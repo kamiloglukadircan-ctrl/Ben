@@ -27,24 +27,33 @@ tools/openwrt-flash/
 ```bash
 cd tools/openwrt-flash
 
-# 1. Firmware'i firmware-selector.openwrt.org'dan indir, sonra
-#    config/tdw8970-v1.env içindeki FIRMWARE_SOURCE_PATH'i o dosyanın
-#    gerçek yoluna güncelle.
+# 1. Firmware-selector.openwrt.org'dan hem "Sysupgrade" hem "Initramfs"
+#    imajını indir; config/tdw8970-v1.env içindeki FIRMWARE_SOURCE_PATH ve
+#    INITRAMFS_SOURCE_PATH değerlerini gerçek dosya yollarıyla güncelle.
 
-# 2. Firmware'i TFTP dizinine kopyala
+# 2. Dosyaları TFTP dizinine kopyala
 ./scripts/setup-tftp.sh config/tdw8970-v1.env
 
 # 3. Ayrı bir terminalde seri konsola bağlan
 ./scripts/connect-serial.sh config/tdw8970-v1.env
 
-# 4. Hangi komutları gireceğini unutursan (başka bir terminalde):
+# 4. Komutları unutursan (başka bir terminalde):
 ./scripts/print-flash-steps.sh config/tdw8970-v1.env
 ```
 
 `print-flash-steps.sh` hiçbir şeyi otomatik çalıştırmaz — sadece U-Boot
 konsoluna elle/kopyala-yapıştır ile gireceğin komutları, config'teki
-gerçek IP/adres değerleriyle doldurup ekrana basar. Flash işlemi seri
-konsol üzerinden, senin kontrolünde ilerler.
+gerçek IP/adres değerleriyle doldurup ekrana basar. Çıktısı iki adıma
+ayrılır:
+
+- **ADIM A** — imajı sadece RAM'e yükleyip `bootm` ile geçici çalıştırır,
+  **flash'a hiçbir şey yazmaz**. Bir sorun olursa elektriği kesip tekrar
+  vermen yeterli, cihaz eski firmware'iyle açılır. `INITRAMFS_SOURCE_PATH`
+  config'te tanımlıysa bu adım otomatik olarak komutlara dahil edilir.
+- **ADIM B** — RAM testinden memnun kaldıktan sonra yapılan, **geri dönüşü
+  olmayan** kalıcı flash yazımı.
+
+Flash işlemi baştan sona seri konsol üzerinden, senin kontrolünde ilerler.
 
 ## Yeni bir cihaz eklemek
 

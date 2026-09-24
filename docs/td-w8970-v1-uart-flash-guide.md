@@ -70,16 +70,42 @@ olduğundan tam dosya adını şimdi teyit edemedim):
 1. https://firmware-selector.openwrt.org adresine git
 2. Arama kutusuna **"tp-link_td-w8970-v1"** yaz
 3. **Sysupgrade** imajını indir (dosya adı örn. `openwrt-25.12.2-lantiq-xrx200-tplink_tdw8970-v1-squashfs-sysupgrade.bin` şeklinde olacaktır — tam adı indirdiğinde göreceksin)
-4. İndirilen dosyayı `/srv/tftp/` klasörüne kopyala ve TFTP'nin okuyabileceği kısa bir isimle de bir kopyasını oluştur, ör:
+4. Aynı arama sonucunda genelde ayrıca bir **Initramfs** imajı da listelenir
+   (ör. `...-initramfs-kernel.bin`) — bunu da indir, bir sonraki bölümde
+   flash'a hiç dokunmadan test etmek için kullanacağız.
+5. İndirilen dosyaları `/srv/tftp/` klasörüne kopyala ve TFTP'nin okuyabileceği kısa isimlerle de birer kopyasını oluştur, ör:
    ```bash
    cp openwrt-*-tplink_tdw8970*-sysupgrade.bin /srv/tftp/openwrt-tdw8970-sysupgrade.bin
+   cp openwrt-*-tplink_tdw8970*-initramfs-kernel.bin /srv/tftp/openwrt-tdw8970-initramfs.bin
    ```
 
 > **Neden sysupgrade, factory değil?** U-Boot üzerinden doğrudan flash'a
 > yazarken OEM firmware'in beklediği header'lar önemsizdir; ham
 > kernel+rootfs içeren **sysupgrade** imajı bu amaç için doğru olandır.
 
-## 4. Flash İşlemi — Adım Adım (Cihaz Elinde Olduğunda)
+## 4. Flash Öncesi — RAM'de Test-Boot (ŞİDDETLE ÖNERİLİR)
+
+Flash'a yazmadan önce imajı sadece **RAM'e yükleyip geçici olarak çalıştırmak**
+mümkün — hiçbir şey flash'a yazılmaz, bir sorun olursa elektriği kesip
+fişi çekip takman yeterli, cihaz eski OEM firmware'iyle olduğu gibi açılır.
+
+U-Boot'a düştükten sonra (bkz. Bölüm 5, adım 1-3):
+
+```
+tftpboot 0x81000000 openwrt-tdw8970-initramfs.bin
+bootm 0x81000000
+```
+
+OpenWrt RAM'de açıldığında test et:
+- `ping 192.168.1.1` (LAN portundan bağlıyken)
+- `ssh root@192.168.1.1`
+- `dmesg` / `ifconfig` ile ethernet (ve varsa WLAN) arayüzlerinin göründüğünü doğrula
+
+Sorun görürsen elektriği kes/tak — flash'a hiç dokunulmadı, risk yok.
+Her şey iyiyse elektriği kesip tekrar ver, `t` ile yine U-Boot'a düş ve
+aşağıdaki **kalıcı flash** adımlarına geç.
+
+## 5. Kalıcı Flash İşlemi — Adım Adım (Cihaz Elinde Olduğunda)
 
 1. Router'ı UART adaptörüne ve Ethernet ile bilgisayara bağla, **henüz güç verme**.
 2. Terminal programını aç (115200 8N1) ve bekle.
@@ -90,6 +116,8 @@ olduğundan tam dosya adını şimdi teyit edemedim):
    setenv serverip 192.168.1.2
    setenv bootargs 'board=WD8970'
    ```
+   (Bu noktada istersen Bölüm 4'teki RAM test adımını yapıp sonra tekrar
+   `t` ile U-Boot'a dönüp devam edebilirsin.)
 5. İmajı TFTP üzerinden RAM'e çek:
    ```
    tftpboot 0x81000000 openwrt-tdw8970-sysupgrade.bin
@@ -109,7 +137,7 @@ olduğundan tam dosya adını şimdi teyit edemedim):
    ```
 9. Cihaz OpenWrt ile açılmalı. Router varsayılan olarak `192.168.1.1` üzerinde LuCI/SSH ile erişilebilir olacak (`br-lan`).
 
-## 5. İlk Boot Sonrası Kontroller
+## 6. İlk Boot Sonrası Kontroller
 
 ```bash
 ssh root@192.168.1.1          # ilk girişte şifre yok, uci ile şifre koy
@@ -120,7 +148,7 @@ dmesg | grep -i eth           # ethernet linklerini kontrol et
 - `opkg update && opkg install luci` (web arayüzü istersen).
 - VDSL/DSL firmware'i gerekiyorsa (`vdsl_fw_install.sh` veya trunk'ta hazır `lantiq-vrx200-a.bin`/`-b.bin`), `/etc/config/network` üzerinden `annex`, `tone`, `xfer_mode` ayarlarını hattına göre yap.
 
-## 6. Geri Dönüş / Kurtarma Planı (Önlem)
+## 7. Geri Dönüş / Kurtarma Planı (Önlem)
 
 - **Flaşlamadan önce OEM firmware'i yedekle.** Eğer OEM firmware üzerinde
   serial ile shell'e erişimin varsa:
@@ -137,7 +165,7 @@ dmesg | grep -i eth           # ethernet linklerini kontrol et
   U-Boot'un kendisi bozulursa donanımsal SPI programlayıcı (BusPirate,
   Raspberry Pi SPI, Pomona clip) gerekir — bkz. sayfadaki "Debricking" bölümü.
 
-## 7. Riskler / Dikkat Edilecekler
+## 8. Riskler / Dikkat Edilecekler
 
 - Yanlış (v3 için olan) imajı yazmak cihazı brick edebilir — **model/versiyon
   etiketini** açtığında mutlaka doğrula.
