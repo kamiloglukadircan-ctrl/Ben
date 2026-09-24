@@ -20,14 +20,5 @@ if [[ ! -e "$SERIAL_PORT" ]]; then
     exit 1
 fi
 
-if command -v picocom >/dev/null 2>&1; then
-    exec picocom -b "$SERIAL_BAUD" "$SERIAL_PORT"
-elif command -v minicom >/dev/null 2>&1; then
-    exec minicom -D "$SERIAL_PORT" -b "$SERIAL_BAUD"
-elif command -v screen >/dev/null 2>&1; then
-    exec screen "$SERIAL_PORT" "$SERIAL_BAUD"
-else
-    echo "HATA: picocom, minicom veya screen bulunamadı. Birini kur:" >&2
-    echo "  sudo apt install picocom" >&2
-    exit 1
-fi
+pick_serial_cmd
+exec "${SERIAL_CMD[@]}"

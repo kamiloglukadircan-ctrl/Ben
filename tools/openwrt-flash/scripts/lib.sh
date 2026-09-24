@@ -28,3 +28,20 @@ require_config() {
         fi
     done
 }
+
+# picocom > minicom > screen sırasıyla ilk bulduğunu, ihtiyaç duyulan
+# argümanlarla birlikte döndürür (exec edilecek komut dizisi olarak).
+# Kullanım: pick_serial_cmd  (sonra "${SERIAL_CMD[@]}" ile çağır)
+pick_serial_cmd() {
+    if command -v picocom >/dev/null 2>&1; then
+        SERIAL_CMD=(picocom -b "$SERIAL_BAUD" "$SERIAL_PORT")
+    elif command -v minicom >/dev/null 2>&1; then
+        SERIAL_CMD=(minicom -D "$SERIAL_PORT" -b "$SERIAL_BAUD")
+    elif command -v screen >/dev/null 2>&1; then
+        SERIAL_CMD=(screen "$SERIAL_PORT" "$SERIAL_BAUD")
+    else
+        echo "HATA: picocom, minicom veya screen bulunamadı. Birini kur:" >&2
+        echo "  sudo apt install picocom" >&2
+        exit 1
+    fi
+}

@@ -15,11 +15,15 @@ tools/openwrt-flash/
     template.env       # yeni cihaz eklerken kopyalanacak şablon
     tdw8970-v1.env      # TP-Link TD-W8970 v1 için dolu config
   scripts/
-    lib.sh              # ortak fonksiyonlar (diğer script'ler bunu kullanır)
-    setup-tftp.sh        # firmware'i TFTP kök dizinine kopyalar
-    connect-serial.sh    # seri konsola bağlanır (picocom/minicom/screen)
-    print-flash-steps.sh # U-Boot'a elle gireceğin komutları, config'ten
-                          # doldurulmuş halde ekrana basar
+    lib.sh                 # ortak fonksiyonlar (diğer script'ler bunu kullanır)
+    setup-tftp.sh           # firmware'i TFTP kök dizinine kopyalar
+    connect-serial.sh       # seri konsola bağlanır (picocom/minicom/screen)
+    print-flash-steps.sh    # U-Boot'a elle gireceğin komutları, config'ten
+                             # doldurulmuş halde ekrana basar
+    print-backup-steps.sh   # OEM firmware'i flaşlamadan önce yedeklemek için
+                             # router'a yapıştırılacak komutları üretir
+    capture-serial-log.sh   # seri oturumu dosyaya loglayarak açar (yedekleme için)
+    extract-backup.sh       # loglanan hex çıktısını gerçek .bin dosyalarına çevirir
 ```
 
 ## Kullanım (TD-W8970 v1 örneği)
@@ -54,6 +58,38 @@ ayrılır:
   olmayan** kalıcı flash yazımı.
 
 Flash işlemi baştan sona seri konsol üzerinden, senin kontrolünde ilerler.
+
+## OEM Firmware Yedekleme (Flaşlamadan Önce, Şiddetle Önerilir)
+
+Cihazın hâlâ OEM firmware ile açılıp seri konsoldan doğrudan root shell
+verdiği durumda (bu cihazda login: `admin`/`1234`), kritik partition'ları
+(özellikle WLAN kalibrasyon/MAC verisi) bilgisayarına yedekleyebilirsin.
+Yöntem: partition'ı router'da hex'e çevirip seri konsola bastır, tüm
+oturumu bir log dosyasına kaydet, sonra log'dan gerçek `.bin` dosyasını
+çıkar. Flash'a hiçbir şey yazmaz, sadece okur.
+
+```bash
+# 1. Router'da hangi partition isimlerinin olduğunu gör (seri konsolda):
+#    cat /proc/mtd
+#    Gördüğün isimleri config/tdw8970-v1.env içindeki BACKUP_PARTITIONS'a yaz.
+
+# 2. Loglanan bir seri oturum aç (normal connect-serial.sh yerine):
+./scripts/capture-serial-log.sh config/tdw8970-v1.env
+
+# 3. print-backup-steps.sh'ın bastığı komutları o oturumda TEK TEK çalıştır:
+./scripts/print-backup-steps.sh config/tdw8970-v1.env
+
+# 4. Oturumdan çık (picocom: Ctrl-A Ctrl-X), sonra log'u işle:
+./scripts/extract-backup.sh config/tdw8970-v1.env <capture'ın verdiği log yolu>
+```
+
+Çıkan `.bin` dosyaları `BACKUP_DIR`'a (`config/tdw8970-v1.env`'de tanımlı)
+kaydedilir. `extract-backup.sh`'ın yazdığı dosya boyutunu, router'daki
+`cat /proc/mtd` çıktısındaki partition boyutuyla karşılaştırıp doğrula.
+
+Bu yöntem yalnızca küçük partition'lar (64-256KB) için pratiktir — tüm
+8MB flash'ı yedeklemek istersen donanımsal bir SPI programlayıcı gerekir
+(bkz. ana dokümandaki "Debricking" notu).
 
 ## Yeni bir cihaz eklemek
 
