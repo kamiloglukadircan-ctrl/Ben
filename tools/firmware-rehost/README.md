@@ -1,15 +1,14 @@
 # Firmware Rehosting Toolkit
 
-Kapalı UART portlu gömülü cihazların (ör. Humax IRHD-5000S) firmware'ini
+Kapalı UART portlu gömülü cihazların (ör. Humax HTR-1000S) firmware'ini
 sanal ortamda (QEMU) yeniden barındırarak (rehosting) analiz etmek için
 araç takımı.
 
 ## Teknik: Alien Kernel Emülasyonu
 
-Aynı CPU mimarisini (MIPS) paylaşan bir "donor" cihazın (ör. TD-W9970)
-çekirdeğini QEMU'da boot edip, hedef cihazın (Humax) dosya sistemini
-`chroot` ile bağlarız. Sonuç: havya kullanmadan, UART pinleriyle
-boğuşmadan root shell.
+Aynı CPU mimarisini (MIPS) paylaşan bir "donor" cihazın çekirdeğini
+QEMU'da boot edip, hedef cihazın (Humax) dosya sistemini `chroot` ile
+bağlarız. Sonuç: havya kullanmadan, UART pinleriyle boğuşmadan root shell.
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -34,23 +33,26 @@ boğuşmadan root shell.
 ## Ön Koşullar
 
 ```bash
-# macOS
-brew install binwalk qemu squashfs
+# macOS — sadece qemu ve squashfs yeterli (binwalk gerekmez)
+brew install qemu squashfs
 
 # Linux
-sudo apt install binwalk qemu-system-mips squashfs-tools
+sudo apt install qemu-system-mips squashfs-tools
 ```
+
+NAND tarayıcı (`nand-scan.py`) Python 3 ile çalışır, harici bağımlılık
+gerektirmez. OOB temizliği dahildir.
 
 ## Kullanım (4 Adım)
 
 ### 1. NAND Döküm Analizi
 
-Ham NAND dökümünü tarar, dosya sistemi imzalarını (SquashFS, JFFS2, kernel)
-ve ofsetlerini bulur.
+Ham NAND dökümünü tarar, OOB verisini otomatik temizler, dosya sistemi
+imzalarını (SquashFS, JFFS2, kernel) ve ofsetlerini bulur.
 
 ```bash
 cd tools/firmware-rehost
-./scripts/01-nand-analyze.sh config/humax-5000s.env
+./scripts/01-nand-analyze.sh config/humax-htr1000s.env
 ```
 
 ### 2. RootFS Çıkarma
@@ -58,9 +60,9 @@ cd tools/firmware-rehost
 Bulunan SquashFS'i dökümden çıkarıp bir dizine açar.
 
 ```bash
-./scripts/02-extract-rootfs.sh config/humax-5000s.env
+./scripts/02-extract-rootfs.sh config/humax-htr1000s.env
 # veya manuel ofset ile:
-./scripts/02-extract-rootfs.sh config/humax-5000s.env 0x1A0000
+./scripts/02-extract-rootfs.sh config/humax-htr1000s.env 0x1A0000
 ```
 
 ### 3. QEMU Rehosting (Frankenstein)
@@ -69,7 +71,7 @@ OpenWrt Malta kernel'ini QEMU'da boot eder, Humax rootfs'ini 9P ile paylaşır,
 chroot ile root shell açar.
 
 ```bash
-./scripts/03-qemu-rehost.sh config/humax-5000s.env
+./scripts/03-qemu-rehost.sh config/humax-htr1000s.env
 ```
 
 ### 4. Kriptografi Analizi
@@ -78,7 +80,7 @@ chroot ile root shell açar.
 ve şifreleme mekanizmalarını tarar.
 
 ```bash
-./scripts/04-analyze-crypto.sh config/humax-5000s.env
+./scripts/04-analyze-crypto.sh config/humax-htr1000s.env
 ```
 
 ## QEMU'da Ne Çalışır, Ne Çalışmaz?
@@ -96,29 +98,20 @@ ve şifreleme mekanizmalarını tarar.
 | HDMI çıkışı | Çalışmaz | Donanımsal video işlemci |
 | Smartcard (CAS) | Kısmen | Yazılımsal kısım çalışır, fiziksel kart okuyucu yok |
 
-## OOB Sorunu
-
-Programlayıcı dökümü OOB (spare area) verisi içeriyorsa binwalk dosya
-sistemini bulamayabilir. Bu durumda:
-
-```bash
-# nand-tool ile OOB temizliği
-pip3 install nand-tool
-nand-tool -i dump.bin -o dump-clean.bin -p 2048 -s 64
-```
-
 ## Dizin Yapısı
 
 ```
 tools/firmware-rehost/
 ├── config/
-│   ├── template.env          # Yeni cihaz şablonu
-│   └── humax-5000s.env       # Humax IRHD-5000S config
+│   ├── template.env            # Yeni cihaz şablonu
+│   └── humax-htr1000s.env      # Humax HTR-1000S config
 ├── scripts/
-│   ├── lib.sh                # Ortak fonksiyonlar
-│   ├── 01-nand-analyze.sh    # NAND tarama
-│   ├── 02-extract-rootfs.sh  # RootFS çıkarma
-│   ├── 03-qemu-rehost.sh     # QEMU + chroot
-│   └── 04-analyze-crypto.sh  # Kriptografi analizi
+│   ├── lib.sh                  # Ortak fonksiyonlar
+│   ├── nand-scan.py            # NAND tarayıcı (OOB + imza)
+│   ├── 00-mac-setup.sh         # Mac tek-adım kurulum
+│   ├── 01-nand-analyze.sh      # NAND tarama
+│   ├── 02-extract-rootfs.sh    # RootFS çıkarma
+│   ├── 03-qemu-rehost.sh       # QEMU + chroot
+│   └── 04-analyze-crypto.sh    # Kriptografi analizi
 └── README.md
 ```
