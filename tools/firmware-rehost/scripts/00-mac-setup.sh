@@ -76,7 +76,7 @@ echo
 echo " Sonraki adımlar:"
 echo
 echo " 1) NAND dökümünü kopyala:"
-echo "    cp /path/to/S34ML01G_dump.bin ~/firmware-dumps/humax-5000s-nand-full.bin"
+echo "    cp /path/to/S34ML01G200BHI00@BGA63_2147.BIN ~/firmware-dumps/"
 echo
 echo " 2) Repo'yu klonla (henüz yapmadıysan):"
 echo "    git clone https://github.com/kamiloglukadircan-ctrl/Ben.git"
