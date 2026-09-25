@@ -70,11 +70,11 @@ require_tool() {
 human_size() {
     local bytes="$1"
     if (( bytes >= 1073741824 )); then
-        printf "%.1f GB" "$(echo "$bytes / 1073741824" | bc -l)"
+        echo "$bytes 1073741824" | awk '{printf "%.1f GB", $1/$2}'
     elif (( bytes >= 1048576 )); then
-        printf "%.1f MB" "$(echo "$bytes / 1048576" | bc -l)"
+        echo "$bytes 1048576" | awk '{printf "%.1f MB", $1/$2}'
     elif (( bytes >= 1024 )); then
-        printf "%.1f KB" "$(echo "$bytes / 1024" | bc -l)"
+        echo "$bytes 1024" | awk '{printf "%.1f KB", $1/$2}'
     else
         printf "%d B" "$bytes"
     fi
