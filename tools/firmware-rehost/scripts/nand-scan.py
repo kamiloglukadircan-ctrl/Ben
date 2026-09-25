@@ -66,17 +66,46 @@ def strip_oob(data: bytes, page_size: int, oob_size: int) -> bytes:
 
 def detect_oob(data: bytes, page_size: int, oob_size: int) -> bool:
     """Dökümde OOB verisi olup olmadığını kontrol eder."""
-    expected_clean = page_size * (len(data) // (page_size + oob_size))
-    expected_with_oob = (page_size + oob_size) * (len(data) // (page_size + oob_size))
+    full_page = page_size + oob_size
+    data_len = len(data)
 
-    # Dosya boyutu tam sayfa+oob'a bölünüyorsa OOB var
-    if len(data) % (page_size + oob_size) == 0 and len(data) % page_size != 0:
+    divides_full = (data_len % full_page == 0)
+    divides_page = (data_len % page_size == 0)
+
+    # Her ikisine de bölünüyorsa: sayfa sayısına bak.
+    # NAND chip'lerde sayfa sayısı 2'nin kuvveti olur (1024, 2048, 4096, 16384, 32768, 65536...)
+    # OOB dahilse: data_len / full_page = 2^n (temiz veri = 2^n * page_size = tam MB)
+    # OOB hariçse: data_len / page_size = 2^n ama data_len / full_page = 2^n olmaz
+    if divides_full and divides_page:
+        pages_with_oob = data_len // full_page
+        pages_without_oob = data_len // page_size
+        # Hangisi bilinen NAND boyutuna (2^n) daha yakın?
+        def is_power_of_2(n):
+            return n > 0 and (n & (n - 1)) == 0
+        # OOB dahil sayfa sayısı 2^n ise ve temiz veri bilinen bir boyutsa
+        clean_size_with_oob = pages_with_oob * page_size
+        known_nand_sizes = [
+            16 * 1024 * 1024,    # 16MB (128Mbit)
+            32 * 1024 * 1024,    # 32MB (256Mbit)
+            64 * 1024 * 1024,    # 64MB (512Mbit)
+            128 * 1024 * 1024,   # 128MB (1Gbit) <- S34ML01G
+            256 * 1024 * 1024,   # 256MB (2Gbit)
+            512 * 1024 * 1024,   # 512MB (4Gbit)
+            1024 * 1024 * 1024,  # 1GB (8Gbit)
+        ]
+        if clean_size_with_oob in known_nand_sizes and is_power_of_2(pages_with_oob):
+            return True
+        if data_len in known_nand_sizes:
+            return False
+        # Fallback: OOB dahil varsay (güvenli taraf)
         return True
-    # Dosya boyutu tam sayfa boyutuna bölünüyorsa OOB yok
-    if len(data) % page_size == 0:
+
+    if divides_full:
+        return True
+    if divides_page:
         return False
-    # Belirsiz
-    return len(data) > page_size * 1024  # büyük dosyalarda varsayılan: OOB var
+    # Belirsiz — büyük dosyalarda OOB var varsay
+    return data_len > page_size * 1024
 
 
 def scan_signatures(data: bytes, label: str = "") -> list:
