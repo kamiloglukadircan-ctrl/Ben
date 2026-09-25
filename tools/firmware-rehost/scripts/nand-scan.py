@@ -323,15 +323,29 @@ def main():
                 print(f"  Endian: {info.get('endian', '?')}")
                 print()
 
-        print("  Çıkarmak için:")
+        print("  Çıkarmak için (dikkat: bs=1 ÇOK YAVAŞTIR, blok-hizalı ofset kullan):")
         for offset in squashfs_offsets:
             info = parse_squashfs_header(clean_data, offset)
             size = info.get("bytes_used", 0)
+            # bytes_used alanı Broadcom özel formatlarda farklı ofsette olabilir —
+            # dosya boyutunu aşan/anlamsız büyük değerleri güvenilmez say.
+            remaining = len(clean_data) - offset
+            if size <= 0 or size > remaining:
+                size = 0
+
             out_path = args.output or args.dump.rsplit(".", 1)[0] + "-clean.bin"
+
+            # En büyük 2'nin kuvveti blok boyutunu bul (hızlı dd için)
+            block = 65536
+            while offset % block != 0 and block > 512:
+                block //= 2
+            skip_blocks = offset // block
+
             if size > 0:
-                print(f"    dd if=\"{out_path}\" bs=1 skip={offset} count={size} of=rootfs.sqfs")
+                count_blocks = (size + block - 1) // block
+                print(f"    dd if=\"{out_path}\" bs={block} skip={skip_blocks} count={count_blocks} of=rootfs.sqfs")
             else:
-                print(f"    dd if=\"{out_path}\" bs=1 skip={offset} of=rootfs.sqfs")
+                print(f"    dd if=\"{out_path}\" bs={block} skip={skip_blocks} of=rootfs.sqfs")
             print(f"    unsquashfs -d rootfs rootfs.sqfs")
             print(f"    # veya Broadcom özel format için: sasquatch -d rootfs rootfs.sqfs")
             print()

@@ -36,7 +36,19 @@ SQFS_FILE="$EXTRACT_DIR/rootfs.sqfs"
 ROOTFS_DIR="$EXTRACT_DIR/rootfs"
 
 log_info "SquashFS bloğu kesiliyor (ofsetten itibaren tüm veri)..."
-dd if="$CLEAN_DUMP" bs=1 skip="$SQFS_OFFSET" of="$SQFS_FILE" 2>/dev/null
+# bs=1 byte-byte kopyalar (çok yavaş). En büyük ortak bölen blok boyutuyla
+# hızlı ata; kalan (blok'a bölünmeyen) kısmı bs=1 ile tamamla.
+BLOCK_SIZE=65536
+while (( SQFS_OFFSET % BLOCK_SIZE != 0 )); do
+    BLOCK_SIZE=$(( BLOCK_SIZE / 2 ))
+done
+if (( BLOCK_SIZE >= 512 )); then
+    SKIP_BLOCKS=$(( SQFS_OFFSET / BLOCK_SIZE ))
+    dd if="$CLEAN_DUMP" bs="$BLOCK_SIZE" skip="$SKIP_BLOCKS" of="$SQFS_FILE" 2>/dev/null
+else
+    log_warn "Ofset blok hizalı değil, yavaş (bs=1) yöntem kullanılıyor..."
+    dd if="$CLEAN_DUMP" bs=1 skip="$SQFS_OFFSET" of="$SQFS_FILE" 2>/dev/null
+fi
 
 SQFS_SIZE=$(stat -f%z "$SQFS_FILE" 2>/dev/null || stat -c%s "$SQFS_FILE" 2>/dev/null)
 log_ok "SquashFS bloğu: $SQFS_FILE ($(human_size "$SQFS_SIZE"))"
