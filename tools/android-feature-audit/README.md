@@ -16,6 +16,32 @@ değiştirmez.
 ```
 Önce `OZET.txt` dosyasına bakın; ayrıntılar ham dosyalarda.
 
+## Bilgisayarsız: Termux'tan
+Termux normal bir uygulama yetkisiyle çalışır. Tek başına sadece `getprop` ve
+kısmen `pm` çalışır; `dumpsys`, `settings`, `device_config` izin hatası verir.
+Tam sonuç için telefonun **kendine** kablosuz hata ayıklama ile bağlanın
+(Android 11+, root gerekmez):
+
+```bash
+pkg update && pkg install android-tools git
+```
+1. Telefon bir Wi-Fi ağına bağlı olsun (internet gerekmez).
+2. Geliştirici seçenekleri → **Kablosuz hata ayıklama** → aç →
+   "Eşleştirme kodu ile cihaz eşleştir". Ekranı bölün (Termux + Ayarlar)
+   ya da kodu not alıp hızlıca Termux'a geçin.
+3. Termux'ta (portlar ekranda yazar, eşleştirme portu ile bağlantı portu farklıdır):
+   ```bash
+   adb pair 127.0.0.1:<eşleştirme_portu> <6_haneli_kod>
+   adb connect 127.0.0.1:<bağlantı_portu>
+   adb devices          # "device" görünmeli
+   ```
+4. Betiği çalıştırın:
+   ```bash
+   ./audit.sh ~/storage/shared/audit   # termux-setup-storage sonrası Dosyalar'da görünür
+   ```
+
+adb bağlı değilse betik otomatik olarak sınırlı yerel modda çalışır.
+
 ## Sonuçları okumak
 | Bölüm | Neye bakılır |
 |---|---|

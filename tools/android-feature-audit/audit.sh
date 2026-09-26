@@ -3,29 +3,32 @@
 # kısıtlı olduğunu ROOT GEREKTİRMEDEN, sadece ADB ile okur. Telefonda hiçbir
 # ayarı DEĞİŞTİRMEZ; yalnızca okuma komutları çalıştırır.
 #
-# Gereksinim: adb (platform-tools), telefonda USB hata ayıklama açık ve
-# bilgisayar yetkilendirilmiş olmalı.
+# Gereksinim: adb (bilgisayarda platform-tools ya da Termux'ta android-tools)
+# ve yetkilendirilmiş bir cihaz. adb yoksa telefonda (Termux) sınırlı yerel
+# modda çalışır.
 #
 # Kullanım: ./audit.sh [çıktı_klasörü]
 #   Varsayılan çıktı klasörü: ./audit-<model>-<tarih>
 
 set -u
 
-if ! command -v adb >/dev/null 2>&1; then
-    echo "HATA: adb bulunamadı. Android platform-tools kurun." >&2
-    exit 1
-fi
+state=""
+command -v adb >/dev/null 2>&1 && state="$(adb get-state 2>/dev/null || true)"
 
-state="$(adb get-state 2>/dev/null || true)"
-if [[ "$state" != "device" ]]; then
+if [[ "$state" == "device" ]]; then
+    sh_() { adb shell "$@" 2>&1 | tr -d '\r'; }
+elif command -v getprop >/dev/null 2>&1; then
+    # Telefonun kendisinde (Termux) ADB bağlantısı olmadan çalışıyoruz.
+    # Uygulama yetkisiyle getprop ve pm çalışır; dumpsys/settings/device_config
+    # çoğunlukla "Permission Denial" verir. Tam sonuç için Termux içinden
+    # kablosuz hata ayıklama ile adb'ye bağlanın (README'ye bakın).
+    echo "UYARI: adb cihazı yok, YEREL (sınırlı) modda çalışılıyor." >&2
+    sh_() { "$@" 2>&1; }
+else
     echo "HATA: Yetkilendirilmiş cihaz yok (durum: ${state:-yok})." >&2
-    echo "Telefonda: Geliştirici seçenekleri > USB hata ayıklama, sonra 'izin ver'." >&2
-    adb devices >&2
+    echo "Telefonda: Geliştirici seçenekleri > USB/Kablosuz hata ayıklama, sonra 'izin ver'." >&2
     exit 1
 fi
-
-sh_() { adb shell "$@" 2>&1 | tr -d '\r'; }
-
 model="$(sh_ getprop ro.product.model | tr ' /' '__')"
 out="${1:-./audit-${model:-android}-$(date +%Y%m%d-%H%M%S)}"
 mkdir -p "$out"
