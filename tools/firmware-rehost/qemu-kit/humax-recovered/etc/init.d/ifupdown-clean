@@ -1,0 +1,164 @@
+[ -x /sbin/ifup ] || exit 0
+[ -x /sbin/ifdown ] || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+MYNAME="${0##*/}"
+report() { echo "${MYNAME}: $*" ; }
+report_err() { log_failure_msg "$*" ; }
+RUN_DIR=/var/run
+[ -r /etc/default/ifupdown ] && . /etc/default/ifupdown
+
+# Note: The state file location is hardcoded in ifup|ifdown
+IFSTATE=/var/run/ifstate
+
+HUMAXTV_CONFIG=/var/lib/humaxtv/network/network.conf
+
+
+myreadlink () {
+    dest="${1%/}"
+    extras=""
+
+    while [ "$dest" != "" ]; do
+	if [ -d "$dest" ]; then
+	    cd "$dest"
+	    dest=$(/bin/pwd)
+	    break
+	fi
+
+	if [ -L "$dest" ]; then
+	    d2=$(readlink "$dest")
+	    if [ "${d2#/}" = "$d2" ]; then
+		dest="${dest%/*}/$d2"
+	    else
+		dest="$d2"
+	    fi
+	fi
+
+	while [ ! -e "$dest" ]; do
+	    extras="${dest##*/}/$extras"
+	    if [ "${extras%%/*}" = ".." ]; then return 1; fi
+	    destx="${dest%/*}"
+	    if [ "$destx" = "$dest" ]; then destx=""; fi
+	    dest="$destx"
+	done
+    done
+    dest="$dest/$extras"
+    echo "${dest%/}"
+}
+
+case "$1" in
+    start|restart)
+	if [ "$2" ]; then
+	    report_err "Arguments to '$1' command not accepted"
+	    exit 3
+	fi
+	if [ "$VERBOSE" != no ]; then
+		log_begin_msg "Setting up networking..."
+	fi
+
+	echo "   Debug mode not support ethetnet setting"
+
+	if [ "$VERBOSE" != no ]; then
+		log_end_msg 0
+	fi
+	exit 0
+	;;
+    stop)
+	if [ "$2" ]; then
+	    report_err "Arguments to '$1' command not accepted"
+	    exit 3
+	fi
+	if [ -x /etc/init.d/ifupdown-clean ]; then
+	    /etc/init.d/ifupdown-clean start
+	fi
+	;;
+    force-reload)
+	;;
+    *)
+	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	exit 3
+	;;
+esac
+#!/bin/sh
+
+MODULES_FILE=/etc/default/modules
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg 'Loading deamons...'
+fi
+
+
+case "$1" in
+    start|restart)
+        if [ "$VERBOSE" != no ]; then
+                log_begin_msg "Starting inetd..."
+        fi
+    	exec /usr/sbin/inetd
+	;;
+    stop)
+        ;;
+    force-reload)
+        ;;
+esac
+
+
+/bin/echo 10000 > /proc/sys/vm/min_free_kbytes
+#!/bin/sh
+
+[ -x /usr/bin/humaxtv ] || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+if [ -f /etc/default/neo ] ; then
+    . /etc/default/settop
+fi
+
+if grep -q "nosettop" /proc/cmdline ; then
+    exit 0;
+fi
+
+case "$1" in
+    start)
+		if [ "$VERBOSE" != no ]; then
+			log_begin_msg "Starting humaxtv..."
+		fi
+		exec /usr/bin/humaxtv
+		;;
+    stop)
+		if [ "$VERBOSE" != no ]; then
+			log_begin_msg "Stopping humaxtv..."
+		fi
+		killall humaxtv
+		;;
+    *)
+		if [ "$VERBOSE" != no ]; then
+			log_success_msg "Usage: /etc/init.d/S90settop {start|stop}"
+		fi
+		exit 1
+		;;
+esac
+
+#!/bin/sh
+# Start all init scripts in /etc/init.d
+# executing them in numerical order.
+#
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+# Source defaults.
+. /etc/default/rcS
+export VERBOSE
+
+# Trap CTRL-C &c only int this shell so we can interrupt subprocesses.
+trap ":" INT QUIT TSTP
+
+steps=$(echo /etc/init.d/S??*)
+
+for i in $steps
+do
+     # Ignore dangling symlinks (if any).
+     [ ! -f "$i" ]

@@ -1,0 +1,1984 @@
+# file <name> <location> <mode> <uid> <gid>
+# dir <name> <mode> <uid> <gid>
+# nod <name> <mode> <uid> <gid> <dev_type> <maj> <min>
+# slink <name> <target> <mode> <uid> <gid>
+# pipe <name> <mode> <uid> <gid>
+# sock <name> <mode> <uid> <gid>
+#
+# <name>      name of the file/dir/nod/etc in the archive
+# <location>  location of the file in the current filesystem
+# <target>    link target
+# <mode>      mode/permissions of the file
+# <uid>       user id (0=root)
+# <gid>       group id (0=root)
+# <dev_type>  device type (b=block, c=character)
+# <maj>       major number of nod
+# <min>       minor number of nod
+
+
+dir /dev 755 0 0
+
+nod /dev/mem 640 0 0 c 1 1
+dir /dev/pts 755 0 0
+nod /dev/ram 640 0 0 b 1 1
+dir /dev/shm 755 0 0
+nod /dev/rtc 640 0 0 c 10 135
+nod /dev/tty 666 0 0 c 5 0
+nod /dev/kmem 640 0 0 c 1 2
+nod /dev/port 666 0 0 c 1 4
+nod /dev/zero 666 0 0 c 1 5
+nod /dev/full 666 0 0 c 1 7
+nod /dev/kmsg 640 0 0 c 1 11
+nod /dev/console 666 0 0 c 5 1
+nod /dev/random 666 0 0 c 1 8
+nod /dev/urandom 666 0 0 c 1 9
+
+nod /dev/null 666 0 0 c 1 3
+nod /dev/ptmx 666 0 0 c 5 2
+nod /dev/ram0 640 0 0 b 1 0
+nod /dev/ram1 640 0 0 b 1 1
+nod /dev/ram2 640 0 0 b 1 2
+nod /dev/ram3 640 0 0 b 1 3
+
+nod /dev/hda 640 0 0 b 3 0
+nod /dev/hda1 640 0 0 b 3 1
+nod /dev/hda2 640 0 0 b 3 2
+nod /dev/hda3 640 0 0 b 3 3
+nod /dev/hda4 640 0 0 b 3 4
+nod /dev/hda5 640 0 0 b 3 5
+nod /dev/hda6 640 0 0 b 3 6
+nod /dev/hda7 640 0 0 b 3 7
+nod /dev/hda8 640 0 0 b 3 8
+
+nod /dev/sda 640 0 0 b 8 0
+nod /dev/sda1 640 0 0 b 8 1
+nod /dev/sda2 640 0 0 b 8 2
+nod /dev/sda3 640 0 0 b 8 3
+nod /dev/sda4 640 0 0 b 8 4
+nod /dev/sda5 640 0 0 b 8 5
+nod /dev/sda6 640 0 0 b 8 6
+nod /dev/sda7 640 0 0 b 8 7
+nod /dev/sda8 640 0 0 b 8 8
+nod /dev/sdb 640 0 0 b 8 16
+nod /dev/sdb1 640 0 0 b 8 17
+nod /dev/sdb2 640 0 0 b 8 18
+nod /dev/sdb3 640 0 0 b 8 19
+nod /dev/sdb4 640 0 0 b 8 20
+nod /dev/sdb5 640 0 0 b 8 21
+nod /dev/sdb6 640 0 0 b 8 22
+nod /dev/sdb7 640 0 0 b 8 23
+nod /dev/sdb8 640 0 0 b 8 24
+nod /dev/sdc 640 0 0 b 8 32
+nod /dev/sdc1 640 0 0 b 8 33
+nod /dev/sdc2 640 0 0 b 8 34
+nod /dev/sdc3 640 0 0 b 8 35
+nod /dev/sdc4 640 0 0 b 8 36
+nod /dev/sdc5 640 0 0 b 8 37
+nod /dev/sdc6 640 0 0 b 8 38
+nod /dev/sdc7 640 0 0 b 8 39
+nod /dev/sdc8 640 0 0 b 8 40
+nod /dev/sdd 640 0 0 b 8 48
+nod /dev/sdd1 640 0 0 b 8 49
+nod /dev/sdd2 640 0 0 b 8 50
+nod /dev/sdd3 640 0 0 b 8 51
+nod /dev/sdd4 640 0 0 b 8 52
+nod /dev/sdd5 640 0 0 b 8 53
+nod /dev/sdd6 640 0 0 b 8 54
+nod /dev/sdd7 640 0 0 b 8 55
+nod /dev/sdd8 640 0 0 b 8 56
+nod /dev/sde 640 0 0 b 8 64
+nod /dev/sde1 640 0 0 b 8 65
+nod /dev/sde2 640 0 0 b 8 66
+nod /dev/sde3 640 0 0 b 8 67
+nod /dev/sde4 640 0 0 b 8 68
+nod /dev/sde5 640 0 0 b 8 69
+nod /dev/sde6 640 0 0 b 8 70
+nod /dev/sde7 640 0 0 b 8 71
+nod /dev/sde8 640 0 0 b 8 72
+nod /dev/sdf 640 0 0 b 8 80
+nod /dev/sdf1 640 0 0 b 8 81
+nod /dev/sdf2 640 0 0 b 8 82
+nod /dev/sdf3 640 0 0 b 8 83
+nod /dev/sdf4 640 0 0 b 8 84
+nod /dev/sdf5 640 0 0 b 8 85
+nod /dev/sdf6 640 0 0 b 8 86
+nod /dev/sdf7 640 0 0 b 8 87
+nod /dev/sdf8 640 0 0 b 8 88
+nod /dev/sdg 640 0 0 b 8 96
+nod /dev/sdg1 640 0 0 b 8 97
+nod /dev/sdg2 640 0 0 b 8 98
+nod /dev/sdg3 640 0 0 b 8 99
+nod /dev/sdg4 640 0 0 b 8 100
+nod /dev/sdg5 640 0 0 b 8 101
+nod /dev/sdg6 640 0 0 b 8 102
+nod /dev/sdg7 640 0 0 b 8 103
+nod /dev/sdg8 640 0 0 b 8 104
+nod /dev/sdh 640 0 0 b 8 112
+nod /dev/sdh1 640 0 0 b 8 113
+nod /dev/sdh2 640 0 0 b 8 114
+nod /dev/sdh3 640 0 0 b 8 115
+nod /dev/sdh4 640 0 0 b 8 116
+nod /dev/sdh5 640 0 0 b 8 117
+nod /dev/sdh6 640 0 0 b 8 118
+nod /dev/sdh7 640 0 0 b 8 119
+nod /dev/sdh8 640 0 0 b 8 120
+nod /dev/sdi 640 0 0 b 8 128
+nod /dev/sdi1 640 0 0 b 8 129
+nod /dev/sdi2 640 0 0 b 8 130
+nod /dev/sdi3 640 0 0 b 8 131
+nod /dev/sdi4 640 0 0 b 8 132
+nod /dev/sdi5 640 0 0 b 8 133
+nod /dev/sdi6 640 0 0 b 8 134
+nod /dev/sdi7 640 0 0 b 8 135
+nod /dev/sdi8 640 0 0 b 8 136
+nod /dev/hmxsdcon 640 0 0 c 241 0
+
+nod /dev/tty0 666 0 0 c 4 0
+nod /dev/tty1 666 0 0 c 4 1
+#nod /dev/tty2 666 0 0 c 4 2
+#nod /dev/tty3 666 0 0 c 4 3
+#nod /dev/tty4 666 0 0 c 4 4
+#nod /dev/tty5 666 0 0 c 4 5
+#nod /dev/tty6 666 0 0 c 4 6
+#nod /dev/tty7 666 0 0 c 4 7
+
+nod /dev/loop0 640 0 0 b 7 0
+#nod /dev/loop1 640 0 0 b 7 1
+#nod /dev/loop2 640 0 0 b 7 2
+#nod /dev/loop3 640 0 0 b 7 3
+#nod /dev/loop4 640 0 0 b 7 4
+#nod /dev/loop5 640 0 0 b 7 5
+#nod /dev/loop6 640 0 0 b 7 6
+#nod /dev/loop7 640 0 0 b 7 7
+#nod /dev/loop8 640 0 0 b 7 8
+
+nod /dev/ptyp0 666 0 0 c 2 0
+nod /dev/ptyp1 666 0 0 c 2 1
+nod /dev/ptyp2 666 0 0 c 2 2
+nod /dev/ptyp3 666 0 0 c 2 3
+nod /dev/ptyp4 666 0 0 c 2 4
+nod /dev/ptyp5 666 0 0 c 2 5
+nod /dev/ptyp6 666 0 0 c 2 6
+nod /dev/ptyp7 666 0 0 c 2 7
+nod /dev/ptyp8 666 0 0 c 2 8
+nod /dev/ptyp9 666 0 0 c 2 9
+
+#nod /dev/ttyp0 666 0 0 c 3 0
+#nod /dev/ttyp1 666 0 0 c 3 1
+#nod /dev/ttyp2 666 0 0 c 3 2
+#nod /dev/ttyp3 666 0 0 c 3 3
+#nod /dev/ttyp4 666 0 0 c 3 4
+#nod /dev/ttyp5 666 0 0 c 3 5
+#nod /dev/ttyp6 666 0 0 c 3 6
+#nod /dev/ttyp7 666 0 0 c 3 7
+#nod /dev/ttyp8 666 0 0 c 3 8
+
+#nod /dev/ttyP0 666 0 0 c 57 0
+#nod /dev/ttyP1 666 0 0 c 57 1
+#nod /dev/ttyP2 666 0 0 c 57 2
+#nod /dev/ttyP3 666 0 0 c 57 3
+
+nod /dev/ttyS0 666 0 0 c 4 64
+nod /dev/ttyS1 666 0 0 c 4 65
+nod /dev/ttyS2 666 0 0 c 4 66
+nod /dev/ttyS3 666 0 0 c 4 67
+nod /dev/ttyS64 666 0 0 c 4 128
+
+nod /dev/mtd0 640 0 0 c 90 0
+nod /dev/mtd1 640 0 0 c 90 2
+nod /dev/mtd2 640 0 0 c 90 4
+nod /dev/mtd3 640 0 0 c 90 6
+nod /dev/mtd4 640 0 0 c 90 8
+nod /dev/mtd5 640 0 0 c 90 10
+nod /dev/mtd6 640 0 0 c 90 12
+nod /dev/mtd7 640 0 0 c 90 14
+nod /dev/mtd8 640 0 0 c 90 16
+nod /dev/mtd9 640 0 0 c 90 18
+nod /dev/mtd10 640 0 0 c 90 20
+nod /dev/mtd11 640 0 0 c 90 22
+nod /dev/mtd12 640 0 0 c 90 24
+nod /dev/mtd13 640 0 0 c 90 26
+nod /dev/mtd14 640 0 0 c 90 28
+nod /dev/mtd15 640 0 0 c 90 30
+
+nod /dev/mtdblock0 640 0 0 b 31 0
+nod /dev/mtdblock1 640 0 0 b 31 1
+nod /dev/mtdblock2 640 0 0 b 31 2
+nod /dev/mtdblock3 640 0 0 b 31 3
+nod /dev/mtdblock4 640 0 0 b 31 4
+nod /dev/mtdblock5 640 0 0 b 31 5
+nod /dev/mtdblock6 640 0 0 b 31 6
+nod /dev/mtdblock7 640 0 0 b 31 7
+nod /dev/mtdblock8 640 0 0 b 31 8
+nod /dev/mtdblock9 640 0 0 b 31 9
+nod /dev/mtdblock10 640 0 0 b 31 10
+nod /dev/mtdblock11 640 0 0 b 31 11
+nod /dev/mtdblock12 640 0 0 b 31 12
+nod /dev/mtdblock13 640 0 0 b 31 13
+nod /dev/mtdblock14 640 0 0 b 31 14
+nod /dev/mtdblock15 640 0 0 b 31 15
+
+# broadcom device nod
+# settop api proxy
+#nod /dev/bcmsettopapi 666 0 0 c 204 0
+nod /dev/brcm0 666 0 0 c 30 0
+nod /dev/bcmfpga 666 0 0 c 38 0
+
+# for 7445 URSR 13.4 linux 3.8
+nod /dev/brcm_cma0 666 0 0 c 254 0
+
+# SUPPORT USB to Serial device
+nod /dev/ttyUSB0 666 0 0 c 188 0
+
+# input device
+dir /dev/input 755 0 0
+nod /dev/input/event0 666 0 0 c 13 64
+nod /dev/input/event1 666 0 0 c 13 65
+nod /dev/input/event2 666 0 0 c 13 66
+nod /dev/input/event3 666 0 0 c 13 67
+nod /dev/input/event4 666 0 0 c 13 68
+nod /dev/input/event5 666 0 0 c 13 69
+nod /dev/input/event6 666 0 0 c 13 70
+nod /dev/input/event7 666 0 0 c 13 71
+nod /dev/input/event8 666 0 0 c 13 72
+nod /dev/input/event9 666 0 0 c 13 73
+
+
+
+
+
+#nod /dev/bcmgraphics_0 666 0 0 c 30 0
+#nod /dev/bcmgraphics_1 666 0 0 c 30 1
+#nod /dev/bcmrecord_0 666 0 0 c 30 2
+#nod /dev/bcmrecord_1 666 0 0 c 30 3
+#nod /dev/bcmrecord_2 666 0 0 c 30 3
+#nod /dev/bcmrecord_3 666 0 0 c 30 3
+#nod /dev/bcmindex_0 666 0 0 c 30 5
+#nod /dev/bcmindex_1 666 0 0 c 30 6
+#nod /dev/bcmindex_2 666 0 0 c 30 6
+#nod /dev/bcmindex_3 666 0 0 c 30 6
+#nod /dev/bcmplay_0 666 0 0 c 30 8
+#nod /dev/bcmplay_1 666 0 0 c 30 9
+#nod /dev/bcmpcm_0 666 0 0 c 30 12
+#nod /dev/bcmpcm_1 666 0 0 c 30 13
+#nod /dev/bcmpcmcapture_0 666 0 0 c 30 14
+#nod /dev/bcmpcmcapture_1 666 0 0 c 30 15
+#nod /dev/bcmmessage 666 0 0 c 30 18
+#nod /dev/bcmtransport 666 0 0 c 30 19
+#nod /dev/bcmdma 666 0 0 c 30 20
+#nod /dev/bcmplayes_0 666 0 0 c 30 24
+#nod /dev/bcmplayes_1 666 0 0 c 30 25
+#nod /dev/bcmplayes_2 666 0 0 c 30 26
+#nod /dev/bcmplayes_3 666 0 0 c 30 27
+#nod /dev/bcmvbi 666 0 0 c 30 30
+#nod /dev/bcmoutput_0 666 0 0 c 30 33
+#nod /dev/bcmoutput_1 666 0 0 c 30 34
+#nod /dev/bcmio 666 0 0 c 30 35
+#nod /dev/bcmpaxel 666 0 0 c 30 36
+
+# frontend
+#nod /dev/bcmleds 666 0 0 c 31 0
+#nod /dev/bcmkeypad 666 0 0 c 31 1
+#nod /dev/bcmsejinkbd 666 0 0 c 31 3
+#nod /dev/bcmremote_a 666 0 0 c 31 14
+#nod /dev/bcmremote_b 666 0 0 c 31 15
+#nod /dev/bcmsejinrem 666 0 0 c 31 16
+#nod /dev/bcmtuner 666 0 0 c 31 11
+#nod /dev/bcmqamoob 666 0 0 c 31 9
+#nod /dev/bcmupggpio 666 0 0 c 31 12
+#nod /dev/bcmupgi2c  666 0 0 c 31 22
+#nod /dev/scarda 666 0 0 c 31 20
+#nod /dev/scardb 666 0 0 c 31 21
+
+#nod /dev/pod 666 0 0 c 38 0
+
+# kfir
+#nod /dev/kf2x00 666 0 0 c 203 0
+#nod /dev/kf2x01 666 0 0 c 203 1
+#nod /dev/kfir0 666 0 0 c 203 0
+
+# settop api proxy
+#nod /dev/bcmsettopapi 666 0 0 c 204 0
+
+# general
+#nod /dev/bcmdebug 666 0 0 c 30 21
+
+
+# streamer
+#nod /dev/strm0 666 0 0 c 50 0
+#nod /dev/strm1 666 0 0 c 50 1
+#nod /dev/strm2 666 0 0 c 50 2
+#nod /dev/strm3 666 0 0 c 50 3
+#nod /dev/strm4 666 0 0 c 50 4
+#nod /dev/strm5 666 0 0 c 50 5
+#nod /dev/strm6 666 0 0 c 50 6
+#nod /dev/strm7 666 0 0 c 50 7
+#nod /dev/strm8 666 0 0 c 50 8
+#nod /dev/strm9 666 0 0 c 50 9
+#nod /dev/strm10 666 0 0 c 50 10
+#nod /dev/strm11 666 0 0 c 50 11
+#nod /dev/strm12 666 0 0 c 50 12
+
+# nexus
+dir /dev/nexus 755 0 0
+nod /dev/nexus_platform 666 0 0 c 33 0
+nod /dev/nexus_uart 666 0 0 c 33 1
+nod /dev/nexus_smartcard 666 0 0 c 33 2
+nod /dev/nexus_hdmi_output 666 0 0 c 33 3
+nod /dev/nexus_sync_channel 666 0 0 c 33 4
+nod /dev/nexus_astm 666 0 0 c 33 5
+nod /dev/nexus_display 666 0 0 c 33 6
+nod /dev/nexus_graphics2d 666 0 0 c 33 7
+nod /dev/nexus_surface 666 0 0 c 33 8
+nod /dev/nexus_audio 666 0 0 c 33 9
+nod /dev/nexus_video_decoder 666 0 0 c 33 10
+nod /dev/nexus_transport 666 0 0 c 33 11
+nod /dev/nexus_dma 666 0 0 c 33 12
+nod /dev/nexus_security 666 0 0 c 33 13
+nod /dev/nexus_spi 666 0 0 c 33 14
+nod /dev/nexus_frontend 666 0 0 c 33 15
+nod /dev/nexus_keypad 666 0 0 c 33 16
+nod /dev/nexus_rfm 666 0 0 c 33 17
+nod /dev/nexus_uhf_input 666 0 0 c 33 18
+nod /dev/nexus_input_capture 666 0 0 c 33 19
+nod /dev/nexus_ir_blaster 666 0 0 c 33 20
+nod /dev/nexus_ir_input 666 0 0 c 33 21
+nod /dev/nexus_led 666 0 0 c 33 22
+nod /dev/nexus_gpio 666 0 0 c 33 23
+nod /dev/nexus_i2c 666 0 0 c 33 24
+nod /dev/nexus_pwm 666 0 0 c 33 25
+nod /dev/nexus_core 666 0 0 c 33 26
+nod /dev/nexus_proxy 666 0 0 c 33 27
+nod /dev/nexus_driver 666 0 0 c 33 29
+
+# ubi
+nod /dev/ubi_ctrl 666 0 0 c 10 59 
+nod /dev/ubi0 666 0 0 c 242 0
+nod /dev/ubi0_0 666 0 0 c 242 1
+nod /dev/ubi0_1 666 0 0 c 242 2
+nod /dev/ubi0_2 666 0 0 c 242 3
+nod /dev/ubi0_3 666 0 0 c 242 4
+nod /dev/ubi1 666 0 0 c 243 0
+nod /dev/ubi1_0 666 0 0 c 243 1
+nod /dev/ubi1_1 666 0 0 c 243 2
+nod /dev/ubi1_2 666 0 0 c 243 3
+nod /dev/ubi1_3 666 0 0 c 243 4
+nod /dev/ubi1_4 666 0 0 c 243 5
+nod /dev/ubi2 666 0 0 c 244 0
+nod /dev/ubi2_0 666 0 0 c 244 1
+nod /dev/ubi2_1 666 0 0 c 244 2
+nod /dev/ubi2_2 666 0 0 c 244 3
+nod /dev/ubi2_3 666 0 0 c 244 4
+nod /dev/ubi2_4 666 0 0 c 244 5
+
+# dfb fusion
+dir /dev/fusion 755 0 0
+nod /dev/fusion/0 666 0 0 c 250 0
+nod /dev/fusion/1 666 0 0 c 250 1
+
+# sdio
+nod /dev/mmcblk0 666 0 0 b 179 0
+nod /dev/mmcblk0p1 666 0 0 b 179 1
+
+#Bluetooth
+nod /dev/btusb0 666 0 0 c 180 194
+nod /dev/bthid 666 0 0 c 10 224
+
+#Mapper Directory
+dir /dev/mapper 666 0 0
+
+#pppoe
+nod /dev/ppp 666 0 0 c 108 0
+
+# MoCA
+nod /dev/bmoca0 666 0 0 c 234 0
+
+#mic
+nod /dev/dsp0 666 0 0 c 14 3
+nod /dev/dsp1 666 0 0 c 14 19
+nod /dev/dsp2 666 0 0 c 14 35
+nod /dev/mixer0 666 0 0 c 14 0
+nod /dev/mixer1 666 0 0 c 14 16
+nod /dev/mixer2 666 0 0 c 14 32
+GMT0
+bcmdriver
+fusion fusion_shm_base=0x20000000 fusion_shm_size=0x10000000
+nexus
+#
+# Defaults for the boot scripts
+#
+
+# Set VERBOSE to 'no' if you would like a more quiet bootup.
+VERBOSE=no
+# /etc/fstab: static file system information.
+#
+# <file system> <mount pt>     <type>	<options>         <dump> <pass>
+/dev/root	/		jffs2	rw,noauto	0	1
+proc		/proc		proc	defaults	0	0
+devpts		/dev/pts	devpts	defaults,gid=5,mode=620	0	0
+tmpfs		/tmp		tmpfs	defaults	0	0
+sysfs		/sys		sysfs	defaults	0	0
+#/dev/sda1	/mnt/hd1	ext3	rw,defaults,data=journal	0	0
+#/dev/sda2	/mnt/hd2	ext3	rw,defaults,data=ordered	0	0
+
+root:x:0:root
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+wheel:x:10:root
+utmp:x:43:
+staff:x:50:
+nobody:x:99:
+nogroup:x:99:
+users:x:100:
+default:x:1000:
+settop:x:500:
+HUMAX
+telnet stream tcp nowait root /bin/busybox telnetd
+#!/bin/sh
+
+TTYGRP=5
+TTYMODE=620
+if [ -f /etc/default/devpts ]; then
+    . /etc/default/devpts
+fi
+
+TMPFS_SIZE=
+if [ -f /etc/default/tmpfs ]; then
+    . /etc/default/tmpfs
+fi
+
+# Mount standard /proc and /sys
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t usbfs usbfs /proc/bus/usb
+
+# Mount /dev/pts. Create master ptmx node if needed.
+if [ -d /dev/pts ]; then
+    mount -t devpts devpts /dev/pts -ogid=$TTYGRP,mode=$TTYMODE
+fi
+
+# Mount tmpfs.
+if [ -n "$TMPFS_SIZE" ]; then
+    tmpfs_opt="-osize=${TMPFS_SIZE}"
+fi
+mount -t tmpfs tmpfs /tmp $tmpfs_opt
+mount -t tmpfs tmpfs /dev/nexus $tmpfs_opt
+
+# hotplug
+#echo /sbin/mdev > /proc/sys/kernel/hotplug
+#/sbin/mdev -s
+
+
+mount -t tmpfs -o mode=0755  tmpfs /media
+
+grep 'var' /proc/mtd | \
+while read device size erasesize name; do
+	mtd -q -q unlock var
+	device=${device%:}
+	device=${device#mtd}
+	device=/dev/mtdblock$device
+	mount $device /var
+	if [ ! -f /var/tmp ] ; then
+		ln -sf ../tmp /var/lock
+		ln -sf ../tmp /var/log
+		ln -sf ../tmp /var/run
+		ln -sf ../tmp /var/spool
+		mkdir -p /var/lib/neo
+	fi
+done
+#!/bin/sh
+
+if [ -f /proc/sys/vm/dirty_ratio ]; then
+    echo 5 > /proc/sys/vm/dirty_ratio
+fi
+
+if [ -f /proc/sys/vm/dirty_background_ratio ]; then
+    echo 2 > /proc/sys/vm/dirty_background_ratio
+fi
+
+if [ -f /proc/sys/vm/dirty_writeback_centisecs ]; then
+    echo 1 > /proc/sys/vm/dirty_writeback_centisecs
+fi
+
+if [ -f /proc/sys/vm/dirty_expire_centisecs ]; then
+    echo 1 > /proc/sys/vm/dirty_expire_centisecs
+fi
+#!/bin/sh
+
+########################################################################
+## Configure ProcFs
+########################################################################
+
+#
+# Set Default Hotplug Handler
+#
+echo /usr/sbin/hotplug_handler > /proc/sys/kernel/hotplug
+
+#
+# Set Panic On Oops
+#
+echo 1 > /proc/sys/kernel/panic_on_oops
+
+# 
+# Set Reboot Time(second) When Panic Occurs
+#
+echo 1 > /proc/sys/kernel/panic
+
+
+
+########################################################################
+## Configure SysFs
+########################################################################
+
+
+#!/bin/sh
+
+MODULES_FILE=/etc/default/modules
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg 'Loading modules...'
+fi
+grep '^[^#]' $MODULES_FILE | \
+while read module args; do
+    [ "$module" ] || continue
+    if [ "$VERBOSE" != no ]; then
+		log_begin_msg "Trying module $module"
+		if modprobe $module $args >/dev/null 2>&1; then
+		    log_end_msg 0
+		else
+		    log_end_msg 1 || true
+		fi
+    else
+	modprobe $module $args >/dev/null 2>&1 || true
+    fi
+done
+
+#!/bin/sh
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg "Mounting local filesystems..."
+fi
+
+(
+	ubiattach -m 4
+	mount -t ubifs -o sync ubi1:dbdata /var/lib/humaxtv
+	mount -t ubifs -o sync ubi1:dbbackup /var/lib/humaxtv_backup
+	mount -t ubifs -o sync ubi1:dbuser /var/lib/humaxtv_user
+
+) 2>&1 | grep -v '(already|nothing was) mounted'
+
+#!/bin/sh
+
+[ -x /sbin/ifup ] || exit 0
+[ -x /sbin/ifdown ] || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+MYNAME="${0##*/}"
+report() { echo "${MYNAME}: $*" ; }
+report_err() { log_failure_msg "$*" ; }
+RUN_DIR=/var/run
+[ -r /etc/default/ifupdown ] && . /etc/default/ifupdown
+
+# Note: The state file location is hardcoded in ifup|ifdown
+IFSTATE=/var/run/ifstate
+
+HUMAXTV_CONFIG=/var/lib/humaxtv/network/network.conf
+
+
+myreadlink () {
+    dest="${1%/}"
+    extras=""
+
+    while [ "$dest" != "" ]; do
+	if [ -d "$dest" ]; then
+	    cd "$dest"
+	    dest=$(/bin/pwd)
+	    break
+	fi
+
+	if [ -L "$dest" ]; then
+	    d2=$(readlink "$dest")
+	    if [ "${d2#/}" = "$d2" ]; then
+		dest="${dest%/*}/$d2"
+	    else
+		dest="$d2"
+	    fi
+	fi
+
+	while [ ! -e "$dest" ]; do
+	    extras="${dest##*/}/$extras"
+	    if [ "${extras%%/*}" = ".." ]; then return 1; fi
+	    destx="${dest%/*}"
+	    if [ "$destx" = "$dest" ]; then destx=""; fi
+	    dest="$destx"
+	done
+    done
+    dest="$dest/$extras"
+    echo "${dest%/}"
+}
+
+case "$1" in
+    start|restart)
+	if [ "$2" ]; then
+	    report_err "Arguments to '$1' command not accepted"
+	    exit 3
+	fi
+	if [ "$VERBOSE" != no ]; then
+		log_begin_msg "Setting up networking..."
+	fi
+
+	echo "   Debug mode not support ethetnet setting"
+
+	if [ "$VERBOSE" != no ]; then
+		log_end_msg 0
+	fi
+	exit 0
+	;;
+    stop)
+	if [ "$2" ]; then
+	    report_err "Arguments to '$1' command not accepted"
+	    exit 3
+	fi
+	if [ -x /etc/init.d/ifupdown-clean ]; then
+	    /etc/init.d/ifupdown-clean start
+	fi
+	;;
+    force-reload)
+	;;
+    *)
+	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	exit 3
+	;;
+esac
+#!/bin/sh
+
+MODULES_FILE=/etc/default/modules
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg 'Loading deamons...'
+fi
+
+
+case "$1" in
+    start|restart)
+        if [ "$VERBOSE" != no ]; then
+                log_begin_msg "Starting inetd..."
+        fi
+    	exec /usr/sbin/inetd
+	;;
+    stop)
+        ;;
+    force-reload)
+        ;;
+esac
+
+
+/bin/echo 10000 > /proc/sys/vm/min_free_kbytes
+#!/bin/sh
+
+[ -x /usr/bin/humaxtv ] || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+if [ -f /etc/default/neo ] ; then
+    . /etc/default/settop
+fi
+
+if grep -q "nosettop" /proc/cmdline ; then
+    exit 0;
+fi
+
+case "$1" in
+    start)
+		if [ "$VERBOSE" != no ]; then
+			log_begin_msg "Starting humaxtv..."
+		fi
+		exec /usr/bin/humaxtv
+		;;
+    stop)
+		if [ "$VERBOSE" != no ]; then
+			log_begin_msg "Stopping humaxtv..."
+		fi
+		killall humaxtv
+		;;
+    *)
+		if [ "$VERBOSE" != no ]; then
+			log_success_msg "Usage: /etc/init.d/S90settop {start|stop}"
+		fi
+		exit 1
+		;;
+esac
+
+#!/bin/sh
+# Start all init scripts in /etc/init.d
+# executing them in numerical order.
+#
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+# Source defaults.
+. /etc/default/rcS
+export VERBOSE
+
+# Trap CTRL-C &c only int this shell so we can interrupt subprocesses.
+trap ":" INT QUIT TSTP
+
+steps=$(echo /etc/init.d/S??*)
+
+for i in $steps
+do
+     # Ignore dangling symlinks (if any).
+     [ ! -f "$i" ] && continue
+
+     case "$i" in
+	*.sh)
+	    # Source shell script for speed.
+	    (
+		trap - INT QUIT TSTP
+		set start
+		. $i
+	    )
+	    ;;
+	*)
+	    # No sh extension, so fork subprocess.
+	    $i start
+	    ;;
+    esac
+done
+
+# /etc/inittab
+#
+# Copyright (C) 2001 Erik Andersen <andersen@codepoet.org>
+#
+# Note: BusyBox init doesn't support runlevels.  The runlevels field is
+# completely ignored by BusyBox init. If you want runlevels, use
+# sysvinit.
+#
+# Format for each entry: <id>:<runlevels>:<action>:<process>
+#
+# id        == tty to run on, or empty for /dev/console
+# runlevels == ignored
+# action    == one of sysinit, respawn, askfirst, wait, and once
+# process   == program to run
+
+# Startup the system
+# now run any rc scripts
+::sysinit:/etc/init.d/rcS
+
+# Put a getty on the serial port
+# if debug
+#ttyS0::respawn:/bin/sh
+# else release
+::once:/sbin/reboot /dev/null
+/dev/null::respawn:/sbin/getty /dev/null
+# endif
+
+#::respawn:/sbin/getty -n -L /sbin/autologin 115200 ttyS0
+#::respawn:/sbin/getty -n -L 115200 --autologin root ttyS0
+#::respawn:/sbin/getty -n -L 115200 ttyS0
+
+# /etc/inputrc - global inputrc for libreadline
+# See readline(3readline) and `info readline' for more information.
+
+# Be 8 bit clean.
+set input-meta on
+set output-meta on
+set bell-style visible
+
+# To allow the use of 8bit-characters like the german umlauts, comment out
+# the line below. However this makes the meta key not work as a meta key,
+# which is annoying to those which don't need to type in 8-bit characters.
+
+# set convert-meta off
+
+"\e0d": backward-word
+"\e0c": forward-word
+"\e[h": beginning-of-line
+"\e[f": end-of-line
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+#"\e[5~": beginning-of-history
+#"\e[6~": end-of-history
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# Common standard keypad and cursor
+# (codes courtsey Werner Fink, <werner@suse.de>)
+#"\e[1~": history-search-backward
+"\e[2~": yank
+"\e[3~": delete-char
+#"\e[4~": set-mark
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+# Normal keypad and cursor of xterm
+"\e[F": end-of-line
+"\e[H": beginning-of-line
+# Application keypad and cursor of xterm
+"\eOA": previous-history
+"\eOC": forward-char
+"\eOB": next-history
+"\eOD": backward-char
+"\eOF": end-of-line
+"\eOH": beginning-of-line
+
+Welcome to HUMAX 
+
+#!/bin/sh
+
+if ! echo ${MDEV#sd[a-z]} | grep -q '[0-9]' ; then
+	exit 0
+fi
+
+device=/dev/$MDEV
+mount_path=/media/$MDEV
+
+case "$ACTION" in
+	add*)
+#		mkdir -p $mount_path
+#		mount -t vfat $device $mount_path
+#		find $mount_path -name 'sting*.img' > /tmp/firmware_list.txt
+#		killall neo
+#		cat /tmp/firmware_list.txt | \
+#		while read list ; do
+#			mtd -r write $list auto
+#		done
+#		rm /tmp/firmware_list.txt
+		;;
+	remove*)
+		umount -l $device
+		rm -rf $mount_path
+		;;
+	*)
+		;;
+esac
+#hda1 0:0 660 @mount /dev/$MDEV /mnt/hd1
+#hda2 0:0 660 @mount /dev/$MDEV /mnt/hd2
+#hda3 0:0 660 @mount /dev/$MDEV /mnt/hd3
+#hda4 0:0 660 @mount /dev/$MDEV /mnt/hd4
+sd[a-z][0-9]* 0:0 660 */etc/mdev/run-and-gun
+root:x:0:0:root:/:/bin/sh
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:100:sync:/bin:/bin/sh
+mail:x:8:8:mail:/var/spool/mail:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+operator:x:37:37:Operator:/var:/bin/sh
+sshd:x:103:99:Operator:/var:/bin/sh
+nobody:x:99:99:nobody:/home:/bin/sh
+settop:$1$iW/iBAOp$jvmbN/0ypFSEqQciL31Xv.:1001:1001:Linux User,,,:/home/settop:/bin/sh
+-----BEGIN CERTIFICATE-----
+MIIENjCCAx6gAwIBAgIBATANBgkqhkiG9w0BAQUFADBvMQswCQYDVQQGEwJTRTEU
+MBIGA1UEChMLQWRkVHJ1c3QgQUIxJjAkBgNVBAsTHUFkZFRydXN0IEV4dGVybmFs
+IFRUUCBOZXR3b3JrMSIwIAYDVQQDExlBZGRUcnVzdCBFeHRlcm5hbCBDQSBSb290
+MB4XDTAwMDUzMDEwNDgzOFoXDTIwMDUzMDEwNDgzOFowbzELMAkGA1UEBhMCU0Ux
+FDASBgNVBAoTC0FkZFRydXN0IEFCMSYwJAYDVQQLEx1BZGRUcnVzdCBFeHRlcm5h
+bCBUVFAgTmV0d29yazEiMCAGA1UEAxMZQWRkVHJ1c3QgRXh0ZXJuYWwgQ0EgUm9v
+dDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALf3GjPm8gAELTngTlvt
+H7xsD821+iO2zt6bETOXpClMfZOfvUq8k+0DGuOPz+VtUFrWlymUWoCwSXrbLpX9
+uMq/NzgtHj6RQa1wVsfwTz/oMp50ysiQVOnGXw94nZpAPA6sYapeFI+eh6FqUNzX
+mk6vBbOmcZSccbNQYArHE504B4YCqOmoaSYYkKtMsE8jqzpPhNjfzp/haW+710LX
+a0Tkx63ubUFfclpxCDezeWWkWaCUN/cALw3CknLa0Dhy2xSoRcRdKn23tNbE7qzN
+E0S3ySvdQwAl+mG5aWpYIxG3pzOPVnVZ9c0p10a3CitlttNCbxWyuHv77+ldU9U0
+WicCAwEAAaOB3DCB2TAdBgNVHQ4EFgQUrb2YejS0Jvf6xCZU7wO94CTLVBowCwYD
+VR0PBAQDAgEGMA8GA1UdEwEB/wQFMAMBAf8wgZkGA1UdIwSBkTCBjoAUrb2YejS0
+Jvf6xCZU7wO94CTLVBqhc6RxMG8xCzAJBgNVBAYTAlNFMRQwEgYDVQQKEwtBZGRU
+cnVzdCBBQjEmMCQGA1UECxMdQWRkVHJ1c3QgRXh0ZXJuYWwgVFRQIE5ldHdvcmsx
+IjAgBgNVBAMTGUFkZFRydXN0IEV4dGVybmFsIENBIFJvb3SCAQEwDQYJKoZIhvcN
+AQEFBQADggEBALCb4IUlwtYj4g+WBpKdQZic2YR5gdkeWxQHIzZlj7DYd7usQWxH
+YINRsPkyPef89iYTx4AWpb9a/IfPeHmJIZriTAcKhjW88t5RxNKWt9x+Tu5w/Rw5
+6wwCURQtjr0W4MHfRnXnJK3s9EK0hZNwEGe6nQY1ShjTK3rMUUKhemPR5ruhxSvC
+Nr4TDea9Y355e6cJDUCrat2PisP29owaQgVR1EX1n6diIWgVIEM8med8vSTYqZEX
+c4g/VhsxOBi0cQ+azcgOno4uG+GMmIPLHzHxREzGBHNJdmAPx/i9F4BrLunMTA5a
+mnkPIAou1Z5jJh5VkpTYghdae9C8x49OhgQ=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIE/DCCA+SgAwIBAgIQFpDDKbZ4BgdRHwWwNEhGyzANBgkqhkiG9w0BAQUFADBv
+MQswCQYDVQQGEwJTRTEUMBIGA1UEChMLQWRkVHJ1c3QgQUIxJjAkBgNVBAsTHUFk
+ZFRydXN0IEV4dGVybmFsIFRUUCBOZXR3b3JrMSIwIAYDVQQDExlBZGRUcnVzdCBF
+eHRlcm5hbCBDQSBSb290MB4XDTEwMDQxNjAwMDAwMFoXDTIwMDUzMDEwNDgzOFow
+gYkxCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO
+BgNVBAcTB1NhbGZvcmQxGjAYBgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMS8wLQYD
+VQQDEyZDT01PRE8gSGlnaC1Bc3N1cmFuY2UgU2VjdXJlIFNlcnZlciBDQTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOeH2sB35Ls6+mokyIBBrNIWExU9
++vf4KnbcqC05CM5ISr4PffDeurtH1b0t1xurDyCBIwhyscARlQ3m6qmH/8duHk9m
+MrpTvAWqHCwM7003R2sQDNvFoJh+WNs31q7pBr3XqGXzN7nHbc53xybg13QfppgW
+uwxryL530O9YpymgubhpBTbLstpYowt1rT2LIoIgPnCGmRy5T893pAcaI2PROFaE
+7L+PxU70GJabGuiT7I2vFZwk8Fo76A+5qFoB07IcYMmcUgTdkqf+DKziRY0DYbx5
+4Hcuh0E8WF/L9cV38ljITSjQmvrzcwkkaHS8IEzYLLCq6NlObfKMJNOTXZECAwEA
+AaOCAXcwggFzMB8GA1UdIwQYMBaAFK29mHo0tCb3+sQmVO8DveAky1QaMB0GA1Ud
+DgQWBBQ/1bXQ1kR5UEoXo5uMSty4sCJkazAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0T
+AQH/BAgwBgEB/wIBADARBgNVHSAECjAIMAYGBFUdIAAwRAYDVR0fBD0wOzA5oDeg
+NYYzaHR0cDovL2NybC51c2VydHJ1c3QuY29tL0FkZFRydXN0RXh0ZXJuYWxDQVJv
+b3QuY3JsMIGzBggrBgEFBQcBAQSBpjCBozA/BggrBgEFBQcwAoYzaHR0cDovL2Ny
+dC51c2VydHJ1c3QuY29tL0FkZFRydXN0RXh0ZXJuYWxDQVJvb3QucDdjMDkGCCsG
+AQUFBzAChi1odHRwOi8vY3J0LnVzZXJ0cnVzdC5jb20vQWRkVHJ1c3RVVE5TR0ND
+QS5jcnQwJQYIKwYBBQUHMAGGGWh0dHA6Ly9vY3NwLnVzZXJ0cnVzdC5jb20wDQYJ
+KoZIhvcNAQEFBQADggEBABOFH1KAGMlT9/4uGq/M2Qs8wtOFgRDwKI25QH4sno/W
+NoYKTBQt1pdDkkEZN0uWnuupMHkSlbMCNlftK7kdmBqjGAo/mzmLzaFJKUwv+dCV
+jMhNlbqoQ88zqiUqWg6qJ8lOa7Hmcx+zdATD80ziqOtnt124CAUaVppUKYX1KU6A
+O5XQe1OWEVbBAtPqsn/Kj5xwShSNWrkWYHXWzSceFs1bM455QM8oSOfccRZOdJF1
+uSqM8XCsJt0EuUDChd4ck0DQzG7Dm6rvYGXfYCLwWqV6oi/kcHPuPNQmK2gHwSB6
+6JhaPnufAotiwIWBgGA1fqUdDNKc32JFDdv8N/v1JSI=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDxTCCAq2gAwIBAgIQAqxcJmoLQJuPC3nyrkYldzANBgkqhkiG9w0BAQUFADBs
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSswKQYDVQQDEyJEaWdpQ2VydCBIaWdoIEFzc3VyYW5j
+ZSBFViBSb290IENBMB4XDTA2MTExMDAwMDAwMFoXDTMxMTExMDAwMDAwMFowbDEL
+MAkGA1UEBhMCVVMxFTATBgNVBAoTDERpZ2lDZXJ0IEluYzEZMBcGA1UECxMQd3d3
+LmRpZ2ljZXJ0LmNvbTErMCkGA1UEAxMiRGlnaUNlcnQgSGlnaCBBc3N1cmFuY2Ug
+RVYgUm9vdCBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMbM5XPm
++9S75S0tMqbf5YE/yc0lSbZxKsPVlDRnogocsF9ppkCxxLeyj9CYpKlBWTrT3JTW
+PNt0OKRKzE0lgvdKpVMSOO7zSW1xkX5jtqumX8OkhPhPYlG++MXs2ziS4wblCJEM
+xChBVfvLWokVfnHoNb9Ncgk9vjo4UFt3MRuNs8ckRZqnrG0AFFoEt7oT61EKmEFB
+Ik5lYYeBQVCmeVyJ3hlKV9Uu5l0cUyx+mM0aBhakaHPQNAQTXKFx01p8VdteZOE3
+hzBWBOURtCmAEvF5OYiiAhF8J2a3iLd48soKqDirCmTCv2ZdlYTBoSUeh10aUAsg
+EsxBu24LUTi4S8sCAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgGGMA8GA1UdEwEB/wQF
+MAMBAf8wHQYDVR0OBBYEFLE+w2kD+L9HAdSYJhoIAu9jZCvDMB8GA1UdIwQYMBaA
+FLE+w2kD+L9HAdSYJhoIAu9jZCvDMA0GCSqGSIb3DQEBBQUAA4IBAQAcGgaX3Nec
+nzyIZgYIVyHbIUf4KmeqvxgydkAQV8GK83rZEWWONfqe/EW1ntlMMUu4kehDLI6z
+eM7b41N5cdblIZQB2lWHmiRk9opmzN6cN82oNLFpmyPInngiK3BD41VHMWEZ71jF
+hS9OMPagMRYjyOfiZRYzy78aG6A9+MpeizGLYAiJLQwGXFK3xPkKmNEVX58Svnw2
+Yzi9RKR/5CYrCsSXaQ3pjOLAEFe4yHYSkVXySGnYvCoCWw9E1CAx2/S6cCZdkGCe
+vEsXCS+0yx5DaMkHJ8HSXPfqIbloEpw8nL+e/IBcm2PN7EeqJSdnoDfzAIJ9VNep
++OkuE6N36B9K
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDdzCCAl+gAwIBAgIEAgAAuTANBgkqhkiG9w0BAQUFADBaMQswCQYDVQQGEwJJ
+RTESMBAGA1UEChMJQmFsdGltb3JlMRMwEQYDVQQLEwpDeWJlclRydXN0MSIwIAYD
+VQQDExlCYWx0aW1vcmUgQ3liZXJUcnVzdCBSb290MB4XDTAwMDUxMjE4NDYwMFoX
+DTI1MDUxMjIzNTkwMFowWjELMAkGA1UEBhMCSUUxEjAQBgNVBAoTCUJhbHRpbW9y
+ZTETMBEGA1UECxMKQ3liZXJUcnVzdDEiMCAGA1UEAxMZQmFsdGltb3JlIEN5YmVy
+VHJ1c3QgUm9vdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKMEuyKr
+mD1X6CZymrV51Cni4eiVgLGw41uOKymaZN+hXe2wCQVt2yguzmKiYv60iNoS6zjr
+IZ3AQSsBUnuId9Mcj8e6uYi1agnnc+gRQKfRzMpijS3ljwumUNKoUMMo6vWrJYeK
+mpYcqWe4PwzV9/lSEy/CG9VwcPCPwBLKBsua4dnKM3p31vjsufFoREJIE9LAwqSu
+XmD+tqYF/LTdB1kC1FkYmGP1pWPgkAx9XbIGevOF6uvUA65ehD5f/xXtabz5OTZy
+dc93Uk3zyZAsuT3lySNTPx8kmCFcB5kpvcY67Oduhjprl3RjM71oGDHweI12v/ye
+jl0qhqdNkNwnGjkCAwEAAaNFMEMwHQYDVR0OBBYEFOWdWTCCR1jMrPoIVDaGezq1
+BE3wMBIGA1UdEwEB/wQIMAYBAf8CAQMwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3
+DQEBBQUAA4IBAQCFDF2O5G9RaEIFoN27TyclhAO992T9Ldcw46QQF+vaKSm2eT92
+9hkTI7gQCvlYpNRhcL0EYWoSihfVCr3FvDB81ukMJY2GQE/szKN+OMY3EU/t3Wgx
+jkzSswF07r51XgdIGn9w/xZchMB5hbgF/X++ZRGjD8ACtPhSNzkE1akxehi/oCr0
+Epn3o0WC4zxe9Z2etciefC7IpJ5OCBRLbf1wbWsaY71k5h+3zvDyny67G7fyUIhz
+ksLi4xaNmjICq44Y3ekQEe5+NauQrz4wlHrQMz2nZQ/1/I6eYs9HRCwBXbsdtTLS
+R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIEkTCCA3mgAwIBAgIERWtQVDANBgkqhkiG9w0BAQUFADCBsDELMAkGA1UEBhMC
+VVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xOTA3BgNVBAsTMHd3dy5lbnRydXN0
+Lm5ldC9DUFMgaXMgaW5jb3Jwb3JhdGVkIGJ5IHJlZmVyZW5jZTEfMB0GA1UECxMW
+KGMpIDIwMDYgRW50cnVzdCwgSW5jLjEtMCsGA1UEAxMkRW50cnVzdCBSb290IENl
+cnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTA2MTEyNzIwMjM0MloXDTI2MTEyNzIw
+NTM0MlowgbAxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1FbnRydXN0LCBJbmMuMTkw
+NwYDVQQLEzB3d3cuZW50cnVzdC5uZXQvQ1BTIGlzIGluY29ycG9yYXRlZCBieSBy
+ZWZlcmVuY2UxHzAdBgNVBAsTFihjKSAyMDA2IEVudHJ1c3QsIEluYy4xLTArBgNV
+BAMTJEVudHJ1c3QgUm9vdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBALaVtkNC+sZtKm9I35RMOVcF7sN5EUFo
+Nu3s/poBj6E4KPz3EEZmLk0eGrEaTsbRwJWIsMn/MYszA9u3g3s+IIRe7bJWKKf4
+4LlAcTfFy0cOlypowCKVYhXbR9n10Cv/gkvJrT7eTNuQgFA/CYqEAOwwCj0Yzfv9
+KlmaI5UXLEWeH25DeW0MXJj+SKfFI0dcXv1u5x609mhF0YaDW6KKjbHjKYD+JXGI
+rb68j6xSlkuqUY3kEzEZ6E5Nn9uss2rVvDlUccp6en+Q3X0dgNmBu1kmwhH+5pPi
+94DkZfs0Nw4pgHBNrziGLp5/V6+eF67rHMsoIV+2HNjnogQi+dPa2MsCAwEAAaOB
+sDCBrTAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zArBgNVHRAEJDAi
+gA8yMDA2MTEyNzIwMjM0MlqBDzIwMjYxMTI3MjA1MzQyWjAfBgNVHSMEGDAWgBRo
+kORnpKZTgMeGZqTx90tD+4S9bTAdBgNVHQ4EFgQUaJDkZ6SmU4DHhmak8fdLQ/uE
+vW0wHQYJKoZIhvZ9B0EABBAwDhsIVjcuMTo0LjADAgSQMA0GCSqGSIb3DQEBBQUA
+A4IBAQCT1DCw1wMgKtD5Y+iRDAUgqV8ZyntyTtSx29CW+1RaGSwMCPeyvIWonX9t
+O1KzKtvn1ISMY/YPyyYBkVBs9F8U4pN0wBOeMDpQ47RgxRzwIkSNcUesyBrJ6Zua
+AGAT/3B+XxFNSRuzFVJ7yVTav52Vr2ua2J7p8eRDjeIRRDq/r72DQnNSi6q7pynP
+9WQcCk3RvKqsnyrQ/39/2n3qse0wJcGE2jTSW3iDVuycNsMm4hH2Z0kdkquM++v/
+eu6FSqdQgPCnXEqULl8FmTxSQeDNtGPPAUO6nIPcj2A781q0tHuu2guQOHXvgR1m
+0vdXcDazv/wor3ElhVsT/h5/WrQ8
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIE2DCCBEGgAwIBAgIEN0rSQzANBgkqhkiG9w0BAQUFADCBwzELMAkGA1UEBhMC
+VVMxFDASBgNVBAoTC0VudHJ1c3QubmV0MTswOQYDVQQLEzJ3d3cuZW50cnVzdC5u
+ZXQvQ1BTIGluY29ycC4gYnkgcmVmLiAobGltaXRzIGxpYWIuKTElMCMGA1UECxMc
+KGMpIDE5OTkgRW50cnVzdC5uZXQgTGltaXRlZDE6MDgGA1UEAxMxRW50cnVzdC5u
+ZXQgU2VjdXJlIFNlcnZlciBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw05OTA1
+MjUxNjA5NDBaFw0xOTA1MjUxNjM5NDBaMIHDMQswCQYDVQQGEwJVUzEUMBIGA1UE
+ChMLRW50cnVzdC5uZXQxOzA5BgNVBAsTMnd3dy5lbnRydXN0Lm5ldC9DUFMgaW5j
+b3JwLiBieSByZWYuIChsaW1pdHMgbGlhYi4pMSUwIwYDVQQLExwoYykgMTk5OSBF
+bnRydXN0Lm5ldCBMaW1pdGVkMTowOAYDVQQDEzFFbnRydXN0Lm5ldCBTZWN1cmUg
+U2VydmVyIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIGdMA0GCSqGSIb3DQEBAQUA
+A4GLADCBhwKBgQDNKIM0VBuJ8w+vN5Ex/68xYMmo6LIQaO2f55M28Qpku0f1BBc/
+I0dNxScZgSYMVHINiC3ZH5oSn7yzcdOAGT9HZnuMNSjSuQrfJNqc1lB5gXpa0zf3
+wkrYKZImZNHkmGw6AIr1NJtl+O3jEP/9uElY3KDegjlrgbEWGWG5VLbmQwIBA6OC
+AdcwggHTMBEGCWCGSAGG+EIBAQQEAwIABzCCARkGA1UdHwSCARAwggEMMIHeoIHb
+oIHYpIHVMIHSMQswCQYDVQQGEwJVUzEUMBIGA1UEChMLRW50cnVzdC5uZXQxOzA5
+BgNVBAsTMnd3dy5lbnRydXN0Lm5ldC9DUFMgaW5jb3JwLiBieSByZWYuIChsaW1p
+dHMgbGlhYi4pMSUwIwYDVQQLExwoYykgMTk5OSBFbnRydXN0Lm5ldCBMaW1pdGVk
+MTowOAYDVQQDEzFFbnRydXN0Lm5ldCBTZWN1cmUgU2VydmVyIENlcnRpZmljYXRp
+b24gQXV0aG9yaXR5MQ0wCwYDVQQDEwRDUkwxMCmgJ6AlhiNodHRwOi8vd3d3LmVu
+dHJ1c3QubmV0L0NSTC9uZXQxLmNybDArBgNVHRAEJDAigA8xOTk5MDUyNTE2MDk0
+MFqBDzIwMTkwNTI1MTYwOTQwWjALBgNVHQ8EBAMCAQYwHwYDVR0jBBgwFoAU8Bdi
+E1U9s/8KAGv7UISX8+1i0BowHQYDVR0OBBYEFPAXYhNVPbP/CgBr+1CEl/PtYtAa
+MAwGA1UdEwQFMAMBAf8wGQYJKoZIhvZ9B0EABAwwChsEVjQuMAMCBJAwDQYJKoZI
+hvcNAQEFBQADgYEAkNwwAvpkdMKnCqV8IY00F6j7Rw7/JXyNEwr75Ji174z4xRAN
+95K+8cPV1ZVqBLssziY2ZcgxxufuP+NXdYR6Ee9GTxj005i7qIcyunL2POI9n9cd
+2cNgQ4xYDiKWL2KjLB+6rQXvqzJ4h6BUcxm1XAX5Uj5tLUUL9wqT6u0G+bI=
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDIDCCAomgAwIBAgIENd70zzANBgkqhkiG9w0BAQUFADBOMQswCQYDVQQGEwJV
+UzEQMA4GA1UEChMHRXF1aWZheDEtMCsGA1UECxMkRXF1aWZheCBTZWN1cmUgQ2Vy
+dGlmaWNhdGUgQXV0aG9yaXR5MB4XDTk4MDgyMjE2NDE1MVoXDTE4MDgyMjE2NDE1
+MVowTjELMAkGA1UEBhMCVVMxEDAOBgNVBAoTB0VxdWlmYXgxLTArBgNVBAsTJEVx
+dWlmYXggU2VjdXJlIENlcnRpZmljYXRlIEF1dGhvcml0eTCBnzANBgkqhkiG9w0B
+AQEFAAOBjQAwgYkCgYEAwV2xWGcIYu6gmi0fCG2RFGiYCh7+2gRvE4RiIcPRfM6f
+BeC4AfBONOziipUEZKzxa1NfBbPLZ4C/QgKO/t0BCezhABRP/PvwDN1Dulsr4R+A
+cJkVV5MW8Q+XarfCaCMczE1ZMKxRHjuvK9buY0V7xdlfUNLjUA86iOe/FP3gx7kC
+AwEAAaOCAQkwggEFMHAGA1UdHwRpMGcwZaBjoGGkXzBdMQswCQYDVQQGEwJVUzEQ
+MA4GA1UEChMHRXF1aWZheDEtMCsGA1UECxMkRXF1aWZheCBTZWN1cmUgQ2VydGlm
+aWNhdGUgQXV0aG9yaXR5MQ0wCwYDVQQDEwRDUkwxMBoGA1UdEAQTMBGBDzIwMTgw
+ODIyMTY0MTUxWjALBgNVHQ8EBAMCAQYwHwYDVR0jBBgwFoAUSOZo+SvSspXXR9gj
+IBBPM5iQn9QwHQYDVR0OBBYEFEjmaPkr0rKV10fYIyAQTzOYkJ/UMAwGA1UdEwQF
+MAMBAf8wGgYJKoZIhvZ9B0EABA0wCxsFVjMuMGMDAgbAMA0GCSqGSIb3DQEBBQUA
+A4GBAFjOKer89961zgK5F7WF0bnj4JXMJTENAKaSbn+2kmOeUJXRmm/kEd5jhW6Y
+7qj/WsjTVbJmcVfewCHrPSqnI0kBBIZCe/zuf6IWUrVnZ9NA2zsmWLIodz2uFHdh
+1voqZiegDfqnc1zqcPGUIWVEX/r87yloqaKHee9570+sB3c4
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDVDCCAjygAwIBAgIDAjRWMA0GCSqGSIb3DQEBBQUAMEIxCzAJBgNVBAYTAlVT
+MRYwFAYDVQQKEw1HZW9UcnVzdCBJbmMuMRswGQYDVQQDExJHZW9UcnVzdCBHbG9i
+YWwgQ0EwHhcNMDIwNTIxMDQwMDAwWhcNMjIwNTIxMDQwMDAwWjBCMQswCQYDVQQG
+EwJVUzEWMBQGA1UEChMNR2VvVHJ1c3QgSW5jLjEbMBkGA1UEAxMSR2VvVHJ1c3Qg
+R2xvYmFsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2swYYzD9
+9BcjGlZ+W988bDjkcbd4kdS8odhM+KhDtgPpTSEHCIjaWC9mOSm9BXiLnTjoBbdq
+fnGk5sRgprDvgOSJKA+eJdbtg/OtppHHmMlCGDUUna2YRpIuT8rxh0PBFpVXLVDv
+iS2Aelet8u5fa9IAjbkU+BQVNdnARqN7csiRv8lVK83Qlz6cJmTM386DGXHKTubU
+1XupGc1V3sjs0l44U+VcT4wt/lAjNvxm5suOpDkZALeVAjmRCw7+OC7RHQWa9k0+
+bw8HHa8sHo9gOeL6NlMTOdReJivbPagUvTLrGAMoUgRx5aszPeE4uwc2hGKceeoW
+MPRfwCvocWvk+QIDAQABo1MwUTAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTA
+ephojYn7qwVkDBF9qn1luMrMTjAfBgNVHSMEGDAWgBTAephojYn7qwVkDBF9qn1l
+uMrMTjANBgkqhkiG9w0BAQUFAAOCAQEANeMpauUvXVSOKVCUn5kaFOSPeCpilKIn
+Z57QzxpeR+nBsqTP3UEaBU6bS+5Kb1VSsyShNwrrZHYqLizz/Tt1kL/6cdjHPTfS
+tQWVYrmm3ok9Nns4d0iXrKYgjy6myQzCsplFAMfOEVEiIuCl6rYVSAlk6l5PdPcF
+PseKUgzbFbS9bZvlxrFUaKnjaZC2mqUPuLk/IH2uSrW4nOQdtqvmlKXBx4Ot2/Un
+hw4EbNX/3aBd7YdStysVAq45pmp06drE57xNNB6pXE0zX5IJL4hmXXeXxx12E6nV
+5fEWCRE11azbJHFwLJhWC9kXtNHjUStedejV0NxPNO3CBWaAocvmMw==
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIICWjCCAcMCAgGlMA0GCSqGSIb3DQEBBAUAMHUxCzAJBgNVBAYTAlVTMRgwFgYD
+VQQKEw9HVEUgQ29ycG9yYXRpb24xJzAlBgNVBAsTHkdURSBDeWJlclRydXN0IFNv
+bHV0aW9ucywgSW5jLjEjMCEGA1UEAxMaR1RFIEN5YmVyVHJ1c3QgR2xvYmFsIFJv
+b3QwHhcNOTgwODEzMDAyOTAwWhcNMTgwODEzMjM1OTAwWjB1MQswCQYDVQQGEwJV
+UzEYMBYGA1UEChMPR1RFIENvcnBvcmF0aW9uMScwJQYDVQQLEx5HVEUgQ3liZXJU
+cnVzdCBTb2x1dGlvbnMsIEluYy4xIzAhBgNVBAMTGkdURSBDeWJlclRydXN0IEds
+b2JhbCBSb290MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCVD6C28FCc6HrH
+iM3dFw4usJTQGz0O9pTAipTHBsiQl8i4ZBp6fmw8U+E3KHNgf7KXUwefU/ltWJTS
+r41tiGeA5u2ylc9yMcqlHHK6XALnZELn+aks1joNrI1CqiQBOeacPwGFVw1Yh0X4
+04Wqk2kmhXBIgD8SFcd5tB8FLztimQIDAQABMA0GCSqGSIb3DQEBBAUAA4GBAG3r
+GwnpXtlR22ciYaQqPEh346B8pt5zohQDhT37qw4wxYMWM4ETCJ57NE7fQMh017l9
+3PR2VX2bY1QY6fDq81yx2YtCHrnAlU66+tXifPVoYb+O7AWXX1uw16OFNMQkpw0P
+lZPvy5TYnh+dXIVtx6quTx8itc2VrbqnzPmrC3p/
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            9d:f2:6e:fb:3b:67:4d:e9
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=KR, ST=KYUNG-GI, L=SUNG-NAM, O=HUMAX Co., CN=humaxdigital.com/emailAddress=info@humaxdigital.com
+        Validity
+            Not Before: Apr  6 20:42:15 2012 GMT
+            Not After : Apr  4 20:42:15 2022 GMT
+        Subject: C=KR, ST=KYUNG-GI, L=SUNG-NAM, O=HUMAX Co., CN=hdr1000s.humaxdigital.com/emailAddress=info@humaxdigital.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:c8:95:f7:42:2f:d9:5e:2b:cb:37:5a:7d:7d:51:
+                    9b:b7:72:a6:75:d1:50:ff:b9:31:3f:12:ee:77:0c:
+                    c9:82:20:96:52:4f:9e:6f:ee:c5:50:85:55:05:64:
+                    84:f6:c3:8c:61:88:38:8c:91:69:dd:d4:5f:e8:c5:
+                    c5:aa:8b:ef:04:f0:89:37:71:86:49:44:b8:5c:44:
+                    0e:d3:1d:60:16:4c:4c:bc:13:1e:07:41:6b:db:b1:
+                    1e:c1:c6:b7:2d:17:97:21:ec:0e:45:9f:02:a4:c8:
+                    ee:ca:70:19:f1:b1:c6:64:21:6b:7e:c5:da:92:c8:
+                    83:39:86:c7:df:f6:17:47:79
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Client
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                D3:51:82:2A:37:AB:91:64:CE:30:B5:5E:04:F2:38:A5:92:5F:15:62
+            X509v3 Authority Key Identifier: 
+                keyid:FA:D1:A9:71:6D:71:C4:4B:6D:C0:FC:CF:17:56:08:BC:76:D2:3A:4A
+                DirName:/C=KR/ST=KYUNG-GI/L=SUNG-NAM/O=HUMAX Co./CN=humaxdigital.com/emailAddress=info@humaxdigital.com
+                serial:AD:D7:D3:D8:F0:9C:E3:E4
+
+    Signature Algorithm: sha1WithRSAEncryption
+        85:91:b5:39:2a:b3:b6:e6:e0:6a:2a:3a:c7:6d:22:fc:d5:9f:
+        15:79:83:e5:89:3c:c5:05:4e:35:12:b9:d3:44:74:b3:64:4a:
+        fa:65:64:12:93:de:36:a5:a8:68:02:fb:1e:c2:59:d8:1f:62:
+        a2:71:dd:3b:d6:cf:1b:6e:41:31:45:fb:8d:f1:fc:6a:75:ed:
+        60:0a:73:64:14:18:bd:2b:15:b8:81:8f:ae:2a:66:9f:de:e7:
+        ee:22:a9:1b:81:93:62:73:02:0a:2b:a4:c1:18:c6:18:ee:73:
+        64:d3:ab:96:53:2d:d3:08:20:21:74:ee:4f:26:f6:50:c4:37:
+        54:33
+-----BEGIN CERTIFICATE-----
+MIIDyjCCAzOgAwIBAgIJAJ3ybvs7Z03pMA0GCSqGSIb3DQEBBQUAMIGIMQswCQYD
+VQQGEwJLUjERMA8GA1UECBMIS1lVTkctR0kxETAPBgNVBAcTCFNVTkctTkFNMRIw
+EAYDVQQKEwlIVU1BWCBDby4xGTAXBgNVBAMTEGh1bWF4ZGlnaXRhbC5jb20xJDAi
+BgkqhkiG9w0BCQEWFWluZm9AaHVtYXhkaWdpdGFsLmNvbTAeFw0xMjA0MDYyMDQy
+MTVaFw0yMjA0MDQyMDQyMTVaMIGRMQswCQYDVQQGEwJLUjERMA8GA1UECBMIS1lV
+TkctR0kxETAPBgNVBAcTCFNVTkctTkFNMRIwEAYDVQQKEwlIVU1BWCBDby4xIjAg
+BgNVBAMTGWhkcjEwMDBzLmh1bWF4ZGlnaXRhbC5jb20xJDAiBgkqhkiG9w0BCQEW
+FWluZm9AaHVtYXhkaWdpdGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkC
+gYEAyJX3Qi/ZXivLN1p9fVGbt3KmddFQ/7kxPxLudwzJgiCWUk+eb+7FUIVVBWSE
+9sOMYYg4jJFp3dRf6MXFqovvBPCJN3GGSUS4XEQO0x1gFkxMvBMeB0Fr27Eewca3
+LReXIewORZ8CpMjuynAZ8bHGZCFrfsXaksiDOYbH3/YXR3kCAwEAAaOCAS8wggEr
+MAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgeAMCwGCWCGSAGG+EIBDQQfFh1P
+cGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU01GCKjerkWTO
+MLVeBPI4pZJfFWIwgb0GA1UdIwSBtTCBsoAU+tGpcW1xxEttwPzPF1YIvHbSOkqh
+gY6kgYswgYgxCzAJBgNVBAYTAktSMREwDwYDVQQIEwhLWVVORy1HSTERMA8GA1UE
+BxMIU1VORy1OQU0xEjAQBgNVBAoTCUhVTUFYIENvLjEZMBcGA1UEAxMQaHVtYXhk
+aWdpdGFsLmNvbTEkMCIGCSqGSIb3DQEJARYVaW5mb0BodW1heGRpZ2l0YWwuY29t
+ggkArdfT2PCc4+QwDQYJKoZIhvcNAQEFBQADgYEAhZG1OSqztubgaio6x20i/NWf
+FXmD5Yk8xQVONRK500R0s2RK+mVkEpPeNqWoaAL7HsJZ2B9ionHdO9bPG25BMUX7
+jfH8anXtYApzZBQYvSsVuIGPripmn97n7iKpG4GTYnMCCiukwRjGGO5zZNOrllMt
+0wggIXTuTyb2UMQ3VDM=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIEIDCCAwigAwIBAgIQNE7VVyDV7exJ9C/ON9srbTANBgkqhkiG9w0BAQUFADCB
+qTELMAkGA1UEBhMCVVMxFTATBgNVBAoTDHRoYXd0ZSwgSW5jLjEoMCYGA1UECxMf
+Q2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjE4MDYGA1UECxMvKGMpIDIw
+MDYgdGhhd3RlLCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxHzAdBgNV
+BAMTFnRoYXd0ZSBQcmltYXJ5IFJvb3QgQ0EwHhcNMDYxMTE3MDAwMDAwWhcNMzYw
+NzE2MjM1OTU5WjCBqTELMAkGA1UEBhMCVVMxFTATBgNVBAoTDHRoYXd0ZSwgSW5j
+LjEoMCYGA1UECxMfQ2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjE4MDYG
+A1UECxMvKGMpIDIwMDYgdGhhd3RlLCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNl
+IG9ubHkxHzAdBgNVBAMTFnRoYXd0ZSBQcmltYXJ5IFJvb3QgQ0EwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCsoPD7gFnUnMekz52hWXMJEEUMDSxuaPFs
+W0hoSVk3/AszGcJ3f8wQLZU0HObrTQmnHNK4yZc2AreJ1CRfBsDMRJSUjQJib+ta
+3RGNKJpchJAQeg29dGYvajig4tVUROsdB58Hum/u6f1OCyn1PoSgAfGcq/gcfomk
+6KHYcWUNo1F77rzSImANuVud37r8UVsLr5iy6S7pBOhih94ryNdOwUxkHt3Ph1i6
+Sk/KaAcdHJ1KxtUvkcx8cXIcxcBn6zL9yZJclNqFwJu/U30rCfSMnZEfl2pSy94J
+NqR32HuHUETVPm4pafs5SSYeCaWAe0At6+gnhcn+Yf1+5nyXHdWdAgMBAAGjQjBA
+MA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBR7W0XP
+r87Lev0xkhpqtvNG61dIUDANBgkqhkiG9w0BAQUFAAOCAQEAeRHAS7ORtvzw6WfU
+DW5FvlXok9LOAz/t2iWwHVfLHjp2oEzsUHboZHIMpKnxuIvW1oeEuzLlQRHAd9mz
+YJ3rG9XRbkREqaYB7FViHXe4XI5ISXycO1cRrK1zN44veFyQaEfZYGDm/Ac9IiAX
+xPcW6cTYcvnIc3zfFi8VqT79aie2oetaupgf1eNNZAqdE8hhuvU5HIe6uL17In/2
+/qxAeeWsEG89jxt5dovEN7MhGITlNgDrYyCZuen+MwS7QcjBAvlEYyCegc5C09Y/
+LHbTY5xZ3Y+m4Q6gLkH3LpVHz7z9M/P2C2F+fpErgUfCJzDupxBdN49cOSvkBPB7
+jVaMaA==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDMDCCApmgAwIBAgIQDY4VEuGsu3eNOOMk34ww8jANBgkqhkiG9w0BAQUFADCB
+yzELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMRowGAYDVQQKExFUaGF3dGUgQ29uc3VsdGluZzEoMCYGA1UECxMf
+Q2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEhMB8GA1UEAxMYVGhhd3Rl
+IFBlcnNvbmFsIEJhc2ljIENBMSgwJgYJKoZIhvcNAQkBFhlwZXJzb25hbC1iYXNp
+Y0B0aGF3dGUuY29tMB4XDTk2MDEwMTAwMDAwMFoXDTIxMDEwMTIzNTk1OVowgcsx
+CzAJBgNVBAYTAlpBMRUwEwYDVQQIEwxXZXN0ZXJuIENhcGUxEjAQBgNVBAcTCUNh
+cGUgVG93bjEaMBgGA1UEChMRVGhhd3RlIENvbnN1bHRpbmcxKDAmBgNVBAsTH0Nl
+cnRpZmljYXRpb24gU2VydmljZXMgRGl2aXNpb24xITAfBgNVBAMTGFRoYXd0ZSBQ
+ZXJzb25hbCBCYXNpYyBDQTEoMCYGCSqGSIb3DQEJARYZcGVyc29uYWwtYmFzaWNA
+dGhhd3RlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAvLyTU23AUE+C
+FeZIlDWmWr5vQvoPR+53dXLdjUmbllegeNTKP1GzaQuRdhciB5dqxFGTS+CN7zeV
+oQxN2jSQHReJl+A1OFdKwPQIcOk8RHtQfmGakOMj04gRRif1CwcOu93RfyAKiLlW
+Cy4cgNrx454p7xS9CkT7G1sY0b8jkyECAwEAAaMTMBEwDwYDVR0TAQH/BAUwAwEB
+/zANBgkqhkiG9w0BAQUFAAOBgQCIO/64+XpCRhGgpKJkhc1IHJzVilHNL8F9sQfP
+1wHeMj+W5IT+0V6tDH4OY0lqDhDkl9A/xacp2aZTHkseP1T6wIQ1c+qRqdxdk1cF
+BgwHua8LRDmIIaDugnOpRi9pbCV0qc3fp9f9hTAElDVKpxszJCxEFu0KxN+AqmUa
+v3Em8A==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDPDCCAqWgAwIBAgIQEj3w59oqIkekOIngiu7JZzANBgkqhkiG9w0BAQUFADCB
+0TELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMRowGAYDVQQKExFUaGF3dGUgQ29uc3VsdGluZzEoMCYGA1UECxMf
+Q2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEkMCIGA1UEAxMbVGhhd3Rl
+IFBlcnNvbmFsIEZyZWVtYWlsIENBMSswKQYJKoZIhvcNAQkBFhxwZXJzb25hbC1m
+cmVlbWFpbEB0aGF3dGUuY29tMB4XDTk2MDEwMTAwMDAwMFoXDTIxMDEwMTIzNTk1
+OVowgdExCzAJBgNVBAYTAlpBMRUwEwYDVQQIEwxXZXN0ZXJuIENhcGUxEjAQBgNV
+BAcTCUNhcGUgVG93bjEaMBgGA1UEChMRVGhhd3RlIENvbnN1bHRpbmcxKDAmBgNV
+BAsTH0NlcnRpZmljYXRpb24gU2VydmljZXMgRGl2aXNpb24xJDAiBgNVBAMTG1Ro
+YXd0ZSBQZXJzb25hbCBGcmVlbWFpbCBDQTErMCkGCSqGSIb3DQEJARYccGVyc29u
+YWwtZnJlZW1haWxAdGhhd3RlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkC
+gYEA1GnX1LCUZFtx6UfYDFG26nKRsIRefS0Nj3sS34UldSh0OkIsYyeflXtL734Z
+hx2G6qPduc6WZBrCFG5ErHzmj+hND3EfQDimAKOHePb5lIZererAXnbr2RSjXW56
+fAylS1V/Bhkpf56aJtVquzgkCGqYx7Hao5iR/Xnb5VrEHLkCAwEAAaMTMBEwDwYD
+VR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQAemGDU5fJUYLA9GoFkR/db
+o9lvwykLp9KpgUn2w22FFChFRAH0cVyVLhQPGivRqWvBX2c9FvFyIK++FsoOMF/J
+y6WTLMNnVB5yIoojdmyUHVFSbJ3E4EcC18y/8IB7GG4l3GJh1qb+wR1/2bP9jVxF
+EFrGZWSa6yz1A0/WSGL7Lg==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDODCCAqGgAwIBAgIQQAWyU6AaRkNQCYGPEhB27DANBgkqhkiG9w0BAQUFADCB
+zzELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMRowGAYDVQQKExFUaGF3dGUgQ29uc3VsdGluZzEoMCYGA1UECxMf
+Q2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEjMCEGA1UEAxMaVGhhd3Rl
+IFBlcnNvbmFsIFByZW1pdW0gQ0ExKjAoBgkqhkiG9w0BCQEWG3BlcnNvbmFsLXBy
+ZW1pdW1AdGhhd3RlLmNvbTAeFw05NjAxMDEwMDAwMDBaFw0yMTAxMDEyMzU5NTla
+MIHPMQswCQYDVQQGEwJaQTEVMBMGA1UECBMMV2VzdGVybiBDYXBlMRIwEAYDVQQH
+EwlDYXBlIFRvd24xGjAYBgNVBAoTEVRoYXd0ZSBDb25zdWx0aW5nMSgwJgYDVQQL
+Ex9DZXJ0aWZpY2F0aW9uIFNlcnZpY2VzIERpdmlzaW9uMSMwIQYDVQQDExpUaGF3
+dGUgUGVyc29uYWwgUHJlbWl1bSBDQTEqMCgGCSqGSIb3DQEJARYbcGVyc29uYWwt
+cHJlbWl1bUB0aGF3dGUuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJ
+Ztn4B0TPuYwu8KHvE0VsBd/eJxZRNkERbGw77f4QfRKe5ZtCmv5gMcNmt3M6SK5O
+0DI3lIi1DbbZ8/JE2dWIEt12TfIa/G8jHnrx2JhFTgcQ7xZC0EN1bUre4qrJMf8f
+AHB8Zs8QJQi6+u4A6UYDZicRFTuqW/KY3TZCstqIdQIDAQABoxMwETAPBgNVHRMB
+Af8EBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBALpkCujztDHJJ2+idqAtNnHHhsAI
+wk7t2pokGYf8WiOcck0I361cwzskgR1Xj7YSpSID7xK90S1elo8mJk9LG3w7oFIa
+pag3hsRHKsrdQfho9cITQSma8AyozaH8FSMC23or1GJRQkfEox/00sVNVBDr2vDM
+p083DL08yxDjGugV
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDNjCCAp+gAwIBAgIQNhIilsXjOKUgodJfTNcJVDANBgkqhkiG9w0BAQUFADCB
+zjELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMR0wGwYDVQQKExRUaGF3dGUgQ29uc3VsdGluZyBjYzEoMCYGA1UE
+CxMfQ2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEhMB8GA1UEAxMYVGhh
+d3RlIFByZW1pdW0gU2VydmVyIENBMSgwJgYJKoZIhvcNAQkBFhlwcmVtaXVtLXNl
+cnZlckB0aGF3dGUuY29tMB4XDTk2MDgwMTAwMDAwMFoXDTIxMDEwMTIzNTk1OVow
+gc4xCzAJBgNVBAYTAlpBMRUwEwYDVQQIEwxXZXN0ZXJuIENhcGUxEjAQBgNVBAcT
+CUNhcGUgVG93bjEdMBsGA1UEChMUVGhhd3RlIENvbnN1bHRpbmcgY2MxKDAmBgNV
+BAsTH0NlcnRpZmljYXRpb24gU2VydmljZXMgRGl2aXNpb24xITAfBgNVBAMTGFRo
+YXd0ZSBQcmVtaXVtIFNlcnZlciBDQTEoMCYGCSqGSIb3DQEJARYZcHJlbWl1bS1z
+ZXJ2ZXJAdGhhd3RlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA0jY2
+aovXwlue2oFBYo847kkEVdbQ7xwblRZH7xhINTpS9CtqBo87L+pW46+GjZ4X9560
+ZXUCTe/LCaIhUdib0GfQug2SBhRz1JPLlyoAnFxODLz6FVL88kRu2hFKbgifLy3j
++ao6hnO2RlNYyIkFvYMRuHM/qgeN9EJN50CdHDcCAwEAAaMTMBEwDwYDVR0TAQH/
+BAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQBlkKyID1bZ5jA01CbH0FDxkt5r1DmI
+CSLGpmODA/eZd9iy5Ri4XWPz1HP7bJyZePFLeH0ZJMMrAoT4vCLZiiLXoPxx7JGH
+IPG47LHlVYCsPVLIOQ7C8MAFT9aCdYy9X9LcdpoFEsmvcsPcJX6kTY4XpeCHf+Ga
+WuFg3GQjPEIuTQ==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDIjCCAougAwIBAgIQNKT/9jCvTKU8MxdCoZRmdTANBgkqhkiG9w0BAQUFADCB
+xDELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMR0wGwYDVQQKExRUaGF3dGUgQ29uc3VsdGluZyBjYzEoMCYGA1UE
+CxMfQ2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEZMBcGA1UEAxMQVGhh
+d3RlIFNlcnZlciBDQTEmMCQGCSqGSIb3DQEJARYXc2VydmVyLWNlcnRzQHRoYXd0
+ZS5jb20wHhcNOTYwODAxMDAwMDAwWhcNMjEwMTAxMjM1OTU5WjCBxDELMAkGA1UE
+BhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJQ2FwZSBUb3du
+MR0wGwYDVQQKExRUaGF3dGUgQ29uc3VsdGluZyBjYzEoMCYGA1UECxMfQ2VydGlm
+aWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEZMBcGA1UEAxMQVGhhd3RlIFNlcnZl
+ciBDQTEmMCQGCSqGSIb3DQEJARYXc2VydmVyLWNlcnRzQHRoYXd0ZS5jb20wgZ8w
+DQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANOkUG7I/1Zr5s9dtuoMaHVHoqrC2oQl
+/Kj0R1HahbUgdJSGHg91yekIYfUGbTBuFRkC6VLAYttNmZ7iagxEOM3+vuNkCXDF
+/rFrKbYvScg71CcEJRCXL+eQbcAoQpnXTEPew/UhbVSfXcNY4cDk2VuwuNy0e982
+OsK1ZiIS1ocNAgMBAAGjEzARMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQEF
+BQADgYEAvkBpQW/G28GnvwfAReTQtUMeTJUzNelewj4o9qgNUNX/4gwP/FACjq6R
+ua00io2fJ3GqGcxL6ATK1BdrEhrWxl/WzV7/iXa/2EjYWb0IiokdV81FHlK6EpqE
++hiJX+j5MDVqAWC5mYCDhQpu2vTJj15zLTFKY6B08h+LItIpPus=
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIICPTCCAaYCEQDNun9W8N/kvFT+IqyzcqpVMA0GCSqGSIb3DQEBAgUAMF8xCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE3MDUGA1UECxMuQ2xh
+c3MgMSBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw05
+NjAxMjkwMDAwMDBaFw0yODA4MDEyMzU5NTlaMF8xCzAJBgNVBAYTAlVTMRcwFQYD
+VQQKEw5WZXJpU2lnbiwgSW5jLjE3MDUGA1UECxMuQ2xhc3MgMSBQdWJsaWMgUHJp
+bWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTCBnzANBgkqhkiG9w0BAQEFAAOB
+jQAwgYkCgYEA5Rm/baNWYS2ZSHH2Z965jeu3noaACpEO+jglr0aIguVzqKCbJF0N
+H8xlbgyw0FaEGIeaBpsQoXPftFg5a27B9hXVqKg/qhIGjTGsf7A01480Z4gJzRQR
+4k5FVmkfeAKA2txHkSm7NsljXMXg1y2He6G3MrB7MLoqLzGq7qNn2tsCAwEAATAN
+BgkqhkiG9w0BAQIFAAOBgQBMP7iLxmjf7kMzDl3ppssHhE16M/+SG/Q2rdiVIjZo
+EWx8QszznC7EBz8UsA9P/5CSdvnivErpj82ggAr3xSnxgiJduLHdgSOjeyUVRjB5
+FvjqBUuUfx3CHMjjt/QQQDwTw18fU+hI5Ia0e6E1sHslurjTjqs/OJ0ANACY89Fx
+lA==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIICPDCCAaUCEC0b/EoXjaOR6+f/9YtFvgswDQYJKoZIhvcNAQECBQAwXzELMAkG
+A1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMTcwNQYDVQQLEy5DbGFz
+cyAyIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTk2
+MDEyOTAwMDAwMFoXDTI4MDgwMTIzNTk1OVowXzELMAkGA1UEBhMCVVMxFzAVBgNV
+BAoTDlZlcmlTaWduLCBJbmMuMTcwNQYDVQQLEy5DbGFzcyAyIFB1YmxpYyBQcmlt
+YXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIGfMA0GCSqGSIb3DQEBAQUAA4GN
+ADCBiQKBgQC2WoujDWojg4BrzzmH9CETMwZMJaLtVRKXxaeAufqDwSCg+i8VDXyh
+YGt+eSz6Bg86rvYbb7HS/y8oUl+DfUvEerf4Zh+AVPy3wo5ZShRXRtGak75BkQO7
+FYCTXOvnzAhsPz6zSvz/S2wj1VCCJkQZjiPDceoZJEcEnnW/yKYAHwIDAQABMA0G
+CSqGSIb3DQEBAgUAA4GBAIobK/o5wXTXXtgZZKJYSi034DNHD6zt96rbHuSLBlxg
+J8pFUs4W7z8GZOeUaHxgMxURaa+dYo2jA1Rrpr7l7gUYYAS/QoD90KioHgE796Nc
+r6Pc5iaAIzy4RHT3Cq5Ji2F4zCS/iIqnDupzGUH9TQPwiNHleI2lKk/2lw0Xd8rY
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIICPDCCAaUCEDyRMcsf9tAbDpq40ES/Er4wDQYJKoZIhvcNAQEFBQAwXzELMAkG
+A1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMTcwNQYDVQQLEy5DbGFz
+cyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTk2
+MDEyOTAwMDAwMFoXDTI4MDgwMjIzNTk1OVowXzELMAkGA1UEBhMCVVMxFzAVBgNV
+BAoTDlZlcmlTaWduLCBJbmMuMTcwNQYDVQQLEy5DbGFzcyAzIFB1YmxpYyBQcmlt
+YXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIGfMA0GCSqGSIb3DQEBAQUAA4GN
+ADCBiQKBgQDJXFme8huKARS0EN8EQNvjV69qRUCPhAwL0TPZ2RHP7gJYHyX3KqhE
+BarsAx94f56TuZoAqiN91qyFomNFx3InzPRMxnVx0jnvT0Lwdd8KkMaOIG+YD/is
+I19wKTakyYbnsZogy1Olhec9vn2a/iRFM9x2Fe0PonFkTGUugWhFpwIDAQABMA0G
+CSqGSIb3DQEBBQUAA4GBABByUqkFFBkyCEHwxWsKzH4PIRnN5GfcX6kb5sroc50i
+2JhucwNhkcV8sEVAbkSdjbCxlnRhLQ2pRdKkkirWmnWXbj9T/UWZYB2oK0z5XqcJ
+2HUw19JlYD1n1khVdWk/kfVIC0dpImmClr7JyDiGSnoscxlIaU5rfGW/D/xwzoiQ
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDAjCCAmsCEEzH6qqYPnHTkxD4PTqJkZIwDQYJKoZIhvcNAQEFBQAwgcExCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xh
+c3MgMSBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcy
+MTowOAYDVQQLEzEoYykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3Jp
+emVkIHVzZSBvbmx5MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMB4X
+DTk4MDUxODAwMDAwMFoXDTI4MDgwMTIzNTk1OVowgcExCzAJBgNVBAYTAlVTMRcw
+FQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xhc3MgMSBQdWJsaWMg
+UHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcyMTowOAYDVQQLEzEo
+YykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5
+MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCq0Lq+Fi24g9TK0g+8djHKlNgdk4xWArzZbxpvUjZudVYK
+VdPfQ4chEWWKfo+9Id5rMj8bhDSVBZ1BNeuS65bdqlk/AVNtmU/t5eIqWpDBucSm
+Fc/IReumXY6cPvBkJHalzasab7bYe1FhbqZ/h8jit+U03EGI6glAvnOSPWvndQID
+AQABMA0GCSqGSIb3DQEBBQUAA4GBAKlPww3HZ74sy9mozS11534Vnjty637rXC0J
+h9ZrbWB85a7FkCMMXErQr7Fd88e2CtvgFZMN3QO8x3aKtd1Pw5sTdbgBwObJW2ul
+uIncrKTdcu1OofdPvAbT6shkdHvClUGcZXNY8ZCaPGqxmMnEh7zPRW1F4m4iP/68
+DzFc6PLZ
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDAzCCAmwCEQC5L2DMiJ+hekYJuFtwbIqvMA0GCSqGSIb3DQEBBQUAMIHBMQsw
+CQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xPDA6BgNVBAsTM0Ns
+YXNzIDIgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkgLSBH
+MjE6MDgGA1UECxMxKGMpIDE5OTggVmVyaVNpZ24sIEluYy4gLSBGb3IgYXV0aG9y
+aXplZCB1c2Ugb25seTEfMB0GA1UECxMWVmVyaVNpZ24gVHJ1c3QgTmV0d29yazAe
+Fw05ODA1MTgwMDAwMDBaFw0yODA4MDEyMzU5NTlaMIHBMQswCQYDVQQGEwJVUzEX
+MBUGA1UEChMOVmVyaVNpZ24sIEluYy4xPDA6BgNVBAsTM0NsYXNzIDIgUHVibGlj
+IFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkgLSBHMjE6MDgGA1UECxMx
+KGMpIDE5OTggVmVyaVNpZ24sIEluYy4gLSBGb3IgYXV0aG9yaXplZCB1c2Ugb25s
+eTEfMB0GA1UECxMWVmVyaVNpZ24gVHJ1c3QgTmV0d29yazCBnzANBgkqhkiG9w0B
+AQEFAAOBjQAwgYkCgYEAp4gBIXQs5xoD8JjhlzwPIQjxnNuX6Zr8wgQGE75fUsjM
+HiwSViy4AWkszJkfrbCWrnkE8hM5wXuYuggs6MKEEyyqaekJ9MepAqRCwiNPStjw
+DqL7MWzJ5m+ZJwf15vRMeJ5t60aG+rmGyVTyssSv1EYcWskVMP8NbPUtDm3Of3cC
+AwEAATANBgkqhkiG9w0BAQUFAAOBgQByLvl/0fFx+8Se9sVeUYpAmLho+Jscg9ji
+nb3/7aHmZuovCfTK1+qlK5X2JGCGTUQug6XELaDTrnhpb3LabK4I8GOSN+a7xDAX
+rXfMSTWqz9iP0b63GJZHc2pUIjRkLbYWm1lbtFFZOrMLFPQS32eg9K0yZF6xRnIn
+jBJ7xUS0rg==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDAjCCAmsCEH3Z/gfPqB63EHln+6eJNMYwDQYJKoZIhvcNAQEFBQAwgcExCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xh
+c3MgMyBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcy
+MTowOAYDVQQLEzEoYykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3Jp
+emVkIHVzZSBvbmx5MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMB4X
+DTk4MDUxODAwMDAwMFoXDTI4MDgwMTIzNTk1OVowgcExCzAJBgNVBAYTAlVTMRcw
+FQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xhc3MgMyBQdWJsaWMg
+UHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcyMTowOAYDVQQLEzEo
+YykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5
+MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQDMXtERXVxp0KvTuWpMmR9ZmDCOFoUgRm1HP9SFIIThbbP4
+pO0M8RcPO/mn+SXXwc+EY/J8Y8+iR/LGWzOOZEAEaMGAuWQcRXfH2G71lSk8UOg0
+13gfqLptQ5GVj0VXXn7F+8qkBOvqlzdUMG+7AUcyM83cV5tkaWH4mx0ciU9cZwID
+AQABMA0GCSqGSIb3DQEBBQUAA4GBAFFNzb5cy5gZnBWyATl4Lk0PZ3BwmcYQWpSk
+U01UbSuvDV1Ai2TT1+7eVmGSX6bEHRBhNtMsJzzoKQm5EWR0zLVznxxIqbxhAe7i
+F6YM40AIOw7n60RzKprxaZLvcRTDOaxxp5EJb+RxBrO6WVcmeQD2+A2iMzAo1KpY
+oJ2daZH9
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDAjCCAmsCEDKIjprS9esTR/h/xCA3JfgwDQYJKoZIhvcNAQEFBQAwgcExCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xh
+c3MgNCBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcy
+MTowOAYDVQQLEzEoYykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3Jp
+emVkIHVzZSBvbmx5MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMB4X
+DTk4MDUxODAwMDAwMFoXDTI4MDgwMTIzNTk1OVowgcExCzAJBgNVBAYTAlVTMRcw
+FQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xhc3MgNCBQdWJsaWMg
+UHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcyMTowOAYDVQQLEzEo
+YykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5
+MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQC68OTP+cSuhVS5B1f5j8V/aBH4xBewRNzjMHPVKmIquNDM
+HO0oW369atyzkSTKQWI8/AIBvxwWMZQFl3Zuoq29YRdsTjCG8FE3KlDHqGKB3FtK
+qsGgtG7rL+VXxbErQHDbWk2hjh+9Ax/YA9SPTJlxvOKCzFjomDqG04Y48wApHwID
+AQABMA0GCSqGSIb3DQEBBQUAA4GBAIWMEsGnuVAVess+rLhDityq3RS6iYF+ATwj
+cSGIL4LcY/oCRaxFWdcqWERbt5+BO5JoPeI3JPV7bI92NZYJqFmduc4jq3TWg/0y
+cyfYaT5DdPauxYma51N86Xv2S/PBZYPejYqcPIiNOVn8qj8ijaHBZlCBckztImRP
+T8qAkbYp
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIEGjCCAwICEQCLW3VWhFSFCwDPrzhIzrGkMA0GCSqGSIb3DQEBBQUAMIHKMQsw
+CQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZl
+cmlTaWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWdu
+LCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlT
+aWduIENsYXNzIDEgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3Jp
+dHkgLSBHMzAeFw05OTEwMDEwMDAwMDBaFw0zNjA3MTYyMzU5NTlaMIHKMQswCQYD
+VQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlT
+aWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWduLCBJ
+bmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlTaWdu
+IENsYXNzIDEgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkg
+LSBHMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN2E1Lm0+afY8wR4
+nN493GwTFtl63SRRZsDHJlkNrAYIwpTRMx/wgzUfbhvI3qpuFU5UJ+/EbRrsC+MO
+8ESlV8dAWB6jRx9x7GD2bZTIGDnt/kIYVt/kTEkQeE4BdjVjEjbdZrwBBDajVWjV
+ojYJrKshJlQGrT/KFOCsyq0GHZXi+J3x4GD/wn91K0zM2v6HmSHquv4+VNfSWXjb
+PG7PoBMAGrgnoeS+Z5bKoMWznN3JdZ7rMJpfo83ZrngZPyPpXNspva1VyBtUjGP2
+6KbqxzcSXKMpHgLZ2x87tNcPVkeBFQRKr4Mn0cVYiMHd9qqnoxjaaKptEVHhv2Vr
+n5Z20T0CAwEAATANBgkqhkiG9w0BAQUFAAOCAQEAq2aN17O6x5q25lXQBfGfMY1a
+qtmqRiYPce2lrVNWYgFHKkTp/j90CxObufRNG7LRX7K20ohcs5/Ny9Sn2WCVhDr4
+wTcdYcrnsMXlkdpUpqwxga6X3s0IrLjAl4B/bnKk52kTlWUfxJM8/XmPBNQ+T+r3
+ns7NZ3xPZQL/kYVUc8f/NveGLezQXk//EZ9yBta4GvFMDSZl4kSAHsef493oCtrs
+pSCAaWihT37ha88HQfqDjrw43bAuEbFrskLMmrz5SCJ5ShkPshw+IHTZasO+8ih4
+E1Z5T21Q6huwtVexN2ZYI/PcD98Kh8TvhgXVOBRgmaNL3gaWcSzy27YfpO8/7g==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIEGTCCAwECEGFwy0mMX5hFKeewptlQW3owDQYJKoZIhvcNAQEFBQAwgcoxCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjEfMB0GA1UECxMWVmVy
+aVNpZ24gVHJ1c3QgTmV0d29yazE6MDgGA1UECxMxKGMpIDE5OTkgVmVyaVNpZ24s
+IEluYy4gLSBGb3IgYXV0aG9yaXplZCB1c2Ugb25seTFFMEMGA1UEAxM8VmVyaVNp
+Z24gQ2xhc3MgMiBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0
+eSAtIEczMB4XDTk5MTAwMTAwMDAwMFoXDTM2MDcxNjIzNTk1OVowgcoxCzAJBgNV
+BAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjEfMB0GA1UECxMWVmVyaVNp
+Z24gVHJ1c3QgTmV0d29yazE6MDgGA1UECxMxKGMpIDE5OTkgVmVyaVNpZ24sIElu
+Yy4gLSBGb3IgYXV0aG9yaXplZCB1c2Ugb25seTFFMEMGA1UEAxM8VmVyaVNpZ24g
+Q2xhc3MgMiBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAt
+IEczMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArwoNwtUs22e5LeWU
+J92lvuCwTY+zYVY81nzD9M0+hsuiiOLh2KRpxbXiv8GmR1BeRjmL1Za6tW8UvxDO
+JxOeBUebMXoT2B/Z0wI3i60sR/COgQanDTAM6/c8DyAd3HJG7qUCyFvDyVZpTMUY
+wZF7C9UTAJu878NIPkZgIIUq1ZC2zYugzDLdt/1AVbJQHFauzI13TccgTacxdu9o
+koqQHgiBVrKtaaNS0MscxCM9H5n+TOgWY47GCI72MfbS+uV23bUckqNJzc0BzWjN
+qWm6o+sdDZykIKbBoMXRRkwXbdKsZj+WjOCE1Db/IlnF+RFgqF8EffIa9iVCYQ/E
+Srg+iQIDAQABMA0GCSqGSIb3DQEBBQUAA4IBAQA0JhU8wI1NQ0kdvekhktdmnLfe
+xbjQ5F1fdiLAJvmEOjr5jLX77GDx6M4EsMjdpwOPMPOY36TmpDHf0xwLRtxyID+u
+7gU8pDM/CzmscHhzS5kr3zDCVLCoO1Wh/hYozUK9dG6A2ydEp85EXdQbkJgNHkKU
+sQAsBNB0owIFImNjzYO1+8FtYmtpdf1dcEG59b98377BMnMiIYtYgXsVkXq642RI
+sH/7NiXaldDxJBQX3RiAa0YjOVT1jmIJBB2UkKab5iXiQkWquJCtvgiPqQtCGJTP
+cjnhsUPgKM+351psE2tJs//jGHyJizNdrDPXp/naOlXJWBD5qu9ats9LS98q
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIEGjCCAwICEQCbfgZJoz5iudXukEhxKe9XMA0GCSqGSIb3DQEBBQUAMIHKMQsw
+CQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZl
+cmlTaWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWdu
+LCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlT
+aWduIENsYXNzIDMgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3Jp
+dHkgLSBHMzAeFw05OTEwMDEwMDAwMDBaFw0zNjA3MTYyMzU5NTlaMIHKMQswCQYD
+VQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlT
+aWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWduLCBJ
+bmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlTaWdu
+IENsYXNzIDMgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkg
+LSBHMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMu6nFL8eB8aHm8b
+N3O9+MlrlBIwT/A2R/XQkQr1F8ilYcEWQE37imGQ5XYgwREGfassbqb1EUGO+i2t
+KmFZpGcmTNDovFJbcCAEWNF6yaRpvIMXZK0Fi7zQWM6NjPXr8EJJC52XJ2cybuGu
+kxUccLwgTS8Y3pKI6GyFVxEa6X7jJhFUokWWVYPKMIno3Nij7SqAP395ZVc+FSBm
+CC+Vk7+qRy+oRpfwEuL+wgorUeZ25rdGt+INpsyow0xZVYnm6FNcHOqd8GIWC6fJ
+Xwzw3sJ2zq/3avL6QaaiMxTJ5Xpj055iN9WFZZ4O5lMkdBteHRJTW8cs54NJOxWu
+imi5V5cCAwEAATANBgkqhkiG9w0BAQUFAAOCAQEAERSWwauSCPc/L8my/uRan2Te
+2yFPhpk0djZX3dAVL8WtfxUfN2JzPtTnX84XA9s1+ivbrmAJXx5fj267Cz3qWhMe
+DGBvtcC1IyIuBwvLqXTLR7sdwdela8wv0kL9Sd2nic9TutoAWii/gt/4uhMdUIaC
+/Y4wjylGsB49Ndo4YhYYSq3mtlFs3q9i6wHQHiT+eo8SGhJouPtmmRQURVyu565p
+F4ErWjfJXir0xuKhXFSbplQAz/DxwceYMBo7Nhbbo27q/a2ywtrvAkcTisDxszGt
+TxzhT5yvDwyd93gN2PQ1VoDat20Xj50egWTh/sVFuq1ruQp6Tk9LhO5L8X3dEQ==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIEGjCCAwICEQDsoKeLbnVqAc/EfMwvlF7XMA0GCSqGSIb3DQEBBQUAMIHKMQsw
+CQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZl
+cmlTaWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWdu
+LCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlT
+aWduIENsYXNzIDQgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3Jp
+dHkgLSBHMzAeFw05OTEwMDEwMDAwMDBaFw0zNjA3MTYyMzU5NTlaMIHKMQswCQYD
+VQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlT
+aWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWduLCBJ
+bmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlTaWdu
+IENsYXNzIDQgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkg
+LSBHMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK3LpRFpxlmr8Y+1
+GQ9Wzsy1HyDkniYlS+BzZYlZ3tCD5PUPtbut8XzoIfzk6AzufEUiGXaStBO3IFsJ
++mGuqPKljYXCKtbeZjbSmwL0qJJgfJxptI8kHtCGUvYynEFYHiK9zUVilQhu0Gbd
+U6LM8BDcVHOLBKFGMzNcF0C5nk3T875Vg+ixiY5afJqWIpA7iCXy0lOIAgwLePLm
+NxdLMEYH5IBtptiWLugs+BGzOA1mppvqySNb247i8xOOGlktqgLw7KSHZtzBP/XY
+ufTsgsbSPZUd5cBPhMnZo0QoBmrXRazwa2rvTl/4EYIeOGM0ZlDUPpNz+jDDZq3/
+ky2X7wMCAwEAATANBgkqhkiG9w0BAQUFAAOCAQEAj/ola09b5KROJ1WrIhVZPMq1
+CtRK26vdoV9TxaBXOcLORyu+OshWv8LZJxA6sQU8wHcxuzrTBXttmhwwjIDLk5Mq
+g6sFUYICABFna/OIYUdfA5PVWw3g8dShMjWFsjrbsIKr0csKvE+MW8VLADsfKoKm
+fjaF3H48ZwC15DtS4KjrXRX5xm3wrR0OhbepmnMUWluPQSjA1egtTaRezarZ7c7c
+2NU8Qh0XwRJdRTjDOPP8hS6DRkiy1yBfkjaP53kPmF6Z6PDQpLv1U70qzlmwr25/
+bLvSHgCwIe34QWKCudiyxLtGUPMxxY8BqHTr9Xgn2uf3ZkPznoM+IKrDNWCRzg==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDhDCCAwqgAwIBAgIQL4D+I4wOIg9IZxIokYesszAKBggqhkjOPQQDAzCByjEL
+MAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZW
+ZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNyBWZXJpU2ln
+biwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxWZXJp
+U2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9y
+aXR5IC0gRzQwHhcNMDcxMTA1MDAwMDAwWhcNMzgwMTE4MjM1OTU5WjCByjELMAkG
+A1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJp
+U2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNyBWZXJpU2lnbiwg
+SW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxWZXJpU2ln
+biBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5
+IC0gRzQwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAASnVnp8Utpkmw4tXNherJI9/gHm
+GUo9FANL+mAnINmDiWn6VMaaGF5VKmTeBvaNSjutEDxlPZCIBIngMGGzrl0Bp3ve
+fLK+ymVhAIau2o970ImtTR1ZmkGxvEeA3J5iw/mjgbIwga8wDwYDVR0TAQH/BAUw
+AwEB/zAOBgNVHQ8BAf8EBAMCAQYwbQYIKwYBBQUHAQwEYTBfoV2gWzBZMFcwVRYJ
+aW1hZ2UvZ2lmMCEwHzAHBgUrDgMCGgQUj+XTGoasjY5rw8+AatRIGCx7GS4wJRYj
+aHR0cDovL2xvZ28udmVyaXNpZ24uY29tL3ZzbG9nby5naWYwHQYDVR0OBBYEFLMW
+kf3upm7ktS5Jj4d4gYDs5bG1MAoGCCqGSM49BAMDA2gAMGUCMGYhDBgmYFo4e1ZC
+4Kf8NoRRkSAsdk1DPcQdhCPQrNZ8NQbOzWm9kA3bbEhCHQ6qQgIxAJw9SDkjOVga
+FRJZap7v1VmyHVIsmXHNxynfGyphe3HR3vPA5Q06Sqotp9iGKt0uEA==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIE0zCCA7ugAwIBAgIQGNrRniZ96LtKIVjNzGs7SjANBgkqhkiG9w0BAQUFADCB
+yjELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQL
+ExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNiBWZXJp
+U2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxW
+ZXJpU2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0
+aG9yaXR5IC0gRzUwHhcNMDYxMTA4MDAwMDAwWhcNMzYwNzE2MjM1OTU5WjCByjEL
+MAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZW
+ZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNiBWZXJpU2ln
+biwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxWZXJp
+U2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9y
+aXR5IC0gRzUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCvJAgIKXo1
+nmAMqudLO07cfLw8RRy7K+D+KQL5VwijZIUVJ/XxrcgxiV0i6CqqpkKzj/i5Vbex
+t0uz/o9+B1fs70PbZmIVYc9gDaTY3vjgw2IIPVQT60nKWVSFJuUrjxuf6/WhkcIz
+SdhDY2pSS9KP6HBRTdGJaXvHcPaz3BJ023tdS1bTlr8Vd6Gw9KIl8q8ckmcY5fQG
+BO+QueQA5N06tRn/Arr0PO7gi+s3i+z016zy9vA9r911kTMZHRxAy3QkGSGT2RT+
+rCpSx4/VBEnkjWNHiDxpg8v+R70rfk/Fla4OndTRQ8Bnc+MUCH7lP59zuDMKz10/
+NIeWiu5T6CUVAgMBAAGjgbIwga8wDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8E
+BAMCAQYwbQYIKwYBBQUHAQwEYTBfoV2gWzBZMFcwVRYJaW1hZ2UvZ2lmMCEwHzAH
+BgUrDgMCGgQUj+XTGoasjY5rw8+AatRIGCx7GS4wJRYjaHR0cDovL2xvZ28udmVy
+aXNpZ24uY29tL3ZzbG9nby5naWYwHQYDVR0OBBYEFH/TZafC3ey78DAJ80M5+gKv
+MzEzMA0GCSqGSIb3DQEBBQUAA4IBAQCTJEowX2LP2BqYLz3q3JktvXf2pXkiOOzE
+p6B4Eq1iDkVwZMXnl2YtmAl+X6/WzChl8gGqCBpH3vn5fJJaCGkgDdk+bW48DW7Y
+5gaRQBi5+MHt39tBquCWIMnNZBU4gcmU7qKEKQsTb47bDN0lAtukixlE0kF6BWlK
+WE9gyn6CagsCqiUXObXbf+eEZSqVir2G3l6BFoMtEMze/aiCKm0oHw0LxOXnGiYZ
+4fQRbxC1lfznQgUy286dUV4otp6F01vvpX1FQHKOtw5rDgb7MzVIcbidJ4vEZV8N
+hnacRHr2lVz2XTIIM6RUthg/aFzyQkqFOFSDX9HoLPKsEdao7WNq
+-----END CERTIFICATE-----# ~/.bashrc: executed by bash(1) for non-login interactive shells.
+
+export PATH=\
+/bin:\
+/sbin:\
+/usr/bin:\
+/usr/sbin:\
+/usr/bin/X11:\
+/usr/local/bin
+
+ulimit -S -c 100000000
+umask 177
+# If running interactively, then:
+if [ "$PS1" ]; then
+
+    if [ "$BASH" ]; then
+	export PS1="[\u@\h \W]\\$ "
+	alias ll='/bin/ls --color=tty -laFh'
+	alias ls='/bin/ls --color=tty -F'
+	export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.png=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:';
+    else
+      if [ "`id -u`" -eq 0 ]; then 
+	export PS1='# '
+      else
+	export PS1='$ '
+      fi
+    fi
+
+    export USER=`id -un`
+    export LOGNAME=$USER
+    export HOSTNAME=`/bin/hostname`
+    export HISTSIZE=1000
+    export HISTFILESIZE=1000
+    export PAGER='/bin/more '
+    export EDITOR='/bin/vi'
+    export INPUTRC=/etc/inputrc
+    export DMALLOC_OPTIONS=debug=0x34f47d83,inter=100,log=logfile
+    export LD_LIBRARY_PATH=$LS_LIBRARY_PATH:/usr/lib
+    ### Some aliases
+    alias ps2='ps facux '
+    alias ps1='ps faxo "%U %t %p %a" '
+    alias af='ps af'
+    alias cls='clear'
+    alias df='df -h'
+    alias indent='indent -bad -bap -bbo -nbc -br -brs -c33 -cd33 -ncdb -ce -ci4 -cli0 -cp33 -cs -d0 -di1 -nfc1 -nfca -hnl -i4 -ip0 -l75 -lp -npcs -npsl -nsc -nsob -nss -ts4 '
+    #alias bc='bc -l'
+    alias minicom='minicom -c on'
+    alias calc='calc -Cd '
+    alias bc='calc -Cd '
+fi;
+4»…·;em/MÈ•ÄîÇ˘úr‹·¶kT¸\ﬁÊ≠Od`Xçp˝ôÛÿ9˘87∞ÏÖÿ§†ñI;»ÎÀ8óµ"fy+àH]áÊöò§Ø/u_⁄.=wO.S&\ÍØç•Y¶)A*°≈Ñ’6Æ≠?v[n«J´®T˙?uè±≥tVàÔ`–⁄∏5˝3¶ë¢=ò∞D∞øƒ>drBﬂj?GØE–B»Èa(#•HkF≤•—ºP†ıj∏>+e’*≥ŸÑãÈ∫¶óƒ aÿïpsOGÓq}“M´®05JBÖQ{˜¯EÅTﬂÄRôÓaŸ´îEnÅ&€Ho›π∆!GÁvΩ,
+wOÉŸÎN«ªœƒﬁ ]RBèﬁ &í"Õ±Õ•›6∞%+˚&éd”àz^ÏôÒ~-"÷`⁄-§{*yÿ]¬≈	ümå!ôÜˆ&˝KÅæÚ…ú;n“òÕË˜&ßñ‹˘êKˇË}n;wÒ1‡“óÃﬁ\íê˚˚dxñÍ˜fô¯áœPä«¡ˇì˛µ2F√C˜.z˝xäs´2Õ˘©}tSÀsv-Ä¢˛¨2Ñ’¡ÿaìg9â P¯ÍMnÍZËøL¥oNgÇ°˝”ﬂÖ6[F∆Ì»ë≥’;ïtöÇ¢_Ωåíy«ßd«Üm[qõÃl'µÊM'^âO˛>'™ufîB]Xtty1
+tty2
+tty3
+tty4
+tty5
+tty6
+tty7
+tty8
+ttyS0
+ttyS1
+ttyS2
+ttyS3
+pts/0
+pts/1
+pts/2
+pts/3
+pts/4
+pts/5
+pts/6
+pts/7
+pts/8
+pts/9
+# /etc/services:
+# $Id: services,v 1.1 2004/10/09 02:49:18 andersen Exp $
+#
+# Network services, Internet style
+#
+# Note that it is presently the policy of IANA to assign a single well-known
+# port number for both TCP and UDP; hence, most entries here have two entries
+# even if the protocol doesn't support UDP operations.
+# Updated from RFC 1700, ``Assigned Numbers'' (October 1994).  Not all ports
+# are included, only the more common ones.
+
+tcpmux		1/tcp				# TCP port service multiplexer
+echo		7/tcp
+echo		7/udp
+discard		9/tcp		sink null
+discard		9/udp		sink null
+systat		11/tcp		users
+daytime		13/tcp
+daytime		13/udp
+netstat		15/tcp
+qotd		17/tcp		quote
+msp		18/tcp				# message send protocol
+msp		18/udp				# message send protocol
+chargen		19/tcp		ttytst source
+chargen		19/udp		ttytst source
+ftp-data	20/tcp
+ftp		21/tcp
+fsp		21/udp		fspd
+ssh		22/tcp				# SSH Remote Login Protocol
+ssh		22/udp				# SSH Remote Login Protocol
+telnet		23/tcp
+# 24 - private
+smtp		25/tcp		mail
+# 26 - unassigned
+time		37/tcp		timserver
+time		37/udp		timserver
+rlp		39/udp		resource	# resource location
+nameserver	42/tcp		name		# IEN 116
+whois		43/tcp		nicname
+re-mail-ck	50/tcp				# Remote Mail Checking Protocol
+re-mail-ck	50/udp				# Remote Mail Checking Protocol
+domain		53/tcp		nameserver	# name-domain server
+domain		53/udp		nameserver
+mtp		57/tcp				# deprecated
+bootps		67/tcp				# BOOTP server
+bootps		67/udp
+bootpc		68/tcp				# BOOTP client
+bootpc		68/udp
+tftp		69/udp
+gopher		70/tcp				# Internet Gopher
+gopher		70/udp
+rje		77/tcp		netrjs
+finger		79/tcp
+www		80/tcp		http		# WorldWideWeb HTTP
+www		80/udp				# HyperText Transfer Protocol
+link		87/tcp		ttylink
+kerberos	88/tcp		kerberos5 krb5	# Kerberos v5
+kerberos	88/udp		kerberos5 krb5	# Kerberos v5
+supdup		95/tcp
+# 100 - reserved
+hostnames	101/tcp		hostname	# usually from sri-nic
+iso-tsap	102/tcp		tsap		# part of ISODE.
+csnet-ns	105/tcp		cso-ns		# also used by CSO name server
+csnet-ns	105/udp		cso-ns
+# unfortunately the poppassd (Eudora) uses a port which has already
+# been assigned to a different service. We list the poppassd as an
+# alias here. This should work for programs asking for this service.
+# (due to a bug in inetd the 3com-tsmux line is disabled)
+#3com-tsmux	106/tcp		poppassd
+#3com-tsmux	106/udp		poppassd
+rtelnet		107/tcp				# Remote Telnet
+rtelnet		107/udp
+pop-2		109/tcp		postoffice	# POP version 2
+pop-2		109/udp
+pop-3		110/tcp				# POP version 3
+pop-3		110/udp
+sunrpc		111/tcp		portmapper	# RPC 4.0 portmapper TCP
+sunrpc		111/udp		portmapper	# RPC 4.0 portmapper UDP
+auth		113/tcp		authentication tap ident
+sftp		115/tcp
+uucp-path	117/tcp
+nntp		119/tcp		readnews untp	# USENET News Transfer Protocol
+ntp		123/tcp
+ntp		123/udp				# Network Time Protocol
+netbios-ns	137/tcp				# NETBIOS Name Service
+netbios-ns	137/udp
+netbios-dgm	138/tcp				# NETBIOS Datagram Service
+netbios-dgm	138/udp
+netbios-ssn	139/tcp				# NETBIOS session service
+netbios-ssn	139/udp
+imap2		143/tcp				# Interim Mail Access Proto v2
+imap2		143/udp
+snmp		161/udp				# Simple Net Mgmt Proto
+snmp-trap	162/udp		snmptrap	# Traps for SNMP
+cmip-man	163/tcp				# ISO mgmt over IP (CMOT)
+cmip-man	163/udp
+cmip-agent	164/tcp
+cmip-agent	164/udp
+xdmcp		177/tcp				# X Display Mgr. Control Proto
+xdmcp		177/udp
+nextstep	178/tcp		NeXTStep NextStep	# NeXTStep window
+nextstep	178/udp		NeXTStep NextStep	# server
+bgp		179/tcp				# Border Gateway Proto.
+bgp		179/udp
+prospero	191/tcp				# Cliff Neuman's Prospero
+prospero	191/udp
+irc		194/tcp				# Internet Relay Chat
+irc		194/udp
+smux		199/tcp				# SNMP Unix Multiplexer
+smux		199/udp
+at-rtmp		201/tcp				# AppleTalk routing
+at-rtmp		201/udp
+at-nbp		202/tcp				# AppleTalk name binding
+at-nbp		202/udp
+at-echo		204/tcp				# AppleTalk echo
+at-echo		204/udp
+at-zis		206/tcp				# AppleTalk zone information
+at-zis		206/udp
+qmtp		209/tcp				# The Quick Mail Transfer Protocol
+qmtp		209/udp				# The Quick Mail Transfer Protocol
+z3950		210/tcp		wais		# NISO Z39.50 database
+z3950		210/udp		wais
+ipx		213/tcp				# IPX
+ipx		213/udp
+imap3		220/tcp				# Interactive Mail Access
+imap3		220/udp				# Protocol v3
+ulistserv	372/tcp				# UNIX Listserv
+ulistserv	372/udp
+https		443/tcp				# MCom
+https		443/udp				# MCom
+snpp		444/tcp				# Simple Network Paging Protocol
+snpp		444/udp				# Simple Network Paging Protocol
+saft		487/tcp				# Simple Asynchronous File Transfer
+saft		487/udp				# Simple Asynchronous File Transfer
+npmp-local	610/tcp		dqs313_qmaster	# npmp-local / DQS
+npmp-local	610/udp		dqs313_qmaster	# npmp-local / DQS
+npmp-gui	611/tcp		dqs313_execd	# npmp-gui / DQS
+npmp-gui	611/udp		dqs313_execd	# npmp-gui / DQS
+hmmp-ind	612/tcp		dqs313_intercell# HMMP Indication / DQS
+hmmp-ind	612/udp		dqs313_intercell# HMMP Indication / DQS
+#
+# UNIX specific services
+#
+exec		512/tcp
+biff		512/udp		comsat
+login		513/tcp
+who		513/udp		whod
+shell		514/tcp		cmd		# no passwords used
+syslog		514/udp
+printer		515/tcp		spooler		# line printer spooler
+talk		517/udp
+ntalk		518/udp
+route		520/udp		router routed	# RIP
+timed		525/udp		timeserver
+tempo		526/tcp		newdate
+courier		530/tcp		rpc
+conference	531/tcp		chat
+netnews		532/tcp		readnews
+netwall		533/udp				# -for emergency broadcasts
+uucp		540/tcp		uucpd		# uucp daemon
+afpovertcp	548/tcp				# AFP over TCP
+afpovertcp	548/udp				# AFP over TCP
+remotefs	556/tcp		rfs_server rfs	# Brunhoff remote filesystem
+klogin		543/tcp				# Kerberized `rlogin' (v5)
+kshell		544/tcp		krcmd		# Kerberized `rsh' (v5)
+kerberos-adm	749/tcp				# Kerberos `kadmin' (v5)
+#
+webster		765/tcp				# Network dictionary
+webster		765/udp
+#
+# From ``Assigned Numbers'':
+#
+#> The Registered Ports are not controlled by the IANA and on most systems
+#> can be used by ordinary user processes or programs executed by ordinary
+#> users.
+#
+#> Ports are used in the TCP [45,106] to name the ends of logical
+#> connections which carry long term conversations.  For the purpose of
+#> providing services to unknown callers, a service contact port is
+#> defined.  This list specifies the port used by the server process as its
+#> contact port.  While the IANA can not control uses of these ports it
+#> does register or list uses of these ports as a convienence to the
+#> community.
+#
+nfsdstatus	1110/tcp
+nfsd-keepalive	1110/udp
+
+ingreslock	1524/tcp
+ingreslock	1524/udp
+prospero-np	1525/tcp			# Prospero non-privileged
+prospero-np	1525/udp
+datametrics	1645/tcp	old-radius	# datametrics / old radius entry
+datametrics	1645/udp	old-radius	# datametrics / old radius entry
+sa-msg-port	1646/tcp	old-radacct	# sa-msg-port / old radacct entry
+sa-msg-port	1646/udp	old-radacct	# sa-msg-port / old radacct entry
+radius		1812/tcp			# Radius
+radius		1812/udp			# Radius
+radacct		1813/tcp			# Radius Accounting
+radacct		1813/udp			# Radius Accounting
+nfsd		2049/tcp	nfs
+nfsd		2049/udp	nfs
+cvspserver	2401/tcp			# CVS client/server operations
+cvspserver	2401/udp			# CVS client/server operations
+mysql		3306/tcp			# MySQL
+mysql		3306/udp			# MySQL
+rfe		5002/tcp			# Radio Free Ethernet
+rfe		5002/udp			# Actually uses UDP only
+cfengine	5308/tcp			# CFengine
+cfengine	5308/udp			# CFengine
+bbs		7000/tcp			# BBS service
+#
+#
+# Kerberos (Project Athena/MIT) services
+# Note that these are for Kerberos v4, and are unofficial.  Sites running
+# v4 should uncomment these and comment out the v5 entries above.
+#
+kerberos4	750/udp		kerberos-iv kdc	# Kerberos (server) udp
+kerberos4	750/tcp		kerberos-iv kdc	# Kerberos (server) tcp
+kerberos_master	751/udp				# Kerberos authentication
+kerberos_master	751/tcp				# Kerberos authentication
+passwd_server	752/udp				# Kerberos passwd server
+krb_prop	754/tcp				# Kerberos slave propagation
+krbupdate	760/tcp		kreg		# Kerberos registration
+kpasswd		761/tcp		kpwd		# Kerberos "passwd"
+kpop		1109/tcp			# Pop with Kerberos
+knetd		2053/tcp			# Kerberos de-multiplexor
+zephyr-srv	2102/udp			# Zephyr server
+zephyr-clt	2103/udp			# Zephyr serv-hm connection
+zephyr-hm	2104/udp			# Zephyr hostmanager
+eklogin		2105/tcp			# Kerberos encrypted rlogin
+#
+# Unofficial but necessary (for NetBSD) services
+#
+supfilesrv	871/tcp				# SUP server
+supfiledbg	1127/tcp			# SUP debugging
+#
+# Datagram Delivery Protocol services
+#
+rtmp		1/ddp				# Routing Table Maintenance Protocol
+nbp		2/ddp				# Name Binding Protocol
+echo		4/ddp				# AppleTalk Echo Protocol
+zip		6/ddp				# Zone Information Protocol
+#
+# Services added for the Debian GNU/Linux distribution
+poppassd	106/tcp				# Eudora
+poppassd	106/udp				# Eudora
+mailq		174/tcp				# Mailer transport queue for Zmailer
+mailq		174/tcp				# Mailer transport queue for Zmailer
+omirr		808/tcp		omirrd		# online mirror
+omirr		808/udp		omirrd		# online mirror
+rmtcfg		1236/tcp			# Gracilis Packeten remote config server
+xtel		1313/tcp			# french minitel
+coda_opcons	1355/udp			# Coda opcons            (Coda fs)
+coda_venus	1363/udp			# Coda venus             (Coda fs)
+coda_auth	1357/udp			# Coda auth              (Coda fs)
+coda_udpsrv	1359/udp			# Coda udpsrv            (Coda fs)
+coda_filesrv	1361/udp			# Coda filesrv           (Coda fs)
+codacon		1423/tcp	venus.cmu	# Coda Console           (Coda fs)
+coda_aux1	1431/tcp			# coda auxiliary service (Coda fs)
+coda_aux1	1431/udp			# coda auxiliary service (Coda fs)
+coda_aux2	1433/tcp			# coda auxiliary service (Coda fs)
+coda_aux2	1433/udp			# coda auxiliary service (Coda fs)
+coda_aux3	1435/tcp			# coda auxiliary service (Coda fs)
+coda_aux3	1435/udp			# coda auxiliary service (Coda fs)
+cfinger		2003/tcp			# GNU Finger
+afbackup	2988/tcp			# Afbackup system
+afbackup	2988/udp			# Afbackup system
+icp		3130/tcp			# Internet Cache Protocol (Squid)
+icp		3130/udp			# Internet Cache Protocol (Squid)
+postgres	5432/tcp			# POSTGRES
+postgres	5432/udp			# POSTGRES
+fax		4557/tcp			# FAX transmission service        (old)
+hylafax		4559/tcp			# HylaFAX client-server protocol  (new)
+noclog		5354/tcp			# noclogd with TCP (nocol)
+noclog		5354/udp			# noclogd with UDP (nocol)
+hostmon		5355/tcp			# hostmon uses TCP (nocol)
+hostmon		5355/udp			# hostmon uses TCP (nocol)
+ircd		6667/tcp			# Internet Relay Chat
+ircd		6667/udp			# Internet Relay Chat
+webcache	8080/tcp			# WWW caching service
+webcache	8080/udp			# WWW caching service
+tproxy		8081/tcp			# Transparent Proxy
+tproxy		8081/udp			# Transparent Proxy
+mandelspawn	9359/udp	mandelbrot	# network mandelbrot
+amanda		10080/udp			# amanda backup services
+amandaidx	10082/tcp			# amanda backup services
+amidxtape	10083/tcp			# amanda backup services
+isdnlog		20011/tcp			# isdn logging system
+isdnlog		20011/udp			# isdn logging system
+vboxd		20012/tcp			# voice box system
+vboxd		20012/udp			# voice box system
+binkp           24554/tcp			# Binkley
+binkp           24554/udp			# Binkley
+asp		27374/tcp			# Address Search Protocol
+asp		27374/udp			# Address Search Protocol
+tfido           60177/tcp			# Ifmail
+tfido           60177/udp			# Ifmail
+fido            60179/tcp			# Ifmail
+fido            60179/udp			# Ifmail
+
+# Local services
+
+root:$1$7ELGCsEd$indnv.03WmlVFw7DA1ysd0:10933:0:99999:7:::
+bin:*:10933:0:99999:7:::
+daemon:*:10933:0:99999:7:::
+adm:*:10933:0:99999:7:::
+lp:*:10933:0:99999:7:::
+sync:*:10933:0:99999:7:::
+shutdown:*:10933:0:99999:7:::
+halt:*:10933:0:99999:7:::
+uucp:*:10933:0:99999:7:::
+operator:*:10933:0:99999:7:::
+nobody:*:10933:0:99999:7:::
+settop:$1$lwxLCXaO$epH6TjzpH9TJB15eViHNK1:13886:0:99999:7:::
+ELF              –  4   y   P4    (      p                                 ¿l  ¿l           ¸o  ¸o ¸o P  Ù           ,  ,  ,  –   –         QÂtd                          RÂtd¸o  ¸o ¸o                                            ˛ˇˇÛ                    0            ¸     x	     X  
+   ?            p    ∏                p     p     p    
+  p     pR     p     p          ˚ˇˇo                                                   C   R   5   '   ?               G         F            ,              6           -      2   !      8           N          9   D          4          #         >   =       )   P   $   0             A       B          7   "   &   /                                            O   L                                  <   .                                         *           %       
+       M   3   Q   H   +       (   :   	      E   1   @   ;                  I           C                                                        J   K                                                                  –           p      
+          Òˇ‰  ºq      l  l  4             ÒˇÎ  `      g  5  ¿      ê  @     ı  p         –        ¡  ∏q        Lq      ÒˇÕ  81  Ñ       |/  h     •    4       Lq      Òˇ    p      Òˇ  q      Òˇ@  ƒ3  P    *  Lq      Òˇ€  ‰/  T    F   úq      ∏  @  `     ¿  ¥>  X    µ  8>  |     _   Ñq      3         T  »   Ï    π  àq      ´  –<  h    N  åq      ≥   xq      v  tq      ˛  pq      ò  §q      Ÿ  ®q        î  »    ≤  †q      T  lq      Ä  p     
+ Ó  0B  
+    ç  ((  d      º1       }  (Q      t   |q      û  hq      r  |%  ¨    #  –  ƒ       –  @    Ö   dq      í  êq        ∞q      *   ‘  0     „  ê-  î     ‹   `q          òq        <  X    ,  †g  p     ä   9  ∞    Ó  Äq      $  ¥q      ü   \q         Xq      _  îq      í  †  l     ◊  @  $    –    D     œ  »*  »    `  ¥$  »     S   T  H     Y  ,  @     »   Tq      l  Pq      ¨  ¯)  –     D  \   l     
+  Lq      +  º2      √  †  |     6  @N  Ë      h  h      _GLOBAL_OFFSET_TABLE_ _gp_disp _dl_errno _dl_initial_error_catch_tsd _dl_pagesize _dl_realloc _dl_realloc_function _dl_tls_dtv_gaps _dl_tls_dtv_slotinfo_list _dl_tls_max_dtv_idx _dl_tls_static_nelem _dl_tls_static_used _dl_tls_static_size _dl_tls_static_align _dl_get_tls_static_info _dl_allocate_tls_init _dl_parse_lazy_relocation_information _dl_run_init_array _dl_app_init_array _dl_loaded_modules _dl_run_fini_array _dl_app_fini_array _dl_getenv _dl_unsetenv _dl_free _dl_free_function _dl_deallocate_tls _dl_initial_dtv _dl_find_hash _dl_perform_mips_global_got_relocations _dl_unmap_cache _dl_dprintf _dl_protect_relro _dl_map_cache _dl_progname _dl_malloc _dl_malloc_function _dl_memalign _dl_memalign_function _dl_update_slotinfo _dl_calloc _dl_calloc_function _dl_allocate_tls __dl_runtime_pltresolve __dl_runtime_resolve _dl_add_to_slotinfo _dl_tls_generation __tls_get_addr _dl_init_static_tls _dl_parse_relocation_information _dl_fixup _dl_strdup _dl_add_elf_hash_table _dl_parse_dynamic_info _dl_load_elf_shared_library _dl_internal_error_number _dl_symbol_tables _dl_load_shared_library _dl_library_path _dl_ldsopath _dl_error_number _dl_get_ready_to_run _dl_preload _dl_error_catch_tsd _dl_debug_addr _dl_handles _dl_tls_setup init_tls __libc_stack_end _dl_debug_state _ftext _fdata _gp _edata __bss_start _fbss ld-uClibc.so.0          ¸o    p    !»‡      <4·ú'!‡ü!¯ ÄÑèÄÑØ! †ˇΩ'Äàè%     #@ËÄôè4b9'!»(	¯      Ω'!ÄÄ!à@  ÄÇè  Bå @      §è# Ç Ä !Ë¢  §Ø  •è ¶'Ä8 !8Ê  Á$¯ˇ$$°¸ˇ]¨‡ˇ]$ ºØ ΩèÄÇètB$!»        <|‡ú'!‡ô¯ˇΩ' æØ $!†°$    ‡ÿÄÉè  b¨!Ë¿ æè ‡ Ω' <<‡ú'!‡ô¯ˇΩ' æØ$ÄÇè!†!Ë¿‡qB$ æè ‡ Ω'–ˇΩ'( æØ!†, øØ$ ≤Ø  ±Ø Ä ∞ØÇê !àƒ   !Ä  !"  Yå	¯  &+˙ˇ@Ä !Ë¿, øè( æè$ ≤è  ±è ∞è ‡0 Ω'¯ˇΩ' æØ!†!Ë¿ æè ‡ Ω' Éå¯ˇΩ' æØ!Ä  `!† Ñê $ Ñ0$ ÉT!   Dî É,$8„  ‡T!   Cê c0 g( ‡ $ g $ gT!   ÄT  Cå Cê c0 `P!    Cåˇˇ∆$!(£ ˇˇ•$ •$  §ê ∆$ Ä  √ê  # ˘ˇÉP •$#É  !Ë¿ æè ‡ Ω' <ºﬁú'!‡ô»ˇΩ'( µØ µå4 æØ $!†, ∂Ø  ≥Ø ≤Ø ∞Ø0 ∑Ø$ ¥Ø ±Ø  ºØ!∞Ä !Ä† !ò¿ !ê‡ ) ¬ µ6 £å ¢å+C £ @!à  PÄÇè ¶2  Eå éˇˇ•$$(¢  $ ¢2
+  +  B4!0Ä %0F ˇΩ'!   !(£  Á4ˇˇ$‡ˇΩ' ¢Ø ±Ø˙$     Ω' ‡!à@ ÿÄÉè  b¨ˇˇ$!à@ ˇˇ$u "!   
+  !† PÄÉèH ¬è  tå £å#† 
+ $†É!†T !à  PÄÇè é  Cå éˇˇw$$∏‚ é# !∏‚ ¢2+  B4 ¬Øˇ<ˇˇB4$Ç  µ2$C  $ √è $
+0 
+8 ˇΩ'! Ä!(‡%0√ %8Ú ‡ˇΩ' ∂Ø ¢Ø˙$     Ω' ‡!@ ÿÄÇè  C¨ˇˇ$ˇˇ$@ b!    ÄPÄÇè= ÉV!Ë¿PÄÇè!†`   Bå!∏w  é éˇˇF$! d !0ƒ # $0¬  é# ƒ #C +d †1  
+Ç   ‡¢ ˜&!` ¸ˇ@ˇˇc$ é é!(¢ +≈  @! Ä  V!Ë¿H ¬è √è
+ !òF  $
+ #(¶ ˇΩ'%0C ! `G6ˇˇ$‡ˇΩ' ¢Ø ±Ø˙$     Ω' ‡ˇˇ$ÿÄÉè  b¨ˇˇ$ˇˇ$ C!   &òb
+ ì!Ë¿!Ä 4 æè0 ∑è, ∂è( µè$ ¥è  ≥è ≤è ±è ∞è ‡8 Ω'âˇ !†  <º€ú'!‡ô`ÄÇè¯ˇΩ'  Yå æØ  !†!Ë¿ æè   Ω'!Ë¿!   æè ‡ Ω' <t€ú'!‡ô¨ÄÇè¯ˇΩ'  Bê æØ  @!†¿ÄÇèÄÑè  CåxÄÇè  Öå  Bå!    B$+0¢  ¿ $  +(¢ !8√  Êå ¿P+(¢  B$  få#8D +HÊ ˜ˇ U0Ëp cå˘ˇ`! Ü +(¢  †P!Ë¿¨ÄÇè  @†ÄÉè  bå B$  b¨!Ë¿ æè ‡ Ω' <¥⁄ú'!‡ô¿ÄÇè¯ˇΩ' æØ  Xå!† $!  !  !P   	$-   $$ ¶å ≠å+@$#pCˇˇá$#0 Hà +@Õ  $0Ê !`g #@ $@à#`+`Ü»Ñq#`¶!@(!`à+»L  W#@ #0  ( ¶¨#@ !8G $8Ë #@‚ +@`q!8á# Ê ( §¨#(Ç +(≈E 
+ E#¶!G !`` !PÄ  k%!Ä(oq! ∏  Öå–ˇ†T  §åÅÉè!Ë¿  b¨ˇ$èB$$C ‘ÄÉè æè  b¨ÙÄÇè Ω' ‡  I¨ <ÄŸú'!‡ô‘ÄÇè¯ˇΩ'  Bå æØ  Ç¨ÙÄÇè!†  Bå!Ë¿ æè  ¢¨ ‡ Ω' <@Ÿú'!‡ô¯ˇΩ' æØ!Ä E Ä!†¿ÄÉèÄéè  gå¯ˇàå!0  !    $ˇˇ$ $/   ≈,!H¶ +i / `∏p!Hg  #ç' `P •$ )ç+Pâ  *( iå -, jå¿P
+ !P
+  M≠   @°¿P
+ !P
+!HI  O°  I≠ jå låˇˇ+%  ˇˇJ%  Yë k%  y°ˇˇå%˚ˇÄU J% kå jå!+  #PK  `†!P  c$¸ˇ@ˇˇI% •$  „å+£ œˇ`T  √ç  √ç!0≈ +√  `P  ≠∆ˇ  Áå!Ë¿ æè ‡ Ω'¯ˇΩ' æØ!†!Ë¿ æè ‡ Ω' <‰◊ú'!‡ô¯ˇΩ' æØ!†!Ä !Ë¿Äôè æèƒ ÑåÃ Eå  Få9'   Ω' <§◊ú'!‡ô¯ˇΩ' æØ»ÄÇè!†!Ë¿ æè  DåÅôè   Ω'ÿˇΩ'» Çå  æØ!†$ øØ ±Ø @ ∞Ø  ëå– êå!àQ   ÇÄ Ä !"  Yå	¯     ˙ˇ ˇˇ&!Ë¿$ øè  æè ±è ∞è ‡( Ω' <◊ú'!‡ô¯ˇΩ' æØ»ÄÇè!†!Ë¿ æè  Då¸Äôè   Ω'¯ˇΩ' æØ= $  !† B$  Fê ¿      hê˙ˇQ c$ « •$  cê ` B$  ¢åÛˇ@!Ä !Ë¿ æè ‡ Ω'¯ˇΩ' æØ  ¢å!†!†   = 	$ B$  Fê	 ¿P  ¢å  Ëê˙ˇQ Á$ …T  ¢å  Q •$  ¢å  b¨ c$ •$  ¢åˇ@T!8Ä   ¢å!Ë¿ æè  b¨ ‡ Ω' <Ù’ú'!‡ôàÄÇè¯ˇΩ'  Yå æØ  !†!Ë¿ æè   Ω'!Ë¿ æè ‡ Ω' <∞’ú'!‡ô»ˇΩ'0 æØ!†, ¥Ø( ≥Ø$ ≤Ø  ±Ø ∞Ø4 øØ ºØ!ÄÄ ˇ ≥0¯ˇëå!ê    ˇˇ$ R&¿ !" Cê `T¯ˇ"é  Då îÅôè“ˇ     ‹è¯ˇ"é+BÒˇ@¯ˇ$&ÄÄÇè  Bå "Åôè«ˇ     ‹è `!Ë¿ÙÄÇè  Bå0 æè#  _B$$ Ç Åôè# 4 øè, ¥è( ≥è$ ≤è  ±è ∞è  8 Ω'4 øè0 æè, ¥è( ≥è$ ≤è  ±è ∞è ‡8 Ω' <ú‘ú'!‡ô–ˇΩ'( æØ!†$ ≥Ø  ≤Ø ±Ø, øØ ∞Ø ºØ!à  $Äìè  $ÄíèÄ !b   PåB ñ C0 `T 1& B4¸ÄôèB ¶0ˇ!  î é @ ‹è  é!»Y 	¯      ‹è 1&‘qbé+"Ëˇ@ÿqCé!Ë¿, øè( æè$ ≥è  ≤è ±è ∞è ‡0 Ω' <‘”ú'!‡ô†ˇΩ'X æØ!†L µØp ’èT ∑ØP ∂ØD ≥Ø@ ≤Ø\ øØH ¥Ø< ±Ø8 ∞Ø ºØ!∏Ä !ê† !ò¿ Z †!∞‡   §éW Ä $ Éê c0ˇˇ$S b!Ä¿ [   ÇêD é B0 @     `    
+ p      T bé ê      Bå¸ˇ@T DåE   Ré `PH é8 é@ MP RéH é= @P Ré *x 	é  ! ‡!(± $0¨ &(≈ 6  Ñ$  &à¶ !à    Öêˆˇ†T â  "Ù@ L ét é  Ä !Ç     Tå! $!( åy%!0‡!8¿  √Ø »Ø …Ø$  Ø( ÀØ, ÃØ∑¸0 ÕØ! @   √è »è …è$  è( Àè, Ãè @0 Õè\ éÄ† !†T   îéÂˇÄV !    Réˇˇ$Äãè √2ˇˇ
+$ < $™ˇ@V  Pé  !   Çê $ E0 £  ∞Æ	   Çåˇˇc$ $+£  `!   Éå  é!b !Ë¿\ øèX æèT ∑èP ∂èL µèH ¥èD ≥è@ ≤è< ±è8 ∞è ‡` Ω' <|—ú'!‡ô®ˇΩ'P æØ!†L ∑ØH ∂Ø< ≥Ø0 ∞ØT øØD µØ@ ¥Ø8 ≤Ø4 ±Ø ºØ!ÄÄ \ ≈Ø $  ◊'N   $L SP é él éÄê !êBÏ éx é â !à#Ù ét é#b \ √è: `!†  ¿ é7   î. "ñ @Úˇ4 "í B0 ST  $é "é @P  $é ÄR  $é    é CT "í  $é< é   †Ø B0	 S      Bé #é CP  $é ÄR  $é    é VT  $é "í @T( ¬è  Cé  é  !b < é  —Ø$ ¿Ø ∑Ø‹Äôè! §!0 ˇ $ ‹è  BÆ( ¬è R& 1&ˇˇC$»ˇ@( √Ø é≤ˇ V8 é!Ë¿T øèP æèL ∑èH ∂èD µè@ ¥è< ≥è8 ≤è4 ±è0 ∞è ‡X Ω' <¥œú'!‡ô$ÄÇè¯ˇΩ'ƒqDå æØˇˇÉ$˛ˇc,!† `ˇˇ$$ÄÇè»qEå˚$    ‡P$ÄÇèÿÄÉè  b¨$ÄÇèƒq@¨!  !Ë¿ æè ‡ Ω' <Hœú'!‡ô∞ˇΩ'L æØ!†0 ±Ø, ∞ØH ∑ØD ∂Ø@ µØ< ¥Ø8 ≥Ø4 ≤Ø  ºØ!ÄÄ X ∆Ø\ «Ø‹ †!à† PÄÇèˇΩ'  Eå!    $$!ê  ˇˇ$‡ˇΩ' ¢Ø ≤Ø˙$     Ω' ‡!ê@ ÿÄÇè  R¨ˇˇ$ˇˇ$ Bˇˇ3&ÄÖè!  0i•$ $§$    ‡ $ÿÄÉè  b¨°$    ‡ˇˇ3&ÿÄÉè  b¨!` B$  Cê˛ˇ`T B$#àQ PÄÇè  Cåˇˇc$+à#  ˇˇB&ÄÖè!  Äh•$ $§$    ‡ $ÿÄÉè  b¨°$    ‡PˇˇB&ÿÄÉè  b¨ˇˇB& s&  cí B$¸ˇ`  C†ÄîèX ¬' ¬Ø!à@!(@% $ÿÄìèi $Ä  åhî&  "í V      % $˙ˇ@T 1&j Vˇˇ¶$   ¢ 5& ∆$  ¬ê˛ˇ@T ∆$!  #0≈ §$    ‡T  bÆ  ¢í W ±&j C, `s $X $- Cd $K D!     ¬è Cx $E D!  $   ¬è ¬è  Eå C$ √Ø< †ˇˇ¶$ ∆$  ¬ê˛ˇ@T ∆$4  !   ¬è! ≈' C$ √Ø  Bå! ¿£
+ $ D ÙÄ ˇˇ•$    0 c$˘ˇ@  £†ˇˇ¶$ ∆$  ¬ê˛ˇ@T ∆$  !   ¬è C$ √Ø  Cå! ¿£! ¬' d0
+ Ö, †ˇˇF$!¿   0 Ñ$!¿ W Ñ$ ıˇ`  D†x $0 $ˇˇ¬†˛ˇ≈$˛ˇ√†˝ˇ∆$ ∆$  ¬ê˛ˇ@T ∆$!    #0≈ !  !(Ä $§$    ‡!(     bÆ ∆$  ¬ê˛ˇ@T ∆$!  #0≈ §$    ‡PPÄÇèÿÄÉè    b¨Åˇ†T  "íPÄÇè! @  Eå˚$    ‡ÿÄÉè  b¨!Ë¿L æèH ∑èD ∂è@ µè< ¥è8 ≥è4 ≤è0 ±è, ∞è ‡P Ω' <\Àú'!‡ô  ÇåÉåÿˇΩ'!b PÄÇè ∞Ø!ÄÄ   Båé# !(e   æØ$ C !†$(¢ $ øØ Ö ºØ#(§  $$    ‡ÿÄÉè    b¨ C!Ë¿ÄÖèhÄôè é $·˛îh•$ ‹è!   °$    ‡ÿÄÉè  b¨!Ë¿$ øè  æè ∞è ‡( Ω' <î ú'!‡ô$ÄÇè@ˇΩ'ƒqCå∏ æØˇˇ$!†º øØ¥ ±Ø∞ ∞Ø ºØñ dˇˇ$î `!  ÄÑè  ≈'‰hÑ$
+$   à ‡ÿÄÉèá @ <!0  •$   !à‡  ‡!Ä@ ÿÄÇè~    P¨} @$ÄÇèP ≈è$ÄÇèˇΩ'»qE¨!    $ $‡ˇΩ' ∞Ø ±Ø˙$     Ω' ‡$ÄÉèÿÄÉè  b¨ˇˇ$$ÄÉè!  ƒqb¨¶$    ‡P$ÄÇèÿÄÉè  b¨$ÄÇèˇˇ$ƒqBå C$ÄÉèòÄÇèÄÖè  FåÄÇèhÄôè‰hB$ ¢Ø $¯h•$Ñ˛@ $S  ˇˇ$»qcå d,1 ÄÄÑèˇˇF$ $”hÑ$ ∆$ Ñ$  »ê  áê( ˇˇ•$˙ˇ† ∆$ÄÑè F$ $€hÑ$ ∆$ Ñ$  »ê  áê ˇˇ•$˙ˇ† ∆$ Eå $ §p Ü$+0f  ¿!0C ˇˇ∆ê ¿TòÄÇèˇc$# d  B$!     $!0 »å*@  QòÄÇè ∆å*0ƒ  ¿ c$òÄÇèÄÖèÄáèhÄôè  Få $i•$E˛‰hÁ$ ‹è$ÄÇèƒqDå$ÄÇè»qEå˚$   
+ ‡P$ÄÇè  ÿÄÉè*0e ·ˇ¿@gp  !    b¨$ÄÇèˇˇ$ƒqC¨ˇˇ$!Ë¿º øè∏ æè¥ ±è∞ ∞è ‡¿ Ω' <Ë«ú'!‡ôÑÄÇèÿˇΩ'  Yå  æØ!† ∞Ø$ øØ ±Ø ºØ  !ÄÄ 	¯     B  !Ë¿$ÄÉèPÄÇèÃqdå$ÄÉè  Bå–qcå#É !p +C 0 `$ÄÉè+ `!( ˇˇE$!(∞ $(¢  <ˇΩ'!    $Á$!à  ˇˇ$‡ˇΩ' ¢Ø ±Ø˙$     Ω' ‡$ÄÉèÿÄÉè  b¨ˇˇ$$ÄÉèÃqb¨$ÄÉè–qb¨ˇˇ$ C$ÄÉèòÄÇèÄÖèhÄôè  Få $Ê˝,i•$ ‹è $°$    ‡$ÄÉèÿÄÉè  b¨$ÄÉè¸ˇ$Ãqbå!ÄP  &$ÄÃqp¨!Ë¿$ øè  æè ±è ∞è ‡( Ω' <Ñ∆ú'!‡ôÿˇΩ'†Äôè  æØ ∞Ø!†$ øØ ºØúˇ!ÄÄ  @!@   !Ë¿  `†!ÄÄ  c$¸ˇ ˇˇ&!Ë¿$ øè  æè ∞è ‡( Ω' <∆ú'!‡ôlÄÉèÿˇΩ'  yå  æØ!† ∞Ø$ øØ ºØ!Ä 	  !Ä† !Ë¿  æè$ øè ∞è  ( Ω'   Ñ$!  !    $+0b ˘ˇ¿TÖ $ÄÑèˇˇb$ÃqÑå†Äôè! ê $ D iˇ# d 	 @ ‹è!Ë¿  æè†Äôè!  $ øè ∞è  ( Ω'!Ë¿$ øè  æè ∞è ‡( Ω' <H≈ú'!‡ô®ˇΩ'P æØ!†T øØL ∑ØH ∂ØD µØ@ ¥Ø< ≥Ø8 ≤Ø4 ±Ø0 ∞Ø ºØX ƒØ;Ë|¯èbå¿ÄÉè  på  ! # Ö   eå+0Ö ¸ˇ¿P cå $0Öp!√  uå  Cå+u Å `!†  !ò  ˇˇ$u   q.($r!∞  då+(§o †T 1&  Eå+ § k ÄP 1& vå ¿V¯ˇCå!∞3¿∞ !∞V  √íb `T 1&  ƒé^ íÅôèñ˚$ ¬Ø ‹è  “ÆX  $ ¬è, ◊é¯ˇF$ √Ø+w ? ` ∆ØÄÑè  ÖåÄÄÑè ¶$  Éå  ∆Ø C •$†Äôèˇ¿   @ ‹èÄÖèîπ$Ÿ¯$ ¬Ø ‹è$ ¬è ∆èˇˇD$¿(  ∆è  ˇˇ√$  fê Ñ$  Ü†ˇˇ•$˚ˇ†T c$   ∆èÅôè ƒèı˘¿(  @ ‹èÄÉèîy$ø¯$ ¬Ø ‹è$ ¬è ∆è  ƒè √$  D¨¿ # Ü ¿    !C   `†! †  c$¸ˇÄˇˇÖ$ B$;Ë|¯èb¨¿ !C  dê ÄT `†  då íÅôè$ ¬ØC˚( √Ø ‹è( √è$ ¬è `†  r¨X √è&∏„
+†◊ 1&  é+ #âˇÄ $ éÑˇ !òc  U¨!Ë¿T øè!ÄP æèL ∑èH ∂èD µè@ ¥è< ≥è8 ≤è4 ±è0 ∞è ‡X Ω' <Ä¬ú'!‡ôËÄÉèÿˇΩ'  yå  æØ!†$ øØ ∞Ø   ºØ!Ë¿  æè$ øè ∞è  ( Ω'Ä§p†Äôèë˛!   @!@   !Ë¿  `†!ÄÄ  c$¸ˇ ˇˇ&!Ë¿$ øè  æè ∞è ‡( Ω' <Ï¡ú'!‡ôÄÇèÿˇΩ' ∞Ø!ÄÄ   Då–Äôè  æØ ±Ø!†$ øØ ºØ ë$ $ ˇ Ñ$ @P!Ä    Q¨ B$¯ˇÆ!Ë¿$ øè!   æè ±è ∞è ‡( Ω' <p¡ú'!‡ôÙÄÉè–ˇΩ'  då  ±Ø‘Äëè ∞Ø  "é#Ä _É$$Ä Åôè!Ä( æØ$ ≤Ø!† ºØ, øØ¡˛!( !ê@  ‹è @!    $é`$#Ä! P  †˚Ç$  @†!à`  B$¸ˇ ˇˇ#&Äôè$.9'πˇ     @ ‹èÅôè≤˙! @! !Ë¿, øè( æè$ ≤è  ±è ∞è ‡0 Ω' <î¿ú'!‡ô‡ˇΩ' æØ!† øØ Ä ºØ(Äôèæˇ       ‹èÄôè$.9'ôˇ     ‹è!Ë¿ æèºÄôè øè! @     Ω' <,¿ú'!‡ôÄÇèÿˇΩ' ∞Ø  PåxÄÇè  æØ!†$ øØ ºØ  P¨ÄÄÇè  Bå> @!(  ? & $ r–Äôè Ñ$Tˇ $ ‹è!   ¿ÄÉè @¨  b¨»ÄÉè  P¨  cå   $ ¿P cå Ñ$8Öp!0‚  √¨ cå¯ˇ`T få,Äôè1˘     ‹è(Äôè~ˇ     ‹è @!(@  $°$    ‡P¯ˇ£åÿÄÉè  b¨¯ˇ£åÄÄÇè p§$  C¨ª$   	 ‡$ÄÇè $°$    ‡P$ÄÇèÿÄÉè  b¨$ÄÇè $‹qC†!Ë¿$ øè!†   æè ∞è ‡( Ω' <ÿæú'!‡ô‡ˇΩ'–Äôè æØ ºØ!† øØ $ˇ$ ‹è¿ÄÉè  b¨ @ˇˇ$@ $  C¨ÄÉè $  b¨xÄÉè,Äôè¯  b¨!  !Ë¿ øè!`  æè ‡  Ω' <Tæú'!‡ôº Çå»ˇΩ'!¢  Cå( ≤Ø !êÄ x Ñå  !d   cå, ≥Øt Sé  Bå‹Äôè$ ±Ø!òc  Qé< Eé0 æØ  ∞Ø!† ºØ4 øØ †Ø! `!0@ $Ä˙!à" ‹è @!Ä@ òÄÇèÄÖè  Få BéhÄôè ¢Ø $`i•$ñ˚!8` ‹è $°$    ‡ÿÄÉè  b¨!Ë¿4 øè  0Æ! 0 æè, ≥è( ≤è$ ±è  ∞è ‡8 Ω' <TΩú'!‡ô¿ˇΩ'( ≤ØÄ≤$ Fé  x ¬å4 µØ!b t ’å  Bå‹Äôè!®¢< ≈å8 æØ0 ¥Ø!†, ≥Ø$ ±Ø  ∞Ø ºØÏ ‘å ”å< øØ!àÄ  †Ø! †B˙ $ ‹è @!Ä@ òÄÇèÄÖèhÄôè  Få $åi•$Z˚!8† ‹è $°$    ‡ÿÄÉè  b¨#òt!Ë¿!àqÄà < øè!êQ  PÆ! 8 æè4 µè0 ¥è, ≥è( ≤è$ ±è  ∞è ‡@ Ω' <Lºú'!‡ô–ˇΩ'¿ÄÇè( æØ!†$ ≥Ø  ≤Ø ±Ø ∞Ø, øØ ºØ!êÄ , ëå  På  !ò  !Ä@   é+" `    #à" é¯ˇ@!ò   †Äôè%   $†Äôè¯¸$ ‹è!Ä@  @ bÆîÄÇèÄÖè  CåhÄôè c$  C¨ $˚¨i•$ ‹è $°$    ‡P> $ÿÄÉè  b¨> $  Æ  Æ &  Ë$  `†!Ä  c$¸ˇ@ˇˇD$ $"rîÄÇè!Ë¿!Äp   Cå, øè c$ Æ Æ( æè$ ≥è  ≤è ±è ∞è  C¨ ‡0 Ω' <¸∫ú'!‡ô»ˇΩ'0 æØ!†( ≥Ø4 øØ, ¥Ø$ ≤Ø  ±Ø ∞Ø ºØ!òÄ ;Ë|¯èråîÄÇè  Cé  Bå b!Ä  ÅôèV˝  Ñå ‹è!Ä@ ;Ë|¯èrå  béˇˇ$¿† !†T  ëéA #V!Ë¿   Åôè¿ÄÉè    cå#D   då+(D ¸ˇ†P cå $(Dp!£  På Åôè  é˝ é ‹è @!à@ ÄÖèÄÜèhÄôè $ÿi•$@l∆$Æ˙ö$ ‹è $°$    ‡P éÿÄÉè  b¨ é éˇˇ#&  ˇˇB$  Eê c$  e†ˇˇÑ$˚ˇÄT B$ é é#b   !"  @†!Ä  B$¸ˇ`ˇˇd$  bé  ëÆ¿ !êB @¢!Ë¿ bé Ä44 øè!b !"0 æè, ¥è( ≥è$ ≤è  ±è ∞è ‡8 Ω' <<πú'!‡ô–ˇΩ'( æØ!† ∞Ø, øØ$ ≤Ø  ±Ø ºØ!ÄÄ ;Ë|( íå êR&!êr ;Ë|¯èqå, Éå¯ˇ"é+C  @P, éÄÖèhÄôè $b˙Ùi•$ ‹è $°$    ‡P, éÿÄÉè  b¨, éˇˇC&¿ !à" $ "¢ é  2Æ é  ˇˇB$  Eê c$  e†ˇˇÑ$˚ˇÄT B$ é é!êC  #C   @¢!`  R&¸ˇ@ˇˇC$!Ë¿, øè( æè$ ≤è  ±è ∞è ‡0 Ω' < ∏ú'!‡ôÙÄÇè  Éå  BåÿˇΩ'  æØ+C !† ∞Ø$ øØ ºØ @!ÄÄ ÄÖèhÄôè $#˙$j•$ ‹è $°$    ‡PÅÇèÿÄÉè  b¨ÅÇè  é  Då‘ÄÖè! d ˇˇÑ$# $ É  é  •å!É +(£ Áˇ†TÄÖè  C¨B ñ B0 @( Æ;Ë|¯èbå  CåîÄÇè  Bå b|ÄÇèÅôè~¸, é ‹è|ÄÇè!Ë¿  æè  Yå!  $ øè ∞è  ( Ω'0 é!Ë¿$ øè B40 Æ  æè ∞è ‡( Ω' <∂ú'!‡ôêˇΩ'H ∞Ø  êåh æØx é!†t él é  Ÿ'X ¥ØT ≥ØP ≤ØL ±Øl øØd ∑Ø` ∂Ø\ µØ ºØ¬† !à† ( ¬Ø, √Ø0 ƒØ!ê   $æ  4 ŸØ( ¬èˇ ı2∫  ± !∞V , ƒè  √é  é!É Çˇ§& Ñ,  )é Ä!   ß:!»` ‚,
+» < é%8Y ‹Äôè! ` < √Ø8 »Ø@ …Ø †Øé¯!0  ‹è< √è8 »è @@ …è ƒí! ù ìT $ ‡R ¬é( §* Ä!@(& §* ÄP ƒíé †R R& $j ¢òÄôèD      ~ $W § $S π/ $a §òÄôè ƒí  ÷Ø!  Ä$ ¿Ø& $< é π $' $ ¢4 ƒè/ ß: Á,4 ƒè‹Äôè §Ø8 »Ø! ` Z¯!0 $ ÷è ‹è ¿8 »è!∞ ⁄ˇµ& £.d `P R& $®π
+ £2	 `T  ç £2+ `T, ¬é µ2 †V( √éW   R&#   Äc$ˇˇ$
+ dT( √é0Äôè< ¬Ø8 »Ø'ˇ! ¿ ‹è8 »è< ¬è( √é  ç	   êc$ ‡R  çÏ é+ „ Ä  ç  é √é
+  !É  é#„!d 0 ƒèÄ !É     cå  é!b /    ≠. @P R& √éˇˇ%  ˇˇB$  Dê %  °ˇˇc$˚ˇ` B$"   R&ÄÖè  &èhÄôè< √Ø $+˘Pj•$ ‹è ‡< √èÄÖèhÄôè $Xj•$"˘!0`  ‹èÄÖèhÄôè é $hj•$˘!0† ‹è $°$    ‡P R&ÿÄÉè  b¨ R& 1&+TAˇ@T 7é!  !Ë¿l øèh æèd ∑è` ∂è\ µèX ¥èT ≥èP ≤èL ±èH ∞è ‡p Ω' <@≥ú'!‡ô–ˇΩ'  ≤Ø!êÄ  Ñå( æØ!†$ ≥Ø, øØ ±Ø ∞Ø ºØ Ä!ò† pÄôèÓˇ     ‹è; @!à@   Pé| é7 @ $§ é® é †!à  B ñ c0 `!à@ Ë é @‰Äôè¿ #0¬ !(¢ Î˛! @!à@ B ñ ‹è B4B ¶¿ éº é $ †òC B ñ B0 @PD é `R!Ë¿D é$b @T!Ë¿D éh é%òbD Æ s2 `‰ÄôèdÄôèâˆ! @  B ñ…˛! @!à"B ñ B4B ¶!Ë¿, øè! ( æè$ ≥è  ≤è ±è ∞è ‡0 Ω' <ÿ±ú'!‡ôÿˇΩ' ∞Øˇˇê$  æØ$ øØ!† ºØ!  B$  Cê˛ˇ`T B$# D †Äôèj˙ Ñ$ˇˇC$ &  í c$¸ˇÄ  d†!Ë¿$ øè  æè ∞è ‡( Ω' <\±ú'!‡ô»ˇΩ'†Äôè0 æØ, ¥Ø!†( ≥Ø$ ≤Ø  ±Ø ∞Ø ºØ4 øØ!ÄÄ  $!à† !ê¿ J˙!†‡ !ò@ !@  ‹è   $  `†!Ä  c$¸ˇ@ˇˇD$»ÄÉè  bå @T Cå    s¨ Cå˛ˇ`T!`  S¨ bÆ\Äôè `ÆB `¶¥ˇ!   bÆ $8 bÆ Bé
+ @ tÆ  CåH cÆ DåÄ  B$L bÆ!C X dÆ\ bÆ  qÆ4 qÆ!  Ä   C$! DÄ   Ñå!c B$  d¨' C(˜ˇ`TÄ  !Ë¿4 øè!`0 æè, ¥è( ≥è$ ≤è  ±è ∞è ‡8 Ω'‡ˇΩ' p< æØ ¥Ø ≥Ø ≤Ø ±Ø ∞Ø µØ!†!   %
+ % %2 % %˙ˇ%˚ˇ% 	$ $ $ $ $E   $ @*Ph  äåÄ® !®µ  o  ™Æ k J1 @    ` ©¨ n    4  X ©¨2 mP< †¨1 lT Ñ$t £å. `P Ñ$+  < †¨ @     y     Éå$  à £¨# xT Ñ$ Éå j0 @U` ©¨ c0 J4  C t     Éå  å £¨ s     Éå  ê £¨ r     Éå  î £¨ q     Éå  ò £¨ pT Ñ$ Éå `T  f¨ Ñ$  Éå∫ˇ`" j( ‡P!Ë¿ £å `P £å!g  £¨ £å `P £å!g  £¨ £å `P £å!g  £¨ £å `PD £å!g  £¨D £å `P\ £å!g D £¨\ £å `!8g \ ß¨!Ë¿ æè µè ¥è ≥è ≤è ±è ∞è ‡  Ω' <‡≠ú'!‡ôH˛Ω'∞æØ!†®∂Øú≥Øê∞Ø!∞† !ÄÄ !ò¿ ! ¿ ¥øØ¨∑Ø§µØ†¥Øò≤Øî±Ø ºØ!(  !0  •$    ‡!ê@ ÿÄÇè    R¨ A! @ (ÅÇè $  C¨Q !Ä    ≈'$    ‡ÿÄÉè    b¨ A    ?   $  »ÄÇè4 ¬è B0à@    »ÄÇè    På  ¬è bT éé @T éé0 ¬è	 bT é@ ñ! @ B$@ ¶¶$   '     Ìˇ VéPÄÇè <  EåˇΩ'!    $Á$ˇˇ$‡ˇΩ' ¢Ø ∞Ø˙$     Ω' ‡!à@ ÿÄÇè  Q¨ˇˇ$ˇˇ$ "VPÄÇèòÄÇèÄÖèhÄôè  Få $ ≥Ø¯h•$<˜Ò$ ‹è $(ÅÇèL   C¨! @!(   Få£$    ‡PLF<ÿÄÉè  b¨LF<  #éEB$ bP #ñòÄÇèÄÖèhÄôè  Få $êj•$!˜!8` ‹è†   $ $	 b $ "ñ CP 0é
+ $ CP 0é   $ $(ÅÉèÄÖè  b¨òÄÇèhÄôè  Få $∞j•$˜!8`ä   ‹èÄäè <!Ä0 $!  !  ˇˇ$!†  P¿Ø 	$òÄàè‹jJ% $ $ ≠%;  !(   â     †P é  çhÄôè!(@Ñ¬Øà√Øp»Øl…Øt ØxÀØ|ÃØÄÕØ $„ˆ!8` ‹èÄÕè|ÃèxÀèt èl…èp»èà√èÑ¬è é  é ã     `     é+0ç  ¿P!∏Ä  †R é é+0ó   ∏Ü !®   é é! ƒ +0D   Ü  åT  & é ÄP c$!†   & c$, $ñ* d √ˇÄT  éPÄÉèP≈Ø  cåˇˇd$!Ç # $C $„h¬Ø †\√Ø $  T¬Ø $ ¢.T√Ø9 @!∏   †!   \ƒè\¬èh»èT√è#(ˇΩ'!0   g4!¯  ˇˇ$‡ˇΩ' ¢Ø øØ˙$     Ω' ‡ˇˇ$ÿÄÉè  b¨ˇˇ$ˇˇ$ CTƒèòÄÇèÄÖèhÄôè  Få $ ≥Ø¯h•$ÅˆR$ ‹è $(ÅÇè  C¨! @¶$    ‡PPÄÇèÿÄÉè  b¨PÄÇè!    Eå˚$   9 !Ä  !∏@  Ñ4TƒØ 0éd¿Ø!Ä0`¿Ø\  X¿Ø\¬è! ‡#(˚$   ◊ˇ‡PòÄÇèÿÄÉè”ˇ   b¨  éRÂc4 C $ é é`ƒØE  d»ØD CX»èXƒè Ä é é < 5+H 
+®  b0 @PÄÑèÄÇèT«è ∑Ø! @!( TY$aÚ!0†. @ ‹è’ˇ h»è é  Öå!¯  #  $0Ç ¯ı!¯Ê $ f0 c0
+@ ˇˇ•$! $(¢ ˇ< é éˇˇ5$H +0 $D !(ß ˇΩ'! ‡%0√ T«è‡ˇΩ' ≤Ø ¢Ø˙$     Ω' ‡ˇˇ$ÿÄÉè  b¨ˇˇ$ÆˇDh»è ‡X»è™ˇ‚h»èX»è  & %X»Ø, "ñX√è*b ´ˇ@td<Pƒè!ó  U  ÄPƒØ(ÅÇè $  C¨òÄÇèÄÖèhÄôè  Få $k•$ˆı!8` ‹è!  PÄÇè  Eå˚$    ‡! @ÿÄÉè  b¨! @¶$   ±  !Ä  ∞ √'  ú $  `†!Ä  c$¸ˇ@ˇˇD$ ÅôèPƒè∞ ≈'!0  ™˝!8‡T¬Ø¬è& @ ‹è 0é!@  @ı!Ä0!¯  X»Ø  PÄïè $ CT ˇ' é B0 @T ˇ'  §é éˇˇÖ$ éX»è#  $(£ $ É ! !(¢  $$    ‡ ˇ'ÿÄÉè  b¨  &, "ñ*‚‰ˇ@T  é! @¶$    ‡XÄôèÿÄÉè  b¨P«è! ` †Ø!(‡˝∞ ∆'`ƒèd»è!Ä@  ‹èD¨H¨  ¬è #éÆ0 ¬è ÆÆ  é!b  Æ, "ñT√è¸ ÆD é%C  ÄD Æˇˇ$( Æ Çé Æ Çé @  Æ  $  Æ ÉéˇˇB$$C $ Æ Çé4Äôè Æ ÇéoÚ Æ ‹è, Æ é @P  “é Éé  é!b  Æ  “é @†ÄôèD˜ $ ‹è BÆ  ¬é Cå   $  `†!Ä  c$¸ˇ@ˇˇD$  ¬é Cå b¨  ¬é Bå  ¬Æ  ¬éº √è  P¨ÏÄÇè8  Æ  Bå< Æ@ ñ B$ `@ ¶‡ÄÇè p¨  b¨¯ é @8ÅÑè P¨  D¨   $! d   Üå  é B$!(≈   Ö¨ é+ D ˜ˇÄÄ  PÄÇè!    Eå˚$    ‡P!Ë¿ÿÄÉè  b¨!Ë¿¥øè! ∞æè¨∑è®∂è§µè†¥èú≥èò≤èî±èê∞è ‡∏Ω' <ÿ£ú'!‡ô∞ˇΩ'H æØ!†, ±Ø( ∞ØL øØD ∑Ø@ ∂Ø< µØ8 ¥Ø4 ≥Ø0 ≤Ø ºØ!ÄÄ !à† b ¿!  ˇˇ√$!`  B$  Dê˛ˇÄT B$#0F  ∆$ ¬$¬ ¿ #Ë¢ ¢'˜Ω'!ê@  ¥'  ˇˇD$  eê Ñ$  Ö†ˇˇ∆$˚ˇ¿ c$ÄóèÄñè!®  : $: $ˇˇì&  Dí Ä      H¢ $  Dí9 É      @¢  Dê	 Ä! `ˇˇB$ B$  Eê Ñ$¸ˇ†  Ö†  !`/k¬& B$  Eê Ñ$¸ˇ†  Ö†!`  ! `! ¿  Öê˝ˇ† Ü$3kÂ& •$  ¶ê Ñ$¸ˇ¿  Ü†  ˇˇ&!¿  Eê˝ˇ† F$ Ñ$  Öê B$¸ˇ†  E†úÄôè!(‡   √Ø «Ø »Ø!  ˝!0Ä ‹è  √è «è @ »è B&øˇ† R&!  !Ë¿L øèH æèD ∑è@ ∂è< µè8 ¥è4 ≥è0 ≤è, ±è( ∞è ‡P Ω' <–°ú'!‡ô∞ˇΩ'(ÅÇèH æØ!†4 ≥Ø0 ≤Ø, ±ØL øØD ∑Ø@ ∂Ø< µØ8 ¥Ø( ∞Ø ºØ  @¨ˇˇ‚$!ò¿ !êÄ !à† !0‡ !@  c$  dê˛ˇÄT c$#f c,à `P(ÅÇè  !  
+D  B$  Dê¸ˇÄT/ Ñ8 p$
+Ä√  úÄôè! @œ¸!( ~ @ ‹è `tÄÇèú bé
+ @Äôèt fé!  !(@!0F 8L9'Cˇ!8 p @ ‹ètÄÇè  Få ¿Äôè!  !(@8L9'8ˇ!8 e @ ‹è `$ÄÇè‘ bé
+ @Äôèt fé!  !(@!0F 8L9'*ˇ!8 W @ ‹è$ÄÇèƒqTåˇˇÇ&˛ˇB,6 @!ò   Çé $¢r ñ&!®v  $ $ $)   $!ñ   Då áP Få ÉP Få  óT s& Fåˇˇ	&!0¶ˇˇ∆$ )%  %ë ∆$ †  ƒê  #  ˘ˇ§P )%# §  ÄT s& FåúÄôè  √Ø «Ø »Ø! @!( u¸!0¶ ‹è  √è «è! @ »è s& Çé*b÷ˇ@ hr¯ÄÇèÄìè  Få8Ls&!  !(@!»`‰˛!8  @ ‹èÄÜè!  !(@8k∆$!»`€˛!8  @ ‹è(ÅÇè  Cå `ÅÇè $  C¨!  !Ë¿L øèH æèD ∑è@ ∂è< µè8 ¥è4 ≥è0 ≤è, ±è( ∞è ‡P Ω' <Ëûú'!‡ô‡˝Ω'æØ!†∑Ø ≤ØøØ∂ØµØ¥Ø≥Ø¸±Ø¯∞Ø ºØ!∏Ä $≈Ø!ê¿ ,«Ø∏ √'   $  `†!Ä  c$¸ˇ@ˇˇD$4 Bé $
+b PÄÉè  b¨$ÄÉèÃqb¨$ÄÇè–q@¨0¬è  Bå @òÄÉè  b¨L Cé∏ÄÇè bÄÑèÄÖèhÄôè $∂ÛXk•$ ‹è $°$    ‡ÄÑèÿÄÉè  b¨TÄôè,≈è  ¿Ø«ÒÑkÑ$ $
+ X _&‹√Ø „èˇˇ$  b ‹è∏$    ‡! @ ÿÄÇè  D¨ˇˇ$—$    ‡!(@ ÿÄÇè  E¨ˇˇ$œ$    ‡!0@ ÿÄÇè  F¨ˇˇ$“$    ‡ÿÄÉè  b¨ˇˇ$ ÖT ‚è ¬$ÄÇè ‚èˇˇ$ CP$ÄÇèd Cé C$ÄÇèl Cét Bé b$ÄÇèÄÑèTÄôè,≈èêkÑ$èÒ p@¨ ‹è,≈èƒÄÉèÄÑèTÄôè  b¨áÒúkÑ$ ‹ètÄÉè    b¨Äêè $ pC¨`l&0Åôè,≈èìÒ!   ‹èˇˇ& B$  Cê˛ˇ`T B$ P$ BêÙˇ@0ÅôèƒÄÇè  @¨tÄÇè  @¨ $‹¬ØÃÄÉè∞ÄÇè V&  C¨ ƒé8ÄÉè|ÄÇè $  C¨!Ä   !   ≈ c$ Bå# Ç   ∏ ƒØ  B$( S& fé+0f ıˇ¿T  FåÄÉè $å)y$aı√Ø‹√è ‹è c4!®@  —é‰¿Ø‡¿Ø∏ –'!†  ÿ¿ØÏ√Ø¥  Ë“Ø  "éRÂÑ4 Dÿ»è %é &é‡≈Ø‰∆Øÿ»è	   $ $ C     #é  é!b o  ÿ¬Øn DT  "é  é $é Åôè` &! ‰ !(@◊˙!0†∏ é" @ ‹è ﬂé  !†   $ ET î& ‚è B0 @T î&PÄÜè  é  ƒå „èˇˇÖ$!b  ‚è$(£ #  $ É !(¢  $$    ‡ î&ÿÄàè  ≠  ˇ' bé+Ç„ˇ@T  ‚èòÄÇè  é  Då 'é "éXÄôè!0@!8ß S˙ ¢Ø ‹è!Ä@ »ÄÉèÄÖè  bå √é $ C¨ cé8 D¨¸ C¨å)π$˚Ù $ ‹èÿƒè»ÄàèÏÄÜè  ç  ¬Ø  ¬¨  C¨4 Æ@ ñÏ≈è Ñ$@ ¶l éD Æ Ä< Æ8 bå $ F‡Äàè É¨  à¨¯ bå @8ÅÖè C¨  E¨   $!(Ö   ßå  få B$!0Ê   ¶¨ eå+(E ˜ˇ†Ä(   "é $ FT  #é $é  é\Äôè! Ç Ù˘ ‰Æ ‹èˇˇD$¯Äàè!      ≠
+Ö  Ñ$  Öê¸ˇ†T/ •8 bT  `†  #é $ bT î& "é @Ë“è Æ "é @  Æ  $  Æ #éˇˇB$$C $ Æ "éÄÉè Æ "é Æ $, Æ    b¨  1& bé+ÇJˇ@td<Ë“è‡¬è‰√èÆ é @Æ  é!C  ÆÄÑèTÄôè,≈è{¨kÑ$ ‹è+† »ÄÇè$ƒè  Bå¥Äôè ¢Æ $  ¢Æ<ÄÇè §Æ ¢ÆêÄÇè{Û  U¨ ‹èƒÄÇè  Cå `T: $Ç  ‹ƒè  $	 $  bê˛ˇFP c$¸ˇEP c$˙ˇDP c$l  ‹¬è  í
+ @!à   U: $ V	 $    $ˆˇET &	 $$ÄÜè   ¢ pƒå Äˇˇb$ B$  Eê/ $ ®    ˚ˇ† B$  4ÅôèD @T  ¢4Åôèÿ≈è!8` √Ø ¥Øw˝!0   ‹è @√è ÄhÄôèÄÖè $ƒk•$Ú!0` 0   ‹èÄÖè  fé $ÿk•$Ú!8`  ‹è $°$   % ‡P  ¢ÿÄÉè!    b¨‡ƒè ÄD D¨@ Dî $ ÖT  ¢  géˇˇf$ˇˇÁ$ Á$  Âê ∆$ †  ƒê  #  ˘ˇ§P Á$# §  ÄP  ¢ GåÄÖè  BåhÄôè ¢Ø $¯k•$ﬂÒ!0`  ‹è  ¢  !  c$  bê˛ˇUP c$˚ˇV	 $ F    ¯ˇ  c$  »' B4òÄìè: $  $ÿ»Ø‡¬Ø  bêåˇ@!Ä` ‹ƒè$Äñè»ÄÇè  √' Ñ4‘q¿Æ  Qå‡√Ø‰ƒØk  ÿ“Ø‘q¬é 3é B$b  ‘q¬Æ` ET s&t "é pé!Äˇˇ& B$  Cê˛ˇ`T B$ P/ $ˇˇB$  Cê˚ˇfP  @† P/ $ˇˇB$  Cê˚ˇh&P + !C ÄÉèˇˇB$Gke$ B$  Dê •$ Ä  £ê  # ˘ˇÉ B$#É ; `P s&4Åôè‡≈è ¥Ø!   !0 Á¸!8  ‹è @!ê@  ÄhÄôèÄÖè $ƒk•$Ò!0 '   ‹èòÄàèÄÖè  ç $ÿk•$vÒ!8  ‹è $°$    ‡PP #éÿÄÉè  b¨P #éˇΩ'‰ƒè ¢' R¨  C¨P "Æ ÄD DÆ@ Bñ $ ET s&ÄÖè  Bé GéhÄôè ¢Ø $¯k•$XÒ!0  ‹è s&  béùˇ@ $ 1éïˇ $Äêè$Åôè2Òÿ“è ‹è‘qé†ÄôèˇˇÑ$‘qÆÛÄ   ‹è!   $ÄÉèÿqb¨»ÄÉè  cå   cå!(E   £¨ cå Ñ$˚ˇ`TÄ( »ÄÉè$Äâè  cå(   då!† Ä( !(E   ¶å˚ˇƒ e$  ‘q&ç!0F   «å  P Êå U  ∆å	  #0£ ÄP ˇˇ%Ä@ !@H   ç!PJ   H≠ˇˇ∆$˜ˇ¿!@√ Ä0 !0F   «¨   c$Ïˇ¿T »å •$‘q&ç+0¶ „ˇ¿Ä0  ÑåŸˇÄT!  L ‡$∆è< Ré QéXÄôè ‰é Áé!(¿ !à—  †Øy¯` Ê& ‹è!Ä@  Då$ ≈'
+$    ‡ÿÄÉè    b¨ B, Cñ$ ¬è ÆÆ4 ¬èÆ, Cñtd<¸ Æ Æ!  	  RÂÑ4 § B$ "éÆ "é  Æ  1&*(C ˆˇ†T  %é $8 Æ@ ñÄôè B$@ ¶ÏÄÇè  —è  Båå)9'	  < Æ˛Ú $  √è ‹è "Æ bå   C¨ˆÚ $ ‹è  ¬Ø  ¬è  P¨ $D Æ $B ¶ Ä$ÄÇè  ¬è  Cå¯ÄÇè gå  Fåˇˇ¬$ B$  Dê˛ˇÄT B$ÄÖè#0F   båhÄôè ∆$ ¢Ø $¯k•$ß!0Ê  ‹è!   °$    ‡P$ÄÇèÿÄÉè  b¨$ÄÇè@ÄôèbÙ‹qQê ‹è!Ä@ »ÄÇè‹»è  DååÄôè - ‹èÏÄÇè  Då ÄpÄôèé˜‹≈è @ ‹èˇˇ$°$    ‡P»ÄÇèÿÄÉè  b¨»ÄÇè    Rå @P RéÅôèvÒ! @ ‹è Ré¯ˇ@VBé	  ºÄôèÄÇè  Bå @îÄÇè  Cå c$  C¨ºÄôèÌÌ!   ‹è$ÄÇè‹qBê @ÏÄÇè p&ª$   	 ‡ÏÄÇè $°$    ‡PÏÄÇèÿÄÉè  b¨ÏÄÇèÄÑè‹Äôè  EålÑ$ †Ø!0  .Ô!8   @ ‹è,√è  C¨»ÄÇè $  PåPÄíè $'  ÿÄïè   !à   ST 1& ‚è C0 `T 1&∏ é `P 1&  Eé „è  é#8 ˇˇ•$! d $(£  F0 „è B0!@  @Ç+0 $ ‰ !(£ %0» $    ‡T  ¢Æ 1&  ˇ'¸ é+"ﬁˇ@T  ‚è éŸˇ V éêÄÇè $  Bå<ÄôèÏ C¨ ‹è»ÄÇèÄôè  Bå9'‡ Då‰ EåﬁÎ  Få ‹è$ÄÇè$Äëè  ‘qPåˇˇ&Ä !b   DåB Çî C0 `P Ä¨ B4B Ç§ê Çå @Åôè  ôå!»Y 	¯ ƒØ ‹èƒèÅôèÕÌ     ‹èˇˇ&Áˇ ÿq#éÏÄêèÄÑè  é‹Äôè †ØlÑ$!0  ƒÓ $ ‹è  éÑÄÉèÄÑè‹Äôè  b¨lÑ$ †Ø!0  πÓ $ ‹è  éËÄÉèÄÑè‹Äôè  b¨$lÑ$ †Ø!0  ÆÓ $ ‹è  é`ÄÉèÄÑè‹Äôè  b¨,lÑ$ †Ø!0  £Ó $ ‹è  éàÄÉèÄÑè‹Äôè  b¨4lÑ$!0   $òÓ †Ø ‹èlÄÉè<Äôè  b¨êÄÇè  BåùÎ @¨!Ë¿øèæè∑è∂èµè¥è≥è ≤è¸±è¯∞è ‡ Ω' <‹çú'!‡ô(˛Ω'∏∞Ø ê$¸ˇé–æØÄ ! B$¿≤Ø!†‘øØÃµØ»¥Øƒ≥Øº±Ø ºØ!ê@   Cå˛ˇ` B$ˇˇ$x √Ø    ∆' ÄP B$¿ !√ ˇˇc$ˇˇE$ $ •$  ßê c$ˇˇÑ$˚ˇÄ  g† B$  Cåˇ`T d,\ ¬è @\ ≈èÄÇè cB$     #‚\ ¬Ø\ ≈è †ˇ < ¢åˇ c$$C  < B$ b!   LF<  £åEB$	 bÄÉè!   °$    ‡PÄÉèÿÄÉè  b¨ÄÉèò ƒ'!£    $  Ä†!¿  Ñ$¸ˇ@ˇˇF$ p<ò ≈Ø† √Ø ì$
+ ë$ ü$2 ô$ ò$˙ˇè$˚ˇé$ $  Õ' $ $ 
+$ 	$C   $ ‡*8D  T$ gåÄ† !†¥ Lx áÆ H Á0 ‡    X∆Ø K    1  P∆Ø/ JP4¿Ø- Il¬è, @P c$)  4¿Ø ‡     O     bå"  Ä¬Ø! NT c$ bå B0 @TX∆Ø   c$ S     bå  Ñ¬Ø Q     bå  à¬Ø _     bå  å¬Ø Y     bå  ê¬Ø XT c$ bå @T  @¨ c$  båºˇ@" G(  †ˇˇ$¬è @P¬è!E ¬Ø¬è @P¬è!E ¬Ø¬è @P¬è!E ¬Ø¬è @P<¬è!E ¬Ø<¬è @PT¬è!E <¬ØT¬è @Pˇˇ$!E T¬Øˇˇ$¿ ¬ØÄÑ'   $!É   gåò ∆è B$!0Ê   f¨à√è+0C ˜ˇ¿TÄ Ä !É Ñƒè¬è 1 !¬ å∆èÚˇ4# ƒ  $   $ Dî ÄP Jå àP Jå Dê Ñ0 á      då Jå
+ äò  è  ! D ÜT Jå Dê ÄT c$    jå Jåò ƒè! D  d¨ c$ B$!  ‚ˇÄˇˇâ$ÿÄïè!0   $ ¿Ä¬èT—è   ﬂè<—è@ﬂè0  R ∆$* ¿!ò  ( @¿ #¯‚%  !à"  `  "éƒè 9 ! ‰  áå  !8ß !8  !   ˇ 1  Q s& U $	 Ä!E Ñƒè+d  `P s&  Cå!8g 	    G¨  Cå!e     C¨°$    ‡T  ¢Æ s& 1&+⁄ˇ@T (é ∆$ $∆ˇ¬$ÄÇè¸ˇ&®ÄôèºqC¨ ∞Øò ƒ'  ∆'r˙!8@ ‹è!Ë¿l ¬è$ÄÉè‘øè–æèÃµè»¥èƒ≥è¿≤èº±è∏∞è¿qb¨ ‡ÿΩ'!ÄÿˇΩ' 9' <dàú'!‡ô!‡  ºØ$ ØØ §Ø •Ø ¶Ø ßØ!  !(` ,Åôè∂Ú      ºè$ øè §è •è ¶è ßè( Ω'!»@       ÿˇΩ' äè 9' <Ùáú'!‡ô$ ØØ §Ø •Ø ¶Ø ßØ! @¿( §Äôè\Ú      ºè$ øè §è •è ¶è ßè( Ω'!»@               overflow
+   (null)  %s: cannot apply additional memory protection after relocation  ld.so-  1.7.0   /etc/ld.so.cache    %s:%i: can't map '%s'
+  %s: cache '%s' is corrupt
+  %s: mmap of a spare page failed!
+   unknown error   %s: can't resolve symbol '%s' in lib '%s'.
+ %s: can't resolve symbol '%s'
+  cannot create TLS data structures: ABORT
+   %s:%d: Out of memory!!!
+    map->l_tls_modid <= dtv[-1].counter FAILED!
+    cannot allocate memory in static TLS block  
+%s:    symbol '%s':    can't handle reloc type %x in lib '%s'
+ %s: '%s' is not an ELF file
+    %s: '%s' is not an ELF executable for MIPS
+ %s: '%s' has more than one dynamic section
+ %s: '%s' is missing a dynamic section
+  .   /   /lib:/usr/lib   ld-uClibc.so.0  Standalone execution is not supported yet
+  LD_BIND_NOW LD_PRELOAD  LD_LIBRARY_PATH LD_TRACE_LOADED_OBJECTS 	%s => not found
+   %s: can't load library '%s'
+    	%s => %s (%x)
+ __environ   malloc  calloc  realloc free    memalign    allocate_and_init               LD_PRELOAD LD_LIBRARY_PATH LD_DEBUG LD_DEBUG_OUTPUT LD_TRACE_LOADED_OBJECTS TMPDIR                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          t                 Hk                     Ä,      ¨q    †.  \  7  ú  ‘6  p  ‰/              úq @  ¥>  8>  Ñq   »   àq –<  åq xq tq pq §q ®q î  †q lq p 0B  ((  º1  (Q  |q hq |%  –  –  dq êq ∞q ‘  ê-  `q òq <  †g   9  Äq ¥q \q Xq îq †  @    »*  ¥$  T  ,  Tq Pq ¯)  \   Lq º2  †  @N  h  –                              î     @¸ˇˇˇ                 ‘     @¸ˇˇˇ                     ¿¸ˇˇˇ        0         p     @¸ˇˇˇ                 å     @¸ˇˇˇ                 T    ˇ@¸ˇˇˇ        8         T     @¸ˇˇˇ                 ú     @¸ˇˇˇ                 \     @¸ˇˇˇ                 ê     @¸ˇˇˇ                 –     @¸ˇˇˇ                      @¸ˇˇˇ                 ,     @¸ˇˇˇ                 l     @¸ˇˇˇ                 †    ¿¸ˇˇˇ        (              @¸ˇˇˇ                 @     @¸ˇˇˇ                 †     @¸ˇˇˇ                      @¸ˇˇˇ                 `    ¿¸ˇˇˇ        8         t    ¿¸ˇˇˇ        0         <    ˇ¿¸ˇˇˇ        `         î    ˇ¿¸ˇˇˇ        X         \      @¸ˇˇˇ                 »     ˇ@¸ˇˇˇ        P         ¥$    ¿¸ˇˇˇ        (         |%    ¿¸ˇˇˇ        ¿         ((    ¿¸ˇˇˇ        (         å)    ¿¸ˇˇˇ        (         ¯)    ¿¸ˇˇˇ        (         »*    ˇ¿¸ˇˇˇ        X         ê-    ¿¸ˇˇˇ        (         $.    ¿¸ˇˇˇ        (         †.    ¿¸ˇˇˇ        0         |/     ¿¸ˇˇˇ                  ‰/    ¿¸ˇˇˇ        (         81     ¿¸ˇˇˇ                  º1    ¿¸ˇˇˇ        8         º2    ?¿¸ˇˇˇ        @         ƒ3    ¿¸ˇˇˇ        0         5    ¿¸ˇˇˇ        8         ‘6    ¿¸ˇˇˇ        0         7    ¿¸ˇˇˇ        (          9    ˇ¿¸ˇˇˇ        p         –<    ¿¸ˇˇˇ        0         8>    ¿¸ˇˇˇ        (         ¥>    ¿¸ˇˇˇ        8         @    ?@¸ˇˇˇ                  0B    ˇ¿¸ˇˇˇ        ∏        8L    ˇ¿¸ˇˇˇ        P         @N    ˇ¿¸ˇˇˇ        P         (Q    ˇ¿¸ˇˇˇ                 4b    ?¿¸ˇˇˇ        ÿ        †g                  (         h                  (         GCC: (Broadcom stbgcc-4.5.3-1.3) 4.5.3 A   gnu     .shstrtab .reginfo .dynamic .hash .dynsym .dynstr .rel.dyn .text .rodata .dtors .data .got .sbss .bss .pdr .comment .gnu.attributes .mdebug.abi32                                                p                                 ,  ,  –                         ¸  ¸  \               #         X  X                 +         x	  x	  ?                 3   	      ∏  ∏                  <         –  –  ∞Y                 B         Äh  Äh  @                 J         ¸o ¸o                    Q          p  p                     W         p  p  ,                \        Lq Lq  1                  b         Äq Lq  p                  g              Lq                    l      0       Lx  '                 u   ıˇˇo        sx                    Ö             Éx                                   Éx  ì                  

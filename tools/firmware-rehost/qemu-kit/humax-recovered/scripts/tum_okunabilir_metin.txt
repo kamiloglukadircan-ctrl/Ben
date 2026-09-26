@@ -1,0 +1,3046 @@
+Copyright (C) 1998-2009 Erik Andersen, Rob Landley, Denys Vlasenko
+and others. Licensed under GPLv2.
+See source distribution for full notice.
+
+Usage: busybox [function] [arguments]...
+   or: busybox --list[-full]
+   or: function [arguments]...
+
+	BusyBox is a multi-call binary that combines many common Unix
+	utilities into a single executable.  Most people will create a
+	link to busybox for each function they wish to use and BusyBox
+	will act like whatever it was invoked as.
+
+Currently defined functions:
+
+
+=====BLOCK=====
+
+
+The number of cylinders for this disk is set to %u.
+There is nothing wrong with that, but this is larger than 1024,
+and could in certain setups cause problems with:
+1) software that runs at boot time (e.g., old versions of LILO)
+2) booting and partitioning software from other OSs
+   (e.g., DOS FDISK, OS/2 FDISK)
+
+
+=====BLOCK=====
+
+	Command being timed: "%C"
+	User time (seconds): %U
+	System time (seconds): %S
+	Percent of CPU this job got: %P
+	Elapsed (wall clock) time (h:mm:ss or m:ss): %E
+	Average shared text size (kbytes): %X
+	Average unshared data size (kbytes): %D
+	Average stack size (kbytes): %p
+	Average total size (kbytes): %K
+	Maximum resident set size (kbytes): %M
+	Average resident set size (kbytes): %t
+	Major (requiring I/O) page faults: %F
+	Minor (reclaiming a frame) page faults: %R
+	Voluntary context switches: %w
+	Involuntary context switches: %c
+	Swaps: %W
+	File system inputs: %I
+	File system outputs: %O
+	Socket messages sent: %s
+	Socket messages received: %r
+	Signals delivered: %k
+	Page size (bytes): %Z
+	Exit status: %x
+
+=====BLOCK=====
+
+Qaf_ZAam_ETar_AEar_BHar_DZar_EGar_INar_IQar_JOar_KWar_LBar_LYar_MAar_OMar_QAar_SAar_SDar_SYar_TNar_YEaz_AZbe_BYbg_BGbn_BDbn_INbr_FRbs_BAca_EScaeEScs_CZcy_GBda_DKde_ATdeeATde_BEdeeBEde_CHde_DEdeeDEde_LUdeeLUel_GRen_AUen_BWen_CAen_DKen_GBen_HKen_IEeneIEen_INen_NZen_PHen_SGen_USen_ZAen_ZWeo_EOes_ARes_BOes_CLes_COes_CRes_DOes_ECes_ESeseESes_GTes_HNes_MXes_NIes_PAes_PEes_PRes_PYes_SVes_USes_UYes_VEet_EEeu_ESeueESfa_IRfi_FIfieFIfo_FOfr_BEfreBEfr_CAfr_CHfr_FRfreFRfr_LUfreLUga_IEgaeIEgd_GBgl_ESgleESgv_GBhe_ILhi_INhr_HRhu_HUhy_AMid_IDis_ISit_CHit_ITiteITiw_ILja_JPka_GEkl_GLko_KRkw_GBlt_LTlv_LVmi_NZmk_MKmr_INms_MYmt_MTnl_BEnleBEnl_NLnleNLnn_NOno_NOoc_FRpl_PLpt_BRpt_PTptePTro_ROru_RUru_UAse_NOsk_SKsl_SIsq_ALsr_YUsrcYUsv_FIsveFIsv_SEta_INte_INtg_TJth_THti_ERti_ETtl_PHtr_TRtt_RUuk_UAur_PKuz_UZvi_VNwa_BEwaeBEyi_USzh_CNzh_HKzh_SGzh_TW
+
+=====BLOCK=====
+
+Address family not supported by proto# file <name> <location> <mode> <uid> <gid>
+# dir <name> <mode> <uid> <gid>
+# nod <name> <mode> <uid> <gid> <dev_type> <maj> <min>
+# slink <name> <target> <mode> <uid> <gid>
+# pipe <name> <mode> <uid> <gid>
+# sock <name> <mode> <uid> <gid>
+#
+# <name>      name of the file/dir/nod/etc in the archive
+# <location>  location of the file in the current filesystem
+# <target>    link target
+# <mode>      mode/permissions of the file
+# <uid>       user id (0=root)
+# <gid>       group id (0=root)
+# <dev_type>  device type (b=block, c=character)
+# <maj>       major number of nod
+# <min>       minor number of nod
+
+
+dir /dev 755 0 0
+
+nod /dev/mem 640 0 0 c 1 1
+dir /dev/pts 755 0 0
+nod /dev/ram 640 0 0 b 1 1
+dir /dev/shm 755 0 0
+nod /dev/rtc 640 0 0 c 10 135
+nod /dev/tty 666 0 0 c 5 0
+nod /dev/kmem 640 0 0 c 1 2
+nod /dev/port 666 0 0 c 1 4
+nod /dev/zero 666 0 0 c 1 5
+nod /dev/full 666 0 0 c 1 7
+nod /dev/kmsg 640 0 0 c 1 11
+nod /dev/console 666 0 0 c 5 1
+nod /dev/random 666 0 0 c 1 8
+nod /dev/urandom 666 0 0 c 1 9
+
+nod /dev/null 666 0 0 c 1 3
+nod /dev/ptmx 666 0 0 c 5 2
+nod /dev/ram0 640 0 0 b 1 0
+nod /dev/ram1 640 0 0 b 1 1
+nod /dev/ram2 640 0 0 b 1 2
+nod /dev/ram3 640 0 0 b 1 3
+
+nod /dev/hda 640 0 0 b 3 0
+nod /dev/hda1 640 0 0 b 3 1
+nod /dev/hda2 640 0 0 b 3 2
+nod /dev/hda3 640 0 0 b 3 3
+nod /dev/hda4 640 0 0 b 3 4
+nod /dev/hda5 640 0 0 b 3 5
+nod /dev/hda6 640 0 0 b 3 6
+nod /dev/hda7 640 0 0 b 3 7
+nod /dev/hda8 640 0 0 b 3 8
+
+nod /dev/sda 640 0 0 b 8 0
+nod /dev/sda1 640 0 0 b 8 1
+nod /dev/sda2 640 0 0 b 8 2
+nod /dev/sda3 640 0 0 b 8 3
+nod /dev/sda4 640 0 0 b 8 4
+nod /dev/sda5 640 0 0 b 8 5
+nod /dev/sda6 640 0 0 b 8 6
+nod /dev/sda7 640 0 0 b 8 7
+nod /dev/sda8 640 0 0 b 8 8
+nod /dev/sdb 640 0 0 b 8 16
+nod /dev/sdb1 640 0 0 b 8 17
+nod /dev/sdb2 640 0 0 b 8 18
+nod /dev/sdb3 640 0 0 b 8 19
+nod /dev/sdb4 640 0 0 b 8 20
+nod /dev/sdb5 640 0 0 b 8 21
+nod /dev/sdb6 640 0 0 b 8 22
+nod /dev/sdb7 640 0 0 b 8 23
+nod /dev/sdb8 640 0 0 b 8 24
+nod /dev/sdc 640 0 0 b 8 32
+nod /dev/sdc1 640 0 0 b 8 33
+nod /dev/sdc2 640 0 0 b 8 34
+nod /dev/sdc3 640 0 0 b 8 35
+nod /dev/sdc4 640 0 0 b 8 36
+nod /dev/sdc5 640 0 0 b 8 37
+nod /dev/sdc6 640 0 0 b 8 38
+nod /dev/sdc7 640 0 0 b 8 39
+nod /dev/sdc8 640 0 0 b 8 40
+nod /dev/sdd 640 0 0 b 8 48
+nod /dev/sdd1 640 0 0 b 8 49
+nod /dev/sdd2 640 0 0 b 8 50
+nod /dev/sdd3 640 0 0 b 8 51
+nod /dev/sdd4 640 0 0 b 8 52
+nod /dev/sdd5 640 0 0 b 8 53
+nod /dev/sdd6 640 0 0 b 8 54
+nod /dev/sdd7 640 0 0 b 8 55
+nod /dev/sdd8 640 0 0 b 8 56
+nod /dev/sde 640 0 0 b 8 64
+nod /dev/sde1 640 0 0 b 8 65
+nod /dev/sde2 640 0 0 b 8 66
+nod /dev/sde3 640 0 0 b 8 67
+nod /dev/sde4 640 0 0 b 8 68
+nod /dev/sde5 640 0 0 b 8 69
+nod /dev/sde6 640 0 0 b 8 70
+nod /dev/sde7 640 0 0 b 8 71
+nod /dev/sde8 640 0 0 b 8 72
+nod /dev/sdf 640 0 0 b 8 80
+nod /dev/sdf1 640 0 0 b 8 81
+nod /dev/sdf2 640 0 0 b 8 82
+nod /dev/sdf3 640 0 0 b 8 83
+nod /dev/sdf4 640 0 0 b 8 84
+nod /dev/sdf5 640 0 0 b 8 85
+nod /dev/sdf6 640 0 0 b 8 86
+nod /dev/sdf7 640 0 0 b 8 87
+nod /dev/sdf8 640 0 0 b 8 88
+nod /dev/sdg 640 0 0 b 8 96
+nod /dev/sdg1 640 0 0 b 8 97
+nod /dev/sdg2 640 0 0 b 8 98
+nod /dev/sdg3 640 0 0 b 8 99
+nod /dev/sdg4 640 0 0 b 8 100
+nod /dev/sdg5 640 0 0 b 8 101
+nod /dev/sdg6 640 0 0 b 8 102
+nod /dev/sdg7 640 0 0 b 8 103
+nod /dev/sdg8 640 0 0 b 8 104
+nod /dev/sdh 640 0 0 b 8 112
+nod /dev/sdh1 640 0 0 b 8 113
+nod /dev/sdh2 640 0 0 b 8 114
+nod /dev/sdh3 640 0 0 b 8 115
+nod /dev/sdh4 640 0 0 b 8 116
+nod /dev/sdh5 640 0 0 b 8 117
+nod /dev/sdh6 640 0 0 b 8 118
+nod /dev/sdh7 640 0 0 b 8 119
+nod /dev/sdh8 640 0 0 b 8 120
+nod /dev/sdi 640 0 0 b 8 128
+nod /dev/sdi1 640 0 0 b 8 129
+nod /dev/sdi2 640 0 0 b 8 130
+nod /dev/sdi3 640 0 0 b 8 131
+nod /dev/sdi4 640 0 0 b 8 132
+nod /dev/sdi5 640 0 0 b 8 133
+nod /dev/sdi6 640 0 0 b 8 134
+nod /dev/sdi7 640 0 0 b 8 135
+nod /dev/sdi8 640 0 0 b 8 136
+nod /dev/hmxsdcon 640 0 0 c 241 0
+
+nod /dev/tty0 666 0 0 c 4 0
+nod /dev/tty1 666 0 0 c 4 1
+#nod /dev/tty2 666 0 0 c 4 2
+#nod /dev/tty3 666 0 0 c 4 3
+#nod /dev/tty4 666 0 0 c 4 4
+#nod /dev/tty5 666 0 0 c 4 5
+#nod /dev/tty6 666 0 0 c 4 6
+#nod /dev/tty7 666 0 0 c 4 7
+
+nod /dev/loop0 640 0 0 b 7 0
+#nod /dev/loop1 640 0 0 b 7 1
+#nod /dev/loop2 640 0 0 b 7 2
+#nod /dev/loop3 640 0 0 b 7 3
+#nod /dev/loop4 640 0 0 b 7 4
+#nod /dev/loop5 640 0 0 b 7 5
+#nod /dev/loop6 640 0 0 b 7 6
+#nod /dev/loop7 640 0 0 b 7 7
+#nod /dev/loop8 640 0 0 b 7 8
+
+nod /dev/ptyp0 666 0 0 c 2 0
+nod /dev/ptyp1 666 0 0 c 2 1
+nod /dev/ptyp2 666 0 0 c 2 2
+nod /dev/ptyp3 666 0 0 c 2 3
+nod /dev/ptyp4 666 0 0 c 2 4
+nod /dev/ptyp5 666 0 0 c 2 5
+nod /dev/ptyp6 666 0 0 c 2 6
+nod /dev/ptyp7 666 0 0 c 2 7
+nod /dev/ptyp8 666 0 0 c 2 8
+nod /dev/ptyp9 666 0 0 c 2 9
+
+#nod /dev/ttyp0 666 0 0 c 3 0
+#nod /dev/ttyp1 666 0 0 c 3 1
+#nod /dev/ttyp2 666 0 0 c 3 2
+#nod /dev/ttyp3 666 0 0 c 3 3
+#nod /dev/ttyp4 666 0 0 c 3 4
+#nod /dev/ttyp5 666 0 0 c 3 5
+#nod /dev/ttyp6 666 0 0 c 3 6
+#nod /dev/ttyp7 666 0 0 c 3 7
+#nod /dev/ttyp8 666 0 0 c 3 8
+
+#nod /dev/ttyP0 666 0 0 c 57 0
+#nod /dev/ttyP1 666 0 0 c 57 1
+#nod /dev/ttyP2 666 0 0 c 57 2
+#nod /dev/ttyP3 666 0 0 c 57 3
+
+nod /dev/ttyS0 666 0 0 c 4 64
+nod /dev/ttyS1 666 0 0 c 4 65
+nod /dev/ttyS2 666 0 0 c 4 66
+nod /dev/ttyS3 666 0 0 c 4 67
+nod /dev/ttyS64 666 0 0 c 4 128
+
+nod /dev/mtd0 640 0 0 c 90 0
+nod /dev/mtd1 640 0 0 c 90 2
+nod /dev/mtd2 640 0 0 c 90 4
+nod /dev/mtd3 640 0 0 c 90 6
+nod /dev/mtd4 640 0 0 c 90 8
+nod /dev/mtd5 640 0 0 c 90 10
+nod /dev/mtd6 640 0 0 c 90 12
+nod /dev/mtd7 640 0 0 c 90 14
+nod /dev/mtd8 640 0 0 c 90 16
+nod /dev/mtd9 640 0 0 c 90 18
+nod /dev/mtd10 640 0 0 c 90 20
+nod /dev/mtd11 640 0 0 c 90 22
+nod /dev/mtd12 640 0 0 c 90 24
+nod /dev/mtd13 640 0 0 c 90 26
+nod /dev/mtd14 640 0 0 c 90 28
+nod /dev/mtd15 640 0 0 c 90 30
+
+nod /dev/mtdblock0 640 0 0 b 31 0
+nod /dev/mtdblock1 640 0 0 b 31 1
+nod /dev/mtdblock2 640 0 0 b 31 2
+nod /dev/mtdblock3 640 0 0 b 31 3
+nod /dev/mtdblock4 640 0 0 b 31 4
+nod /dev/mtdblock5 640 0 0 b 31 5
+nod /dev/mtdblock6 640 0 0 b 31 6
+nod /dev/mtdblock7 640 0 0 b 31 7
+nod /dev/mtdblock8 640 0 0 b 31 8
+nod /dev/mtdblock9 640 0 0 b 31 9
+nod /dev/mtdblock10 640 0 0 b 31 10
+nod /dev/mtdblock11 640 0 0 b 31 11
+nod /dev/mtdblock12 640 0 0 b 31 12
+nod /dev/mtdblock13 640 0 0 b 31 13
+nod /dev/mtdblock14 640 0 0 b 31 14
+nod /dev/mtdblock15 640 0 0 b 31 15
+
+# broadcom device nod
+# settop api proxy
+#nod /dev/bcmsettopapi 666 0 0 c 204 0
+nod /dev/brcm0 666 0 0 c 30 0
+nod /dev/bcmfpga 666 0 0 c 38 0
+
+# for 7445 URSR 13.4 linux 3.8
+nod /dev/brcm_cma0 666 0 0 c 254 0
+
+# SUPPORT USB to Serial device
+nod /dev/ttyUSB0 666 0 0 c 188 0
+
+# input device
+dir /dev/input 755 0 0
+nod /dev/input/event0 666 0 0 c 13 64
+nod /dev/input/event1 666 0 0 c 13 65
+nod /dev/input/event2 666 0 0 c 13 66
+nod /dev/input/event3 666 0 0 c 13 67
+nod /dev/input/event4 666 0 0 c 13 68
+nod /dev/input/event5 666 0 0 c 13 69
+nod /dev/input/event6 666 0 0 c 13 70
+nod /dev/input/event7 666 0 0 c 13 71
+nod /dev/input/event8 666 0 0 c 13 72
+nod /dev/input/event9 666 0 0 c 13 73
+
+
+
+
+
+#nod /dev/bcmgraphics_0 666 0 0 c 30 0
+#nod /dev/bcmgraphics_1 666 0 0 c 30 1
+#nod /dev/bcmrecord_0 666 0 0 c 30 2
+#nod /dev/bcmrecord_1 666 0 0 c 30 3
+#nod /dev/bcmrecord_2 666 0 0 c 30 3
+#nod /dev/bcmrecord_3 666 0 0 c 30 3
+#nod /dev/bcmindex_0 666 0 0 c 30 5
+#nod /dev/bcmindex_1 666 0 0 c 30 6
+#nod /dev/bcmindex_2 666 0 0 c 30 6
+#nod /dev/bcmindex_3 666 0 0 c 30 6
+#nod /dev/bcmplay_0 666 0 0 c 30 8
+#nod /dev/bcmplay_1 666 0 0 c 30 9
+#nod /dev/bcmpcm_0 666 0 0 c 30 12
+#nod /dev/bcmpcm_1 666 0 0 c 30 13
+#nod /dev/bcmpcmcapture_0 666 0 0 c 30 14
+#nod /dev/bcmpcmcapture_1 666 0 0 c 30 15
+#nod /dev/bcmmessage 666 0 0 c 30 18
+#nod /dev/bcmtransport 666 0 0 c 30 19
+#nod /dev/bcmdma 666 0 0 c 30 20
+#nod /dev/bcmplayes_0 666 0 0 c 30 24
+#nod /dev/bcmplayes_1 666 0 0 c 30 25
+#nod /dev/bcmplayes_2 666 0 0 c 30 26
+#nod /dev/bcmplayes_3 666 0 0 c 30 27
+#nod /dev/bcmvbi 666 0 0 c 30 30
+#nod /dev/bcmoutput_0 666 0 0 c 30 33
+#nod /dev/bcmoutput_1 666 0 0 c 30 34
+#nod /dev/bcmio 666 0 0 c 30 35
+#nod /dev/bcmpaxel 666 0 0 c 30 36
+
+# frontend
+#nod /dev/bcmleds 666 0 0 c 31 0
+#nod /dev/bcmkeypad 666 0 0 c 31 1
+#nod /dev/bcmsejinkbd 666 0 0 c 31 3
+#nod /dev/bcmremote_a 666 0 0 c 31 14
+#nod /dev/bcmremote_b 666 0 0 c 31 15
+#nod /dev/bcmsejinrem 666 0 0 c 31 16
+#nod /dev/bcmtuner 666 0 0 c 31 11
+#nod /dev/bcmqamoob 666 0 0 c 31 9
+#nod /dev/bcmupggpio 666 0 0 c 31 12
+#nod /dev/bcmupgi2c  666 0 0 c 31 22
+#nod /dev/scarda 666 0 0 c 31 20
+#nod /dev/scardb 666 0 0 c 31 21
+
+#nod /dev/pod 666 0 0 c 38 0
+
+# kfir
+#nod /dev/kf2x00 666 0 0 c 203 0
+#nod /dev/kf2x01 666 0 0 c 203 1
+#nod /dev/kfir0 666 0 0 c 203 0
+
+# settop api proxy
+#nod /dev/bcmsettopapi 666 0 0 c 204 0
+
+# general
+#nod /dev/bcmdebug 666 0 0 c 30 21
+
+
+# streamer
+#nod /dev/strm0 666 0 0 c 50 0
+#nod /dev/strm1 666 0 0 c 50 1
+#nod /dev/strm2 666 0 0 c 50 2
+#nod /dev/strm3 666 0 0 c 50 3
+#nod /dev/strm4 666 0 0 c 50 4
+#nod /dev/strm5 666 0 0 c 50 5
+#nod /dev/strm6 666 0 0 c 50 6
+#nod /dev/strm7 666 0 0 c 50 7
+#nod /dev/strm8 666 0 0 c 50 8
+#nod /dev/strm9 666 0 0 c 50 9
+#nod /dev/strm10 666 0 0 c 50 10
+#nod /dev/strm11 666 0 0 c 50 11
+#nod /dev/strm12 666 0 0 c 50 12
+
+# nexus
+dir /dev/nexus 755 0 0
+nod /dev/nexus_platform 666 0 0 c 33 0
+nod /dev/nexus_uart 666 0 0 c 33 1
+nod /dev/nexus_smartcard 666 0 0 c 33 2
+nod /dev/nexus_hdmi_output 666 0 0 c 33 3
+nod /dev/nexus_sync_channel 666 0 0 c 33 4
+nod /dev/nexus_astm 666 0 0 c 33 5
+nod /dev/nexus_display 666 0 0 c 33 6
+nod /dev/nexus_graphics2d 666 0 0 c 33 7
+nod /dev/nexus_surface 666 0 0 c 33 8
+nod /dev/nexus_audio 666 0 0 c 33 9
+nod /dev/nexus_video_decoder 666 0 0 c 33 10
+nod /dev/nexus_transport 666 0 0 c 33 11
+nod /dev/nexus_dma 666 0 0 c 33 12
+nod /dev/nexus_security 666 0 0 c 33 13
+nod /dev/nexus_spi 666 0 0 c 33 14
+nod /dev/nexus_frontend 666 0 0 c 33 15
+nod /dev/nexus_keypad 666 0 0 c 33 16
+nod /dev/nexus_rfm 666 0 0 c 33 17
+nod /dev/nexus_uhf_input 666 0 0 c 33 18
+nod /dev/nexus_input_capture 666 0 0 c 33 19
+nod /dev/nexus_ir_blaster 666 0 0 c 33 20
+nod /dev/nexus_ir_input 666 0 0 c 33 21
+nod /dev/nexus_led 666 0 0 c 33 22
+nod /dev/nexus_gpio 666 0 0 c 33 23
+nod /dev/nexus_i2c 666 0 0 c 33 24
+nod /dev/nexus_pwm 666 0 0 c 33 25
+nod /dev/nexus_core 666 0 0 c 33 26
+nod /dev/nexus_proxy 666 0 0 c 33 27
+nod /dev/nexus_driver 666 0 0 c 33 29
+
+# ubi
+nod /dev/ubi_ctrl 666 0 0 c 10 59 
+nod /dev/ubi0 666 0 0 c 242 0
+nod /dev/ubi0_0 666 0 0 c 242 1
+nod /dev/ubi0_1 666 0 0 c 242 2
+nod /dev/ubi0_2 666 0 0 c 242 3
+nod /dev/ubi0_3 666 0 0 c 242 4
+nod /dev/ubi1 666 0 0 c 243 0
+nod /dev/ubi1_0 666 0 0 c 243 1
+nod /dev/ubi1_1 666 0 0 c 243 2
+nod /dev/ubi1_2 666 0 0 c 243 3
+nod /dev/ubi1_3 666 0 0 c 243 4
+nod /dev/ubi1_4 666 0 0 c 243 5
+nod /dev/ubi2 666 0 0 c 244 0
+nod /dev/ubi2_0 666 0 0 c 244 1
+nod /dev/ubi2_1 666 0 0 c 244 2
+nod /dev/ubi2_2 666 0 0 c 244 3
+nod /dev/ubi2_3 666 0 0 c 244 4
+nod /dev/ubi2_4 666 0 0 c 244 5
+
+# dfb fusion
+dir /dev/fusion 755 0 0
+nod /dev/fusion/0 666 0 0 c 250 0
+nod /dev/fusion/1 666 0 0 c 250 1
+
+# sdio
+nod /dev/mmcblk0 666 0 0 b 179 0
+nod /dev/mmcblk0p1 666 0 0 b 179 1
+
+#Bluetooth
+nod /dev/btusb0 666 0 0 c 180 194
+nod /dev/bthid 666 0 0 c 10 224
+
+#Mapper Directory
+dir /dev/mapper 666 0 0
+
+#pppoe
+nod /dev/ppp 666 0 0 c 108 0
+
+# MoCA
+nod /dev/bmoca0 666 0 0 c 234 0
+
+#mic
+nod /dev/dsp0 666 0 0 c 14 3
+nod /dev/dsp1 666 0 0 c 14 19
+nod /dev/dsp2 666 0 0 c 14 35
+nod /dev/mixer0 666 0 0 c 14 0
+nod /dev/mixer1 666 0 0 c 14 16
+nod /dev/mixer2 666 0 0 c 14 32
+GMT0
+bcmdriver
+fusion fusion_shm_base=0x20000000 fusion_shm_size=0x10000000
+nexus
+#
+# Defaults for the boot scripts
+#
+
+# Set VERBOSE to 'no' if you would like a more quiet bootup.
+VERBOSE=no
+# /etc/fstab: static file system information.
+#
+# <file system> <mount pt>     <type>	<options>         <dump> <pass>
+/dev/root	/		jffs2	rw,noauto	0	1
+proc		/proc		proc	defaults	0	0
+devpts		/dev/pts	devpts	defaults,gid=5,mode=620	0	0
+tmpfs		/tmp		tmpfs	defaults	0	0
+sysfs		/sys		sysfs	defaults	0	0
+#/dev/sda1	/mnt/hd1	ext3	rw,defaults,data=journal	0	0
+#/dev/sda2	/mnt/hd2	ext3	rw,defaults,data=ordered	0	0
+
+root:x:0:root
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+wheel:x:10:root
+utmp:x:43:
+staff:x:50:
+nobody:x:99:
+nogroup:x:99:
+users:x:100:
+default:x:1000:
+settop:x:500:
+HUMAX
+telnet stream tcp nowait root /bin/busybox telnetd
+#!/bin/sh
+
+TTYGRP=5
+TTYMODE=620
+if [ -f /etc/default/devpts ]; then
+    . /etc/default/devpts
+fi
+
+TMPFS_SIZE=
+if [ -f /etc/default/tmpfs ]; then
+    . /etc/default/tmpfs
+fi
+
+# Mount standard /proc and /sys
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t usbfs usbfs /proc/bus/usb
+
+# Mount /dev/pts. Create master ptmx node if needed.
+if [ -d /dev/pts ]; then
+    mount -t devpts devpts /dev/pts -ogid=$TTYGRP,mode=$TTYMODE
+fi
+
+# Mount tmpfs.
+if [ -n "$TMPFS_SIZE" ]; then
+    tmpfs_opt="-osize=${TMPFS_SIZE}"
+fi
+mount -t tmpfs tmpfs /tmp $tmpfs_opt
+mount -t tmpfs tmpfs /dev/nexus $tmpfs_opt
+
+# hotplug
+#echo /sbin/mdev > /proc/sys/kernel/hotplug
+#/sbin/mdev -s
+
+
+mount -t tmpfs -o mode=0755  tmpfs /media
+
+grep 'var' /proc/mtd | \
+while read device size erasesize name; do
+	mtd -q -q unlock var
+	device=${device%:}
+	device=${device#mtd}
+	device=/dev/mtdblock$device
+	mount $device /var
+	if [ ! -f /var/tmp ] ; then
+		ln -sf ../tmp /var/lock
+		ln -sf ../tmp /var/log
+		ln -sf ../tmp /var/run
+		ln -sf ../tmp /var/spool
+		mkdir -p /var/lib/neo
+	fi
+done
+#!/bin/sh
+
+if [ -f /proc/sys/vm/dirty_ratio ]; then
+    echo 5 > /proc/sys/vm/dirty_ratio
+fi
+
+if [ -f /proc/sys/vm/dirty_background_ratio ]; then
+    echo 2 > /proc/sys/vm/dirty_background_ratio
+fi
+
+if [ -f /proc/sys/vm/dirty_writeback_centisecs ]; then
+    echo 1 > /proc/sys/vm/dirty_writeback_centisecs
+fi
+
+if [ -f /proc/sys/vm/dirty_expire_centisecs ]; then
+    echo 1 > /proc/sys/vm/dirty_expire_centisecs
+fi
+#!/bin/sh
+
+########################################################################
+## Configure ProcFs
+########################################################################
+
+#
+# Set Default Hotplug Handler
+#
+echo /usr/sbin/hotplug_handler > /proc/sys/kernel/hotplug
+
+#
+# Set Panic On Oops
+#
+echo 1 > /proc/sys/kernel/panic_on_oops
+
+# 
+# Set Reboot Time(second) When Panic Occurs
+#
+echo 1 > /proc/sys/kernel/panic
+
+
+
+########################################################################
+## Configure SysFs
+########################################################################
+
+
+#!/bin/sh
+
+MODULES_FILE=/etc/default/modules
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg 'Loading modules...'
+fi
+grep '^[^#]' $MODULES_FILE | \
+while read module args; do
+    [ "$module" ] || continue
+    if [ "$VERBOSE" != no ]; then
+		log_begin_msg "Trying module $module"
+		if modprobe $module $args >/dev/null 2>&1; then
+		    log_end_msg 0
+		else
+		    log_end_msg 1 || true
+		fi
+    else
+	modprobe $module $args >/dev/null 2>&1 || true
+    fi
+done
+
+#!/bin/sh
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg "Mounting local filesystems..."
+fi
+
+(
+	ubiattach -m 4
+	mount -t ubifs -o sync ubi1:dbdata /var/lib/humaxtv
+	mount -t ubifs -o sync ubi1:dbbackup /var/lib/humaxtv_backup
+	mount -t ubifs -o sync ubi1:dbuser /var/lib/humaxtv_user
+
+) 2>&1 | grep -v '(already|nothing was) mounted'
+
+#!/bin/sh
+
+[ -x /sbin/ifup ] || exit 0
+[ -x /sbin/ifdown ] || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+MYNAME="${0##*/}"
+report() { echo "${MYNAME}: $*" ; }
+report_err() { log_failure_msg "$*" ; }
+RUN_DIR=/var/run
+[ -r /etc/default/ifupdown ] && . /etc/default/ifupdown
+
+# Note: The state file location is hardcoded in ifup|ifdown
+IFSTATE=/var/run/ifstate
+
+HUMAXTV_CONFIG=/var/lib/humaxtv/network/network.conf
+
+
+myreadlink () {
+    dest="${1%/}"
+    extras=""
+
+    while [ "$dest" != "" ]; do
+	if [ -d "$dest" ]; then
+	    cd "$dest"
+	    dest=$(/bin/pwd)
+	    break
+	fi
+
+	if [ -L "$dest" ]; then
+	    d2=$(readlink "$dest")
+	    if [ "${d2#/}" = "$d2" ]; then
+		dest="${dest%/*}/$d2"
+	    else
+		dest="$d2"
+	    fi
+	fi
+
+	while [ ! -e "$dest" ]; do
+	    extras="${dest##*/}/$extras"
+	    if [ "${extras%%/*}" = ".." ]; then return 1; fi
+	    destx="${dest%/*}"
+	    if [ "$destx" = "$dest" ]; then destx=""; fi
+	    dest="$destx"
+	done
+    done
+    dest="$dest/$extras"
+    echo "${dest%/}"
+}
+
+case "$1" in
+    start|restart)
+	if [ "$2" ]; then
+	    report_err "Arguments to '$1' command not accepted"
+	    exit 3
+	fi
+	if [ "$VERBOSE" != no ]; then
+		log_begin_msg "Setting up networking..."
+	fi
+
+	echo "   Debug mode not support ethetnet setting"
+
+	if [ "$VERBOSE" != no ]; then
+		log_end_msg 0
+	fi
+	exit 0
+	;;
+    stop)
+	if [ "$2" ]; then
+	    report_err "Arguments to '$1' command not accepted"
+	    exit 3
+	fi
+	if [ -x /etc/init.d/ifupdown-clean ]; then
+	    /etc/init.d/ifupdown-clean start
+	fi
+	;;
+    force-reload)
+	;;
+    *)
+	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	exit 3
+	;;
+esac
+#!/bin/sh
+
+MODULES_FILE=/etc/default/modules
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg 'Loading deamons...'
+fi
+
+
+case "$1" in
+    start|restart)
+        if [ "$VERBOSE" != no ]; then
+                log_begin_msg "Starting inetd..."
+        fi
+    	exec /usr/sbin/inetd
+	;;
+    stop)
+        ;;
+    force-reload)
+        ;;
+esac
+
+
+/bin/echo 10000 > /proc/sys/vm/min_free_kbytes
+#!/bin/sh
+
+[ -x /usr/bin/humaxtv ] || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+if [ -f /etc/default/neo ] ; then
+    . /etc/default/settop
+fi
+
+if grep -q "nosettop" /proc/cmdline ; then
+    exit 0;
+fi
+
+case "$1" in
+    start)
+		if [ "$VERBOSE" != no ]; then
+			log_begin_msg "Starting humaxtv..."
+		fi
+		exec /usr/bin/humaxtv
+		;;
+    stop)
+		if [ "$VERBOSE" != no ]; then
+			log_begin_msg "Stopping humaxtv..."
+		fi
+		killall humaxtv
+		;;
+    *)
+		if [ "$VERBOSE" != no ]; then
+			log_success_msg "Usage: /etc/init.d/S90settop {start|stop}"
+		fi
+		exit 1
+		;;
+esac
+
+#!/bin/sh
+# Start all init scripts in /etc/init.d
+# executing them in numerical order.
+#
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+# Source defaults.
+. /etc/default/rcS
+export VERBOSE
+
+# Trap CTRL-C &c only int this shell so we can interrupt subprocesses.
+trap ":" INT QUIT TSTP
+
+steps=$(echo /etc/init.d/S??*)
+
+for i in $steps
+do
+     # Ignore dangling symlinks (if any).
+     [ ! -f "$i" ] && continue
+
+     case "$i" in
+	*.sh)
+	    # Source shell script for speed.
+	    (
+		trap - INT QUIT TSTP
+		set start
+		. $i
+	    )
+	    ;;
+	*)
+	    # No sh extension, so fork subprocess.
+	    $i start
+	    ;;
+    esac
+done
+
+# /etc/inittab
+#
+# Copyright (C) 2001 Erik Andersen <andersen@codepoet.org>
+#
+# Note: BusyBox init doesn't support runlevels.  The runlevels field is
+# completely ignored by BusyBox init. If you want runlevels, use
+# sysvinit.
+#
+# Format for each entry: <id>:<runlevels>:<action>:<process>
+#
+# id        == tty to run on, or empty for /dev/console
+# runlevels == ignored
+# action    == one of sysinit, respawn, askfirst, wait, and once
+# process   == program to run
+
+# Startup the system
+# now run any rc scripts
+::sysinit:/etc/init.d/rcS
+
+# Put a getty on the serial port
+# if debug
+#ttyS0::respawn:/bin/sh
+# else release
+::once:/sbin/reboot /dev/null
+/dev/null::respawn:/sbin/getty /dev/null
+# endif
+
+#::respawn:/sbin/getty -n -L /sbin/autologin 115200 ttyS0
+#::respawn:/sbin/getty -n -L 115200 --autologin root ttyS0
+#::respawn:/sbin/getty -n -L 115200 ttyS0
+
+# /etc/inputrc - global inputrc for libreadline
+# See readline(3readline) and `info readline' for more information.
+
+# Be 8 bit clean.
+set input-meta on
+set output-meta on
+set bell-style visible
+
+# To allow the use of 8bit-characters like the german umlauts, comment out
+# the line below. However this makes the meta key not work as a meta key,
+# which is annoying to those which don't need to type in 8-bit characters.
+
+# set convert-meta off
+
+"\e0d": backward-word
+"\e0c": forward-word
+"\e[h": beginning-of-line
+"\e[f": end-of-line
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+#"\e[5~": beginning-of-history
+#"\e[6~": end-of-history
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# Common standard keypad and cursor
+# (codes courtsey Werner Fink, <werner@suse.de>)
+#"\e[1~": history-search-backward
+"\e[2~": yank
+"\e[3~": delete-char
+#"\e[4~": set-mark
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+# Normal keypad and cursor of xterm
+"\e[F": end-of-line
+"\e[H": beginning-of-line
+# Application keypad and cursor of xterm
+"\eOA": previous-history
+"\eOC": forward-char
+"\eOB": next-history
+"\eOD": backward-char
+"\eOF": end-of-line
+"\eOH": beginning-of-line
+
+Welcome to HUMAX 
+
+#!/bin/sh
+
+if ! echo ${MDEV#sd[a-z]} | grep -q '[0-9]' ; then
+	exit 0
+fi
+
+device=/dev/$MDEV
+mount_path=/media/$MDEV
+
+case "$ACTION" in
+	add*)
+#		mkdir -p $mount_path
+#		mount -t vfat $device $mount_path
+#		find $mount_path -name 'sting*.img' > /tmp/firmware_list.txt
+#		killall neo
+#		cat /tmp/firmware_list.txt | \
+#		while read list ; do
+#			mtd -r write $list auto
+#		done
+#		rm /tmp/firmware_list.txt
+		;;
+	remove*)
+		umount -l $device
+		rm -rf $mount_path
+		;;
+	*)
+		;;
+esac
+#hda1 0:0 660 @mount /dev/$MDEV /mnt/hd1
+#hda2 0:0 660 @mount /dev/$MDEV /mnt/hd2
+#hda3 0:0 660 @mount /dev/$MDEV /mnt/hd3
+#hda4 0:0 660 @mount /dev/$MDEV /mnt/hd4
+sd[a-z][0-9]* 0:0 660 */etc/mdev/run-and-gun
+root:x:0:0:root:/:/bin/sh
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:100:sync:/bin:/bin/sh
+mail:x:8:8:mail:/var/spool/mail:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+operator:x:37:37:Operator:/var:/bin/sh
+sshd:x:103:99:Operator:/var:/bin/sh
+nobody:x:99:99:nobody:/home:/bin/sh
+settop:$1$iW/iBAOp$jvmbN/0ypFSEqQciL31Xv.:1001:1001:Linux User,,,:/home/settop:/bin/sh
+-----BEGIN CERTIFICATE-----
+MIIENjCCAx6gAwIBAgIBATANBgkqhkiG9w0BAQUFADBvMQswCQYDVQQGEwJTRTEU
+MBIGA1UEChMLQWRkVHJ1c3QgQUIxJjAkBgNVBAsTHUFkZFRydXN0IEV4dGVybmFs
+IFRUUCBOZXR3b3JrMSIwIAYDVQQDExlBZGRUcnVzdCBFeHRlcm5hbCBDQSBSb290
+MB4XDTAwMDUzMDEwNDgzOFoXDTIwMDUzMDEwNDgzOFowbzELMAkGA1UEBhMCU0Ux
+FDASBgNVBAoTC0FkZFRydXN0IEFCMSYwJAYDVQQLEx1BZGRUcnVzdCBFeHRlcm5h
+bCBUVFAgTmV0d29yazEiMCAGA1UEAxMZQWRkVHJ1c3QgRXh0ZXJuYWwgQ0EgUm9v
+dDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALf3GjPm8gAELTngTlvt
+H7xsD821+iO2zt6bETOXpClMfZOfvUq8k+0DGuOPz+VtUFrWlymUWoCwSXrbLpX9
+uMq/NzgtHj6RQa1wVsfwTz/oMp50ysiQVOnGXw94nZpAPA6sYapeFI+eh6FqUNzX
+mk6vBbOmcZSccbNQYArHE504B4YCqOmoaSYYkKtMsE8jqzpPhNjfzp/haW+710LX
+a0Tkx63ubUFfclpxCDezeWWkWaCUN/cALw3CknLa0Dhy2xSoRcRdKn23tNbE7qzN
+E0S3ySvdQwAl+mG5aWpYIxG3pzOPVnVZ9c0p10a3CitlttNCbxWyuHv77+ldU9U0
+WicCAwEAAaOB3DCB2TAdBgNVHQ4EFgQUrb2YejS0Jvf6xCZU7wO94CTLVBowCwYD
+VR0PBAQDAgEGMA8GA1UdEwEB/wQFMAMBAf8wgZkGA1UdIwSBkTCBjoAUrb2YejS0
+Jvf6xCZU7wO94CTLVBqhc6RxMG8xCzAJBgNVBAYTAlNFMRQwEgYDVQQKEwtBZGRU
+cnVzdCBBQjEmMCQGA1UECxMdQWRkVHJ1c3QgRXh0ZXJuYWwgVFRQIE5ldHdvcmsx
+IjAgBgNVBAMTGUFkZFRydXN0IEV4dGVybmFsIENBIFJvb3SCAQEwDQYJKoZIhvcN
+AQEFBQADggEBALCb4IUlwtYj4g+WBpKdQZic2YR5gdkeWxQHIzZlj7DYd7usQWxH
+YINRsPkyPef89iYTx4AWpb9a/IfPeHmJIZriTAcKhjW88t5RxNKWt9x+Tu5w/Rw5
+6wwCURQtjr0W4MHfRnXnJK3s9EK0hZNwEGe6nQY1ShjTK3rMUUKhemPR5ruhxSvC
+Nr4TDea9Y355e6cJDUCrat2PisP29owaQgVR1EX1n6diIWgVIEM8med8vSTYqZEX
+c4g/VhsxOBi0cQ+azcgOno4uG+GMmIPLHzHxREzGBHNJdmAPx/i9F4BrLunMTA5a
+mnkPIAou1Z5jJh5VkpTYghdae9C8x49OhgQ=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIE/DCCA+SgAwIBAgIQFpDDKbZ4BgdRHwWwNEhGyzANBgkqhkiG9w0BAQUFADBv
+MQswCQYDVQQGEwJTRTEUMBIGA1UEChMLQWRkVHJ1c3QgQUIxJjAkBgNVBAsTHUFk
+ZFRydXN0IEV4dGVybmFsIFRUUCBOZXR3b3JrMSIwIAYDVQQDExlBZGRUcnVzdCBF
+eHRlcm5hbCBDQSBSb290MB4XDTEwMDQxNjAwMDAwMFoXDTIwMDUzMDEwNDgzOFow
+gYkxCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO
+BgNVBAcTB1NhbGZvcmQxGjAYBgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMS8wLQYD
+VQQDEyZDT01PRE8gSGlnaC1Bc3N1cmFuY2UgU2VjdXJlIFNlcnZlciBDQTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOeH2sB35Ls6+mokyIBBrNIWExU9
++vf4KnbcqC05CM5ISr4PffDeurtH1b0t1xurDyCBIwhyscARlQ3m6qmH/8duHk9m
+MrpTvAWqHCwM7003R2sQDNvFoJh+WNs31q7pBr3XqGXzN7nHbc53xybg13QfppgW
+uwxryL530O9YpymgubhpBTbLstpYowt1rT2LIoIgPnCGmRy5T893pAcaI2PROFaE
+7L+PxU70GJabGuiT7I2vFZwk8Fo76A+5qFoB07IcYMmcUgTdkqf+DKziRY0DYbx5
+4Hcuh0E8WF/L9cV38ljITSjQmvrzcwkkaHS8IEzYLLCq6NlObfKMJNOTXZECAwEA
+AaOCAXcwggFzMB8GA1UdIwQYMBaAFK29mHo0tCb3+sQmVO8DveAky1QaMB0GA1Ud
+DgQWBBQ/1bXQ1kR5UEoXo5uMSty4sCJkazAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0T
+AQH/BAgwBgEB/wIBADARBgNVHSAECjAIMAYGBFUdIAAwRAYDVR0fBD0wOzA5oDeg
+NYYzaHR0cDovL2NybC51c2VydHJ1c3QuY29tL0FkZFRydXN0RXh0ZXJuYWxDQVJv
+b3QuY3JsMIGzBggrBgEFBQcBAQSBpjCBozA/BggrBgEFBQcwAoYzaHR0cDovL2Ny
+dC51c2VydHJ1c3QuY29tL0FkZFRydXN0RXh0ZXJuYWxDQVJvb3QucDdjMDkGCCsG
+AQUFBzAChi1odHRwOi8vY3J0LnVzZXJ0cnVzdC5jb20vQWRkVHJ1c3RVVE5TR0ND
+QS5jcnQwJQYIKwYBBQUHMAGGGWh0dHA6Ly9vY3NwLnVzZXJ0cnVzdC5jb20wDQYJ
+KoZIhvcNAQEFBQADggEBABOFH1KAGMlT9/4uGq/M2Qs8wtOFgRDwKI25QH4sno/W
+NoYKTBQt1pdDkkEZN0uWnuupMHkSlbMCNlftK7kdmBqjGAo/mzmLzaFJKUwv+dCV
+jMhNlbqoQ88zqiUqWg6qJ8lOa7Hmcx+zdATD80ziqOtnt124CAUaVppUKYX1KU6A
+O5XQe1OWEVbBAtPqsn/Kj5xwShSNWrkWYHXWzSceFs1bM455QM8oSOfccRZOdJF1
+uSqM8XCsJt0EuUDChd4ck0DQzG7Dm6rvYGXfYCLwWqV6oi/kcHPuPNQmK2gHwSB6
+6JhaPnufAotiwIWBgGA1fqUdDNKc32JFDdv8N/v1JSI=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDxTCCAq2gAwIBAgIQAqxcJmoLQJuPC3nyrkYldzANBgkqhkiG9w0BAQUFADBs
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSswKQYDVQQDEyJEaWdpQ2VydCBIaWdoIEFzc3VyYW5j
+ZSBFViBSb290IENBMB4XDTA2MTExMDAwMDAwMFoXDTMxMTExMDAwMDAwMFowbDEL
+MAkGA1UEBhMCVVMxFTATBgNVBAoTDERpZ2lDZXJ0IEluYzEZMBcGA1UECxMQd3d3
+LmRpZ2ljZXJ0LmNvbTErMCkGA1UEAxMiRGlnaUNlcnQgSGlnaCBBc3N1cmFuY2Ug
+RVYgUm9vdCBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMbM5XPm
++9S75S0tMqbf5YE/yc0lSbZxKsPVlDRnogocsF9ppkCxxLeyj9CYpKlBWTrT3JTW
+PNt0OKRKzE0lgvdKpVMSOO7zSW1xkX5jtqumX8OkhPhPYlG++MXs2ziS4wblCJEM
+xChBVfvLWokVfnHoNb9Ncgk9vjo4UFt3MRuNs8ckRZqnrG0AFFoEt7oT61EKmEFB
+Ik5lYYeBQVCmeVyJ3hlKV9Uu5l0cUyx+mM0aBhakaHPQNAQTXKFx01p8VdteZOE3
+hzBWBOURtCmAEvF5OYiiAhF8J2a3iLd48soKqDirCmTCv2ZdlYTBoSUeh10aUAsg
+EsxBu24LUTi4S8sCAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgGGMA8GA1UdEwEB/wQF
+MAMBAf8wHQYDVR0OBBYEFLE+w2kD+L9HAdSYJhoIAu9jZCvDMB8GA1UdIwQYMBaA
+FLE+w2kD+L9HAdSYJhoIAu9jZCvDMA0GCSqGSIb3DQEBBQUAA4IBAQAcGgaX3Nec
+nzyIZgYIVyHbIUf4KmeqvxgydkAQV8GK83rZEWWONfqe/EW1ntlMMUu4kehDLI6z
+eM7b41N5cdblIZQB2lWHmiRk9opmzN6cN82oNLFpmyPInngiK3BD41VHMWEZ71jF
+hS9OMPagMRYjyOfiZRYzy78aG6A9+MpeizGLYAiJLQwGXFK3xPkKmNEVX58Svnw2
+Yzi9RKR/5CYrCsSXaQ3pjOLAEFe4yHYSkVXySGnYvCoCWw9E1CAx2/S6cCZdkGCe
+vEsXCS+0yx5DaMkHJ8HSXPfqIbloEpw8nL+e/IBcm2PN7EeqJSdnoDfzAIJ9VNep
++OkuE6N36B9K
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDdzCCAl+gAwIBAgIEAgAAuTANBgkqhkiG9w0BAQUFADBaMQswCQYDVQQGEwJJ
+RTESMBAGA1UEChMJQmFsdGltb3JlMRMwEQYDVQQLEwpDeWJlclRydXN0MSIwIAYD
+VQQDExlCYWx0aW1vcmUgQ3liZXJUcnVzdCBSb290MB4XDTAwMDUxMjE4NDYwMFoX
+DTI1MDUxMjIzNTkwMFowWjELMAkGA1UEBhMCSUUxEjAQBgNVBAoTCUJhbHRpbW9y
+ZTETMBEGA1UECxMKQ3liZXJUcnVzdDEiMCAGA1UEAxMZQmFsdGltb3JlIEN5YmVy
+VHJ1c3QgUm9vdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKMEuyKr
+mD1X6CZymrV51Cni4eiVgLGw41uOKymaZN+hXe2wCQVt2yguzmKiYv60iNoS6zjr
+IZ3AQSsBUnuId9Mcj8e6uYi1agnnc+gRQKfRzMpijS3ljwumUNKoUMMo6vWrJYeK
+mpYcqWe4PwzV9/lSEy/CG9VwcPCPwBLKBsua4dnKM3p31vjsufFoREJIE9LAwqSu
+XmD+tqYF/LTdB1kC1FkYmGP1pWPgkAx9XbIGevOF6uvUA65ehD5f/xXtabz5OTZy
+dc93Uk3zyZAsuT3lySNTPx8kmCFcB5kpvcY67Oduhjprl3RjM71oGDHweI12v/ye
+jl0qhqdNkNwnGjkCAwEAAaNFMEMwHQYDVR0OBBYEFOWdWTCCR1jMrPoIVDaGezq1
+BE3wMBIGA1UdEwEB/wQIMAYBAf8CAQMwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3
+DQEBBQUAA4IBAQCFDF2O5G9RaEIFoN27TyclhAO992T9Ldcw46QQF+vaKSm2eT92
+9hkTI7gQCvlYpNRhcL0EYWoSihfVCr3FvDB81ukMJY2GQE/szKN+OMY3EU/t3Wgx
+jkzSswF07r51XgdIGn9w/xZchMB5hbgF/X++ZRGjD8ACtPhSNzkE1akxehi/oCr0
+Epn3o0WC4zxe9Z2etciefC7IpJ5OCBRLbf1wbWsaY71k5h+3zvDyny67G7fyUIhz
+ksLi4xaNmjICq44Y3ekQEe5+NauQrz4wlHrQMz2nZQ/1/I6eYs9HRCwBXbsdtTLS
+R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIEkTCCA3mgAwIBAgIERWtQVDANBgkqhkiG9w0BAQUFADCBsDELMAkGA1UEBhMC
+VVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xOTA3BgNVBAsTMHd3dy5lbnRydXN0
+Lm5ldC9DUFMgaXMgaW5jb3Jwb3JhdGVkIGJ5IHJlZmVyZW5jZTEfMB0GA1UECxMW
+KGMpIDIwMDYgRW50cnVzdCwgSW5jLjEtMCsGA1UEAxMkRW50cnVzdCBSb290IENl
+cnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTA2MTEyNzIwMjM0MloXDTI2MTEyNzIw
+NTM0MlowgbAxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1FbnRydXN0LCBJbmMuMTkw
+NwYDVQQLEzB3d3cuZW50cnVzdC5uZXQvQ1BTIGlzIGluY29ycG9yYXRlZCBieSBy
+ZWZlcmVuY2UxHzAdBgNVBAsTFihjKSAyMDA2IEVudHJ1c3QsIEluYy4xLTArBgNV
+BAMTJEVudHJ1c3QgUm9vdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBALaVtkNC+sZtKm9I35RMOVcF7sN5EUFo
+Nu3s/poBj6E4KPz3EEZmLk0eGrEaTsbRwJWIsMn/MYszA9u3g3s+IIRe7bJWKKf4
+4LlAcTfFy0cOlypowCKVYhXbR9n10Cv/gkvJrT7eTNuQgFA/CYqEAOwwCj0Yzfv9
+KlmaI5UXLEWeH25DeW0MXJj+SKfFI0dcXv1u5x609mhF0YaDW6KKjbHjKYD+JXGI
+rb68j6xSlkuqUY3kEzEZ6E5Nn9uss2rVvDlUccp6en+Q3X0dgNmBu1kmwhH+5pPi
+94DkZfs0Nw4pgHBNrziGLp5/V6+eF67rHMsoIV+2HNjnogQi+dPa2MsCAwEAAaOB
+sDCBrTAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zArBgNVHRAEJDAi
+gA8yMDA2MTEyNzIwMjM0MlqBDzIwMjYxMTI3MjA1MzQyWjAfBgNVHSMEGDAWgBRo
+kORnpKZTgMeGZqTx90tD+4S9bTAdBgNVHQ4EFgQUaJDkZ6SmU4DHhmak8fdLQ/uE
+vW0wHQYJKoZIhvZ9B0EABBAwDhsIVjcuMTo0LjADAgSQMA0GCSqGSIb3DQEBBQUA
+A4IBAQCT1DCw1wMgKtD5Y+iRDAUgqV8ZyntyTtSx29CW+1RaGSwMCPeyvIWonX9t
+O1KzKtvn1ISMY/YPyyYBkVBs9F8U4pN0wBOeMDpQ47RgxRzwIkSNcUesyBrJ6Zua
+AGAT/3B+XxFNSRuzFVJ7yVTav52Vr2ua2J7p8eRDjeIRRDq/r72DQnNSi6q7pynP
+9WQcCk3RvKqsnyrQ/39/2n3qse0wJcGE2jTSW3iDVuycNsMm4hH2Z0kdkquM++v/
+eu6FSqdQgPCnXEqULl8FmTxSQeDNtGPPAUO6nIPcj2A781q0tHuu2guQOHXvgR1m
+0vdXcDazv/wor3ElhVsT/h5/WrQ8
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIE2DCCBEGgAwIBAgIEN0rSQzANBgkqhkiG9w0BAQUFADCBwzELMAkGA1UEBhMC
+VVMxFDASBgNVBAoTC0VudHJ1c3QubmV0MTswOQYDVQQLEzJ3d3cuZW50cnVzdC5u
+ZXQvQ1BTIGluY29ycC4gYnkgcmVmLiAobGltaXRzIGxpYWIuKTElMCMGA1UECxMc
+KGMpIDE5OTkgRW50cnVzdC5uZXQgTGltaXRlZDE6MDgGA1UEAxMxRW50cnVzdC5u
+ZXQgU2VjdXJlIFNlcnZlciBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw05OTA1
+MjUxNjA5NDBaFw0xOTA1MjUxNjM5NDBaMIHDMQswCQYDVQQGEwJVUzEUMBIGA1UE
+ChMLRW50cnVzdC5uZXQxOzA5BgNVBAsTMnd3dy5lbnRydXN0Lm5ldC9DUFMgaW5j
+b3JwLiBieSByZWYuIChsaW1pdHMgbGlhYi4pMSUwIwYDVQQLExwoYykgMTk5OSBF
+bnRydXN0Lm5ldCBMaW1pdGVkMTowOAYDVQQDEzFFbnRydXN0Lm5ldCBTZWN1cmUg
+U2VydmVyIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIGdMA0GCSqGSIb3DQEBAQUA
+A4GLADCBhwKBgQDNKIM0VBuJ8w+vN5Ex/68xYMmo6LIQaO2f55M28Qpku0f1BBc/
+I0dNxScZgSYMVHINiC3ZH5oSn7yzcdOAGT9HZnuMNSjSuQrfJNqc1lB5gXpa0zf3
+wkrYKZImZNHkmGw6AIr1NJtl+O3jEP/9uElY3KDegjlrgbEWGWG5VLbmQwIBA6OC
+AdcwggHTMBEGCWCGSAGG+EIBAQQEAwIABzCCARkGA1UdHwSCARAwggEMMIHeoIHb
+oIHYpIHVMIHSMQswCQYDVQQGEwJVUzEUMBIGA1UEChMLRW50cnVzdC5uZXQxOzA5
+BgNVBAsTMnd3dy5lbnRydXN0Lm5ldC9DUFMgaW5jb3JwLiBieSByZWYuIChsaW1p
+dHMgbGlhYi4pMSUwIwYDVQQLExwoYykgMTk5OSBFbnRydXN0Lm5ldCBMaW1pdGVk
+MTowOAYDVQQDEzFFbnRydXN0Lm5ldCBTZWN1cmUgU2VydmVyIENlcnRpZmljYXRp
+b24gQXV0aG9yaXR5MQ0wCwYDVQQDEwRDUkwxMCmgJ6AlhiNodHRwOi8vd3d3LmVu
+dHJ1c3QubmV0L0NSTC9uZXQxLmNybDArBgNVHRAEJDAigA8xOTk5MDUyNTE2MDk0
+MFqBDzIwMTkwNTI1MTYwOTQwWjALBgNVHQ8EBAMCAQYwHwYDVR0jBBgwFoAU8Bdi
+E1U9s/8KAGv7UISX8+1i0BowHQYDVR0OBBYEFPAXYhNVPbP/CgBr+1CEl/PtYtAa
+MAwGA1UdEwQFMAMBAf8wGQYJKoZIhvZ9B0EABAwwChsEVjQuMAMCBJAwDQYJKoZI
+hvcNAQEFBQADgYEAkNwwAvpkdMKnCqV8IY00F6j7Rw7/JXyNEwr75Ji174z4xRAN
+95K+8cPV1ZVqBLssziY2ZcgxxufuP+NXdYR6Ee9GTxj005i7qIcyunL2POI9n9cd
+2cNgQ4xYDiKWL2KjLB+6rQXvqzJ4h6BUcxm1XAX5Uj5tLUUL9wqT6u0G+bI=
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDIDCCAomgAwIBAgIENd70zzANBgkqhkiG9w0BAQUFADBOMQswCQYDVQQGEwJV
+UzEQMA4GA1UEChMHRXF1aWZheDEtMCsGA1UECxMkRXF1aWZheCBTZWN1cmUgQ2Vy
+dGlmaWNhdGUgQXV0aG9yaXR5MB4XDTk4MDgyMjE2NDE1MVoXDTE4MDgyMjE2NDE1
+MVowTjELMAkGA1UEBhMCVVMxEDAOBgNVBAoTB0VxdWlmYXgxLTArBgNVBAsTJEVx
+dWlmYXggU2VjdXJlIENlcnRpZmljYXRlIEF1dGhvcml0eTCBnzANBgkqhkiG9w0B
+AQEFAAOBjQAwgYkCgYEAwV2xWGcIYu6gmi0fCG2RFGiYCh7+2gRvE4RiIcPRfM6f
+BeC4AfBONOziipUEZKzxa1NfBbPLZ4C/QgKO/t0BCezhABRP/PvwDN1Dulsr4R+A
+cJkVV5MW8Q+XarfCaCMczE1ZMKxRHjuvK9buY0V7xdlfUNLjUA86iOe/FP3gx7kC
+AwEAAaOCAQkwggEFMHAGA1UdHwRpMGcwZaBjoGGkXzBdMQswCQYDVQQGEwJVUzEQ
+MA4GA1UEChMHRXF1aWZheDEtMCsGA1UECxMkRXF1aWZheCBTZWN1cmUgQ2VydGlm
+aWNhdGUgQXV0aG9yaXR5MQ0wCwYDVQQDEwRDUkwxMBoGA1UdEAQTMBGBDzIwMTgw
+ODIyMTY0MTUxWjALBgNVHQ8EBAMCAQYwHwYDVR0jBBgwFoAUSOZo+SvSspXXR9gj
+IBBPM5iQn9QwHQYDVR0OBBYEFEjmaPkr0rKV10fYIyAQTzOYkJ/UMAwGA1UdEwQF
+MAMBAf8wGgYJKoZIhvZ9B0EABA0wCxsFVjMuMGMDAgbAMA0GCSqGSIb3DQEBBQUA
+A4GBAFjOKer89961zgK5F7WF0bnj4JXMJTENAKaSbn+2kmOeUJXRmm/kEd5jhW6Y
+7qj/WsjTVbJmcVfewCHrPSqnI0kBBIZCe/zuf6IWUrVnZ9NA2zsmWLIodz2uFHdh
+1voqZiegDfqnc1zqcPGUIWVEX/r87yloqaKHee9570+sB3c4
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDVDCCAjygAwIBAgIDAjRWMA0GCSqGSIb3DQEBBQUAMEIxCzAJBgNVBAYTAlVT
+MRYwFAYDVQQKEw1HZW9UcnVzdCBJbmMuMRswGQYDVQQDExJHZW9UcnVzdCBHbG9i
+YWwgQ0EwHhcNMDIwNTIxMDQwMDAwWhcNMjIwNTIxMDQwMDAwWjBCMQswCQYDVQQG
+EwJVUzEWMBQGA1UEChMNR2VvVHJ1c3QgSW5jLjEbMBkGA1UEAxMSR2VvVHJ1c3Qg
+R2xvYmFsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2swYYzD9
+9BcjGlZ+W988bDjkcbd4kdS8odhM+KhDtgPpTSEHCIjaWC9mOSm9BXiLnTjoBbdq
+fnGk5sRgprDvgOSJKA+eJdbtg/OtppHHmMlCGDUUna2YRpIuT8rxh0PBFpVXLVDv
+iS2Aelet8u5fa9IAjbkU+BQVNdnARqN7csiRv8lVK83Qlz6cJmTM386DGXHKTubU
+1XupGc1V3sjs0l44U+VcT4wt/lAjNvxm5suOpDkZALeVAjmRCw7+OC7RHQWa9k0+
+bw8HHa8sHo9gOeL6NlMTOdReJivbPagUvTLrGAMoUgRx5aszPeE4uwc2hGKceeoW
+MPRfwCvocWvk+QIDAQABo1MwUTAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTA
+ephojYn7qwVkDBF9qn1luMrMTjAfBgNVHSMEGDAWgBTAephojYn7qwVkDBF9qn1l
+uMrMTjANBgkqhkiG9w0BAQUFAAOCAQEANeMpauUvXVSOKVCUn5kaFOSPeCpilKIn
+Z57QzxpeR+nBsqTP3UEaBU6bS+5Kb1VSsyShNwrrZHYqLizz/Tt1kL/6cdjHPTfS
+tQWVYrmm3ok9Nns4d0iXrKYgjy6myQzCsplFAMfOEVEiIuCl6rYVSAlk6l5PdPcF
+PseKUgzbFbS9bZvlxrFUaKnjaZC2mqUPuLk/IH2uSrW4nOQdtqvmlKXBx4Ot2/Un
+hw4EbNX/3aBd7YdStysVAq45pmp06drE57xNNB6pXE0zX5IJL4hmXXeXxx12E6nV
+5fEWCRE11azbJHFwLJhWC9kXtNHjUStedejV0NxPNO3CBWaAocvmMw==
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIICWjCCAcMCAgGlMA0GCSqGSIb3DQEBBAUAMHUxCzAJBgNVBAYTAlVTMRgwFgYD
+VQQKEw9HVEUgQ29ycG9yYXRpb24xJzAlBgNVBAsTHkdURSBDeWJlclRydXN0IFNv
+bHV0aW9ucywgSW5jLjEjMCEGA1UEAxMaR1RFIEN5YmVyVHJ1c3QgR2xvYmFsIFJv
+b3QwHhcNOTgwODEzMDAyOTAwWhcNMTgwODEzMjM1OTAwWjB1MQswCQYDVQQGEwJV
+UzEYMBYGA1UEChMPR1RFIENvcnBvcmF0aW9uMScwJQYDVQQLEx5HVEUgQ3liZXJU
+cnVzdCBTb2x1dGlvbnMsIEluYy4xIzAhBgNVBAMTGkdURSBDeWJlclRydXN0IEds
+b2JhbCBSb290MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCVD6C28FCc6HrH
+iM3dFw4usJTQGz0O9pTAipTHBsiQl8i4ZBp6fmw8U+E3KHNgf7KXUwefU/ltWJTS
+r41tiGeA5u2ylc9yMcqlHHK6XALnZELn+aks1joNrI1CqiQBOeacPwGFVw1Yh0X4
+04Wqk2kmhXBIgD8SFcd5tB8FLztimQIDAQABMA0GCSqGSIb3DQEBBAUAA4GBAG3r
+GwnpXtlR22ciYaQqPEh346B8pt5zohQDhT37qw4wxYMWM4ETCJ57NE7fQMh017l9
+3PR2VX2bY1QY6fDq81yx2YtCHrnAlU66+tXifPVoYb+O7AWXX1uw16OFNMQkpw0P
+lZPvy5TYnh+dXIVtx6quTx8itc2VrbqnzPmrC3p/
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            9d:f2:6e:fb:3b:67:4d:e9
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=KR, ST=KYUNG-GI, L=SUNG-NAM, O=HUMAX Co., CN=humaxdigital.com/emailAddress=info@humaxdigital.com
+        Validity
+            Not Before: Apr  6 20:42:15 2012 GMT
+            Not After : Apr  4 20:42:15 2022 GMT
+        Subject: C=KR, ST=KYUNG-GI, L=SUNG-NAM, O=HUMAX Co., CN=hdr1000s.humaxdigital.com/emailAddress=info@humaxdigital.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:c8:95:f7:42:2f:d9:5e:2b:cb:37:5a:7d:7d:51:
+                    9b:b7:72:a6:75:d1:50:ff:b9:31:3f:12:ee:77:0c:
+                    c9:82:20:96:52:4f:9e:6f:ee:c5:50:85:55:05:64:
+                    84:f6:c3:8c:61:88:38:8c:91:69:dd:d4:5f:e8:c5:
+                    c5:aa:8b:ef:04:f0:89:37:71:86:49:44:b8:5c:44:
+                    0e:d3:1d:60:16:4c:4c:bc:13:1e:07:41:6b:db:b1:
+                    1e:c1:c6:b7:2d:17:97:21:ec:0e:45:9f:02:a4:c8:
+                    ee:ca:70:19:f1:b1:c6:64:21:6b:7e:c5:da:92:c8:
+                    83:39:86:c7:df:f6:17:47:79
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Client
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                D3:51:82:2A:37:AB:91:64:CE:30:B5:5E:04:F2:38:A5:92:5F:15:62
+            X509v3 Authority Key Identifier: 
+                keyid:FA:D1:A9:71:6D:71:C4:4B:6D:C0:FC:CF:17:56:08:BC:76:D2:3A:4A
+                DirName:/C=KR/ST=KYUNG-GI/L=SUNG-NAM/O=HUMAX Co./CN=humaxdigital.com/emailAddress=info@humaxdigital.com
+                serial:AD:D7:D3:D8:F0:9C:E3:E4
+
+    Signature Algorithm: sha1WithRSAEncryption
+        85:91:b5:39:2a:b3:b6:e6:e0:6a:2a:3a:c7:6d:22:fc:d5:9f:
+        15:79:83:e5:89:3c:c5:05:4e:35:12:b9:d3:44:74:b3:64:4a:
+        fa:65:64:12:93:de:36:a5:a8:68:02:fb:1e:c2:59:d8:1f:62:
+        a2:71:dd:3b:d6:cf:1b:6e:41:31:45:fb:8d:f1:fc:6a:75:ed:
+        60:0a:73:64:14:18:bd:2b:15:b8:81:8f:ae:2a:66:9f:de:e7:
+        ee:22:a9:1b:81:93:62:73:02:0a:2b:a4:c1:18:c6:18:ee:73:
+        64:d3:ab:96:53:2d:d3:08:20:21:74:ee:4f:26:f6:50:c4:37:
+        54:33
+-----BEGIN CERTIFICATE-----
+MIIDyjCCAzOgAwIBAgIJAJ3ybvs7Z03pMA0GCSqGSIb3DQEBBQUAMIGIMQswCQYD
+VQQGEwJLUjERMA8GA1UECBMIS1lVTkctR0kxETAPBgNVBAcTCFNVTkctTkFNMRIw
+EAYDVQQKEwlIVU1BWCBDby4xGTAXBgNVBAMTEGh1bWF4ZGlnaXRhbC5jb20xJDAi
+BgkqhkiG9w0BCQEWFWluZm9AaHVtYXhkaWdpdGFsLmNvbTAeFw0xMjA0MDYyMDQy
+MTVaFw0yMjA0MDQyMDQyMTVaMIGRMQswCQYDVQQGEwJLUjERMA8GA1UECBMIS1lV
+TkctR0kxETAPBgNVBAcTCFNVTkctTkFNMRIwEAYDVQQKEwlIVU1BWCBDby4xIjAg
+BgNVBAMTGWhkcjEwMDBzLmh1bWF4ZGlnaXRhbC5jb20xJDAiBgkqhkiG9w0BCQEW
+FWluZm9AaHVtYXhkaWdpdGFsLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkC
+gYEAyJX3Qi/ZXivLN1p9fVGbt3KmddFQ/7kxPxLudwzJgiCWUk+eb+7FUIVVBWSE
+9sOMYYg4jJFp3dRf6MXFqovvBPCJN3GGSUS4XEQO0x1gFkxMvBMeB0Fr27Eewca3
+LReXIewORZ8CpMjuynAZ8bHGZCFrfsXaksiDOYbH3/YXR3kCAwEAAaOCAS8wggEr
+MAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgeAMCwGCWCGSAGG+EIBDQQfFh1P
+cGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU01GCKjerkWTO
+MLVeBPI4pZJfFWIwgb0GA1UdIwSBtTCBsoAU+tGpcW1xxEttwPzPF1YIvHbSOkqh
+gY6kgYswgYgxCzAJBgNVBAYTAktSMREwDwYDVQQIEwhLWVVORy1HSTERMA8GA1UE
+BxMIU1VORy1OQU0xEjAQBgNVBAoTCUhVTUFYIENvLjEZMBcGA1UEAxMQaHVtYXhk
+aWdpdGFsLmNvbTEkMCIGCSqGSIb3DQEJARYVaW5mb0BodW1heGRpZ2l0YWwuY29t
+ggkArdfT2PCc4+QwDQYJKoZIhvcNAQEFBQADgYEAhZG1OSqztubgaio6x20i/NWf
+FXmD5Yk8xQVONRK500R0s2RK+mVkEpPeNqWoaAL7HsJZ2B9ionHdO9bPG25BMUX7
+jfH8anXtYApzZBQYvSsVuIGPripmn97n7iKpG4GTYnMCCiukwRjGGO5zZNOrllMt
+0wggIXTuTyb2UMQ3VDM=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIEIDCCAwigAwIBAgIQNE7VVyDV7exJ9C/ON9srbTANBgkqhkiG9w0BAQUFADCB
+qTELMAkGA1UEBhMCVVMxFTATBgNVBAoTDHRoYXd0ZSwgSW5jLjEoMCYGA1UECxMf
+Q2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjE4MDYGA1UECxMvKGMpIDIw
+MDYgdGhhd3RlLCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxHzAdBgNV
+BAMTFnRoYXd0ZSBQcmltYXJ5IFJvb3QgQ0EwHhcNMDYxMTE3MDAwMDAwWhcNMzYw
+NzE2MjM1OTU5WjCBqTELMAkGA1UEBhMCVVMxFTATBgNVBAoTDHRoYXd0ZSwgSW5j
+LjEoMCYGA1UECxMfQ2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjE4MDYG
+A1UECxMvKGMpIDIwMDYgdGhhd3RlLCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNl
+IG9ubHkxHzAdBgNVBAMTFnRoYXd0ZSBQcmltYXJ5IFJvb3QgQ0EwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCsoPD7gFnUnMekz52hWXMJEEUMDSxuaPFs
+W0hoSVk3/AszGcJ3f8wQLZU0HObrTQmnHNK4yZc2AreJ1CRfBsDMRJSUjQJib+ta
+3RGNKJpchJAQeg29dGYvajig4tVUROsdB58Hum/u6f1OCyn1PoSgAfGcq/gcfomk
+6KHYcWUNo1F77rzSImANuVud37r8UVsLr5iy6S7pBOhih94ryNdOwUxkHt3Ph1i6
+Sk/KaAcdHJ1KxtUvkcx8cXIcxcBn6zL9yZJclNqFwJu/U30rCfSMnZEfl2pSy94J
+NqR32HuHUETVPm4pafs5SSYeCaWAe0At6+gnhcn+Yf1+5nyXHdWdAgMBAAGjQjBA
+MA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBR7W0XP
+r87Lev0xkhpqtvNG61dIUDANBgkqhkiG9w0BAQUFAAOCAQEAeRHAS7ORtvzw6WfU
+DW5FvlXok9LOAz/t2iWwHVfLHjp2oEzsUHboZHIMpKnxuIvW1oeEuzLlQRHAd9mz
+YJ3rG9XRbkREqaYB7FViHXe4XI5ISXycO1cRrK1zN44veFyQaEfZYGDm/Ac9IiAX
+xPcW6cTYcvnIc3zfFi8VqT79aie2oetaupgf1eNNZAqdE8hhuvU5HIe6uL17In/2
+/qxAeeWsEG89jxt5dovEN7MhGITlNgDrYyCZuen+MwS7QcjBAvlEYyCegc5C09Y/
+LHbTY5xZ3Y+m4Q6gLkH3LpVHz7z9M/P2C2F+fpErgUfCJzDupxBdN49cOSvkBPB7
+jVaMaA==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDMDCCApmgAwIBAgIQDY4VEuGsu3eNOOMk34ww8jANBgkqhkiG9w0BAQUFADCB
+yzELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMRowGAYDVQQKExFUaGF3dGUgQ29uc3VsdGluZzEoMCYGA1UECxMf
+Q2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEhMB8GA1UEAxMYVGhhd3Rl
+IFBlcnNvbmFsIEJhc2ljIENBMSgwJgYJKoZIhvcNAQkBFhlwZXJzb25hbC1iYXNp
+Y0B0aGF3dGUuY29tMB4XDTk2MDEwMTAwMDAwMFoXDTIxMDEwMTIzNTk1OVowgcsx
+CzAJBgNVBAYTAlpBMRUwEwYDVQQIEwxXZXN0ZXJuIENhcGUxEjAQBgNVBAcTCUNh
+cGUgVG93bjEaMBgGA1UEChMRVGhhd3RlIENvbnN1bHRpbmcxKDAmBgNVBAsTH0Nl
+cnRpZmljYXRpb24gU2VydmljZXMgRGl2aXNpb24xITAfBgNVBAMTGFRoYXd0ZSBQ
+ZXJzb25hbCBCYXNpYyBDQTEoMCYGCSqGSIb3DQEJARYZcGVyc29uYWwtYmFzaWNA
+dGhhd3RlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAvLyTU23AUE+C
+FeZIlDWmWr5vQvoPR+53dXLdjUmbllegeNTKP1GzaQuRdhciB5dqxFGTS+CN7zeV
+oQxN2jSQHReJl+A1OFdKwPQIcOk8RHtQfmGakOMj04gRRif1CwcOu93RfyAKiLlW
+Cy4cgNrx454p7xS9CkT7G1sY0b8jkyECAwEAAaMTMBEwDwYDVR0TAQH/BAUwAwEB
+/zANBgkqhkiG9w0BAQUFAAOBgQCIO/64+XpCRhGgpKJkhc1IHJzVilHNL8F9sQfP
+1wHeMj+W5IT+0V6tDH4OY0lqDhDkl9A/xacp2aZTHkseP1T6wIQ1c+qRqdxdk1cF
+BgwHua8LRDmIIaDugnOpRi9pbCV0qc3fp9f9hTAElDVKpxszJCxEFu0KxN+AqmUa
+v3Em8A==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDPDCCAqWgAwIBAgIQEj3w59oqIkekOIngiu7JZzANBgkqhkiG9w0BAQUFADCB
+0TELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMRowGAYDVQQKExFUaGF3dGUgQ29uc3VsdGluZzEoMCYGA1UECxMf
+Q2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEkMCIGA1UEAxMbVGhhd3Rl
+IFBlcnNvbmFsIEZyZWVtYWlsIENBMSswKQYJKoZIhvcNAQkBFhxwZXJzb25hbC1m
+cmVlbWFpbEB0aGF3dGUuY29tMB4XDTk2MDEwMTAwMDAwMFoXDTIxMDEwMTIzNTk1
+OVowgdExCzAJBgNVBAYTAlpBMRUwEwYDVQQIEwxXZXN0ZXJuIENhcGUxEjAQBgNV
+BAcTCUNhcGUgVG93bjEaMBgGA1UEChMRVGhhd3RlIENvbnN1bHRpbmcxKDAmBgNV
+BAsTH0NlcnRpZmljYXRpb24gU2VydmljZXMgRGl2aXNpb24xJDAiBgNVBAMTG1Ro
+YXd0ZSBQZXJzb25hbCBGcmVlbWFpbCBDQTErMCkGCSqGSIb3DQEJARYccGVyc29u
+YWwtZnJlZW1haWxAdGhhd3RlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkC
+gYEA1GnX1LCUZFtx6UfYDFG26nKRsIRefS0Nj3sS34UldSh0OkIsYyeflXtL734Z
+hx2G6qPduc6WZBrCFG5ErHzmj+hND3EfQDimAKOHePb5lIZererAXnbr2RSjXW56
+fAylS1V/Bhkpf56aJtVquzgkCGqYx7Hao5iR/Xnb5VrEHLkCAwEAAaMTMBEwDwYD
+VR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQAemGDU5fJUYLA9GoFkR/db
+o9lvwykLp9KpgUn2w22FFChFRAH0cVyVLhQPGivRqWvBX2c9FvFyIK++FsoOMF/J
+y6WTLMNnVB5yIoojdmyUHVFSbJ3E4EcC18y/8IB7GG4l3GJh1qb+wR1/2bP9jVxF
+EFrGZWSa6yz1A0/WSGL7Lg==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDODCCAqGgAwIBAgIQQAWyU6AaRkNQCYGPEhB27DANBgkqhkiG9w0BAQUFADCB
+zzELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMRowGAYDVQQKExFUaGF3dGUgQ29uc3VsdGluZzEoMCYGA1UECxMf
+Q2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEjMCEGA1UEAxMaVGhhd3Rl
+IFBlcnNvbmFsIFByZW1pdW0gQ0ExKjAoBgkqhkiG9w0BCQEWG3BlcnNvbmFsLXBy
+ZW1pdW1AdGhhd3RlLmNvbTAeFw05NjAxMDEwMDAwMDBaFw0yMTAxMDEyMzU5NTla
+MIHPMQswCQYDVQQGEwJaQTEVMBMGA1UECBMMV2VzdGVybiBDYXBlMRIwEAYDVQQH
+EwlDYXBlIFRvd24xGjAYBgNVBAoTEVRoYXd0ZSBDb25zdWx0aW5nMSgwJgYDVQQL
+Ex9DZXJ0aWZpY2F0aW9uIFNlcnZpY2VzIERpdmlzaW9uMSMwIQYDVQQDExpUaGF3
+dGUgUGVyc29uYWwgUHJlbWl1bSBDQTEqMCgGCSqGSIb3DQEJARYbcGVyc29uYWwt
+cHJlbWl1bUB0aGF3dGUuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJ
+Ztn4B0TPuYwu8KHvE0VsBd/eJxZRNkERbGw77f4QfRKe5ZtCmv5gMcNmt3M6SK5O
+0DI3lIi1DbbZ8/JE2dWIEt12TfIa/G8jHnrx2JhFTgcQ7xZC0EN1bUre4qrJMf8f
+AHB8Zs8QJQi6+u4A6UYDZicRFTuqW/KY3TZCstqIdQIDAQABoxMwETAPBgNVHRMB
+Af8EBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBALpkCujztDHJJ2+idqAtNnHHhsAI
+wk7t2pokGYf8WiOcck0I361cwzskgR1Xj7YSpSID7xK90S1elo8mJk9LG3w7oFIa
+pag3hsRHKsrdQfho9cITQSma8AyozaH8FSMC23or1GJRQkfEox/00sVNVBDr2vDM
+p083DL08yxDjGugV
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDNjCCAp+gAwIBAgIQNhIilsXjOKUgodJfTNcJVDANBgkqhkiG9w0BAQUFADCB
+zjELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMR0wGwYDVQQKExRUaGF3dGUgQ29uc3VsdGluZyBjYzEoMCYGA1UE
+CxMfQ2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEhMB8GA1UEAxMYVGhh
+d3RlIFByZW1pdW0gU2VydmVyIENBMSgwJgYJKoZIhvcNAQkBFhlwcmVtaXVtLXNl
+cnZlckB0aGF3dGUuY29tMB4XDTk2MDgwMTAwMDAwMFoXDTIxMDEwMTIzNTk1OVow
+gc4xCzAJBgNVBAYTAlpBMRUwEwYDVQQIEwxXZXN0ZXJuIENhcGUxEjAQBgNVBAcT
+CUNhcGUgVG93bjEdMBsGA1UEChMUVGhhd3RlIENvbnN1bHRpbmcgY2MxKDAmBgNV
+BAsTH0NlcnRpZmljYXRpb24gU2VydmljZXMgRGl2aXNpb24xITAfBgNVBAMTGFRo
+YXd0ZSBQcmVtaXVtIFNlcnZlciBDQTEoMCYGCSqGSIb3DQEJARYZcHJlbWl1bS1z
+ZXJ2ZXJAdGhhd3RlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA0jY2
+aovXwlue2oFBYo847kkEVdbQ7xwblRZH7xhINTpS9CtqBo87L+pW46+GjZ4X9560
+ZXUCTe/LCaIhUdib0GfQug2SBhRz1JPLlyoAnFxODLz6FVL88kRu2hFKbgifLy3j
++ao6hnO2RlNYyIkFvYMRuHM/qgeN9EJN50CdHDcCAwEAAaMTMBEwDwYDVR0TAQH/
+BAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQBlkKyID1bZ5jA01CbH0FDxkt5r1DmI
+CSLGpmODA/eZd9iy5Ri4XWPz1HP7bJyZePFLeH0ZJMMrAoT4vCLZiiLXoPxx7JGH
+IPG47LHlVYCsPVLIOQ7C8MAFT9aCdYy9X9LcdpoFEsmvcsPcJX6kTY4XpeCHf+Ga
+WuFg3GQjPEIuTQ==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDIjCCAougAwIBAgIQNKT/9jCvTKU8MxdCoZRmdTANBgkqhkiG9w0BAQUFADCB
+xDELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJ
+Q2FwZSBUb3duMR0wGwYDVQQKExRUaGF3dGUgQ29uc3VsdGluZyBjYzEoMCYGA1UE
+CxMfQ2VydGlmaWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEZMBcGA1UEAxMQVGhh
+d3RlIFNlcnZlciBDQTEmMCQGCSqGSIb3DQEJARYXc2VydmVyLWNlcnRzQHRoYXd0
+ZS5jb20wHhcNOTYwODAxMDAwMDAwWhcNMjEwMTAxMjM1OTU5WjCBxDELMAkGA1UE
+BhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTESMBAGA1UEBxMJQ2FwZSBUb3du
+MR0wGwYDVQQKExRUaGF3dGUgQ29uc3VsdGluZyBjYzEoMCYGA1UECxMfQ2VydGlm
+aWNhdGlvbiBTZXJ2aWNlcyBEaXZpc2lvbjEZMBcGA1UEAxMQVGhhd3RlIFNlcnZl
+ciBDQTEmMCQGCSqGSIb3DQEJARYXc2VydmVyLWNlcnRzQHRoYXd0ZS5jb20wgZ8w
+DQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANOkUG7I/1Zr5s9dtuoMaHVHoqrC2oQl
+/Kj0R1HahbUgdJSGHg91yekIYfUGbTBuFRkC6VLAYttNmZ7iagxEOM3+vuNkCXDF
+/rFrKbYvScg71CcEJRCXL+eQbcAoQpnXTEPew/UhbVSfXcNY4cDk2VuwuNy0e982
+OsK1ZiIS1ocNAgMBAAGjEzARMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQEF
+BQADgYEAvkBpQW/G28GnvwfAReTQtUMeTJUzNelewj4o9qgNUNX/4gwP/FACjq6R
+ua00io2fJ3GqGcxL6ATK1BdrEhrWxl/WzV7/iXa/2EjYWb0IiokdV81FHlK6EpqE
++hiJX+j5MDVqAWC5mYCDhQpu2vTJj15zLTFKY6B08h+LItIpPus=
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIICPTCCAaYCEQDNun9W8N/kvFT+IqyzcqpVMA0GCSqGSIb3DQEBAgUAMF8xCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE3MDUGA1UECxMuQ2xh
+c3MgMSBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw05
+NjAxMjkwMDAwMDBaFw0yODA4MDEyMzU5NTlaMF8xCzAJBgNVBAYTAlVTMRcwFQYD
+VQQKEw5WZXJpU2lnbiwgSW5jLjE3MDUGA1UECxMuQ2xhc3MgMSBQdWJsaWMgUHJp
+bWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTCBnzANBgkqhkiG9w0BAQEFAAOB
+jQAwgYkCgYEA5Rm/baNWYS2ZSHH2Z965jeu3noaACpEO+jglr0aIguVzqKCbJF0N
+H8xlbgyw0FaEGIeaBpsQoXPftFg5a27B9hXVqKg/qhIGjTGsf7A01480Z4gJzRQR
+4k5FVmkfeAKA2txHkSm7NsljXMXg1y2He6G3MrB7MLoqLzGq7qNn2tsCAwEAATAN
+BgkqhkiG9w0BAQIFAAOBgQBMP7iLxmjf7kMzDl3ppssHhE16M/+SG/Q2rdiVIjZo
+EWx8QszznC7EBz8UsA9P/5CSdvnivErpj82ggAr3xSnxgiJduLHdgSOjeyUVRjB5
+FvjqBUuUfx3CHMjjt/QQQDwTw18fU+hI5Ia0e6E1sHslurjTjqs/OJ0ANACY89Fx
+lA==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIICPDCCAaUCEC0b/EoXjaOR6+f/9YtFvgswDQYJKoZIhvcNAQECBQAwXzELMAkG
+A1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMTcwNQYDVQQLEy5DbGFz
+cyAyIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTk2
+MDEyOTAwMDAwMFoXDTI4MDgwMTIzNTk1OVowXzELMAkGA1UEBhMCVVMxFzAVBgNV
+BAoTDlZlcmlTaWduLCBJbmMuMTcwNQYDVQQLEy5DbGFzcyAyIFB1YmxpYyBQcmlt
+YXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIGfMA0GCSqGSIb3DQEBAQUAA4GN
+ADCBiQKBgQC2WoujDWojg4BrzzmH9CETMwZMJaLtVRKXxaeAufqDwSCg+i8VDXyh
+YGt+eSz6Bg86rvYbb7HS/y8oUl+DfUvEerf4Zh+AVPy3wo5ZShRXRtGak75BkQO7
+FYCTXOvnzAhsPz6zSvz/S2wj1VCCJkQZjiPDceoZJEcEnnW/yKYAHwIDAQABMA0G
+CSqGSIb3DQEBAgUAA4GBAIobK/o5wXTXXtgZZKJYSi034DNHD6zt96rbHuSLBlxg
+J8pFUs4W7z8GZOeUaHxgMxURaa+dYo2jA1Rrpr7l7gUYYAS/QoD90KioHgE796Nc
+r6Pc5iaAIzy4RHT3Cq5Ji2F4zCS/iIqnDupzGUH9TQPwiNHleI2lKk/2lw0Xd8rY
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIICPDCCAaUCEDyRMcsf9tAbDpq40ES/Er4wDQYJKoZIhvcNAQEFBQAwXzELMAkG
+A1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMTcwNQYDVQQLEy5DbGFz
+cyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTk2
+MDEyOTAwMDAwMFoXDTI4MDgwMjIzNTk1OVowXzELMAkGA1UEBhMCVVMxFzAVBgNV
+BAoTDlZlcmlTaWduLCBJbmMuMTcwNQYDVQQLEy5DbGFzcyAzIFB1YmxpYyBQcmlt
+YXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIGfMA0GCSqGSIb3DQEBAQUAA4GN
+ADCBiQKBgQDJXFme8huKARS0EN8EQNvjV69qRUCPhAwL0TPZ2RHP7gJYHyX3KqhE
+BarsAx94f56TuZoAqiN91qyFomNFx3InzPRMxnVx0jnvT0Lwdd8KkMaOIG+YD/is
+I19wKTakyYbnsZogy1Olhec9vn2a/iRFM9x2Fe0PonFkTGUugWhFpwIDAQABMA0G
+CSqGSIb3DQEBBQUAA4GBABByUqkFFBkyCEHwxWsKzH4PIRnN5GfcX6kb5sroc50i
+2JhucwNhkcV8sEVAbkSdjbCxlnRhLQ2pRdKkkirWmnWXbj9T/UWZYB2oK0z5XqcJ
+2HUw19JlYD1n1khVdWk/kfVIC0dpImmClr7JyDiGSnoscxlIaU5rfGW/D/xwzoiQ
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDAjCCAmsCEEzH6qqYPnHTkxD4PTqJkZIwDQYJKoZIhvcNAQEFBQAwgcExCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xh
+c3MgMSBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcy
+MTowOAYDVQQLEzEoYykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3Jp
+emVkIHVzZSBvbmx5MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMB4X
+DTk4MDUxODAwMDAwMFoXDTI4MDgwMTIzNTk1OVowgcExCzAJBgNVBAYTAlVTMRcw
+FQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xhc3MgMSBQdWJsaWMg
+UHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcyMTowOAYDVQQLEzEo
+YykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5
+MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCq0Lq+Fi24g9TK0g+8djHKlNgdk4xWArzZbxpvUjZudVYK
+VdPfQ4chEWWKfo+9Id5rMj8bhDSVBZ1BNeuS65bdqlk/AVNtmU/t5eIqWpDBucSm
+Fc/IReumXY6cPvBkJHalzasab7bYe1FhbqZ/h8jit+U03EGI6glAvnOSPWvndQID
+AQABMA0GCSqGSIb3DQEBBQUAA4GBAKlPww3HZ74sy9mozS11534Vnjty637rXC0J
+h9ZrbWB85a7FkCMMXErQr7Fd88e2CtvgFZMN3QO8x3aKtd1Pw5sTdbgBwObJW2ul
+uIncrKTdcu1OofdPvAbT6shkdHvClUGcZXNY8ZCaPGqxmMnEh7zPRW1F4m4iP/68
+DzFc6PLZ
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDAzCCAmwCEQC5L2DMiJ+hekYJuFtwbIqvMA0GCSqGSIb3DQEBBQUAMIHBMQsw
+CQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xPDA6BgNVBAsTM0Ns
+YXNzIDIgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkgLSBH
+MjE6MDgGA1UECxMxKGMpIDE5OTggVmVyaVNpZ24sIEluYy4gLSBGb3IgYXV0aG9y
+aXplZCB1c2Ugb25seTEfMB0GA1UECxMWVmVyaVNpZ24gVHJ1c3QgTmV0d29yazAe
+Fw05ODA1MTgwMDAwMDBaFw0yODA4MDEyMzU5NTlaMIHBMQswCQYDVQQGEwJVUzEX
+MBUGA1UEChMOVmVyaVNpZ24sIEluYy4xPDA6BgNVBAsTM0NsYXNzIDIgUHVibGlj
+IFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkgLSBHMjE6MDgGA1UECxMx
+KGMpIDE5OTggVmVyaVNpZ24sIEluYy4gLSBGb3IgYXV0aG9yaXplZCB1c2Ugb25s
+eTEfMB0GA1UECxMWVmVyaVNpZ24gVHJ1c3QgTmV0d29yazCBnzANBgkqhkiG9w0B
+AQEFAAOBjQAwgYkCgYEAp4gBIXQs5xoD8JjhlzwPIQjxnNuX6Zr8wgQGE75fUsjM
+HiwSViy4AWkszJkfrbCWrnkE8hM5wXuYuggs6MKEEyyqaekJ9MepAqRCwiNPStjw
+DqL7MWzJ5m+ZJwf15vRMeJ5t60aG+rmGyVTyssSv1EYcWskVMP8NbPUtDm3Of3cC
+AwEAATANBgkqhkiG9w0BAQUFAAOBgQByLvl/0fFx+8Se9sVeUYpAmLho+Jscg9ji
+nb3/7aHmZuovCfTK1+qlK5X2JGCGTUQug6XELaDTrnhpb3LabK4I8GOSN+a7xDAX
+rXfMSTWqz9iP0b63GJZHc2pUIjRkLbYWm1lbtFFZOrMLFPQS32eg9K0yZF6xRnIn
+jBJ7xUS0rg==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDAjCCAmsCEH3Z/gfPqB63EHln+6eJNMYwDQYJKoZIhvcNAQEFBQAwgcExCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xh
+c3MgMyBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcy
+MTowOAYDVQQLEzEoYykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3Jp
+emVkIHVzZSBvbmx5MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMB4X
+DTk4MDUxODAwMDAwMFoXDTI4MDgwMTIzNTk1OVowgcExCzAJBgNVBAYTAlVTMRcw
+FQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xhc3MgMyBQdWJsaWMg
+UHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcyMTowOAYDVQQLEzEo
+YykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5
+MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQDMXtERXVxp0KvTuWpMmR9ZmDCOFoUgRm1HP9SFIIThbbP4
+pO0M8RcPO/mn+SXXwc+EY/J8Y8+iR/LGWzOOZEAEaMGAuWQcRXfH2G71lSk8UOg0
+13gfqLptQ5GVj0VXXn7F+8qkBOvqlzdUMG+7AUcyM83cV5tkaWH4mx0ciU9cZwID
+AQABMA0GCSqGSIb3DQEBBQUAA4GBAFFNzb5cy5gZnBWyATl4Lk0PZ3BwmcYQWpSk
+U01UbSuvDV1Ai2TT1+7eVmGSX6bEHRBhNtMsJzzoKQm5EWR0zLVznxxIqbxhAe7i
+F6YM40AIOw7n60RzKprxaZLvcRTDOaxxp5EJb+RxBrO6WVcmeQD2+A2iMzAo1KpY
+oJ2daZH9
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDAjCCAmsCEDKIjprS9esTR/h/xCA3JfgwDQYJKoZIhvcNAQEFBQAwgcExCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xh
+c3MgNCBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcy
+MTowOAYDVQQLEzEoYykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3Jp
+emVkIHVzZSBvbmx5MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMB4X
+DTk4MDUxODAwMDAwMFoXDTI4MDgwMTIzNTk1OVowgcExCzAJBgNVBAYTAlVTMRcw
+FQYDVQQKEw5WZXJpU2lnbiwgSW5jLjE8MDoGA1UECxMzQ2xhc3MgNCBQdWJsaWMg
+UHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEcyMTowOAYDVQQLEzEo
+YykgMTk5OCBWZXJpU2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5
+MR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQC68OTP+cSuhVS5B1f5j8V/aBH4xBewRNzjMHPVKmIquNDM
+HO0oW369atyzkSTKQWI8/AIBvxwWMZQFl3Zuoq29YRdsTjCG8FE3KlDHqGKB3FtK
+qsGgtG7rL+VXxbErQHDbWk2hjh+9Ax/YA9SPTJlxvOKCzFjomDqG04Y48wApHwID
+AQABMA0GCSqGSIb3DQEBBQUAA4GBAIWMEsGnuVAVess+rLhDityq3RS6iYF+ATwj
+cSGIL4LcY/oCRaxFWdcqWERbt5+BO5JoPeI3JPV7bI92NZYJqFmduc4jq3TWg/0y
+cyfYaT5DdPauxYma51N86Xv2S/PBZYPejYqcPIiNOVn8qj8ijaHBZlCBckztImRP
+T8qAkbYp
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIEGjCCAwICEQCLW3VWhFSFCwDPrzhIzrGkMA0GCSqGSIb3DQEBBQUAMIHKMQsw
+CQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZl
+cmlTaWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWdu
+LCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlT
+aWduIENsYXNzIDEgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3Jp
+dHkgLSBHMzAeFw05OTEwMDEwMDAwMDBaFw0zNjA3MTYyMzU5NTlaMIHKMQswCQYD
+VQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlT
+aWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWduLCBJ
+bmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlTaWdu
+IENsYXNzIDEgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkg
+LSBHMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN2E1Lm0+afY8wR4
+nN493GwTFtl63SRRZsDHJlkNrAYIwpTRMx/wgzUfbhvI3qpuFU5UJ+/EbRrsC+MO
+8ESlV8dAWB6jRx9x7GD2bZTIGDnt/kIYVt/kTEkQeE4BdjVjEjbdZrwBBDajVWjV
+ojYJrKshJlQGrT/KFOCsyq0GHZXi+J3x4GD/wn91K0zM2v6HmSHquv4+VNfSWXjb
+PG7PoBMAGrgnoeS+Z5bKoMWznN3JdZ7rMJpfo83ZrngZPyPpXNspva1VyBtUjGP2
+6KbqxzcSXKMpHgLZ2x87tNcPVkeBFQRKr4Mn0cVYiMHd9qqnoxjaaKptEVHhv2Vr
+n5Z20T0CAwEAATANBgkqhkiG9w0BAQUFAAOCAQEAq2aN17O6x5q25lXQBfGfMY1a
+qtmqRiYPce2lrVNWYgFHKkTp/j90CxObufRNG7LRX7K20ohcs5/Ny9Sn2WCVhDr4
+wTcdYcrnsMXlkdpUpqwxga6X3s0IrLjAl4B/bnKk52kTlWUfxJM8/XmPBNQ+T+r3
+ns7NZ3xPZQL/kYVUc8f/NveGLezQXk//EZ9yBta4GvFMDSZl4kSAHsef493oCtrs
+pSCAaWihT37ha88HQfqDjrw43bAuEbFrskLMmrz5SCJ5ShkPshw+IHTZasO+8ih4
+E1Z5T21Q6huwtVexN2ZYI/PcD98Kh8TvhgXVOBRgmaNL3gaWcSzy27YfpO8/7g==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIEGTCCAwECEGFwy0mMX5hFKeewptlQW3owDQYJKoZIhvcNAQEFBQAwgcoxCzAJ
+BgNVBAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjEfMB0GA1UECxMWVmVy
+aVNpZ24gVHJ1c3QgTmV0d29yazE6MDgGA1UECxMxKGMpIDE5OTkgVmVyaVNpZ24s
+IEluYy4gLSBGb3IgYXV0aG9yaXplZCB1c2Ugb25seTFFMEMGA1UEAxM8VmVyaVNp
+Z24gQ2xhc3MgMiBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0
+eSAtIEczMB4XDTk5MTAwMTAwMDAwMFoXDTM2MDcxNjIzNTk1OVowgcoxCzAJBgNV
+BAYTAlVTMRcwFQYDVQQKEw5WZXJpU2lnbiwgSW5jLjEfMB0GA1UECxMWVmVyaVNp
+Z24gVHJ1c3QgTmV0d29yazE6MDgGA1UECxMxKGMpIDE5OTkgVmVyaVNpZ24sIElu
+Yy4gLSBGb3IgYXV0aG9yaXplZCB1c2Ugb25seTFFMEMGA1UEAxM8VmVyaVNpZ24g
+Q2xhc3MgMiBQdWJsaWMgUHJpbWFyeSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAt
+IEczMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArwoNwtUs22e5LeWU
+J92lvuCwTY+zYVY81nzD9M0+hsuiiOLh2KRpxbXiv8GmR1BeRjmL1Za6tW8UvxDO
+JxOeBUebMXoT2B/Z0wI3i60sR/COgQanDTAM6/c8DyAd3HJG7qUCyFvDyVZpTMUY
+wZF7C9UTAJu878NIPkZgIIUq1ZC2zYugzDLdt/1AVbJQHFauzI13TccgTacxdu9o
+koqQHgiBVrKtaaNS0MscxCM9H5n+TOgWY47GCI72MfbS+uV23bUckqNJzc0BzWjN
+qWm6o+sdDZykIKbBoMXRRkwXbdKsZj+WjOCE1Db/IlnF+RFgqF8EffIa9iVCYQ/E
+Srg+iQIDAQABMA0GCSqGSIb3DQEBBQUAA4IBAQA0JhU8wI1NQ0kdvekhktdmnLfe
+xbjQ5F1fdiLAJvmEOjr5jLX77GDx6M4EsMjdpwOPMPOY36TmpDHf0xwLRtxyID+u
+7gU8pDM/CzmscHhzS5kr3zDCVLCoO1Wh/hYozUK9dG6A2ydEp85EXdQbkJgNHkKU
+sQAsBNB0owIFImNjzYO1+8FtYmtpdf1dcEG59b98377BMnMiIYtYgXsVkXq642RI
+sH/7NiXaldDxJBQX3RiAa0YjOVT1jmIJBB2UkKab5iXiQkWquJCtvgiPqQtCGJTP
+cjnhsUPgKM+351psE2tJs//jGHyJizNdrDPXp/naOlXJWBD5qu9ats9LS98q
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIEGjCCAwICEQCbfgZJoz5iudXukEhxKe9XMA0GCSqGSIb3DQEBBQUAMIHKMQsw
+CQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZl
+cmlTaWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWdu
+LCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlT
+aWduIENsYXNzIDMgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3Jp
+dHkgLSBHMzAeFw05OTEwMDEwMDAwMDBaFw0zNjA3MTYyMzU5NTlaMIHKMQswCQYD
+VQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlT
+aWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWduLCBJ
+bmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlTaWdu
+IENsYXNzIDMgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkg
+LSBHMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMu6nFL8eB8aHm8b
+N3O9+MlrlBIwT/A2R/XQkQr1F8ilYcEWQE37imGQ5XYgwREGfassbqb1EUGO+i2t
+KmFZpGcmTNDovFJbcCAEWNF6yaRpvIMXZK0Fi7zQWM6NjPXr8EJJC52XJ2cybuGu
+kxUccLwgTS8Y3pKI6GyFVxEa6X7jJhFUokWWVYPKMIno3Nij7SqAP395ZVc+FSBm
+CC+Vk7+qRy+oRpfwEuL+wgorUeZ25rdGt+INpsyow0xZVYnm6FNcHOqd8GIWC6fJ
+Xwzw3sJ2zq/3avL6QaaiMxTJ5Xpj055iN9WFZZ4O5lMkdBteHRJTW8cs54NJOxWu
+imi5V5cCAwEAATANBgkqhkiG9w0BAQUFAAOCAQEAERSWwauSCPc/L8my/uRan2Te
+2yFPhpk0djZX3dAVL8WtfxUfN2JzPtTnX84XA9s1+ivbrmAJXx5fj267Cz3qWhMe
+DGBvtcC1IyIuBwvLqXTLR7sdwdela8wv0kL9Sd2nic9TutoAWii/gt/4uhMdUIaC
+/Y4wjylGsB49Ndo4YhYYSq3mtlFs3q9i6wHQHiT+eo8SGhJouPtmmRQURVyu565p
+F4ErWjfJXir0xuKhXFSbplQAz/DxwceYMBo7Nhbbo27q/a2ywtrvAkcTisDxszGt
+TxzhT5yvDwyd93gN2PQ1VoDat20Xj50egWTh/sVFuq1ruQp6Tk9LhO5L8X3dEQ==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIEGjCCAwICEQDsoKeLbnVqAc/EfMwvlF7XMA0GCSqGSIb3DQEBBQUAMIHKMQsw
+CQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZl
+cmlTaWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWdu
+LCBJbmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlT
+aWduIENsYXNzIDQgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3Jp
+dHkgLSBHMzAeFw05OTEwMDEwMDAwMDBaFw0zNjA3MTYyMzU5NTlaMIHKMQswCQYD
+VQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlT
+aWduIFRydXN0IE5ldHdvcmsxOjA4BgNVBAsTMShjKSAxOTk5IFZlcmlTaWduLCBJ
+bmMuIC0gRm9yIGF1dGhvcml6ZWQgdXNlIG9ubHkxRTBDBgNVBAMTPFZlcmlTaWdu
+IENsYXNzIDQgUHVibGljIFByaW1hcnkgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkg
+LSBHMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK3LpRFpxlmr8Y+1
+GQ9Wzsy1HyDkniYlS+BzZYlZ3tCD5PUPtbut8XzoIfzk6AzufEUiGXaStBO3IFsJ
++mGuqPKljYXCKtbeZjbSmwL0qJJgfJxptI8kHtCGUvYynEFYHiK9zUVilQhu0Gbd
+U6LM8BDcVHOLBKFGMzNcF0C5nk3T875Vg+ixiY5afJqWIpA7iCXy0lOIAgwLePLm
+NxdLMEYH5IBtptiWLugs+BGzOA1mppvqySNb247i8xOOGlktqgLw7KSHZtzBP/XY
+ufTsgsbSPZUd5cBPhMnZo0QoBmrXRazwa2rvTl/4EYIeOGM0ZlDUPpNz+jDDZq3/
+ky2X7wMCAwEAATANBgkqhkiG9w0BAQUFAAOCAQEAj/ola09b5KROJ1WrIhVZPMq1
+CtRK26vdoV9TxaBXOcLORyu+OshWv8LZJxA6sQU8wHcxuzrTBXttmhwwjIDLk5Mq
+g6sFUYICABFna/OIYUdfA5PVWw3g8dShMjWFsjrbsIKr0csKvE+MW8VLADsfKoKm
+fjaF3H48ZwC15DtS4KjrXRX5xm3wrR0OhbepmnMUWluPQSjA1egtTaRezarZ7c7c
+2NU8Qh0XwRJdRTjDOPP8hS6DRkiy1yBfkjaP53kPmF6Z6PDQpLv1U70qzlmwr25/
+bLvSHgCwIe34QWKCudiyxLtGUPMxxY8BqHTr9Xgn2uf3ZkPznoM+IKrDNWCRzg==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIDhDCCAwqgAwIBAgIQL4D+I4wOIg9IZxIokYesszAKBggqhkjOPQQDAzCByjEL
+MAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZW
+ZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNyBWZXJpU2ln
+biwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxWZXJp
+U2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9y
+aXR5IC0gRzQwHhcNMDcxMTA1MDAwMDAwWhcNMzgwMTE4MjM1OTU5WjCByjELMAkG
+A1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJp
+U2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNyBWZXJpU2lnbiwg
+SW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxWZXJpU2ln
+biBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9yaXR5
+IC0gRzQwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAASnVnp8Utpkmw4tXNherJI9/gHm
+GUo9FANL+mAnINmDiWn6VMaaGF5VKmTeBvaNSjutEDxlPZCIBIngMGGzrl0Bp3ve
+fLK+ymVhAIau2o970ImtTR1ZmkGxvEeA3J5iw/mjgbIwga8wDwYDVR0TAQH/BAUw
+AwEB/zAOBgNVHQ8BAf8EBAMCAQYwbQYIKwYBBQUHAQwEYTBfoV2gWzBZMFcwVRYJ
+aW1hZ2UvZ2lmMCEwHzAHBgUrDgMCGgQUj+XTGoasjY5rw8+AatRIGCx7GS4wJRYj
+aHR0cDovL2xvZ28udmVyaXNpZ24uY29tL3ZzbG9nby5naWYwHQYDVR0OBBYEFLMW
+kf3upm7ktS5Jj4d4gYDs5bG1MAoGCCqGSM49BAMDA2gAMGUCMGYhDBgmYFo4e1ZC
+4Kf8NoRRkSAsdk1DPcQdhCPQrNZ8NQbOzWm9kA3bbEhCHQ6qQgIxAJw9SDkjOVga
+FRJZap7v1VmyHVIsmXHNxynfGyphe3HR3vPA5Q06Sqotp9iGKt0uEA==
+-----END CERTIFICATE----------BEGIN CERTIFICATE-----
+MIIE0zCCA7ugAwIBAgIQGNrRniZ96LtKIVjNzGs7SjANBgkqhkiG9w0BAQUFADCB
+yjELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQL
+ExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNiBWZXJp
+U2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxW
+ZXJpU2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0
+aG9yaXR5IC0gRzUwHhcNMDYxMTA4MDAwMDAwWhcNMzYwNzE2MjM1OTU5WjCByjEL
+MAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZW
+ZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNiBWZXJpU2ln
+biwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxWZXJp
+U2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0aG9y
+aXR5IC0gRzUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCvJAgIKXo1
+nmAMqudLO07cfLw8RRy7K+D+KQL5VwijZIUVJ/XxrcgxiV0i6CqqpkKzj/i5Vbex
+t0uz/o9+B1fs70PbZmIVYc9gDaTY3vjgw2IIPVQT60nKWVSFJuUrjxuf6/WhkcIz
+SdhDY2pSS9KP6HBRTdGJaXvHcPaz3BJ023tdS1bTlr8Vd6Gw9KIl8q8ckmcY5fQG
+BO+QueQA5N06tRn/Arr0PO7gi+s3i+z016zy9vA9r911kTMZHRxAy3QkGSGT2RT+
+rCpSx4/VBEnkjWNHiDxpg8v+R70rfk/Fla4OndTRQ8Bnc+MUCH7lP59zuDMKz10/
+NIeWiu5T6CUVAgMBAAGjgbIwga8wDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8E
+BAMCAQYwbQYIKwYBBQUHAQwEYTBfoV2gWzBZMFcwVRYJaW1hZ2UvZ2lmMCEwHzAH
+BgUrDgMCGgQUj+XTGoasjY5rw8+AatRIGCx7GS4wJRYjaHR0cDovL2xvZ28udmVy
+aXNpZ24uY29tL3ZzbG9nby5naWYwHQYDVR0OBBYEFH/TZafC3ey78DAJ80M5+gKv
+MzEzMA0GCSqGSIb3DQEBBQUAA4IBAQCTJEowX2LP2BqYLz3q3JktvXf2pXkiOOzE
+p6B4Eq1iDkVwZMXnl2YtmAl+X6/WzChl8gGqCBpH3vn5fJJaCGkgDdk+bW48DW7Y
+5gaRQBi5+MHt39tBquCWIMnNZBU4gcmU7qKEKQsTb47bDN0lAtukixlE0kF6BWlK
+WE9gyn6CagsCqiUXObXbf+eEZSqVir2G3l6BFoMtEMze/aiCKm0oHw0LxOXnGiYZ
+4fQRbxC1lfznQgUy286dUV4otp6F01vvpX1FQHKOtw5rDgb7MzVIcbidJ4vEZV8N
+hnacRHr2lVz2XTIIM6RUthg/aFzyQkqFOFSDX9HoLPKsEdao7WNq
+-----END CERTIFICATE-----# ~/.bashrc: executed by bash(1) for non-login interactive shells.
+
+export PATH=\
+/bin:\
+/sbin:\
+/usr/bin:\
+/usr/sbin:\
+/usr/bin/X11:\
+/usr/local/bin
+
+ulimit -S -c 100000000
+umask 177
+# If running interactively, then:
+if [ "$PS1" ]; then
+
+    if [ "$BASH" ]; then
+	export PS1="[\u@\h \W]\\$ "
+	alias ll='/bin/ls --color=tty -laFh'
+	alias ls='/bin/ls --color=tty -F'
+	export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.png=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:';
+    else
+      if [ "`id -u`" -eq 0 ]; then 
+	export PS1='# '
+      else
+	export PS1='$ '
+      fi
+    fi
+
+    export USER=`id -un`
+    export LOGNAME=$USER
+    export HOSTNAME=`/bin/hostname`
+    export HISTSIZE=1000
+    export HISTFILESIZE=1000
+    export PAGER='/bin/more '
+    export EDITOR='/bin/vi'
+    export INPUTRC=/etc/inputrc
+    export DMALLOC_OPTIONS=debug=0x34f47d83,inter=100,log=logfile
+    export LD_LIBRARY_PATH=$LS_LIBRARY_PATH:/usr/lib
+    ### Some aliases
+    alias ps2='ps facux '
+    alias ps1='ps faxo "%U %t %p %a" '
+    alias af='ps af'
+    alias cls='clear'
+    alias df='df -h'
+    alias indent='indent -bad -bap -bbo -nbc -br -brs -c33 -cd33 -ncdb -ce -ci4 -cli0 -cp33 -cs -d0 -di1 -nfc1 -nfca -hnl -i4 -ip0 -l75 -lp -npcs -npsl -nsc -nsob -nss -ts4 '
+    #alias bc='bc -l'
+    alias minicom='minicom -c on'
+    alias calc='calc -Cd '
+    alias bc='calc -Cd '
+fi;
+4
+
+=====BLOCK=====
+
+]Xtty1
+tty2
+tty3
+tty4
+tty5
+tty6
+tty7
+tty8
+ttyS0
+ttyS1
+ttyS2
+ttyS3
+pts/0
+pts/1
+pts/2
+pts/3
+pts/4
+pts/5
+pts/6
+pts/7
+pts/8
+pts/9
+# /etc/services:
+# $Id: services,v 1.1 2004/10/09 02:49:18 andersen Exp $
+#
+# Network services, Internet style
+#
+# Note that it is presently the policy of IANA to assign a single well-known
+# port number for both TCP and UDP; hence, most entries here have two entries
+# even if the protocol doesn't support UDP operations.
+# Updated from RFC 1700, ``Assigned Numbers'' (October 1994).  Not all ports
+# are included, only the more common ones.
+
+tcpmux		1/tcp				# TCP port service multiplexer
+echo		7/tcp
+echo		7/udp
+discard		9/tcp		sink null
+discard		9/udp		sink null
+systat		11/tcp		users
+daytime		13/tcp
+daytime		13/udp
+netstat		15/tcp
+qotd		17/tcp		quote
+msp		18/tcp				# message send protocol
+msp		18/udp				# message send protocol
+chargen		19/tcp		ttytst source
+chargen		19/udp		ttytst source
+ftp-data	20/tcp
+ftp		21/tcp
+fsp		21/udp		fspd
+ssh		22/tcp				# SSH Remote Login Protocol
+ssh		22/udp				# SSH Remote Login Protocol
+telnet		23/tcp
+# 24 - private
+smtp		25/tcp		mail
+# 26 - unassigned
+time		37/tcp		timserver
+time		37/udp		timserver
+rlp		39/udp		resource	# resource location
+nameserver	42/tcp		name		# IEN 116
+whois		43/tcp		nicname
+re-mail-ck	50/tcp				# Remote Mail Checking Protocol
+re-mail-ck	50/udp				# Remote Mail Checking Protocol
+domain		53/tcp		nameserver	# name-domain server
+domain		53/udp		nameserver
+mtp		57/tcp				# deprecated
+bootps		67/tcp				# BOOTP server
+bootps		67/udp
+bootpc		68/tcp				# BOOTP client
+bootpc		68/udp
+tftp		69/udp
+gopher		70/tcp				# Internet Gopher
+gopher		70/udp
+rje		77/tcp		netrjs
+finger		79/tcp
+www		80/tcp		http		# WorldWideWeb HTTP
+www		80/udp				# HyperText Transfer Protocol
+link		87/tcp		ttylink
+kerberos	88/tcp		kerberos5 krb5	# Kerberos v5
+kerberos	88/udp		kerberos5 krb5	# Kerberos v5
+supdup		95/tcp
+# 100 - reserved
+hostnames	101/tcp		hostname	# usually from sri-nic
+iso-tsap	102/tcp		tsap		# part of ISODE.
+csnet-ns	105/tcp		cso-ns		# also used by CSO name server
+csnet-ns	105/udp		cso-ns
+# unfortunately the poppassd (Eudora) uses a port which has already
+# been assigned to a different service. We list the poppassd as an
+# alias here. This should work for programs asking for this service.
+# (due to a bug in inetd the 3com-tsmux line is disabled)
+#3com-tsmux	106/tcp		poppassd
+#3com-tsmux	106/udp		poppassd
+rtelnet		107/tcp				# Remote Telnet
+rtelnet		107/udp
+pop-2		109/tcp		postoffice	# POP version 2
+pop-2		109/udp
+pop-3		110/tcp				# POP version 3
+pop-3		110/udp
+sunrpc		111/tcp		portmapper	# RPC 4.0 portmapper TCP
+sunrpc		111/udp		portmapper	# RPC 4.0 portmapper UDP
+auth		113/tcp		authentication tap ident
+sftp		115/tcp
+uucp-path	117/tcp
+nntp		119/tcp		readnews untp	# USENET News Transfer Protocol
+ntp		123/tcp
+ntp		123/udp				# Network Time Protocol
+netbios-ns	137/tcp				# NETBIOS Name Service
+netbios-ns	137/udp
+netbios-dgm	138/tcp				# NETBIOS Datagram Service
+netbios-dgm	138/udp
+netbios-ssn	139/tcp				# NETBIOS session service
+netbios-ssn	139/udp
+imap2		143/tcp				# Interim Mail Access Proto v2
+imap2		143/udp
+snmp		161/udp				# Simple Net Mgmt Proto
+snmp-trap	162/udp		snmptrap	# Traps for SNMP
+cmip-man	163/tcp				# ISO mgmt over IP (CMOT)
+cmip-man	163/udp
+cmip-agent	164/tcp
+cmip-agent	164/udp
+xdmcp		177/tcp				# X Display Mgr. Control Proto
+xdmcp		177/udp
+nextstep	178/tcp		NeXTStep NextStep	# NeXTStep window
+nextstep	178/udp		NeXTStep NextStep	# server
+bgp		179/tcp				# Border Gateway Proto.
+bgp		179/udp
+prospero	191/tcp				# Cliff Neuman's Prospero
+prospero	191/udp
+irc		194/tcp				# Internet Relay Chat
+irc		194/udp
+smux		199/tcp				# SNMP Unix Multiplexer
+smux		199/udp
+at-rtmp		201/tcp				# AppleTalk routing
+at-rtmp		201/udp
+at-nbp		202/tcp				# AppleTalk name binding
+at-nbp		202/udp
+at-echo		204/tcp				# AppleTalk echo
+at-echo		204/udp
+at-zis		206/tcp				# AppleTalk zone information
+at-zis		206/udp
+qmtp		209/tcp				# The Quick Mail Transfer Protocol
+qmtp		209/udp				# The Quick Mail Transfer Protocol
+z3950		210/tcp		wais		# NISO Z39.50 database
+z3950		210/udp		wais
+ipx		213/tcp				# IPX
+ipx		213/udp
+imap3		220/tcp				# Interactive Mail Access
+imap3		220/udp				# Protocol v3
+ulistserv	372/tcp				# UNIX Listserv
+ulistserv	372/udp
+https		443/tcp				# MCom
+https		443/udp				# MCom
+snpp		444/tcp				# Simple Network Paging Protocol
+snpp		444/udp				# Simple Network Paging Protocol
+saft		487/tcp				# Simple Asynchronous File Transfer
+saft		487/udp				# Simple Asynchronous File Transfer
+npmp-local	610/tcp		dqs313_qmaster	# npmp-local / DQS
+npmp-local	610/udp		dqs313_qmaster	# npmp-local / DQS
+npmp-gui	611/tcp		dqs313_execd	# npmp-gui / DQS
+npmp-gui	611/udp		dqs313_execd	# npmp-gui / DQS
+hmmp-ind	612/tcp		dqs313_intercell# HMMP Indication / DQS
+hmmp-ind	612/udp		dqs313_intercell# HMMP Indication / DQS
+#
+# UNIX specific services
+#
+exec		512/tcp
+biff		512/udp		comsat
+login		513/tcp
+who		513/udp		whod
+shell		514/tcp		cmd		# no passwords used
+syslog		514/udp
+printer		515/tcp		spooler		# line printer spooler
+talk		517/udp
+ntalk		518/udp
+route		520/udp		router routed	# RIP
+timed		525/udp		timeserver
+tempo		526/tcp		newdate
+courier		530/tcp		rpc
+conference	531/tcp		chat
+netnews		532/tcp		readnews
+netwall		533/udp				# -for emergency broadcasts
+uucp		540/tcp		uucpd		# uucp daemon
+afpovertcp	548/tcp				# AFP over TCP
+afpovertcp	548/udp				# AFP over TCP
+remotefs	556/tcp		rfs_server rfs	# Brunhoff remote filesystem
+klogin		543/tcp				# Kerberized `rlogin' (v5)
+kshell		544/tcp		krcmd		# Kerberized `rsh' (v5)
+kerberos-adm	749/tcp				# Kerberos `kadmin' (v5)
+#
+webster		765/tcp				# Network dictionary
+webster		765/udp
+#
+# From ``Assigned Numbers'':
+#
+#> The Registered Ports are not controlled by the IANA and on most systems
+#> can be used by ordinary user processes or programs executed by ordinary
+#> users.
+#
+#> Ports are used in the TCP [45,106] to name the ends of logical
+#> connections which carry long term conversations.  For the purpose of
+#> providing services to unknown callers, a service contact port is
+#> defined.  This list specifies the port used by the server process as its
+#> contact port.  While the IANA can not control uses of these ports it
+#> does register or list uses of these ports as a convienence to the
+#> community.
+#
+nfsdstatus	1110/tcp
+nfsd-keepalive	1110/udp
+
+ingreslock	1524/tcp
+ingreslock	1524/udp
+prospero-np	1525/tcp			# Prospero non-privileged
+prospero-np	1525/udp
+datametrics	1645/tcp	old-radius	# datametrics / old radius entry
+datametrics	1645/udp	old-radius	# datametrics / old radius entry
+sa-msg-port	1646/tcp	old-radacct	# sa-msg-port / old radacct entry
+sa-msg-port	1646/udp	old-radacct	# sa-msg-port / old radacct entry
+radius		1812/tcp			# Radius
+radius		1812/udp			# Radius
+radacct		1813/tcp			# Radius Accounting
+radacct		1813/udp			# Radius Accounting
+nfsd		2049/tcp	nfs
+nfsd		2049/udp	nfs
+cvspserver	2401/tcp			# CVS client/server operations
+cvspserver	2401/udp			# CVS client/server operations
+mysql		3306/tcp			# MySQL
+mysql		3306/udp			# MySQL
+rfe		5002/tcp			# Radio Free Ethernet
+rfe		5002/udp			# Actually uses UDP only
+cfengine	5308/tcp			# CFengine
+cfengine	5308/udp			# CFengine
+bbs		7000/tcp			# BBS service
+#
+#
+# Kerberos (Project Athena/MIT) services
+# Note that these are for Kerberos v4, and are unofficial.  Sites running
+# v4 should uncomment these and comment out the v5 entries above.
+#
+kerberos4	750/udp		kerberos-iv kdc	# Kerberos (server) udp
+kerberos4	750/tcp		kerberos-iv kdc	# Kerberos (server) tcp
+kerberos_master	751/udp				# Kerberos authentication
+kerberos_master	751/tcp				# Kerberos authentication
+passwd_server	752/udp				# Kerberos passwd server
+krb_prop	754/tcp				# Kerberos slave propagation
+krbupdate	760/tcp		kreg		# Kerberos registration
+kpasswd		761/tcp		kpwd		# Kerberos "passwd"
+kpop		1109/tcp			# Pop with Kerberos
+knetd		2053/tcp			# Kerberos de-multiplexor
+zephyr-srv	2102/udp			# Zephyr server
+zephyr-clt	2103/udp			# Zephyr serv-hm connection
+zephyr-hm	2104/udp			# Zephyr hostmanager
+eklogin		2105/tcp			# Kerberos encrypted rlogin
+#
+# Unofficial but necessary (for NetBSD) services
+#
+supfilesrv	871/tcp				# SUP server
+supfiledbg	1127/tcp			# SUP debugging
+#
+# Datagram Delivery Protocol services
+#
+rtmp		1/ddp				# Routing Table Maintenance Protocol
+nbp		2/ddp				# Name Binding Protocol
+echo		4/ddp				# AppleTalk Echo Protocol
+zip		6/ddp				# Zone Information Protocol
+#
+# Services added for the Debian GNU/Linux distribution
+poppassd	106/tcp				# Eudora
+poppassd	106/udp				# Eudora
+mailq		174/tcp				# Mailer transport queue for Zmailer
+mailq		174/tcp				# Mailer transport queue for Zmailer
+omirr		808/tcp		omirrd		# online mirror
+omirr		808/udp		omirrd		# online mirror
+rmtcfg		1236/tcp			# Gracilis Packeten remote config server
+xtel		1313/tcp			# french minitel
+coda_opcons	1355/udp			# Coda opcons            (Coda fs)
+coda_venus	1363/udp			# Coda venus             (Coda fs)
+coda_auth	1357/udp			# Coda auth              (Coda fs)
+coda_udpsrv	1359/udp			# Coda udpsrv            (Coda fs)
+coda_filesrv	1361/udp			# Coda filesrv           (Coda fs)
+codacon		1423/tcp	venus.cmu	# Coda Console           (Coda fs)
+coda_aux1	1431/tcp			# coda auxiliary service (Coda fs)
+coda_aux1	1431/udp			# coda auxiliary service (Coda fs)
+coda_aux2	1433/tcp			# coda auxiliary service (Coda fs)
+coda_aux2	1433/udp			# coda auxiliary service (Coda fs)
+coda_aux3	1435/tcp			# coda auxiliary service (Coda fs)
+coda_aux3	1435/udp			# coda auxiliary service (Coda fs)
+cfinger		2003/tcp			# GNU Finger
+afbackup	2988/tcp			# Afbackup system
+afbackup	2988/udp			# Afbackup system
+icp		3130/tcp			# Internet Cache Protocol (Squid)
+icp		3130/udp			# Internet Cache Protocol (Squid)
+postgres	5432/tcp			# POSTGRES
+postgres	5432/udp			# POSTGRES
+fax		4557/tcp			# FAX transmission service        (old)
+hylafax		4559/tcp			# HylaFAX client-server protocol  (new)
+noclog		5354/tcp			# noclogd with TCP (nocol)
+noclog		5354/udp			# noclogd with UDP (nocol)
+hostmon		5355/tcp			# hostmon uses TCP (nocol)
+hostmon		5355/udp			# hostmon uses TCP (nocol)
+ircd		6667/tcp			# Internet Relay Chat
+ircd		6667/udp			# Internet Relay Chat
+webcache	8080/tcp			# WWW caching service
+webcache	8080/udp			# WWW caching service
+tproxy		8081/tcp			# Transparent Proxy
+tproxy		8081/udp			# Transparent Proxy
+mandelspawn	9359/udp	mandelbrot	# network mandelbrot
+amanda		10080/udp			# amanda backup services
+amandaidx	10082/tcp			# amanda backup services
+amidxtape	10083/tcp			# amanda backup services
+isdnlog		20011/tcp			# isdn logging system
+isdnlog		20011/udp			# isdn logging system
+vboxd		20012/tcp			# voice box system
+vboxd		20012/udp			# voice box system
+binkp           24554/tcp			# Binkley
+binkp           24554/udp			# Binkley
+asp		27374/tcp			# Address Search Protocol
+asp		27374/udp			# Address Search Protocol
+tfido           60177/tcp			# Ifmail
+tfido           60177/udp			# Ifmail
+fido            60179/tcp			# Ifmail
+fido            60179/udp			# Ifmail
+
+# Local services
+
+root:$1$7ELGCsEd$indnv.03WmlVFw7DA1ysd0:10933:0:99999:7:::
+bin:*:10933:0:99999:7:::
+daemon:*:10933:0:99999:7:::
+adm:*:10933:0:99999:7:::
+lp:*:10933:0:99999:7:::
+sync:*:10933:0:99999:7:::
+shutdown:*:10933:0:99999:7:::
+halt:*:10933:0:99999:7:::
+uucp:*:10933:0:99999:7:::
+operator:*:10933:0:99999:7:::
+nobody:*:10933:0:99999:7:::
+settop:$1$lwxLCXaO$epH6TjzpH9TJB15eViHNK1:13886:0:99999:7:::
+
+
+=====BLOCK=====
+
+The number of bytes of JPEG compressed thumbnail data. This is not used for primary image JPEG data. JPEG thumbnails are not divided but are recorded as a continuous JPEG bitstream from SOI to EOI. Appn and COM markers should not be recorded. Compressed thumbnails must be recorded in no more than 64 Kbytes, including all other data to be recorded in APP1.
+
+=====BLOCK=====
+
+The matrix coefficients for transformation from RGB to YCbCr image data. No default is given in TIFF; but here the value given in Appendix E, "Color Space Guidelines", is used as the default. The color space is declared in a color space information tag, with the default being the value that gives the optimal image characteristics Interoperability this condition.
+
+=====BLOCK=====
+
+The position of chrominance components in relation to the luminance component. This field is designated only for JPEG compressed data or uncompressed YCbCr data. The TIFF default is 1 (centered); but when Y:Cb:Cr = 4:2:2 it is recommended in this standard that 2 (co-sited) be used to record data, in order to improve the image quality when viewed on TV systems. When this field does not exist, the reader shall assume the TIFF default. In the case of Y:Cb:Cr = 4:2:0, the TIFF default (centered) is recommended. If the reader does not have the capability of supporting both kinds of <YCbCrPositioning>, it shall follow the TIFF default regardless of the value in this field. It is preferable that readers be able to support both centered and co-sited positioning.
+
+=====BLOCK=====
+
+The reference black point value and reference white point value. No defaults are given in TIFF, but the values below are given as defaults here. The color space is declared in a color space information tag, with the default being the value that gives the optimal image characteristics Interoperability these conditions.
+
+=====BLOCK=====
+
+Copyright information. In this standard the tag is used to indicate both the photographer and editor copyrights. It is the copyright notice of the person or organization claiming rights to the image. The Interoperability copyright statement including date and rights should be written in this field; e.g., "Copyright, John Smith, 19xx. All rights reserved.". In this standard the field records both the photographer and editor copyrights, with each recorded in a separate part of the statement. When there is a clear distinction between the photographer and editor copyrights, these are to be written in the order of photographer followed by editor copyright, separated by NULL (in this case, since the statement also ends with a NULL, there are two NULL codes) (see example 1). When only the photographer is given, it is terminated by one NULL code (see example 2). When only the editor copyright is given, the photographer copyright part consists of one space followed by a terminating NULL code, then the editor copyright is given (see example 3). When the field is left blank, it is treated as unknown.
+
+=====BLOCK=====
+
+Indicates the latitude. The latitude is expressed as three RATIONAL values giving the degrees, minutes, and seconds, respectively. When degrees, minutes and seconds are expressed, the format is dd/1,mm/1,ss/1. When degrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the format is dd/1,mmmm/100,0/1.
+
+=====BLOCK=====
+
+Indicates the longitude. The longitude is expressed as three RATIONAL values giving the degrees, minutes, and seconds, respectively. When degrees, minutes and seconds are expressed, the format is ddd/1,mm/1,ss/1. When degrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the format is ddd/1,mmmm/100,0/1.
+
+=====BLOCK=====
+
+Indicates the altitude used as the reference altitude. If the reference is sea level and the altitude is above sea level, 0 is given. If the altitude is below sea level, a value of 1 is given and the altitude is indicated as an absolute value in the GSPAltitude tag. The reference unit is meters. Note that this tag is BYTE type, unlike other reference tags.
+
+=====BLOCK=====
+
+Information specific to compressed data. The channels of each component are arranged in order from the 1st component to the 4th. For uncompressed data the data arrangement is given in the <PhotometricInterpretation> tag. However, since <PhotometricInterpretation> can only express the order of Y, Cb and Cr, this tag is provided for cases when compressed data uses components other than Y, Cb, and Cr and to enable support of other sequences.
+
+=====BLOCK=====
+
+A tag for Exif users to write keywords or comments on the image besides those in <ImageDescription>, and without the character code limitations of the <ImageDescription> tag. The character code used in the <UserComment> tag is identified based on an ID code in a fixed 8-byte area at the start of the tag data area. The unused portion of the area is padded with NULL ("00.h"). ID codes are assigned by means of registration. The designation method and references for each character code are given in Table 6. The value of CountN is determinated based on the 8 bytes in the character code area and the number of bytes in the user comment part. Since the TYPE is not ASCII, NULL termination is not necessary (see Fig. 9). The ID code for the <UserComment> area may be a Defined code such as JIS or ASCII, or may be Undefined. The Undefined name is UndefinedText, and the ID code is filled with 8 bytes of all "NULL" ("00.H"). An Exif reader that reads the <UserComment> tag must have a function for determining the ID code. This function is not required in Exif readers that do not use the <UserComment> tag (see Table 7). When a <UserComment> area is set aside, it is recommended that the ID code be ASCII and that the following user comment part be filled with blank characters [20.H].
+
+=====BLOCK=====
+
+The color space information tag is always recorded as the color space specifier. Normally sRGB (=1) is used to define the color space based on the PC monitor conditions and environment. If a color space other than sRGB is used, Uncalibrated (=FFFF.H) is set. Image data recorded as Uncalibrated can be treated as sRGB when it is converted to FlashPix.
+
+=====BLOCK=====
+
+Information specific to compressed data. When a compressed file is recorded, the valid height of the meaningful image must be recorded in this tag, whether or not there is padding data or a restart marker. This tag should not exist in an uncompressed file. For details see section 2.8.1 and Appendix F. Since data padding is unnecessary in the vertical direction, the number of lines recorded in this valid image height tag will in fact be the same as that recorded in the SOF.
+
+=====BLOCK=====
+
+This tag is used to record the name of an audio file related to the image data. The only relational information recorded here is the Exif audio file name and extension (an ASCII string consisting of 8 characters + '.' + 3 characters). The path is not recorded. Stipulations on audio are given in  section 3.6.3. File naming conventions are given in section 3.7.1. When using this tag, audio files must be recorded in conformance to the Exif audio format. Writers are also allowed to store the data such as Audio within APP2 as FlashPix extension stream data. Audio files must be recorded in conformance to the Exif audio format. The mapping of Exif image files and audio files is done in any of the three ways shown in Table 8. If multiple files are mapped to one file as in [2] or [3] of this table, the above format is used to record just one audio file name. If there are multiple audio files, the first recorded file is given. In the case of [3] in Table 8, for example, for the Exif image file "DSC00001.JPG" only  "SND00001.WAV" is given as the related Exif audio file. When there are three Exif audio files "SND00001.WAV", "SND00002.WAV" and "SND00003.WAV", the Exif image file name for each of them, "DSC00001.JPG", is indicated. By combining multiple relational information, a variety of playback possibilities can be supported. The method of using relational information is left to the implementation on the playback side. Since this information is an ASCII character string, it is terminated by NULL. When this tag is used to map audio files, the relation of the audio file to image data must also be indicated on the audio file end.
+
+=====BLOCK=====
+
+Interoperability IFD is composed of tags which stores the information to ensure the Interoperability and pointed by the following tag located in Exif IFD. The Interoperability structure of Interoperability IFD is the same as TIFF defined IFD structure but does not contain the image data characteristically compared with normal TIFF IFD.
+
+=====BLOCK=====
+
+Indicates the location of the main subject in the scene. The value of this tag represents the pixel at the center of the main subject relative to the left edge, prior to rotation processing as per the <Rotation> tag. The first value indicates the X column number and the second indicates the Y row number.
+
+=====BLOCK=====
+
+# libpng12.la - a libtool library file
+# Generated by ltmain.sh - GNU libtool 1.5.22 (1.1220.2.365 2005/12/18 22:14:06)
+#
+# Please DO NOT delete this file!
+# It is necessary for linking the library.
+
+# The name that we can dlopen(3).
+dlname='libpng12.so.0'
+
+# Names of this library.
+library_names='libpng12.so.0.25.0 libpng12.so.0 libpng12.so'
+
+# The name of the static archive.
+old_library='libpng12.a'
+
+# Libraries that this one depends upon.
+dependency_libs=' -L/media/home_ext/kimty2/htr1000s/apps/packages/build/staging_dir/lib -L/media/home_ext/kimty2/htr1000s/apps/packages/build/staging_dir/usr/lib -L/nfsroot/kimty2/htr1000s/root/usr/lib -lz -lm'
+
+# Version information for libpng12.
+current=25
+age=25
+revision=0
+
+# Is this an already installed library?
+installed=yes
+
+# Should we warn about portability when linking against -modules?
+shouldnotlink=no
+
+# Files to dlopen/dlpreopen
+dlopen=''
+dlpreopen=''
+
+# Directory that this library needs to be installed in:
+libdir='/usr/lib'
+
+
+=====BLOCK=====
+
+# libexif.la - a libtool library file
+# Generated by ltmain.sh - GNU libtool 1.5.22 (1.1220.2.365 2005/12/18 22:14:06)
+#
+# Please DO NOT delete this file!
+# It is necessary for linking the library.
+
+# The name that we can dlopen(3).
+dlname='libexif.so.12'
+
+# Names of this library.
+library_names='libexif.so.12.2.0 libexif.so.12 libexif.so'
+
+# The name of the static archive.
+old_library='libexif.a'
+
+# Libraries that this one depends upon.
+dependency_libs=' -L/media/home_ext/kimty2/htr1000s/apps/packages/build/staging_dir/lib -L/media/home_ext/kimty2/htr1000s/apps/packages/build/staging_dir/usr/lib -L/nfsroot/kimty2/htr1000s/root/usr/lib -lm'
+
+# Version information for libexif.
+current=14
+age=2
+revision=0
+
+# Is this an already installed library?
+installed=yes
+
+# Should we warn about portability when linking against -modules?
+shouldnotlink=no
+
+# Files to dlopen/dlpreopen
+dlopen=''
+dlpreopen=''
+
+# Directory that this library needs to be installed in:
+libdir='/usr/lib'
+# libfreetype.la - a libtool library file
+# Generated by ltmain.sh (GNU libtool) 2.2.4
+#
+# Please DO NOT delete this file!
+# It is necessary for linking the library.
+
+# The name that we can dlopen(3).
+dlname='libfreetype.so.6'
+
+# Names of this library.
+library_names='libfreetype.so.6.3.18 libfreetype.so.6 libfreetype.so'
+
+# The name of the static archive.
+old_library='libfreetype.a'
+
+# Linker flags that can not go in dependency_libs.
+inherited_linker_flags=''
+
+# Libraries that this one depends upon.
+dependency_libs=' -L/media/home_ext/kimty2/htr1000s/apps/packages/build/staging_dir/lib -L/media/home_ext/kimty2/htr1000s/apps/packages/build/staging_dir/usr/lib -L/nfsroot/kimty2/htr1000s/root/usr/lib'
+
+# Names of additional weak libraries provided by this library
+weak_library_names=''
+
+# Version information for libfreetype.
+current=9
+age=3
+revision=18
+
+# Is this an already installed library?
+installed=yes
+
+# Should we warn about portability when linking against -modules?
+shouldnotlink=no
+
+# Files to dlopen/dlpreopen
+dlopen=''
+dlpreopen=''
+
+# Directory that this library needs to be installed in:
+libdir='/usr/lib'
+# libid3.la - a libtool library file
+# Generated by ltmain.sh - GNU libtool 1.4.2 (1.922.2.54 2001/09/11 03:33:37)
+#
+# Please DO NOT delete this file!
+# It is necessary for linking the library.
+
+# The name that we can dlopen(3).
+dlname='libid3-3.8.so.3'
+
+# Names of this library.
+library_names='libid3-3.8.so.3.0.0 libid3-3.8.so.3 libid3.so'
+
+# The name of the static archive.
+old_library='libid3.a'
+
+# Libraries that this one depends upon.
+dependency_libs=' -L/media/home_ext/kimty2/htr1000s/apps/packages/build/staging_dir/lib -L/media/home_ext/kimty2/htr1000s/apps/packages/build/staging_dir/usr/lib -L/nfsroot/kimty2/htr1000s/root/usr/lib'
+
+# Version information for libid3.
+current=3
+age=0
+revision=0
+
+# Is this an already installed library?
+installed=yes
+
+# Files to dlopen/dlpreopen
+dlopen=''
+dlpreopen=''
+
+# Directory that this library needs to be installed in:
+libdir='/usr/lib'
+# libjpeg.la - a libtool library file
+# Generated by ltmain.sh - GNU libtool 1.2
+
+# The name that we can dlopen(3).
+dlname=''
+
+# Names of this library.
+library_names='libjpeg.so.62.0.0 libjpeg.so.62 libjpeg.so'
+
+# The name of the static archive.
+old_library=''
+
+# Libraries that this one depends upon.
+dependency_libs=''
+
+# Version information for libjpeg.
+current=62
+age=0
+revision=0
+
+# Directory that this library needs to be installed in:
+libdir='/usr/lib'
+
+
+=====BLOCK=====
+
+# /lib/lsb/init-functions for Debian -*- shell-script -*-
+#
+#Copyright (c) 2002-03 Chris Lawrence
+#All rights reserved.
+#
+#Redistribution and use in source and binary forms, with or without
+#modification, are permitted provided that the following conditions
+#are met:
+#1. Redistributions of source code must retain the above copyright
+#   notice, this list of conditions and the following disclaimer.
+#2. Redistributions in binary form must reproduce the above copyright
+#   notice, this list of conditions and the following disclaimer in the
+#   documentation and/or other materials provided with the distribution.
+#3. Neither the name of the author nor the names of other contributors
+#   may be used to endorse or promote products derived from this software
+#   without specific prior written permission.
+#
+#THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+#ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+#IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+#ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+#FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+#DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+#OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+#HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+#LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+#OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#SUCH DAMAGE.
+
+log_success_msg () {
+    echo " * $@"
+}
+
+log_failure_msg () {
+    echo " * $@"
+}
+
+log_warning_msg () {
+    echo " * $@"
+}
+
+# int log_begin_message (char *message)
+log_begin_msg () {
+	[ -z "$1" ] && return 1
+	echo " * $*"
+}
+
+# int log_end_message (int exitstatus)
+log_end_msg () {
+	[ -z "$1" ] && return 1
+
+	if [ $1 -eq 0 ]; then
+		echo "   ...done."
+	else
+		echo "   ...fail!"
+	fi
+	return $1
+}
+
+
+=====BLOCK=====
+
+Fonts are (c) Bitstream (see below). DejaVu changes are in public domain. Glyphs imported from Arev fonts are (c) Tavmjung Bah (see below)
+
+Bitstream Vera Fonts Copyright
+------------------------------
+
+Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera is
+a trademark of Bitstream, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the fonts accompanying this license ("Fonts") and associated
+documentation files (the "Font Software"), to reproduce and distribute the
+Font Software, including without limitation the rights to use, copy, merge,
+publish, distribute, and/or sell copies of the Font Software, and to permit
+persons to whom the Font Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright and trademark notices and this permission notice shall
+be included in all copies of one or more of the Font Software typefaces.
+
+The Font Software may be modified, altered, or added to, and in particular
+the designs of glyphs or characters in the Fonts may be modified and
+additional glyphs or characters may be added to the Fonts, only if the fonts
+are renamed to names not containing either the words "Bitstream" or the word
+"Vera".
+
+This License becomes null and void to the extent applicable to Fonts or Font
+Software that has been modified and is distributed under the "Bitstream
+Vera" names.
+
+The Font Software may be sold as part of a larger software package but no
+copy of one or more of the Font Software typefaces may be sold by itself.
+
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT,
+TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL BITSTREAM OR THE GNOME
+FOUNDATION BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING
+ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE
+FONT SOFTWARE.
+
+Except as contained in this notice, the names of Gnome, the Gnome
+Foundation, and Bitstream Inc., shall not be used in advertising or
+otherwise to promote the sale, use or other dealings in this Font Software
+without prior written authorization from the Gnome Foundation or Bitstream
+Inc., respectively. For further information, contact: fonts at gnome dot
+org. 
+
+Arev Fonts Copyright
+------------------------------
+
+Copyright (c) 2006 by Tavmjong Bah. All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the fonts accompanying this license ("Fonts") and
+associated documentation files (the "Font Software"), to reproduce
+and distribute the modifications to the Bitstream Vera Font Software,
+including without limitation the rights to use, copy, merge, publish,
+distribute, and/or sell copies of the Font Software, and to permit
+persons to whom the Font Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright and trademark notices and this permission notice
+shall be included in all copies of one or more of the Font Software
+typefaces.
+
+The Font Software may be modified, altered, or added to, and in
+particular the designs of glyphs or characters in the Fonts may be
+modified and additional glyphs or characters may be added to the
+Fonts, only if the fonts are renamed to names not containing either
+the words "Tavmjong Bah" or the word "Arev".
+
+This License becomes null and void to the extent applicable to Fonts
+or Font Software that has been modified and is distributed under the 
+"Tavmjong Bah Arev" names.
+
+The Font Software may be sold as part of a larger software package but
+no copy of one or more of the Font Software typefaces may be sold by
+itself.
+
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL
+TAVMJONG BAH BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+Except as contained in this notice, the name of Tavmjong Bah shall not
+be used in advertising or otherwise to promote the sale, use or other
+dealings in this Font Software without prior written authorization
+from Tavmjong Bah. For further information, contact: tavmjong @ free
+. fr.
+
+=====BLOCK=====
+
+Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved.
+DejaVu changes are in public domain
+BookDejaVu Sans MonoVersion 2.18DejaVuSansMonoDejaVu fonts teamFonts are (c) Bitstream (see below). DejaVu changes are in public domain.
+
+Bitstream Vera Fonts Copyright
+------------------------------
+
+Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera is a trademark of Bitstream, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of the fonts accompanying this license ("Fonts") and associated documentation files (the "Font Software"), to reproduce and distribute the Font Software, including without limitation the rights to use, copy, merge, publish, distribute, and/or sell copies of the Font Software, and to permit persons to whom the Font Software is furnished to do so, subject to the following conditions:
+
+The above copyright and trademark notices and this permission notice shall be included in all copies of one or more of the Font Software typefaces.
+
+The Font Software may be modified, altered, or added to, and in particular the designs of glyphs or characters in the Fonts may be modified and additional glyphs or  or characters may be added to the Fonts, only if the fonts are renamed to names not containing either the words "Bitstream" or the word "Vera".
+
+This License becomes null and void to the extent applicable to Fonts or Font Software that has been modified and is distributed under the "Bitstream Vera" names.
+
+The Font Software may be sold as part of a larger software package but no copy of one or more of the Font Software typefaces may be sold by itself.
+
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL BITSTREAM OR THE GNOME FOUNDATION BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+
+Except as contained in this notice, the names of Gnome, the Gnome Foundation, and Bitstream Inc., shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Font Software without prior written authorization from the Gnome Foundation or Bitstream Inc., respectively. For further information, contact: fonts at gnome dot org. 
+http://dejavu.sourceforge.net/wiki/index.php/License
+
+=====BLOCK=====
+
+kernel/fs/mbcache.ko
+kernel/fs/ext2/ext2.ko
+kernel/fs/ext3/ext3.ko
+kernel/fs/ext4/ext4.ko
+kernel/fs/fat/fat.ko
+kernel/fs/fat/vfat.ko
+kernel/fs/fat/msdos.ko
+kernel/fs/fuse/fuse.ko
+kernel/fs/jbd/jbd.ko
+kernel/fs/jbd2/jbd2.ko
+kernel/fs/jffs2/jffs2.ko
+kernel/fs/nls/nls_base.ko
+kernel/fs/nls/nls_cp437.ko
+kernel/fs/nls/nls_iso8859-1.ko
+kernel/fs/nls/nls_utf8.ko
+kernel/fs/squashfs/squashfs.ko
+kernel/fs/ubifs/ubifs.ko
+kernel/crypto/crypto.ko
+kernel/crypto/crypto_algapi.ko
+kernel/crypto/deflate.ko
+kernel/crypto/lzo.ko
+kernel/block/cfq-iosched.ko
+kernel/drivers/ata/libata.ko
+kernel/drivers/base/firmware_class.ko
+kernel/drivers/block/brd.ko
+kernel/drivers/block/loop.ko
+kernel/drivers/cdrom/cdrom.ko
+kernel/drivers/char/hw_random/rng-core.ko
+kernel/drivers/hid/hid.ko
+kernel/drivers/hid/usbhid/usbhid.ko
+kernel/drivers/input/input-core.ko
+kernel/drivers/input/mousedev.ko
+kernel/drivers/input/evdev.ko
+kernel/drivers/mmc/card/mmc_block.ko
+kernel/drivers/mmc/core/mmc_core.ko
+kernel/drivers/mmc/host/sdhci.ko
+kernel/drivers/mtd/mtd.ko
+kernel/drivers/mtd/mtdchar.ko
+kernel/drivers/mtd/mtd_blkdevs.ko
+kernel/drivers/mtd/mtdblock.ko
+kernel/drivers/mtd/chips/chipreg.ko
+kernel/drivers/mtd/chips/cfi_probe.ko
+kernel/drivers/mtd/chips/cfi_util.ko
+kernel/drivers/mtd/chips/cfi_cmdset_0020.ko
+kernel/drivers/mtd/chips/cfi_cmdset_0002.ko
+kernel/drivers/mtd/chips/cfi_cmdset_0001.ko
+kernel/drivers/mtd/chips/gen_probe.ko
+kernel/drivers/mtd/chips/jedec_probe.ko
+kernel/drivers/mtd/chips/map_rom.ko
+kernel/drivers/mtd/chips/map_absent.ko
+kernel/drivers/mtd/devices/m25p80.ko
+kernel/drivers/mtd/maps/physmap.ko
+kernel/drivers/mtd/nand/nand.ko
+kernel/drivers/mtd/nand/nand_ecc.ko
+kernel/drivers/mtd/nand/nand_ids.ko
+kernel/drivers/mtd/nand/brcmstb_nand.ko
+kernel/drivers/mtd/ubi/ubi.ko
+kernel/drivers/mtd/ubi/gluebi.ko
+kernel/drivers/net/mii.ko
+kernel/drivers/net/usb/pegasus.ko
+kernel/drivers/net/usb/asix.ko
+kernel/drivers/net/usb/cdc_ether.ko
+kernel/drivers/net/usb/net1080.ko
+kernel/drivers/net/usb/cdc_subset.ko
+kernel/drivers/net/usb/zaurus.ko
+kernel/drivers/net/usb/usbnet.ko
+kernel/drivers/rtc/rtc-lib.ko
+kernel/drivers/scsi/scsi_mod.ko
+kernel/drivers/scsi/sd_mod.ko
+kernel/drivers/scsi/sr_mod.ko
+kernel/drivers/scsi/sg.ko
+kernel/drivers/serial/serial_core.ko
+kernel/drivers/serial/8250.ko
+kernel/drivers/spi/spi_brcmstb.ko
+kernel/drivers/usb/core/usbcore.ko
+kernel/drivers/usb/host/usb-brcm.ko
+kernel/drivers/usb/host/ehci-brcm.ko
+kernel/drivers/usb/host/ohci-brcm.ko
+kernel/drivers/usb/mon/usbmon.ko
+kernel/drivers/usb/storage/usb-storage.ko
+kernel/net/802/p8022.ko
+kernel/net/802/psnap.ko
+kernel/net/802/stp.ko
+kernel/net/bridge/bridge.ko
+kernel/net/ipv4/inet_diag.ko
+kernel/net/ipv4/tcp_diag.ko
+kernel/net/ipv4/tcp_cubic.ko
+kernel/net/llc/llc.ko
+kernel/net/packet/af_packet.ko
+kernel/net/unix/unix.ko
+kernel/lib/bitrev.ko
+kernel/lib/crc16.ko
+kernel/lib/crc-itu-t.ko
+kernel/lib/crc32.ko
+kernel/lib/lzo/lzo_compress.ko
+kernel/lib/lzo/lzo_decompress.ko
+kernel/lib/zlib_deflate/zlib_deflate.ko
+kernel/lib/zlib_inflate/zlib_inflate.ko
+
+
+=====BLOCK=====
+
+# ieee1394 module    match_flags vendor_id model_id specifier_id version
+# module         matchBits bustype vendor product version evBits keyBits relBits absBits mscBits ledBits sndBits ffBits [swBits] driver_info
+# isapnp module      cardvendor carddevice driver_data vendor     function   ...
+# of module          name                 type                 compatible
+kernel/drivers/scsi/scsi_wait_scan.ko
+# pci module         vendor     device     subvendor  subdevice  class      class_mask driver_data
+# serio module       type extra id   proto
+# Aliases for symbols, used by symbol_request().
+# usb module         match_flags idVendor idProduct bcdDevice_lo bcdDevice_hi bDeviceClass bDeviceSubClass bDeviceProtocol bInterfaceClass bInterfaceSubClass bInterfaceProtocol driver_info
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: blkid
+Description: Block device id library
+Version: 1.40.8
+Requires: uuid 
+Cflags: -I${includedir} 
+Libs: -L${libdir} -lblkid 
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: com_err
+Description: Common error description library
+Version: 1.40.8
+Requires:
+Cflags: -I${includedir} 
+Libs: -L${libdir} -lcom_err
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: e2p
+Description: Ext2fs userpace programs utility library
+Version: 1.40.8
+Requires: 
+Cflags: -I${includedir} 
+Libs: -L${libdir} -le2p
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ext2fs
+Description: Ext2fs library
+Version: 1.40.8
+Requires: com_err
+Cflags: -I${includedir} 
+Libs: -L${libdir} -lext2fs
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FreeType 2
+Description: A free, high-quality, and portable font engine.
+Version: 9.18.3
+Requires:
+Libs: -L${libdir} -lfreetype  
+Cflags: -I${includedir}/freetype2 -I${includedir}
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libexif
+Description: Library for easy access to EXIF data
+Requires:
+Version: 0.6.16
+Libs: -L${libdir} -lexif -lm
+Cflags: -I${includedir}
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/libpng12
+
+Name: libpng
+Description: Loads and saves PNG files
+Version: 1.2.25
+Libs: -L${libdir} -lpng12
+Cflags: -I${includedir} 
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ss
+Description: Subsystem command parsing library
+Version: 1.40.8
+Requires: com_err
+Cflags: -I${includedir} 
+Libs: -L${libdir} -lss -ldl
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 1.40.8
+Requires: 
+Cflags: -I${includedir} 
+Libs: -L${libdir} -luuid
+00.03
+
+
+=====BLOCK=====
+
+s;This file contains the main settings for the Irdeto Cloaked CA client
+
+[DEFAULT]
+TEXTMAILCRCFILTER=No
+ENFORCESYSIDMATCH=No
+PACKAGESLOTS=2
+TEMPPACKAGESLOTS=1
+
+[lab]
+;Lab profile. Used at DVT and during integration.
+SYSID=0xFFFF
+SYSID=0
+CASYSID=0x600-0x6FF
+KEY911=0xB6DF9E92DF8B979ADFC6CECEDF949A86
+KEYAPP=0x308188028180D5409563E419E71A34500958AD642E1C5851F5A3B3775CC1D6F5A8848393410990DDAE84565E4BBB0D57DBE2944AFB3BED2150BF446D8CF287052A345D72F5637BFC51A283215998F7EF13E34029EDC546CC7ABD668FE0947D0D4435DCDBCD6DCC5C2E4992790F8DDF5F6DF17DE1E232120EABB3FB3D5DCDD431AA8E25EB5AB90203010001
+KEYSCAME=0x308188028180B68395E778D48DE5C1221179204B6606ECFB446522FA3B90CFF8251CF1A1540FEC03FBAF816F118A41E4C3C8D697D2CA3851E81B61B5F0D8D7A45CAF7FBCC84C7E91692C0DC9BBEF2D5966ED3472691A0C4611FD0AA5246FEFD317106FEF54EEEB0404A3397B1200E55C3FFC2A00C8BE5CE01FC6AA9BE80FDE7FD05B673FEB5D0203010001
+ENFORCESYSIDMATCH=Yes
+IDX2SECTOR=(1, 0)
+;LOCKID=0	;Need PC team modify item
+
+[filsat]
+;Used at production (and possibly at DVT as well).
+SYSID=0x2B
+CASYSID=0x6AD
+IDX2SECTOR=(1, 0)	;Need PC team modify item
+IDX2SECTOR=(1, 1)	;Need PC team modify item
+IDX2SECTOR=(1, 2)	;Need PC team modify item
+IDX2SECTOR=(1, 3)	;Need PC team modify item
+IDX2SECTOR=(1, 4)	;Need PC team modify item
+IDX2SECTOR=(1, 5)	;Need PC team modify item
+IDX2SECTOR=(1, 6)	;Need PC team modify item
+IDX2SECTOR=(1, 7)	;Need PC team modify item
+KEY911=0xB6DF9E92DF8B979ADFC6CECEDF949A86
+KEYAPP=0x308188028180B2ADB7C4AAF6A36CCFEAC57CD8A2843E734EAF036AF1959799846BF007F66E02ED1792DE946EE90B4CFB2C799F8A19F836FAB8F2B58B8762B7A22855E75894C63614980679AA504D21F9A70A4DE2C4BE67F7A24DF564FFBA2B0DEBCD3ED8214BE188BDD58963EF637DFE63EAC15AE91A17E6ED5F8D844BD4FDCDFDE22AD080BD0203010001
+KEYSCAME=0x308188028180BD04D6E326A56C176A23ECE186CE9465070272932C8641AB4A28AEED259BD0870AA3295989A367573BDBBEBFC19E7138A439819F3A909123AC61407452CD05D6C2D52EDB77647333F79A26B0E9ECF49D04179E0C5CFACB0D062316205085AD92EC9A7E4D88DAD7BA29C712BC16B10E3F96CD48E4344535967260E31C3ED7E51D0203010001
+SIGNATURE=0x6929EB435EDDBEB30D39E99AC425BB64493BAD1B40EF90DB567DAFD6F39DED8BD940E6B2961ABD58A671E9A0DF848EE855A1D74448134516F7E174465DB6EFADB544E5FD26CF2373EC75942563CB2E31A0F7FAB4FB16D1E2A5DF12A73BBF257E83353DE74AC9B97622CDC9A1757AE07FA38790208131DAD4917C16477470D2AE
+LOCKID=0	;Need PC team modify item
+
+
+=====BLOCK=====
+
+
+Emergency help:
+ -p                   Automatic repair (no questions)
+ -n                   Make no changes to the filesystem
+ -y                   Assume "yes" to all questions
+ -c                   Check for bad blocks and add them to the badblock list
+ -f                   Force checking even if filesystem is marked clean
+
+
+=====BLOCK=====
+
+
+Usage: %s [options] device [number-of-sectors]
+
+Basic options:
+    -f, --fast                      Perform a quick format
+    -Q, --quick                     Perform a quick format
+    -L, --label STRING              Set the volume label
+    -C, --enable-compression        Enable compression on the volume
+    -I, --no-indexing               Disable indexing on the volume
+    -n, --no-action                 Do not write to disk
+
+Advanced options:
+    -c, --cluster-size BYTES        Specify the cluster size for the volume
+    -s, --sector-size BYTES         Specify the sector size for the device
+    -p, --partition-start SECTOR    Specify the partition start sector
+    -H, --heads NUM                 Specify the number of heads
+    -S, --sectors-per-track NUM     Specify the number of sectors per track
+    -z, --mft-zone-multiplier NUM   Set the MFT zone multiplier
+    -T, --zero-time                 Fake the time to be 00:00 UTC, Jan 1, 1970
+    -d, --discard                   Discard whole device i.e. perform whole device TRIM
+    -F, --force                     Force execution despite errors
+
+Output options:
+    -q, --quiet                     Quiet execution
+    -v, --verbose                   Verbose execution
+        --debug                     Very verbose execution
+
+Help options:
+    -V, --version                   Display version
+    -h, --help                      Display this help
+
+
+
+=====BLOCK=====
+
+Access is denied because the NTFS journal file is unclean. Choices are:
+ A) Shutdown Windows properly.
+ B) Click the 'Safely Remove Hardware' icon in the Windows taskbar
+    notification area before disconnecting the device.
+ C) Use 'Eject' from Windows Explorer to safely remove the device.
+ D) If you ran chkdsk previously then boot Windows again which will
+    automatically initialize the journal.
+ E) Submit 'force' option (WARNING: This solution it not recommended).
+ F) ntfsmount: Mount the volume read-only by using the 'ro' mount option.
+
+
+=====BLOCK=====
+
+Volume is scheduled for check.
+Please boot into Windows TWICE, or use the 'force' option.
+NOTE: If you had not scheduled check and last time accessed this volume
+using ntfsmount and shutdown system properly, then init scripts in your
+distribution are broken. Please report to your distribution developers
+(NOT to us!) that init scripts kill ntfsmount or mount.ntfs-fuse during
+shutdown instead of proper umount.
+
+
+=====BLOCK=====
+
+HINTS: Either the volume is a RAID/LDM but it wasn't setup yet,
+   or it was not setup correctly (e.g. by not using mdadm --build ...),
+   or a wrong device is tried to be mounted,
+   or the partition table is corrupt (partition is smaller than NTFS),
+   or the NTFS boot sector is corrupt (NTFS size is not valid).
+
+
+=====BLOCK=====
+
+NTFS is either inconsistent, or there is a hardware fault, or it's a
+SoftRAID/FakeRAID hardware. In the first case run chkdsk /f on Windows
+then reboot into Windows twice. The usage of the /f parameter is very
+important! If the device is a SoftRAID/FakeRAID then first activate
+it and mount a different device under the /dev/mapper/ directory, (e.g.
+/dev/mapper/nvidia_eahaabcc1). Please see the 'dmraid' documentation
+for more details.
+
+
+=====BLOCK=====
+
+The NTFS partition is hibernated. Please resume and shutdown Windows
+properly, or mount the volume read-only with the 'ro' mount option, or
+mount the volume read-write with the 'remove_hiberfile' mount option.
+For example type on the command line:
+
+            mount -t ntfs-3g -o remove_hiberfile %s %s
+
+
+
+=====BLOCK=====
+
+channel_number,service_name,service_type,provider_name,video_type,service_id,pmt_pid,video_pid,audio_pid,pcr_pid,teletext_pid,satellite_type,ts_id,network_id,modulation,frequency,polarization,symbol_rate,fec,transport_spec,cas_type,tuner_id,psk_mode,pilot,rolloff,prech_ver,old_service_id,old_ts_id,old_network_id,old_frequency
+1,SINEMA TV HD,TV,PlatformTurk,HD,8100,340,2600,2700,2600,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8100,43101,104,11775
+2,SINEMA2 HD,TV,PlatformTurk,HD,8105,341,2601,2701,2601,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8105,43101,104,11775
+3,SINEMA TV AKSIYON HD,TV,PlatformTurk,HD,8110,342,2602,2702,2602,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8110,43101,104,11775
+4,SINEMA TV ASK HD,TV,PlatformTurk,HD,8115,343,2603,2703,2603,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8115,43101,104,11775
+5,SINEMA TV 1001 HD,TV,PlatformTurk,HD,8120,344,2604,2704,2604,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8120,43101,104,11775
+6,SINEMA TV AILE HD,TV,PlatformTurk,HD,8125,345,2605,2705,2605,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8125,43101,104,11775
+20,TRT 1 HD,TV,,HD,10601,33,1601,1701,1601,8192,Turksat,31001,1070,Sat,11054,V,30000,3_4,DVB-S2,FTA,255,8,0,2,20141105,10601,31001,1070,11054
+21,KANAL D,TV,,SD,1101,1101,101,201,8101,8192,Turksat,1,66,Sat,11977,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1701,7,66,12245
+22,FIL TV,TV,PlatformTurk,SD,8165,240,2400,2500,2600,8192,Turksat,43102,104,Sat,11797,V,8800,5_6,DVB-S,FTA,255,4,0,2,20141105,8165,43102,104,11797
+23,STAR TV,TV,,SD,10800,40,1800,1900,1800,8192,Turksat,40601,1,Sat,12015,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10800,40601,1,12015
+24,ATV HD,TV,,HD,10305,1355,1305,1405,1305,8192,Turksat,40801,1070,Sat,12054,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10305,40801,1070,12054
+25,FOX TURKEY,TV,,SD,12800,32,2875,2975,2175,8192,Turksat,41001,1070,Sat,12336,H,5520,3_4,DVB-S,FTA,255,4,0,2,20141105,12800,41001,1070,12336
+26,SHOW TV HD,TV,,HD,11000,40,2000,2100,2000,8192,Turksat,41401,1070,Sat,12209,H,10000,3_4,DVB-S2,FTA,255,8,0,2,20141105,11000,41401,1070,12209
+27,TV8,TV,,SD,12900,101,2900,3000,2900,8192,Turksat,42004,1070,Sat,12346,H,9600,3_4,DVB-S,FTA,255,4,1,2,20141105,12900,42004,1070,12346
+28,KANAL 7 HD,TV,,HD,11600,258,2525,2625,2525,8192,Turksat,41003,1070,Sat,12103,H,8333,2_3,DVB-S2,FTA,255,8,0,2,20141105,11600,41003,1070,12103
+29,SAMANYOLU TV,TV,,SD,11400,32,2175,2275,2175,8192,Turksat,31101,1070,Sat,12079,H,6400,5_6,DVB-S,FTA,255,4,0,2,20141105,11309,31101,1070,11096
+30,KANALTURK HD,TV,,HD,11900,34,2200,2300,2200,8192,Turksat,40502,1070,Sat,11999,V,11666,2_3,DVB-S2,FTA,255,8,0,2,20141105,11900,40502,1070,11999
+31,E2,TV,,SD,10804,44,1804,1904,1804,8192,Turksat,40601,1,Sat,12015,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10804,40601,1,12015
+32,CNBC-E,TV,,SD,10803,43,1803,1903,1803,8192,Turksat,40601,1,Sat,12015,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10803,40601,1,12015
+34,ULUSAL TV,TV,,SD,50102,1102,5102,5202,5102,8192,Turksat,42101,1070,Sat,12423,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,50102,42101,1070,12423
+35,HALK TV,TV,,SD,50100,1100,5100,5200,5100,8192,Turksat,42101,1070,Sat,12423,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,50100,42101,1070,12423
+35,FLASH TV,TV,,SD,51602,2602,6602,6702,6602,8192,Turksat,32001,1070,Sat,12729,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,51602,32001,1070,12729
+37,BEYAZ TV HD,TV,,HD,51201,2201,6201,6301,6201,8192,Turksat,41902,1070,Sat,12380,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,51201,41902,1070,12380
+38,360 Turksat,TV,,SD,13700,4473,3075,3175,3075,8192,Turksat,32203,1070,Sat,11062,H,4820,3_4,DVB-S,FTA,255,4,0,2,20141105,13700,32203,1070,11062
+60,NTV,TV,,SD,10801,41,1801,1901,1801,8192,Turksat,40601,1,Sat,12015,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10801,40601,1,12015
+61,CNN TURK HD,TV,,HD,1702,1702,102,202,8102,8192,Turksat,7,66,Sat,12245,H,27500,5_6,DVB-S2,FTA,255,8,0,2,20141105,1702,7,66,12245
+62,TRT HABER HD,TV,,HD,10602,34,1602,1702,1602,8192,Turksat,31001,1070,Sat,11054,V,30000,3_4,DVB-S2,FTA,255,8,0,2,20141105,10602,31001,1070,11054
+63,HABERTURK HD,TV,,HD,11001,41,2001,2101,2001,8192,Turksat,41401,1070,Sat,12209,H,10000,3_4,DVB-S2,FTA,255,8,0,2,20141105,11001,41401,1070,12209
+64,BLOOMBERG HT,TV,,SD,11201,33,2126,2226,2126,8192,Turksat,32201,1070,Sat,11053,H,8000,3_4,DVB-S,FTA,255,4,0,2,20141105,11201,32201,1070,11053
+65,A HABER HD,TV,,HD,10306,1356,1306,1406,1306,8192,Turksat,40801,1070,Sat,12054,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10306,40801,1070,12054
+67,24 Turksat,TV,,SD,11800,32,1950,2050,1950,8192,Turksat,40501,1070,Sat,11986,V,9600,5_6,DVB-S,FTA,255,4,0,2,20141105,11800,40501,1070,11986
+68,TGRT HABER,TV,,SD,12600,47,2800,2900,2800,8192,Turksat,41302,65535,Sat,12228,V,8400,5_6,DVB-S,FTA,255,4,0,2,20141105,12600,41302,65535,12228
+69,EURONEWS,TV,,SD,23,856,1112,1113,1112,8192,Turksat,61,42,Sat,11096,H,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,23,61,42,11096
+70,BUGUN TV HD,TV,,HD,11901,36,2201,2301,2201,8192,Turksat,40502,1070,Sat,11999,V,11666,2_3,DVB-S2,FTA,255,8,0,2,20141105,11901,40502,1070,11999
+71,SAMANYOLU HABER,TV,,SD,11302,34,2302,2402,2302,8192,Turksat,31101,1070,Sat,11096,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,11302,31101,1070,11096
+72,ULKE TV HD,TV,,HD,11601,257,2526,2626,2526,8192,Turksat,41003,1070,Sat,12103,H,8333,2_3,DVB-S2,FTA,255,8,0,2,20141105,11601,41003,1070,12103
+80,DA VINCI LEARNING,TV,PlatformTurk,SD,8145,349,2609,2709,2609,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8145,43101,104,11775
+81,DISNEY CHANNEL,TV,,SD,50200,1200,5200,5300,5200,8192,Turksat,42201,1070,Sat,12423,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50200,42201,1070,12423
+82,MINIKA COCUK,TV,,SD,10303,1353,1303,1403,1303,8192,Turksat,40801,1070,Sat,12054,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10303,40801,1070,12054
+83,MINIKA GO,TV,,SD,10304,1354,1304,1404,1304,8192,Turksat,40801,1070,Sat,12054,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10304,40801,1070,12054
+84,PLANET COCUK,TV,,SD,51009,2009,6009,6109,6009,8192,Turksat,30601,1070,Sat,11558,V,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,51009,30601,1070,11558
+85,TRT COCUK,TV,,SD,16,656,912,913,912,8192,Turksat,61,42,Sat,11096,H,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,16,61,42,11096
+86,KIDZ/ANIMEZ,TV,PlatformTurk,SD,8170,241,2401,2501,2401,8192,Turksat,43102,104,Sat,11797,V,8800,5_6,DVB-S,FTA,255,4,0,2,20141105,8170,43102,104,11797
+87,CARTOON NETWORK,TV,,SD,1115,1115,115,215,115,8192,Turksat,1,66,Sat,11977,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1115,1,66,11977
+89,YUMURCAK TV,TV,,SD,11303,35,2303,2403,2303,8192,Turksat,31101,1070,Sat,11096,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,11303,31101,1070,11096
+90,ZAROK TV,TV,,SD,50610,1610,5610,5710,5610,8192,Turksat,30201,1070,Sat,12605,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50610,30201,1070,12605
+95,FIGHTBOX  HD,TV,PlatformTurk,HD,8135,347,2607,2707,2606,41001,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8135,43101,104,11775
+96,A SPOR HD,TV,,HD,10307,1357,1307,1407,1307,8192,Turksat,40801,1070,Sat,12054,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10307,40801,1070,12054
+97,NTV SPOR,TV,,SD,10802,42,1802,1902,1802,8192,Turksat,40601,1,Sat,12015,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10802,40601,1,12015
+98,TRT SPOR,TV,,SD,10503,556,1503,1603,1503,8192,Turksat,40301,1070,Sat,11958,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10503,40301,1070,11958
+101,SPORTS TV,TV,,SD,50703,1703,5703,5803,5703,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50703,41901,1070,12345
+102,FB TV,TV,,SD,50701,1701,5701,5801,5701,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50701,41901,1070,12345
+103,TAY TV,TV,,SD,1439,1439,1139,1239,1139,8192,Turksat,4,66,Sat,11012,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,1439,4,66,11012
+110,VIASAT NATURE-HISTORY,TV,PlatformTurk,HD,8130,346,2606,2706,2606,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8130,43101,104,11775
+111,SCITECH TV,TV,PlatformTurk,SD,8155,351,2611,2711,2611,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8155,43101,104,11775
+112,YABAN TV,TV,,SD,51610,2610,6610,6710,6610,8192,Turksat,32001,1070,Sat,12729,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,51610,32001,1070,12729
+113,TRT TURIZM VE BELGESEL,TV,,SD,10505,756,1505,1605,1505,8192,Turksat,40301,1070,Sat,11958,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10505,40301,1070,11958
+120,ENGLISH CLUB TV,TV,PlatformTurk,HD,8140,348,2608,2708,2608,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8140,43101,104,11775
+121,TRT OKUL,TV,,SD,10506,856,1506,1606,1506,8192,Turksat,40301,1070,Sat,11958,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10506,40301,1070,11958
+122,PLANET MUTFAK,TV,,SD,51002,2002,6002,6102,6002,8192,Turksat,30601,1070,Sat,11558,V,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,51002,30601,1070,11558
+123,SOKAK TV,TV,,SD,50510,1510,5510,5610,5510,8192,Turksat,31401,1070,Sat,12641,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,50510,31401,1070,12641
+124,PLANET TURK,TV,,SD,51003,2003,6003,6103,6003,8192,Turksat,30601,1070,Sat,11558,V,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,51003,30601,1070,11558
+125,SEMERKAND HD TV,TV,,HD,51006,2006,6006,6106,6006,8192,Turksat,30601,1070,Sat,11558,V,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,51006,30601,1070,11558
+126,D SHOPPING,TV,,SD,1103,1103,103,203,103,8192,Turksat,1,66,Sat,11977,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1103,1,66,11977
+132,KRAL TV,TV,,SD,10903,63,1903,2003,1903,8192,Turksat,32001,1070,Sat,10962,H,16666,3_4,DVB-S,FTA,255,4,0,2,20141105,10903,32001,1070,10962
+133,KRAL POP,TV,,SD,10902,62,1902,2002,1902,8192,Turksat,32001,1070,Sat,10962,H,16666,3_4,DVB-S,FTA,255,4,0,2,20141105,10902,32001,1070,10962
+134,NUMBER ONE TV,TV,,SD,51608,2608,6608,6708,6608,8192,Turksat,32001,1070,Sat,12729,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,51608,32001,1070,12729
+135,DREAM TV ,TV,,SD,1305,1305,105,205,8105,8192,Turksat,3,66,Sat,12034,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1305,3,66,12034
+136,DREAMTURK,TV,,SD,1307,1307,107,207,8107,8192,Turksat,3,66,Sat,12034,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1307,3,66,12034
+137,DREAMTURK TV,TV,,SD,14601,259,3401,3501,3401,8192,Turksat,41501,1070,Sat,12265,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14601,41501,1070,12265
+138,POWER TV,TV,,SD,14600,258,3400,3500,3400,8192,Turksat,41501,1070,Sat,12265,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14600,41501,1070,12265
+139,TRT MUZIK,TV,,SD,10507,956,1507,1607,1507,8192,Turksat,40301,1070,Sat,11958,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,10507,40301,1070,11958
+140,TRT HD,TV,,HD,10600,32,1600,1700,1600,8192,Turksat,31001,1070,Sat,11054,V,30000,3_4,DVB-S2,FTA,255,8,0,2,20141105,10600,31001,1070,11054
+141,TRT 3,TV,,SD,28,1356,1612,1613,1612,8192,Turksat,61,42,Sat,11096,H,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,28,61,42,11096
+142,TRT DIYANET,TV,,SD,27,1256,1512,1612,1512,8192,Turksat,61,42,Sat,11096,H,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,27,61,42,11096
+143,TRT 6,TV,,SD,26,1156,1412,1413,1412,8192,Turksat,61,42,Sat,11096,H,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,26,61,42,11096
+144,TRT TURK,TV,,SD,9,456,712,713,712,8192,Turksat,61,42,Sat,11096,H,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,9,61,42,11096
+145,TRT ARAPCA,TV,,SD,24,956,1212,1213,1212,8192,Turksat,61,42,Sat,11096,H,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,24,61,42,11096
+146,TRT AVAZ DOGU,TV,,SD,21,756,1012,1013,1012,8192,Turksat,61,42,Sat,11096,H,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,21,61,42,11096
+150,KIBRIS ADA TV,TV,,SD,3,120,125,126,125,8192,Turksat,9,42,Sat,12541,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,3,9,42,12541
+151,BRT 1,TV,,SD,1,110,115,116,115,8192,Turksat,9,42,Sat,12541,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,1,9,42,12541
+152,AS TV,TV,,SD,50704,1704,5704,5804,5704,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50704,41901,1070,12345
+153,RTL,TV,PlatformTurk,SD,8160,352,2612,2712,2612,8192,Turksat,43101,104,Sat,11775,V,27500,3_4,DVB-S2,IR,255,8,0,2,20141105,8160,43101,104,11775
+154,NTV AVRUPA,TV,,SD,10901,61,1901,2001,1901,8192,Turksat,32001,1070,Sat,10962,H,16666,3_4,DVB-S,FTA,255,4,0,2,20141105,10901,32001,1070,10962
+155,EURO D,TV,,SD,1309,1309,109,209,8109,8192,Turksat,3,66,Sat,12034,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1309,3,66,12034
+156,EURO STAR YENI,TV,,SD,10900,60,1900,2000,1900,8192,Turksat,32001,1070,Sat,10962,H,16666,3_4,DVB-S,FTA,255,4,0,2,20141105,10900,32001,1070,10962
+157,NHK WORLD TV,TV,,SD,1105,1105,105,205,105,8192,Turksat,1,66,Sat,11977,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1105,1,66,11977
+158,MEZOPOTAMYA TV,TV,,SD,14020,340,3220,3320,3220,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14020,41701,1070,12303
+159,IMEDI TV,TV,,SD,6,1036,1501,1511,1501,8192,Turksat,45,42,Sat,11472,H,23450,5_6,DVB-S,FTA,255,4,0,2,20141105,6,45,42,11472
+160,AL JAZEERA CHANNEL,TV,,SD,50308,1308,5308,5408,5308,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50308,42102,1070,12458
+161,AL JAZEERA CHANNEL ENGLISH,TV,,SD,50307,1307,5307,5407,5307,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50307,42102,1070,12458
+169,PAMUKKALE TV,TV,,SD,51207,2207,6207,6307,6207,8192,Turksat,41902,1070,Sat,12380,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,51207,41902,1070,12380
+170,GELISIM TV,TV,,SD,52802,3802,7802,7902,7802,8192,Turksat,30301,1,Sat,12699,V,7700,5_6,DVB-S2,FTA,255,4,0,2,20141105,52802,30301,1,12699
+171,SKY TV,TV,,SD,50303,1303,5303,5403,5303,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50303,42102,1070,12458
+172,BURSA TV,TV,,SD,14212,3412,3512,3612,3512,8192,Turksat,20901,1070,Sat,12130,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14212,20901,1070,12130
+173,KANAL 99,TV,,SD,51306,2306,6306,6406,6306,8192,Turksat,40101,1070,Sat,11916,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,51306,40101,1070,11916
+174,EM TV,TV,,SD,50700,1700,5700,5800,5700,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50700,41901,1070,12345
+175,MAVI KARADENIZ,TV,,SD,51605,2605,6605,6705,6605,8192,Turksat,32001,1070,Sat,12729,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,51605,32001,1070,12729
+177,IMC TV,TV,,SD,51508,2508,6508,6608,6508,8192,Turksat,30101,1070,Sat,12524,V,22500,2_3,DVB-S,FTA,255,4,0,2,20141105,51508,30101,1070,12524
+178,CEM TV,TV,,SD,50401,1401,5401,5501,5401,8192,Turksat,30102,1070,Sat,12559,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50401,30102,1070,12559
+179,BENGUTURK TV,TV,,SD,50101,1101,5101,5201,5101,8192,Turksat,42101,1070,Sat,12423,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,50101,42101,1070,12423
+180,KON TV,TV,,SD,50103,1103,5103,5203,5103,8192,Turksat,42101,1070,Sat,12423,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,50103,42101,1070,12423
+181,MMC TURK TV,TV,,SD,51309,2309,6309,6409,6309,8192,Turksat,40101,1070,Sat,11916,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,51309,40101,1070,11916
+182,MEHTAP TV,TV,,SD,11301,33,2301,2401,2301,8192,Turksat,31101,1070,Sat,11096,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,11301,31101,1070,11096
+183,EGE TV,TV,,SD,51600,2600,6600,6700,6600,8192,Turksat,32001,1070,Sat,12729,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,51600,32001,1070,12729
+184,ES TV,TV,,SD,51404,2404,6404,6504,6404,8192,Turksat,42001,1070,Sat,12379,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,51404,42001,1070,12379
+185,MEGA TURK TV,TV,,SD,21,410,415,416,415,8192,Turksat,9,42,Sat,12541,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,21,9,42,12541
+187,REHBER TV,TV,,SD,50110,1110,5110,5210,5110,8192,Turksat,42101,1070,Sat,12423,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,50110,42101,1070,12423
+188,ASU TV,TV,,SD,50311,1311,5311,5411,5311,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50311,42102,1070,12458
+189,TEK RUMELI TV,TV,,SD,50504,1504,5504,5604,5504,8192,Turksat,31401,1070,Sat,12641,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,50504,31401,1070,12641
+190,VATAN TV,TV,,SD,50503,1503,5503,5603,5503,8192,Turksat,31401,1070,Sat,12641,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,50503,31401,1070,12641
+191,A9 TV,TV,,SD,51502,2502,6502,6602,6502,8192,Turksat,30101,1070,Sat,12524,V,22500,2_3,DVB-S,FTA,255,4,0,2,20141105,51502,30101,1070,12524
+192,ON4 TV,TV,,SD,50712,1712,5712,5812,5712,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50712,41901,1070,12345
+193,TURKIYEM TV,TV,,SD,50706,1706,5706,5806,5706,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50706,41901,1070,12345
+194,KANAL 58,TV,,SD,50312,1312,5312,5412,5312,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50312,42102,1070,12458
+195,ANADOLU YURDUM TV,TV,,SD,1141,1141,141,241,141,8192,Turksat,1,66,Sat,11977,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1141,1,66,11977
+197,HAYAT TV,TV,,SD,51504,2504,6504,6604,6504,8192,Turksat,30101,1070,Sat,12524,V,22500,2_3,DVB-S,FTA,255,4,0,2,20141105,51504,30101,1070,12524
+198,ANGORA TV,TV,,SD,14008,328,3208,3308,3208,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14008,41701,1070,12303
+199,FHM TV,TV,,SD,14011,331,3211,3311,3211,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14011,41701,1070,12303
+200,DUNYA TV,TV,,SD,11305,37,2305,2405,2305,8192,Turksat,31101,1070,Sat,11096,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,11305,31101,1070,11096
+201,TURKMENELI TV,TV,,SD,1,32,308,256,4387,8192,Turksat,1,65535,Sat,12009,V,4444,3_4,DVB-S,FTA,255,4,0,2,20141105,1,1,65535,12009
+202,GAZIANTEP OLAY TV,TV,,SD,51501,2501,6501,6601,6501,8192,Turksat,30101,1070,Sat,12524,V,22500,2_3,DVB-S,FTA,255,4,0,2,20141105,51501,30101,1070,12524
+203,HILAL TV,TV,,SD,50505,1505,5505,5605,5505,8192,Turksat,31401,1070,Sat,12641,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,50505,31401,1070,12641
+204,BEREKET TV,TV,,SD,50302,1302,5302,5402,5302,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50302,42102,1070,12458
+205,VAN TV,TV,,SD,50206,1206,5206,5306,5206,8192,Turksat,42201,1070,Sat,12423,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50206,42201,1070,12423
+206,TARIMTURK TV,TV,,SD,50202,1202,5202,5302,5202,8192,Turksat,42201,1070,Sat,12423,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50202,42201,1070,12423
+207,GENC TV,TV,,SD,51500,2500,6500,6600,6500,8192,Turksat,30101,1070,Sat,12524,V,22500,2_3,DVB-S,FTA,255,4,0,2,20141105,51500,30101,1070,12524
+208,YOL TV,TV,,SD,50001,1001,5001,5101,5001,8192,Turksat,31601,1070,Sat,12729,H,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50001,31601,1070,12729
+209,MC TV,TV,,SD,11304,36,2304,2404,2304,8192,Turksat,31101,1070,Sat,11096,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,11304,31101,1070,11096
+210,IRMAK TV,TV,,SD,11307,39,2307,2407,2307,8192,Turksat,31101,1070,Sat,11096,V,30000,5_6,DVB-S,FTA,255,4,0,2,20141105,11307,31101,1070,11096
+211,GOVEND TV,TV,,SD,14000,320,3200,3300,3200,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14000,41701,1070,12303
+212,TV 2000,TV,,SD,50906,1906,5906,6006,5906,8192,Turksat,30602,1070,Sat,11594,V,25000,2_3,DVB-S,FTA,255,4,0,2,20141105,50906,30602,1070,11594
+213,HM TV,TV,,SD,1139,1139,139,239,139,8192,Turksat,1,66,Sat,11977,H,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,1139,1,66,11977
+214,EGETURK TV,TV,,SD,51402,2402,6402,6502,6402,8192,Turksat,42001,1070,Sat,12379,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,51402,42001,1070,12379
+216,ORDU TV,TV,,SD,14209,3409,3509,3609,3509,8192,Turksat,20901,1070,Sat,12130,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14209,20901,1070,12130
+217,BEREKET HAYVANCILIK TV,TV,,SD,51206,2206,6206,6306,6206,8192,Turksat,41902,1070,Sat,12380,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,51206,41902,1070,12380
+218,AKDENIZ TV,TV,,SD,50104,1104,5104,5204,5104,8192,Turksat,42101,1070,Sat,12423,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,50104,42101,1070,12423
+219,7-24 TV,TV,,SD,50604,1604,5604,5704,5604,8192,Turksat,30201,1070,Sat,12605,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50604,30201,1070,12605
+220,DENGE TV,TV,,SD,50608,1608,5608,5708,5608,8192,Turksat,30201,1070,Sat,12605,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50608,30201,1070,12605
+221,KANAL AVRUPA,TV,,SD,50002,1002,5002,5102,5002,8192,Turksat,31601,1070,Sat,12729,H,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50002,31601,1070,12729
+222,KANAL 34,TV,,SD,51305,2305,6305,6405,6305,8192,Turksat,40101,1070,Sat,11916,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,51305,40101,1070,11916
+223,BAHARTURK TV,TV,,SD,8180,243,2403,2503,2403,8192,Turksat,43102,104,Sat,11797,V,8800,5_6,DVB-S,FTA,255,4,0,2,20141105,8180,43102,104,11797
+225,TOPRAK YILDIZ TV,TV,,SD,8175,242,2402,2502,2402,8192,Turksat,43102,104,Sat,11797,V,8800,5_6,DVB-S,FTA,255,4,0,2,20141105,8175,43102,104,11797
+226,KANAL FIRAT,TV,,SD,50609,1609,5609,5709,5609,8192,Turksat,30201,1070,Sat,12605,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50609,30201,1070,12605
+227,KANAL T,TV,,SD,50502,1502,5502,5602,5502,8192,Turksat,31401,1070,Sat,12641,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,50502,31401,1070,12641
+228,KANAL 35,TV,,SD,50500,1500,5500,5600,5500,8192,Turksat,31401,1070,Sat,12641,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,50500,31401,1070,12641
+229,KANAL URFA,TV,,SD,50507,1507,5507,5607,5507,8192,Turksat,31401,1070,Sat,12641,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,50507,31401,1070,12641
+231,KULTURTURK,TV,,SD,50300,1300,5300,5400,5300,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB_S,FTA,255,4,0,2,20141105,50300,42102,1070,12458
+232,ONE DAMLA TV,TV,,SD,51104,2104,6104,6204,6104,8192,Turksat,31701,1070,Sat,11509,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,51104,31701,1070,11509
+233,UZAY TV,TV,,SD,50713,1713,5713,5813,5713,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50713,41901,1070,12345
+234,YILDIZ TV,TV,,SD,50709,1709,5709,5809,5709,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50709,41901,1070,12345
+235,MUNZUR TV,TV,,SD,14007,327,3207,3307,3207,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14007,41701,1070,12303
+236,TV5 ,TV,,SD,50402,1402,5402,5502,5402,8192,Turksat,30102,1070,Sat,12559,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50402,30102,1070,12559
+238,HRT TV,TV,,SD,51505,2505,6505,6605,6505,8192,Turksat,30101,1070,Sat,12524,V,22500,2_3,DVB-S,FTA,255,4,0,2,20141105,51505,30101,1070,12524
+239,CAN ERZINCAN TV,TV,,SD,51103,2103,6103,6203,6103,8192,Turksat,31701,1070,Sat,11509,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,51103,31701,1070,11509
+240,SUN TV,TV,,SD,50711,1711,5711,5811,5711,8192,Turksat,41901,1070,Sat,12345,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50711,41901,1070,12345
+241,ORT TV,TV,,SD,52806,3806,7806,7906,7806,8192,Turksat,30301,1,Sat,12699,V,7700,5_6,DVB-S2,FTA,255,4,0,2,20141105,52806,30301,1,12699
+242,TV 4,TV,,SD,11801,32,1951,2051,1951,8192,Turksat,40501,1070,Sat,11986,V,9600,5_6,DVB-S,FTA,255,4,0,2,20141105,11801,40501,1070,11986
+243,SANCAK TV,TV,,SD,14009,329,3209,3309,3209,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14009,41701,1070,12303
+244,TV 06,TV,,SD,50602,1602,5602,5702,5602,8192,Turksat,30201,1070,Sat,12605,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50602,30201,1070,12605
+245,TEMPO TV,TV,,SD,50205,1205,5205,5305,5205,8192,Turksat,42201,1070,Sat,12423,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50205,42201,1070,12423
+246,KACKAR TV,TV,,SD,50108,1108,5108,5208,5108,8192,Turksat,42101,1070,Sat,12423,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,50108,42101,1070,12423
+247,HABERAKS TV,TV,,SD,50304,1304,5304,5404,5304,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50304,42102,1070,12458
+249,TMB TV,TV,,SD,50201,1201,5201,5301,5201,8192,Turksat,42201,1070,Sat,12423,H,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50201,42201,1070,12423
+250,DRT DENIZLI,TV,,SD,51203,2207,6203,6303,6203,8192,Turksat,41902,1070,Sat,12380,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,51203,41902,1070,12380
+252,SIVAS SRT,TV,,SD,14214,3414,3514,3614,3514,8192,Turksat,20901,1070,Sat,12130,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14214,20901,1070,12130
+253,VIZYON TURK TV,TV,,SD,50109,1109,5109,5209,5109,8192,Turksat,42101,1070,Sat,12423,V,27500,3_4,DVB-S,FTA,255,4,0,2,20141105,50109,42101,1070,12423
+254,KANAL 33,TV,,SD,50301,1301,5301,5401,5301,8192,Turksat,42102,1070,Sat,12458,V,30000,3_4,DVB-S,FTA,255,4,0,2,20141105,50301,42102,1070,12458
+255,KANAL 3,TV,,SD,50501,1502,5501,5601,5501,8192,Turksat,31401,1070,Sat,12641,H,30000,2_3,DVB-S,FTA,255,4,0,2,20141105,50501,31401,1070,12641
+256,ADANA TV,TV,,SD,50403,1403,5403,5503,5403,8192,Turksat,30102,1070,Sat,12559,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50403,30102,1070,12559
+257,YAREN TV,TV,,SD,14006,326,3206,3306,3206,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14006,41701,1070,12303
+258,ABANT TV,TV,,SD,50900,1900,5900,6000,5900,8192,Turksat,30602,1070,Sat,11594,V,25000,2_3,DVB-S,FTA,255,4,0,2,20141105,50900,30602,1070,11594
+259,TV 1,TV,,SD,50603,1603,5603,5703,5603,8192,Turksat,30201,1070,Sat,12605,V,27500,2_3,DVB-S,FTA,255,4,0,2,20141105,50603,30201,1070,12605
+260,HAVIN TV,TV,,SD,14012,332,3212,3312,3212,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14012,41701,1070,12303
+262,RTV,TV,,SD,14013,333,3213,3313,3213,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14013,41701,1070,12303
+263,DENIZ TV,TV,,SD,14014,334,3214,3314,3214,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14014,41701,1070,12303
+264,ANADOLUM TV,TV,,SD,14015,335,3215,3315,3215,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14015,41701,1070,12303
+265,TARZ TV,TV,,SD,14016,336,3216,3316,3216,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14016,41701,1070,12303
+266,CINERAMA TV,TV,,SD,14017,337,3217,3317,3217,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14017,41701,1070,12303
+267,ZEYNO TV,TV,,SD,14018,338,3218,3318,3218,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14018,41701,1070,12303
+268,CHANEL TV,TV,,SD,14021,341,3221,3321,3221,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14021,41701,1070,12303
+270,24 SAAT TV,TV,,SD,14023,343,3223,3323,3223,8192,Turksat,41701,1070,Sat,12303,V,27500,5_6,DVB-S,FTA,255,4,0,2,20141105,14023,41701,1070,12303
+291,SINEMA TV,TV,PlatformTurk,SD,80,410,420,445,420,8192,Astra4A,18,104,Sat,12682,V,6888,5_6,DVB-S,IR,255,4,0,2,20141105,80,18,104,12682
+292,SINEMA TV2,TV,PlatformTurk,SD,85,510,520,545,520,8192,Astra4A,18,104,Sat,12682,V,6888,5_6,DVB-S,IR,255,4,0,2,20141105,85,18,104,12682
+293,SINEMA TV AILE,TV,PlatformTurk,SD,90,610,620,645,620,8192,Astra4A,18,104,Sat,12682,V,6888,5_6,DVB-S,IR,255,4,0,2,20141105,90,18,104,12682
+294,SINEMA TV 1001,TV,PlatformTurk,SD,95,1010,1020,1045,1020,8192,Astra4A,18,104,Sat,12682,V,6888,5_6,DVB-S,IR,255,4,0,2,20141105,95,18,104,12682
+
+
+=====BLOCK=====
+
+	if(ext="vob") print m1000:in; else print name;	print ", ", m1024:size, "b";	print "\n";	set c=0;	while (c++<stream.v) {		print "video";		if (stream.v>1) print c;		print ": ";		if (v[c].lang) print v[c].lang, " ";		if (v[c].x&&v[c].y) print v[c].x, "x", v[c].y;		if (v[c].aspectX&&v[c].aspectY) print "(",v[c].aspectX,":",v[c].aspectY,")";		if (v[c].l) print " ", time:v[c].l;		if (v[c].x&&v[c].y) print " ";		if (v[c].fpsH) print v[c].fpsH;		if (v[c].fpsH && v[c].fpsL) print ".", v[c].fpsL;		if (v[c].fpsH) print "fps";		if (v[c].cc) print " ", cn:v[c].cc;		if (v[c].bps) print	 " ", m1000:v[c].bps, "bps";		print "\n";	}	set c=0;	while (c++<stream.a) {		print "audio";		if (stream.a>1) print c;		print ": ";		if (a[c].lang) print a[c].lang,  " ";		if (a[c].freq) print m1000: a[c].freq, "Hz ";		if (a[c].l) print " ", time:a[c].l;		if (a[c].ch=2) print " Stereo ";		if (a[c].ch=1) print " Mono ";		if (a[c].ch>2) print " ", a[c].ch, " chanels ";		if (a[c].bps) print m1000: a[c].bps,"bps";		if (a[c].vbr) print "(VBR)";		if (a[c].cc) print " ", cn: a[c].cc;		print "\n";	}	set c=0;	if(stream.t){		print "sub";		if(stream.t>1) print "s";		print ": ";		while (c++<stream.t){			if (t[c].lang) print t[c].lang; else print c;			if (t[c].cc) print "(",cn:t[c].cc,")";			if(c<stream.t) print " + ";		}		print "\n";	}	set c=0;	while (c++<stream.d) {		set i=0;		while (i++<d[c].num+1) {			if( d[c][i].name&&d[c][i].value) print d[c][i].name, ": ", d[c][i].value, "\n";		}	}
+
+=====BLOCK=====
+
+	print "\"", name, "\" ";	set c=0;	if (a1.l) print ct:a1.l; else print v1.l;	print " ";	while (c++<stream.v) {	    if (v[c].lang) print v[c].lang, "/";		if (v[c].x&&v[c].y) print v[c].x, "x", v[c].y;		if (v[c].aspectX&&v[c].aspectY) print "(",v[c].aspectX,":",v[c].aspectY,")";		if (v[c].cc && v[c].x) print "/", cn:v[c].cc;		if (v[c].bps) print "/", m1000: v[c].bps, "bps";		if (v[c].fpsH && v[c].fpsH<18) print "/",v[c].fpsH,"fps";	}	print ", ";	set c=0;	while (c++<stream.a) {	    if (a[c].lang) print a[c].lang;		if (a[c].bps) print "/", m1000: a[c].bps, "bps";   		if (a[c].cc) print "/",cn:a[c].cc;		print ",";	}	set c=0;	if(stream.t) print "sub:";	while (c++<stream.t) {			if (t[c].lang) print t[c].lang; else print c;			if(t[c].cc) print "(",t[c].cc,")";			if(c<stream.t) print "+";		}
+
+=====BLOCK=====
+
+if(ext="vob"&&size<16000000) exit;if(ext="vob") print in; else print sn:name;if(ext!="ifo") print " ", m1024:size,"b"; print "\t";if ( (v1.x<512 || v1.y < 350 ) && v1.x && v1.y ) print v1.x,"x",v1.y, " ";if (v1.fpsH < 20 && v1.fpsH) print v1.fpsH,"fps ";if(v1.bps<500000 && v1.bps) print m1000:v1.bps, "bps ";if (stream.v>1) print "[",stream.v, "]";if (v1.x>511||v2.y>351) print v1.x,"x",v1.y;if (v1.aspectX && ((v1.x*v1.aspectX/v1.aspectY)-v1.y)) print "(",v1.aspectX,":",v1.aspectY,")";if (v1.l) print "/",ct: a1.l;if (v1.bps>500000) print "/",m1000: v1.bps,"bps";if (v1.cc && !(v1.cc=XVID || v1.cc=DIVX || v1.cc=DX50 || v1.cc=DIV3) ) print "/",cn: v1.cc;print " ";set c=0;if (stream.t) print "t:";if(t1.cc) print t1.cc,":";while(c++<stream.t){	if(t[c].lang) print t[c].lang; else print c;	if(t[c+1].lang) print "+";}print " ";if (stream.a>1) print "[",stream.a,"]";set c=0;while(c++<stream.a){	if(a[c].lang) print a[c].lang; 	if(a[c+1].lang) print "+";}print " ";if (!v1.l&&a1.l) print ct:a1.l, "/";if (a1.freq) print m1000: a1.freq,"Hz";if (a1.bps) print "/", m1000: a1.bps,"bps";if (a1.cc) print "/",cn:a1.cc;if (a1.ch) print "/",a1.ch,"ch";print "\n";
+
+=====BLOCK=====
+
+print "\nStatistic: ",total.files, " files (",total.processed, " processed) ", "common length: ", ct:total.time, ", common size: ", total.size, "Gb","\n";	  print "Min found:\t";	  if ( total.minx && total.miny ) print " video: ", total.minx,"x",total.miny, " ";	  if ( total.minfps ) print " ", total.minfps, "fps ";	  if ( total.minvbps ) print m1000:total.minvbps, "bps";	  if ( total.minabps||total.minfreq) print "\taudio: ";	  if ( total.minfreq) print m1000:total.minfreq, "Hz ";	  if ( total.minabps) print m1000:total.minabps, "bps";	  if(listpre) print "\n</pre>";
+
+=====BLOCK=====
+
+if(htmlpart) print "<table>";else{print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\"><html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1251\"><title>filelist</title>";print "<style type=\"text/css\">\ntable{width:99%;}\ntd{padding:0.5ex;margin:0;border-bottom:dotted 1px silver}\n.flnm{font-family:Tahoma;}\n.fsize{font-family:Tahoma;font-weight:800;}\n.aud, .vid, {font-family:monospace}\n.aud, .vid, .sub{font-size:90%}\n.aud{color:#900;}\n.vid{color:#009;}\n.sub{color:#0A0;}\n</style>\n</head><body>";if(!umsgh&&umsg) print "<p>";if(umsgh<7&&umsgh>0) print "<h",umsgh,">";if(umsg) print umsg;if(umsgh<7&&umsgh>0) print "</h",umsgh,">\n";print "\n<p align=right>Generated by <a href=\"http://shounen.ru/soft/avinfo/\">AVInfo 1.0</a></p>\n<table cellpadding=0 cellspacing=0>\n";}
+
+=====BLOCK=====
+
+	if(ext="vob"&&size<16000000) {exit;}	print "<tr><td><span class=\"flnm\">";	if(ext="vob")print in; else print sn:name;    print "</span><br><span class=fsize> &nbsp; ", m1024:size,"b </span>";	set c=0;	print "<td><span class=\"vid\">";	while (c++<stream.v) {		print "video";		if (stream.v>1) print c;		print ": ";		if (v[c].x&&v[c].y) print " ",v[c].x,"x", v[c].y;		if (v[c].aspectX && ((v[c].x*v[c].aspectX/v[c].aspectY)-v[c].y)) print "(",v[c].aspectX,":",v[c].aspectY,")";		if (v[c].fpsH) print ", ",v[c].fpsH,".",v[c].fpsL,"fps";		if (v[c].cc) print ", ",cn: v[c].cc;		if (v[c].bps) print ", ",m1000: v[c].bps,"bps",",";		if (v[c].lang) print " language:", v[c].lang;		print "<br>";	}	print "</span><span class=\"aud\">";	set c=0;	while (c++<stream.a){		print "audio";		if (stream.a>1) print c;		print ": ";		if (a[c].freq) print a[c].freq,"Hz";		if (a[c].ch=2) print ", Stereo";		if (a[c].ch=1) print ", Mono";		if (a[c].ch>2) print a[c].ch," chanels";		if (a[c].bps) print ", ",m1000: a[c].bps,"bps";		if (a[c].vbr) print "(VBR)";		if (a[c].lang) print " language: ", a[c].lang;		print "<br>";	}	print "</span>";	set c=0;	print "<span class=sub>";	while (c++<stream.t){		print "subtitle";		if(stream.t>1) print c;		print ": ";		if (t[c].lang) print t[c].lang; else print c;		if (t[c].cc) print " (",t[c].cc, ")";		print "<br>";	}	print "</span>";	set c=0;	while (c++<stream.d) {		set i=0;		while (i++<d[c].num+1) if(d[c][i].name&&d[c][i].value) print d[c][i].name, ": ", d[c][i].value, "\n<br>";	}	print "</td>\n</tr>\n";
+
+=====BLOCK=====
+
+print "</table>\n<p style=\"text-align:right;float:right;border-top:1px solid silver;clear:both;padding-top:0.5ex\">";print "\nStatistic: ",total.files, " files (",total.processed, " processed) ", "common length: ", ct:total.time, ", common size: ", 0:total.size, "Gb","<br>\n";print "Min found: ";if ( total.minvbps ) print " video:", m1000:total.minvbps, "bps";if ( total.minx && total.miny ) print total.minx,"x",total.miny;if ( total.minfps ) print " ", total.minfps, "fps";	  if ( total.minabps||total.minfreq) print " audio: ";	  if ( total.minfreq) print m1000:total.minfreq, "Hz ";	  if ( total.minabps) print m1000:total.minabps, "bps";if(!htmlpart) print "\n</body>\n</html>"; else print "\n<hr>";
+
+=====BLOCK=====
+
+print "in=",in,"\n";print "shortname=",sn:name,"\n";print "size=",-1:size,"\n";print "hsize=",m1024:size,"\n";if(stream.a) print "stream.a=",stream.a,"\n";if(stream.v) print "stream.v=",stream.v,"\n";if(stream.t) print "stream.t=",stream.t,"\n";if(stream.d) print "stream.d=",stream.d,"\n";if( stream.a ){	set c=0;	while(c++<stream.a){		if( a[c].l ) print "a", c, ".l=", a[c].l,"\n";		if( a[c].l ) print "a", c, ".len=", time:a[c].l,"\n";		if( a[c].cc ) print "a", c, ".cc=", a[c].cc,"\n";		if( a[c].cc ) print "a",c, ".codec=", fcc:a[c].cc,"\n";		if( a[c].cc ) print "a",c, ".codecname=",cn:a[c].cc,"\n";		if( a[c].ch ) print "a",c, ".ch=", a[c].ch,"\n";		if( a[c].freq ) print "a",c, ".freq=", a[c].freq,"\n";		if( a[c].bits ) print "a",c, ".bits=", a[c].bits,"\n";		if( a[c].bps ) print "a",c, ".bps=", a[c].bps,"\n";		if( a[c].vbr) print "a",c, ".vbr=",a[c].vbr,"\n";		if( a[c].lang ) print "a",c, ".lang=", a[c].lang, "\n";	}}if( stream.v ){	set c=0;	while(c++<stream.v){		if( v[c].l ) print "v",c, ".l=", v[c].l,"\n";		if( v[c].l ) print "v",c, ".l=", time:v[c].l,"\n";		if( v[c].x ) print "v",c, ".x=", v[c].x,"\n";		if( v[c].y ) print "v",c, ".y=", v[c].y,"\n";		if( v[c].aspectX ) print "v",c, ".aspectX=", v[c].aspectX,"\n";		if( v[c].aspectY ) print "v",c, ".aspectY=", v[c].aspectY,"\n";		if( v[c].bits ) print "v",c, ".bits=", v[c].bits,"\n";		if( v[c].cc ) print "v",c, ".cc=", v[c].cc,"\n";		if( v[c].cc ) print "v",c, ".codec=", fcc:v[c].cc,"\n";		if( v[c].cc ) print "v",c,".codecname=",cn:v[c].cc,"\n";		if( v[c].fpsH ) print "v",c, ".fps=", v[c].fpsH;		if( v[c].fpsH && v[c].fpsL ) print ".",v[c].fpsL;		if( v[c].fpsH) print "\n";		if( v[c].bps ) print "v", c, ".bps=", v[c].bps,"\n";			if( v[c].vbr) print "v", c,".vbr=", v[c].vbr,"\n";		if( v[c].lang ) print "v",c, ".lang=", v[c].lang, "\n";	}}if( stream.t ){	set c=0;	while(c++<stream.t){		if(t[c].lang) print "t",c, ".lang=",t[c].lang, "\n";		if(t[c].cc) print "t",c,".cc=",t[c].cc,"\n";	}}if( stream.d ){	set c=0;	while(c++<stream.d){		if(d[c].num+1) print "d",c, ".num=",d[c].num,"\n";		set i=0;		while(i++<d[c].num){			if(d[c][i].name) print "d",c, i, ".name=", d[c][i].name,"\n";			if(d[c][i].value) print "d", c, i, ".value=", d[c][i].value,"\n";		}	}}
+
+=====BLOCK=====
+
+	if(ext="vob") print m1000:in; else print sn:name;	print "; ", m1024:size, "b;";	set c=0;	if (stream.v>1) print "[",stream.v,"] ";	while (c++<stream.v) {		if (v[c].lang) print v[c].lang, " ";		if (v[c].l) print time:v[c].l, " ";		if (v[c].x&&v[c].y) print v[c].x, "x", v[c].y;		if (v[c].aspectX&&v[c].aspectY) print "(",v[c].aspectX,":",v[c].aspectY,")";		if (v[c].x&&v[c].y) print " ";		if (v[c].fpsH) print v[c].fpsH;		if (v[c].fpsH && v[c].fpsL) print ".", v[c].fpsL;		if (v[c].fpsH) print "fps";		if (v[c].cc) print " ", cn:v[c].cc;		if (v[c].bps) print	 " ", m1000:v[c].bps, "bps";		if(c<stream.v) print ", ";	}	print ";";	set c=0;	if (stream.a>1) print "[",stream.a,"] ";	while (c++<stream.a) {		if (a[c].lang) print a[c].lang,  " ";		if (a[c].l) print time:a[c].l, " ";		if (a[c].freq) print m1000: a[c].freq, "Hz ";		if (a[c].ch=2) print "Stereo ";		if (a[c].ch=1) print "Mono ";		if (a[c].ch>2) print  a[c].ch, " chanels ";		if (a[c].bps) print m1000: a[c].bps,"bps";		if (a[c].vbr) print "(VBR)";		if (a[c].cc) print " ", cn: a[c].cc;		if(c<stream.a) print ", ";	}	print ";";	set c=0;	if (stream.t>1) print "[",stream.t,"] ";		while (c++<stream.t){		if (t[c].lang) print t[c].lang; else print c;		if(t[c].cc) print "(",t[c].cc,")";		if(c<stream.t) print ", ";	}	print "; ";	set c=0;	while (c++<stream.d) {		set i=0;		while (i++<d[c].num+1) {			if( d[c][i].name&&d[c][i].value) print d[c][i].name, "=", d[c][i].value;			if(i<d[c].num+1&&d[c][i].name) print ", ";		}	}
+
+=====BLOCK=====
+
+print "\n\n";print ";;;;Generated by AVInfo 1.0, http://shounen.ru/soft/avinfo/\n\n";print "\nStatistic;",total.files, " files; ",total.processed, " processed; ", "common length: ", ct:total.time, ";common size: ", total.size, "Gb","\n";	  print "Min found:\n";	  if ( total.minx && total.miny ) print " video: ;", total.minx,"x",total.miny, " ;";	  if ( total.minfps ) print " ", total.minfps, "fps ;";	  if ( total.minvbps ) print m1000:total.minvbps, "bps;\n";	  if ( total.minabps||total.minfreq) print " audio: ;";	  if ( total.minfreq) print m1000:total.minfreq, "Hz ;";	  if ( total.minabps) print m1000:total.minabps, "bps;\n";
+
+=====BLOCK=====
+
+    ";		if(v[c].x&&v[c].y) print v[c].x,"x",v[c].y; else print "\t";		if( v[c].x && v[c].y && v[c].aspectX && v[c].aspectY) print " (",v[c].aspectX,":",v[c].aspectY,")";		if (v[c].cc) print "\t", cn:v[c].cc; else print "\t";		if (v[c].fpsH) print "\t", v[c].fpsH; else print "\t";		if (v[c].fpsH && v[c].fpsL) print ".",v[c].fpsL;		if (v[c].fpsH) print "fps";		print "\t
+
+=====BLOCK=====
+
+AVInfo 1.0 alpha 15 [Balalaika]
+
+(c) George Shuklin,2001-2004, http://shounen.ru/soft/avinfo/
+
+Utility for Audio-VIdeo INFOrmation extraction
+
+Usage:
+avinfo filename [options] [--buildin_template_name]
+options (you can use ':' instead '=', or just omit it):
+	-f=extension - force use module, associated with extesion
+	-l=list - use a filelist (use -l- for stdin)
+	-i=ms  - delay between files in filelist (in ms) (/*TODO*/)
+	-e=ext - exclude extension (do not apply accociated module)
+	-o=file - file for output writing (default is stdout)
+	-m=number - max line length (0 - no restriction)
+	-th=template - header of template (use without value to disable)
+	-thf=filename - file, containing the template header
+	-tb=template - body of template (use without value to disable)
+	-tbf=filename - file, containing the template body
+	-tf=template - footer of template (use without value to disable)
+	-tff=filename - file, containing the template footer
+	-s=value - for advanced modules tuning (/*TODO*/)
+	-v=name=value - set int. variable 'name' to 'value' (text or number)
+
+Build-in templates:
+	--default        using by default
+	--description    for creating (updating) descrpipt.ion files
+	--list           for filelist (plain text) generation
+	--html-list      for filelist (html) generation
+	--csv-list       for filelist (CSV, e.g. for Excel)
+	--short          alt. version of --default template
+	--far            "nice" formated report (for FAR Manager)
+	                 (contain a MS-DOS pseudograph. chars)
+
+Samples of use:
+avinfo file.ogm --raw
+dir /s /b c:\anime | sort | avinfo -l- --html-list -o=myanimelist.html
+avinfo -l:Mylist -thf:header.tpl -tbf=body.tpl -tff=footer.tpl >result.txt
+
+
+=====BLOCK=====
+
+UPDATE %Q.%s SET sql = CASE WHEN type = 'trigger' THEN sqlite_rename_trigger(sql, %Q)ELSE sqlite_rename_table(sql, %Q) END, tbl_name = %Q, name = CASE WHEN type='table' THEN %Q WHEN name LIKE 'sqlite_autoindex%%' AND type='index' THEN 'sqlite_autoindex_' || %Q || substr(name,%d+18) ELSE name END WHERE tbl_name=%Q AND (type='table' OR type='index' OR type='trigger');
+
+=====BLOCK=====
+
+BEGIN TRANSACTION; CREATE TABLE IF NOT EXISTS TBL_RECENT (  [recentIdx] INTEGER  ,[hSvc] integer(4) ); CREATE TABLE IF NOT EXISTS TBL_FAV (  [favIdx] INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE  ,[hSvc] integer(4)  ,[eFavGroup] integer(4) ); CREATE UNIQUE INDEX IF NOT EXISTS IDX_FAV_hSvc ON TBL_FAV(hSvc); 
+
+=====BLOCK=====
+
+CREATE TABLE IF NOT EXISTS TBL_BOUQ (  [bouqIdx] INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE  ,[usBouqId] integer(2)  ,[szBouqName] TEXT  ,[ucSearchFlag] integer(1) NOT NULL DEFAULT 1 ); CREATE TABLE IF NOT EXISTS TBL_GENRE (  [genreIdx] INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE  ,[ulGenreId] integer(4)  ,[szGenreName] TEXT  ,[ucSearchFlag] integer(1) NOT NULL DEFAULT 1 ); CREATE TABLE IF NOT EXISTS TBL_NET (  [netIdx] INTEGER PRIMARY KEY AUTOI
+
+=====BLOCK=====
+
