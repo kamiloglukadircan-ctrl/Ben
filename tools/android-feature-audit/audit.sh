@@ -71,7 +71,11 @@ comm -23 <(sed 's/^package:.*=//; s/^package://' "$out/packages_all.txt" | sort 
          > "$out/packages_uninstalled_for_user.txt"
 
 p() { grep -m1 -F "[$1]" "$out/props.txt" | sed 's/.*: \[\(.*\)\]/\1/'; }
-has_feature() { grep -qE "^feature:${1//./\\.}(=.*)?$" "$out/features.txt" && echo "VAR" || echo "YOK"; }
+has_feature() {
+    # pm çağrısı başarısızsa (Termux yerel modu) "YOK" demek yanıltıcı olur.
+    grep -q '^feature:' "$out/features.txt" || { echo "BİLİNMİYOR (izin yok)"; return; }
+    grep -qE "^feature:${1//./\\.}(=.*)?$" "$out/features.txt" && echo "VAR" || echo "YOK"
+}
 
 S="$out/OZET.txt"
 {
