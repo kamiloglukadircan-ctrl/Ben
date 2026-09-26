@@ -1,0 +1,121 @@
+$VERBOSE" != no ]; then
+		log_begin_msg "Trying module $module"
+		if modprobe $module $args >/dev/null 2>&1; then
+		    log_end_msg 0
+		else
+		    log_end_msg 1 || true
+		fi
+    else
+	modprobe $module $args >/dev/null 2>&1 || true
+    fi
+done
+
+#!/bin/sh
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg "Mounting local filesystems..."
+fi
+
+(
+	ubiattach -m 4
+	mount -t ubifs -o sync ubi1:dbdata /var/lib/humaxtv
+	mount -t ubifs -o sync ubi1:dbbackup /var/lib/humaxtv_backup
+	mount -t ubifs -o sync ubi1:dbuser /var/lib/humaxtv_user
+
+) 2>&1 | grep -v '(already|nothing was) mounted'
+
+#!/bin/sh
+
+[ -x /sbin/ifup ] || exit 0
+[ -x /sbin/ifdown ] || exit 0
+
+. /lib/lsb/init-functions
+. /etc/default/rcS
+
+MYNAME="${0##*/}"
+report() { echo "${MYNAME}: $*" ; }
+report_err() { log_failure_msg "$*" ; }
+RUN_DIR=/var/run
+[ -r /etc/default/ifupdown ] && . /etc/default/ifupdown
+
+# Note: The state file location is hardcoded in ifup|ifdown
+IFSTATE=/var/run/ifstate
+
+HUMAXTV_CONFIG=/var/lib/humaxtv/network/network.conf
+
+
+myreadlink () {
+    dest="${1%/}"
+    extras=""
+
+    while [ "$dest" != "" ]; do
+	if [ -d "$dest" ]; then
+	    cd "$dest"
+	    dest=$(/bin/pwd)
+	    break
+	fi
+
+	if [ -L "$dest" ]; then
+	    d2=$(readlink "$dest")
+	    if [ "${d2#/}" = "$d2" ]; then
+		dest="${dest%/*}/$d2"
+	    else
+		dest="$d2"
+	    fi
+	fi
+
+	while [ ! -e "$dest" ]; do
+	    extras="${dest##*/}/$extras"
+	    if [ "${extras%%/*}" = ".." ]; then return 1; fi
+	    destx="${dest%/*}"
+	    if [ "$destx" = "$dest" ]; then destx=""; fi
+	    dest="$destx"
+	done
+    done
+    dest="$dest/$extras"
+    echo "${dest%/}"
+}
+
+case "$1" in
+    start|restart)
+	if [ "$2" ]; then
+	    report_err "Arguments to '$1' command not accepted"
+	    exit 3
+	fi
+	if [ "$VERBOSE" != no ]; then
+		log_begin_msg "Setting up networking..."
+	fi
+
+	echo "   Debug mode not support ethetnet setting"
+
+	if [ "$VERBOSE" != no ]; then
+		log_end_msg 0
+	fi
+	exit 0
+	;;
+    stop)
+	if [ "$2" ]; then
+	    report_err "Arguments to '$1' command not accepted"
+	    exit 3
+	fi
+	if [ -x /etc/init.d/ifupdown-clean ]; then
+	    /etc/init.d/ifupdown-clean start
+	fi
+	;;
+    force-reload)
+	;;
+    *)
+	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	exit 3
+	;;
+esac
+#!/bin/sh
+
+MODULES_FILE=/etc/default/modules
+. /lib/lsb/init-functions
+. /etc/default/rcS
+if [ "$VERBOSE" != no ]; then
+	log_begin_msg 'Loading deamons...'
+fi
