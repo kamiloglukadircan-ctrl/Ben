@@ -50,6 +50,11 @@ A2) RAM'den boot et (flash'a YAZMAZ):
     bootm ${RAM_LOAD_ADDR}
 
 A3) OpenWrt RAM'de açılınca test et:
+    NOT: bootm ile açılan OpenWrt, U-Boot'un ${ROUTER_IP} adresini DEĞİL,
+    kendi varsayılan LAN adresi olan 192.168.1.1'i kullanır (bu, U-Boot'un
+    ipaddr'ı sadece TFTP transferi içindir, OpenWrt'in ağ ayarıyla ilgisi
+    yoktur). Bilgisayarının ağ arayüzüne GEÇİCİ olarak 192.168.1.x/24
+    aralığından bir IP ver (örn. 192.168.1.5), sonra:
     - LAN portuna bağlanıp 192.168.1.1'e ping at
     - SSH ile bağlanmayı dene: ssh root@192.168.1.1
     - dmesg / ifconfig ile ethernet ve (varsa) WLAN'ın göründüğünü kontrol et
