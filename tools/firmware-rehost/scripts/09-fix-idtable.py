@@ -62,6 +62,15 @@ struct.pack_into("<H", data, 0x18, new_flags)
 struct.pack_into("<q", data, 0x58, -1)              # lookup_table_start = -1 (yok)
 print(f"flags: 0x{flags:04x} -> 0x{new_flags:04x} (EXPORT temizlendi)")
 
+# Fragment tablosu da bozuk son-bolgede. Etkisizlestir: no_fragments=0,
+# fragment_table_start=-1. Boylece unsquashfs fragment okumaya calismaz;
+# tam-blok saklanan buyuk dosyalar (binary/kutuphane/script) cikar,
+# yalnizca fragment'a bagli cok kucuk dosyalarin kuyrugu eksik kalabilir.
+no_frags = struct.unpack_from("<I", data, 0x10)[0]
+struct.pack_into("<I", data, 0x10, 0)               # fragments = 0
+struct.pack_into("<q", data, 0x50, -1)              # fragment_table_start = -1
+print(f"fragments: {no_frags} -> 0 (fragment tablosu etkisizlestirildi)")
+
 open(dst, "wb").write(data)
 print(f"Yamalandi -> {dst}")
 print(f"  yeni id_table_start={IDX}  yeni bytes_used={new_bytes_used}")
