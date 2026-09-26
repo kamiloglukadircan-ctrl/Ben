@@ -53,6 +53,15 @@ struct.pack_into("<Q", data, 0x28, new_bytes_used)  # bytes_used
 struct.pack_into("<Q", data, 0x30, IDX)             # id_table_start
 struct.pack_into("<H", data, 0x1a, 1)               # no_ids = 1
 
+# EXPORT bayragini temizle (bit 0x0080). Export/lookup tablosu da bozuk
+# son-bolgede; NFS icin isteğe bagli, temizleyince unsquashfs okumaya
+# calismaz. Ayrica lookup_table_start'i -1 yap.
+flags = struct.unpack_from("<H", data, 0x18)[0]
+new_flags = flags & ~0x0080
+struct.pack_into("<H", data, 0x18, new_flags)
+struct.pack_into("<q", data, 0x58, -1)              # lookup_table_start = -1 (yok)
+print(f"flags: 0x{flags:04x} -> 0x{new_flags:04x} (EXPORT temizlendi)")
+
 open(dst, "wb").write(data)
 print(f"Yamalandi -> {dst}")
 print(f"  yeni id_table_start={IDX}  yeni bytes_used={new_bytes_used}")
