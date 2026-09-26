@@ -108,8 +108,9 @@ done
 echo
 echo "=== KAMERA (Camera2 API donanım seviyesi) ==="
 echo "  0=LIMITED 1=FULL 2=LEGACY 3=LEVEL_3 4=EXTERNAL"
-grep -iE "Camera ID|supportedHardwareLevel|android.info.supportedHardwareLevel" -A1 "$out/camera.txt" \
-    | grep -iE "Camera ID|HardwareLevel|^\s*\[?[0-9]" | head -20 | sed 's/^/  /'
+awk '/Camera ID|Device [0-9]+ is|== Camera device/ {print; next}
+     /android.info.supportedHardwareLevel/ {getline v; gsub(/[^0-9]/,"",v); print "    supportedHardwareLevel = " v}' \
+    "$out/camera.txt" | head -20 | sed 's/^/  /'
 echo
 echo "=== VoLTE / VoWiFi / IMS ==="
 grep -iE "(volte|vowifi|wfc|vilte|ims).*(support|avail|enable)" "$out/props.txt" | sed 's/^/  /'
@@ -132,8 +133,8 @@ echo
 echo "=== KULLANICI İÇİN KALDIRILMIŞ AMA SİSTEMDE DURAN PAKETLER ==="
 sed 's/^/  /' "$out/packages_uninstalled_for_user.txt"
 echo
-echo "=== ÖZELLİK BAYRAKLARI (device_config, 'false' olanlar, ilk 60) ==="
-grep -E "=false$" "$out/device_config.txt" | head -60 | sed 's/^/  /'
+echo "=== ÖZELLİK BAYRAKLARI (device_config, 'false' olanlar, reklam servisleri hariç, ilk 60) ==="
+grep -E "=false$" "$out/device_config.txt" | grep -vE "^(adservices|ondevicepersonalization|federated|attestation)/" | head -60 | sed 's/^/  /'
 } > "$S"
 
 echo
