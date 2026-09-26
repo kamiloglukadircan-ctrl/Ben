@@ -148,7 +148,57 @@ dmesg | grep -i eth           # ethernet linklerini kontrol et
 - `opkg update && opkg install luci` (web arayüzü istersen).
 - VDSL/DSL firmware'i gerekiyorsa (`vdsl_fw_install.sh` veya trunk'ta hazır `lantiq-vrx200-a.bin`/`-b.bin`), `/etc/config/network` üzerinden `annex`, `tone`, `xfer_mode` ayarlarını hattına göre yap.
 
-## 7. Geri Dönüş / Kurtarma Planı (Önlem)
+## 7. İlk Boot Sonrası Ağ Sorunları (2026-09-26'da yaşandı ve çözüldü)
+
+Flash başarıyla bitip kernel sorunsuz açılsa bile, ilk network erişiminde
+şu sorunlarla karşılaşabilirsin — hepsi zararsız, sadece kafa karıştırıcı:
+
+**A) "Destination Port/Host Unreachable" — router cevap veriyor ama her şeyi reddediyor**
+- Sebep: kablo, cihazın **WAN olarak gördüğü fiziksel porta** takılı olabilir
+  (bu, bazı OpenWrt build'lerinde LAN1-4'ten biri farklı VLAN/zone'a
+  atanmış olabiliyor). Belirti: `tcpdump` ile bakınca router'ın kendi
+  kendine `BOOTP/DHCP Request` gönderdiğini görürsün (WAN client davranışı).
+- Çözüm: Kabloyu **farklı bir LAN portuna** tak, tekrar dene.
+
+**B) LAN IP'sini `uci set network.lan.ipaddr` ile değiştirince erişim tamamen kesiliyor**
+- Sebep: Bazı OpenWrt sürümlerinde `ipaddr` CIDR (`/24`) içeriyor; sade
+  `uci set network.lan.ipaddr='X.X.X.X'` yaparsan netmask `/32`'ye düşebilir
+  (yani sadece tek IP, tüm subnet değil). `ip addr show br-lan` ile kontrol
+  et — `/32` görüyorsan:
+  ```
+  uci set network.lan.netmask='255.255.255.0'
+  uci commit network
+  service network restart
+  ```
+
+**C) Bilgisayarda elle eklenen IP birkaç saniye sonra kayboluyor**
+- Sebep: NetworkManager arayüzü kendi yönetimine alıp DHCP ile IP almaya
+  çalışıyor (`nmcli device status` → "connecting (getting IP configuration)"),
+  elle eklenen IP'yi silip duruyor.
+- Çözüm:
+  ```bash
+  sudo nmcli device set enp2s0 managed no
+  sudo ip addr add 192.168.1.5/24 dev enp2s0
+  ```
+
+**D) Factory reset sonrası SSH ile `root` girişi boş şifreyle de reddediliyor**
+- Bu normal — güncel OpenWrt, şifre ayarlanmamış root hesabıyla SSH
+  girişine izin vermiyor (güvenlik varsayılanı).
+- Çözüm: Tarayıcıdan **LuCI**'ye gir (`http://192.168.1.1/cgi-bin/luci` —
+  bazen düz `http://192.168.1.1` bir dosya listesi gösterip yönlendirmeyebilir,
+  o zaman `/cgi-bin/luci` yolunu elle ekle). Kullanıcı adı `root`, şifre
+  alanı **boş**. Girince `System → Administration`'dan yeni şifre koy.
+
+**E) Şifreyi unuttum / yanlış giriyorum, ne yapmalıyım?**
+- **Reset butonuna basmak cihazı BRICK ETMEZ** — sadece ayar/overlay
+  bölümünü siler, kernel ve rootfs'e (asıl firmware) hiç dokunmaz. Bu,
+  `sf write` ile flash yazmaktan (gerçekten riskli olan işlem) tamamen
+  farklı ve çok daha güvenli bir işlemdir.
+- Router **açıkken**, arkasındaki RESET deliğine ince bir cisimle **10
+  saniye basılı tut**, bırak. Router `192.168.1.1`'e, şifresiz duruma
+  döner. WiFi/özel ayarları tekrar girmen gerekir (birkaç dakika sürer).
+
+## 8. Geri Dönüş / Kurtarma Planı (Önlem)
 
 - **Flaşlamadan önce OEM firmware'i yedekle.** Eğer OEM firmware üzerinde
   serial ile shell'e erişimin varsa:
@@ -165,7 +215,7 @@ dmesg | grep -i eth           # ethernet linklerini kontrol et
   U-Boot'un kendisi bozulursa donanımsal SPI programlayıcı (BusPirate,
   Raspberry Pi SPI, Pomona clip) gerekir — bkz. sayfadaki "Debricking" bölümü.
 
-## 8. Riskler / Dikkat Edilecekler
+## 9. Riskler / Dikkat Edilecekler
 
 - Yanlış (v3 için olan) imajı yazmak cihazı brick edebilir — **model/versiyon
   etiketini** açtığında mutlaka doğrula.
